@@ -3,6 +3,7 @@ cache: packages
 
 before_install:
   - sudo apt-get install -y latexmk
+  - sudo apt-get install -y texlive-lang-portuguese
 
 script: make book
 
