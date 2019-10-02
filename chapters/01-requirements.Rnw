@@ -1,0 +1,523 @@
+\section{Revisão}
+\label{sec:prologue}
+
+\subsection{Teoria dos conjuntos}
+\label{sec:sets}
+  
+	Teoria dos Conjuntos é o fundamento para a definição da matemática moderna.
+	Em particular, ela é usada para definir a Teoria da Probabilidade.
+	Conjuntos são usados para definir eventos.
+	Esta seção faz uma revisão rápida e focada de Teoria dos Conjuntos.
+  
+	Um conjunto é uma coleção de objetos.
+	Se um conjunto é composto por um número finito de objetos, $w_{1}, w_{2}, \ldots, w_{n}$,
+	denotamos este conjunto por $\{w_{1},w_{2},\ldots,w_{n}\}$.
+	Alguns conjuntos são usados com tanta frequência que recebem símbolos especiais para designá-los:
+	\begin{itemize}
+	 \item $\mathbb{N}$: Os números naturais, $\{0,1,2,3,\ldots\}$.
+	 \item $\mathbb{Z}$: Os números inteiros, $\{\ldots,-2,-1,0,1,2,\ldots\}$.
+	 \item $\mathbb{R}$: Os números reais.
+	\end{itemize}
+  
+  \begin{example}[Conjuntos] \
+  
+    \begin{itemize}
+     \item \text{O conjunto de resultados em um dado de $6$ faces:} $\{1,2,3,4,5,6\}$.
+     \item \text{O conjunto de resultados em um lançamento de moeda:} $\{T,H\}$.
+     \item \text{O conjunto de resultados em dois lançamentos de moeda:} $\{(T,T),(T,H),(H,T),(H,H)\}$.
+     \item \text{O conjunto de números ímpares:} $\{2n+1: n \in \mathbb{N}\}$ ou  $\{1, 3, 5, 7, \ldots\}$.
+     \item \text{O conjunto de números reais não negativos:} $\{x \in \mathbb{R}: x \geq 0\}$.
+     \item \text{Um círculo de raio $1$:} $\{(x,y) \in \mathbb{R}^2: x^2+y^2 \leq 1\}$.
+    \end{itemize}
+  \end{example}
+
+  \begin{definition}[$\in$ e $\notin$] 
+    \label{def:membership}
+    Escrevemos $w \in S$ se o objeto $w$ é um elemento do conjunto $S$ e $w \notin S$, caso contrário.
+  \end{definition}
+
+  \begin{example}[$\in$ e $\notin$] \
+  \begin{itemize}
+    \item $T \in \{T, H\}$. 
+    \item $7 \notin \{1,2,3,4,5,6\}$.
+    \item $7 \in \{2n+1: n \in \mathbb{N}\}$.
+  \end{itemize}
+  \end{example}
+
+  \begin{definition}[\textbf{Conjunto vazio} - $\emptyset$]
+    \label{emptyset}
+    $\emptyset$ é o único conjunto sem elementos. Isto é, para todo objeto $w$, $w \notin \emptyset$.
+  \end{definition}
+    
+  \begin{definition}[\textbf{Conjuntos disjuntos}] \
+    \label{disjointsets}
+    \begin{itemize}
+     \item Dois conjuntos $A$ e $B$ são \textbf{disjuntos} se, 
+		  para todo $w \in A$, temos $w \notin B$ e 
+			para todo $w \in B$, $w \notin A$.
+     \item Uma sequência de conjuntos $(A_{n})_{n \in \mathbb{N}}$ é disjunta se, 
+		  para todo $i \neq j$, $A_{i}$ é disjunto de $A_{j}$.
+    \end{itemize}
+  \end{definition}
+  
+  \begin{example}[Conjuntos disjuntos] \
+    \begin{itemize}
+      \item $\{1,2\}$ e $\{3,4\}$ são disjuntos.
+      \item $\{1,2\}$ e $\{2,3\}$ não são disjuntos pois $2 \in \{1,2\}$ e $2 \in \{2,3\}$.
+    \end{itemize}
+  \end{example}
+
+  \begin{definition}[$\subset$ e $=$] Sejam $A$ e $B$ dois conjuntos. Dizemos que:
+    \label{subset}
+    \begin{itemize}
+      \item $A \subset B$ se, para todo $w \in A$, $w \in B$.
+      \item $A = B$ se $A \subset B$ e $B \subset A$.
+    \end{itemize}
+  \end{definition}
+
+  \begin{example}[$\subset$ e $=$] \
+    \begin{itemize}
+      \item $\{1,2\} \subset \{1,2,3,4\}$.
+      \item $\{n \in \mathbb{Z}: n \geq 1\} \subset \mathbb{N}$.
+      \item $\{n \in \mathbb{Z}: n \geq 0\} = \mathbb{N}$.
+    \end{itemize}
+  \end{example}
+
+  Reservamos o símbolo $\Omega$ para o conjunto de todos os objetos considerados em um dado modelo.
+	$\Omega$ é chamado em Teoria da Probabilidade de \textbf{Espaço Amostral}.
+	Isto é, para todo conjunto $A$ considerado no modelo, $A \subset \Omega$.
+	
+  \subsubsection{Operações sobre conjuntos}
+  
+  \begin{definition}[complemento - $^{c}$]
+    \label{complement}
+    Seja $A$ um conjunto. $w$ é um elemento de $A^{c}$ se e somente se $w \notin A$. 
+		Isto é, o complemento de $A$ é definido como $A^{c} = \{w \in \Omega: w \notin A\}$.
+		Note que, para determinar $A^{c}$, é necessário conhecer $\Omega$.
+  \end{definition}
+  
+  \begin{example}[$^{c}$] \
+    \begin{itemize}
+      \item Seja $\Omega = \{T,H\}$, $\{T\}^{c} = \{H\}$.
+      \item Seja $\Omega = \{1,2,3,4,5,6\}$, $\{1,2\}^{c} = \{3,4,5,6\}$.
+      \item Seja $\Omega = \mathbb{N}$, $\{n \in \mathbb{N}: n > 0\}^{c} = \{0\}$.
+    \end{itemize}
+  \end{example}
+
+  \begin{definition}[união - $\cup$] \
+    \label{union}
+    \begin{itemize}
+      \item Sejam $A$ e $B$ dois conjuntos, 
+			 $w \in \Omega$ é um elemento da união entre $A$ e $B$, se e somente se
+			 $w$ é elemento de $A$ \textbf{ou} $w$ é elemento de $B$. 
+			 Isto é, $A \cup B = \{w \in \Omega: w \in A \textbf{ ou } \in B\}$. 
+      \item Seja $(A_{n})_{n \in \mathbb{N}}$ uma sequência de conjuntos. 
+			 $w \in \Omega$ é um elemento da união de $(A_{n})_{n \in \mathbb{N}}$, $\cup_{n \in \mathbb{N}}{A_{n}}$,
+			 se e somente se existe $n \in \mathbb{N}$ tal que $w \in A_{n}$. 
+			 Isto é, $\cup_{n \in \mathbb{N}}{A_{n}} = \{w \in \Omega: \textbf{existe } n \in \mathbb{N} \text{ tal que } w \in A_{n}\}$
+    \end{itemize}
+  \end{definition}
+
+  \begin{example}[$\cup$] \
+    \begin{itemize}
+      \item $\{T\} \cup \{H\} = \{T,H\}$.
+      \item $\{1,2\} \cup \{2,3\} = \{1,2,3\}$.
+      \item $\{1\} \cup \{3\} \cup \{5\} = \{1,3,5\}$.
+      \item $\{n \in \mathbb{Z}: n > 0\} \cup \{n \in \mathbb{Z}: n < 0\} = \{n \in \mathbb{Z}: n \neq 0\}$.
+      \item $\cup_{n \in \mathbb{N}}{\{n\}} = \mathbb{N}$.
+      \item $\cup_{n \in \mathbb{N}}{\{x \in \mathbb{R}: x \geq n\}} = \{x \in \mathbb{R}: x \geq 0\}$.
+      \item $\cup_{n \in \mathbb{N}}{\{x \in \mathbb{R}: x \geq 1/(n+1)\}} = \{x \in \mathbb{R}: x > 0\}$.
+    \end{itemize}
+  \end{example}
+
+  
+  \begin{definition}[intersecção - $\cap$] \
+    \label{intersection}
+    \begin{itemize}
+      \item Sejam $A$ e $B$ dois conjuntos. $\omega$ é elemento da intersecção entre $A$ e $B$, $A \cap B$, 
+			se e somente se $w \in \Omega$ é um elemento de $A$ \textbf{e} $w$ é um elemento de $B$. 
+			Isto é, $A \cap B = \{w \in \Omega: w \in A \textbf{ e } w \in B\}$.
+      \item Seja $(A_{n})_{n \in \mathbb{N}}$ uma sequência de conjuntos, 
+			$w \in \Omega$ é elemento da intersecção de $(A_{n})_{n \in \mathbb{N}}$, 
+			$\cap_{n \in \mathbb{N}}{A_{n}}$, se e somente se para todo $n \in \mathbb{N}$, $w \in A_{n}$. 
+			Isto é, $\cap_{n \in \mathbb{N}}{A_{n}} = \{w \in \Omega: \textbf{para todo } n \in \mathbb{N}, w \in A_{n}\}$
+    \end{itemize}
+  \end{definition}
+    
+  \begin{example}[$\cap$] \
+    \begin{itemize}
+      \item $\{T\} \cap \{H\} = \emptyset$.
+      \item $\{1,2\} \cap \{2,3\} = \{2\}$.
+      \item $(\{1,2\} \cap \{2,3\}) \cup \{5\} = \{2,5\}$.
+      \item $\{n \in \mathbb{Z}: n \geq 0\} \cap \{n \in \mathbb{Z}: n \leq 0\} = \{0\}$.
+      \item $\cap_{n \in \mathbb{N}}{\{i \in \mathbb{N}: i \geq n\}} = \emptyset$.
+      \item $\cap_{n \in \mathbb{N}}{\{x \in \mathbb{R}: x \leq n\}} = \{x \in \mathbb{R}: x \leq 0\}$.
+    \end{itemize}
+  \end{example}
+
+
+\begin{theorem}[Lei de De Morgan]\ 
+Seja $(A_n)_{n \in \mathbb{N}}$ uma sequência de subconjuntos de $\Omega$. 
+Para todo $n \in \mathbb{N}$,
+\begin{itemize}
+\item $\left(\cup_{i=1}^n A_i \right)^c = \cap_{i=1}^n A^c_i$
+\item $\left(\cap_{i=1}^n A_i \right)^c = \cup_{i=1}^n A^c_i$
+\end{itemize}
+Ademais,
+\begin{itemize}
+\item $\left(\cup_{i\in \mathbb{N}} A_i \right)^c = \cap_{i\in \mathbb{N}} A^c_i$
+\item $\left(\cap_{i\in \mathbb{N}} A_i \right)^c = \cup_{i\in \mathbb{N}} A^c_i$
+\end{itemize}
+\end{theorem}
+
+  \begin{definition}[Partição]
+    \label{partition}
+    Seja $(A_{n})_{n \in \mathbb{N}}$ uma sequência de conjuntos. 
+		Dizemos que $(A_{n})_{n \in \mathbb{N}}$ particiona $\Omega$ se:
+    \begin{itemize}
+      \item Para todo $i,j \in \mathbb{N}$ tais que $i \neq j$, $A_{i}$ e $A_{j}$ são disjuntos.
+      \item $\cup_{n \in \mathbb{N}}{A_{n}} = \Omega$.
+    \end{itemize}
+  \end{definition}
+  
+\subsection{Teoria da probabilidade}
+
+\subsubsection{Probabilidade}
+
+\begin{definition}[Axiomas da Probabilidade] $\P:\mathcal{F} \rightarrow \mathbb{R}$ é uma probabilidade se: \
+ \label{probability}
+ \begin{enumerate}
+  \item (Não-negatividade) Para todo $A \in \mathcal{F}$, $\P(A) \geq 0$.
+  \item (Aditividade) Se $(A_{n})_{n \in \mathbb{N}}$ é uma sequência de conjuntos disjuntos em $\mathcal{F}$, 
+			  $\P(\cup_{n \in \mathbb{N}}{A_{n}}) = \sum_{n \in \mathbb{N}}{\P(A_{n})}$.
+  \item (Normalização) $\P(\Omega) = 1$.
+ \end{enumerate}
+\end{definition}
+	
+\begin{lemma}
+ $\P(\emptyset) = 0$.
+\end{lemma}
+	
+\begin{lemma}
+ \label{finite_additivity}
+ Se $A_{1}, A_{2}, \ldots, A_{n}$ são disjuntos, 
+ então $\P(A_{1} \cup A_{2} \ldots \cup A_{n}) = \sum_{i=1}^{n}{\P(A_{i})}$.
+\end{lemma}
+	
+\begin{lemma}
+ \label{lemma:complement_probability}
+ Para todo $A$, $\P(A^{c}) = 1-\P(A)$.
+\end{lemma}
+
+\begin{lemma}
+ \label{union_prob}
+ Para quaisquer eventos $A$ e $B$, 
+ $\P(A \cup B) = \P(A) + \P(B) - \P(A \cap B)$.
+\end{lemma}
+
+\begin{lemma}
+ \label{lemma:monotProb}
+ Se $A \subset B$, então $\P(B) \geq \P(A)$.
+\end{lemma}
+
+\begin{definition}[Axioma da Probabilidade Condicional]
+ \label{conditional_probability}
+ \[ \P(A \cap B) = \P(A)\P(B|A) \]
+\end{definition}
+
+\begin{definition}
+ \label{independence}
+ Dois eventos $A$ e $B$ são independentes se $\P(A \cap B) = \P(A)\P(B)$.
+\end{definition}
+
+\begin{lemma}
+ Dois eventos $A$ e $B$ são independentes se e somente se $\P(A|B) = \P(A)$.
+\end{lemma}
+
+\begin{theorem}[Regra da multiplicação]
+ \label{thm::mult}
+ Sejam $A_{1}, A_{2}, \ldots A_{n}$ eventos. Então
+ $$\P(\cap_{i=1}^n{A_{i}}) = \P(A_{1})\P(A_{2}|A_{1})\P(A_{3}|A_{1}\cap A_2) \ldots \P(A_{n}|\cap_{i=1}^{n-1} A_{i})$$
+\end{theorem}
+
+\begin{theorem}[Lei da Probabilidade Total]
+ \label{ltp}
+ Seja $(A_{n})_{n \in \mathbb{N}}$ uma partição de $\Omega$ e $B$ um evento. 
+ \[ \P(B) = \sum_{n \in \mathbb{N}}{\P(A_{n})\P(B|A_{n})} \]
+\end{theorem}
+
+\begin{lemma}
+ \label{finite_ltp}
+ Se $A_{1},\ldots,A_{n}$ particiona $\Omega$ e $B$ é um evento, $\P(B) = \sum_{i = 1}^{n}{\P(A_{i})\P(B|A_{i})}$.
+\end{lemma}
+
+\begin{theorem}[Teorema de Bayes]
+ \label{bayes}
+ Seja $(A_{i})_{i \in \mathbb{N}}$ uma partição de $\Omega$ e $B$ um evento. 
+ Para todo $n \in \mathbb{N}$,
+ \[ \P(A_{n}|B) = \frac{\P(A_{n})\P(B|A_{n})}{\sum_{i \in \mathbb{N}}{\P(A_{i})\P(B|A_{i})}} \]
+\end{theorem}
+
+\begin{lemma}
+ \label{finite_bayes}
+ Seja $A_{1}, \ldots, A_{n}$ uma partição de $\Omega$ e $B$ um evento.
+ \[ \P(A_{i}|B) = \frac{\P(A_{i})\P(B|A_{i})}{\sum_{i=1}^{n}{\P(A_{i})\P(B|A_{i})}} \]
+\end{lemma}
+
+\subsubsection{Variáveis aleatórias}
+
+\begin{definition}
+ \label{defn:random_variable}
+ Uma variável aleatória $X$ é uma função tal que $X: \Omega \rightarrow \mathbb{R}$.
+\end{definition}
+
+\begin{definition}[Função indicadora]
+ \label{indicator_function}
+ A função indicadora é um tipo especial de variável aleatória.
+ Considere um evento $A \in \mathcal{F}$. 
+ A função indicadora de $A$ é denotada por $I_{A}: \Omega \rightarrow \mathbb{R}$ e definida da seguinte forma:
+ 
+ \[ I_{A}(w) = 
+    \begin{cases}
+		 1 & \mbox{, se $w \in A$}	\\
+		 0 & \mbox{, caso contrário}
+    \end{cases}
+ \]
+\end{definition}
+
+\begin{definition}
+ \label{pmf}
+ Seja $X$ uma variável aleatória discreta. 
+ Para $x \in \mathbb{R}$, define-se $p_{X}(x) = \P(X = x) = \P(\{w \in \Omega: X(w) = x\})$. 
+ A função $p_{X}: \mathbb{R} \rightarrow [0,1]$ é chamada de função de massa de probabilidade de $X$.
+\end{definition}
+
+\begin{lemma}
+ \label{pmf_prop}
+ Seja $X$ uma variável aleatória discreta e $p_{X}$ sua função de massa de probabilidade. 
+ Seja $\rchi$ os possíveis valores de $X$.
+ \begin{itemize}
+  \item Para todo $x \in \rchi$, $0 \leq p_{X}(x) \leq 1$.
+  \item $\sum_{x \in \rchi}{p_{X}(x)} = 1$.
+ \end{itemize}
+\end{lemma}
+
+\begin{definition}
+ \label{pdf}
+ Seja $X$ uma variável aleatória contínua. 
+ Denotamos a função densidade de probabilidade de $X$ 
+ por $f_{X}: \mathbb{R} \rightarrow \mathbb{R}$. 
+ Esta função satisfaz as seguintes propriedades:      
+ \begin{enumerate}
+	\item $f_{X}(x) \geq 0$.
+	\item $\int_{-\infty}^{\infty}{f_{X}(x)dx} = 1$.
+	\item $\int_{a}^{b}{f_{X}(x)dx} = \P(a \leq X \leq b)$.
+ \end{enumerate}
+\end{definition}
+
+\begin{definition}
+ \label{cdf}
+ A função de distribuição acumulada de $X$ é uma função $F_{X}: \mathbb{R} \rightarrow \mathbb{R}$,
+ \begin{align*}
+  F(x) = \P(X \leq x)
+ \end{align*}
+\end{definition}
+
+\begin{lemma}
+ \begin{align*}
+  P(X=x)	&= F_{X}(x) - \lim_{y \rightarrow x^{-}}F_{X}(y)
+ \end{align*}
+\end{lemma}
+     
+\begin{lemma}
+ $F_{X}$ satisfaz as seguintes propriedades:
+ \begin{enumerate}
+  \item $F_{X}$ é não-decrescente.
+	\item $\lim_{x \rightarrow -\infty}F_{X}(x) = 0$.
+	\item $\lim_{x \rightarrow \infty}F_{X}(x) = 1$.
+	\item $F_{X}$ é contínua à direita.
+ \end{enumerate}
+\end{lemma}
+	
+\begin{lemma}
+ Seja $X$ uma variável aleatória. Para todo $b \geq a$, $F_{X}(b)-F_{X}(a) = \P(a < X \leq b)$.
+\end{lemma}
+
+\begin{lemma}
+ \label{cdf-derivative}
+ Se $X$ é uma variável aleatória contínua, então:
+ \[ \frac{\partial F_{X}(x)}{\partial x} = f_{X}(x) \]
+\end{lemma}
+
+\begin{theorem}
+ \label{bayes-va}
+ Se $X$ e $Y$ tem densidade conjunta $f(x,y)$, então:
+ \begin{align*}
+  f(y_{0}|x_{0})	&= \frac{f(y_{0})f(x_{0}|y_{0})}{\int{f(y)f(x_{0}|y)dy}}
+ \end{align*}
+\end{theorem}
+
+\begin{definition}
+ \label{def::independence}
+ Dizemos que $X_{1}, \ldots, X_{n}$ são independentes se para todo $A_{1}, \ldots, A_{n} \subset \mathbb{R}$,
+ \[ \P(X_{1} \in A_{1},\ldots,X_{n} \in A_{n}) := \P(\cap_{i=1}^{n}{X_{i} \in A_{i}}) = \prod_{i=1}^{n}{\P(X_{i} \in A_{i})} \] 
+ Portanto, para todo $A_{1} \ldots A_{n}$, $\{\omega \in \Omega : X_{i}(\omega) \in A_{i}\}$ são conjuntamente independentes.
+\end{definition}
+
+\begin{definition}
+ \label{defn:conditional_expectation}
+ Seja $X$ uma variável aleatória discreta e $A$ um evento. 
+ O valor esperado de $X$ dado $A$ é denotado por $\E[X|A]$ e
+ $$\E[X|A] = \sum_{w \in \Omega}{X(w)\P(\{w\}|A)}$$
+ A esperança condicional de uma variável contínua pode ser definida similarmente.
+\end{definition}
+
+\begin{definition}
+ \label{defn:expectation}
+ Seja $X$ uma variável aleatória discreta. 
+ O valor esperado de $X$ é denotado por $\E[X]$ e é igual a $\E[X|\Omega]$.
+ Isto é,
+ $$\E[X] = \sum_{w \in \Omega}{X(w)\P(\{w\})}$$
+ Caso $X$ seja uma variável aleatória contínua,
+ $$\E[X] = \int_{\Omega}{x f_{X}(x) dx}$$
+\end{definition}
+
+\begin{lemma}[Lei do estatístico inconsciente] Seja $X$ uma variável aleatória discreta e que assume valores em $\rchi$:
+ \label{unconscious_statistician}
+ $$\E[f(X)] = \sum_{x \in \rchi}{f(x) \cdot p_{X}(x)}$$
+\end{lemma}
+
+\begin{lemma}
+ \label{lemma:expectationProb}
+ Seja $X$ uma variável aleatória discreta tal que $X \in \mathbb{N}$,
+ $$\E[X] = \sum_{i=1}^{\infty}{\P(X \geq i)}$$
+\end{lemma}
+	
+\begin{lemma}[Linearidade da esperança]
+ \label{expectation_additivity}
+ \[ \E\left[\sum_{i=1}^{n}{c_{i} X_{i}}\bigg|A\right] = \sum_{i=1}^{n}{c_{i} \E[X_{i}\big|A]} \]
+\end{lemma}
+
+\begin{lemma}[Lei da esperança total]
+ \label{expectation_tower}
+ Seja $A_{1}, \ldots, A_{n}$ uma partição de $\Omega$ e $X$ uma variável aleatória,
+ $$\E[X] = \sum_{i=1}^{n}{\E[X|A_{i}] \cdot \P(A_{i})}$$
+\end{lemma}
+
+\begin{definition}[Variância]
+ \label{variance}
+ A variância de uma variável aleatória $X$ é dada por $\E[(X-\E[X])^{2}]$ e denotada por $Var[X]$. 
+\end{definition}
+	
+\begin{lemma}
+ \label{l2_trick}
+ \[ Var[X] = \E[X^{2}] - \E[X]^{2} \]
+\end{lemma}
+	
+\begin{lemma}
+ \label{expectation_multiplication}
+ Se $X$ e $Y$ são independentes, então $E[XY] = E[X]E[Y]$.
+\end{lemma}
+	
+\begin{lemma}
+ \label{variance_additivity}
+ Se $X$ e $Y$ são independentes, então $Var[X+Y] = Var[X] + Var[Y]$.
+\end{lemma}
+	
+\begin{lemma}
+ \label{lemma:zeroVariance}
+ $Var[X]=0$ se e somente se $X$ é uma constante
+ (existe uma constante $c \in \R$ tal que $\P(X=c)=1$).
+\end{lemma}
+	
+\begin{definition}[Covariância]
+ Sejam $X$ e $Y$ duas variáveis aleatórias.
+ \begin{align*}
+  Cov[X,Y] = \E[(X-\E[X])(Y-\E[Y])]
+ \end{align*}
+\end{definition}
+
+\begin{lemma} $Cov[X,Y] = \E[XY] - \E[X]\E[Y]$.
+ \label{lemma:covariance_calculation}
+\end{lemma}
+	
+\begin{lemma}[Propriedades da Covariância] \
+ \label{lemma:covariance_properties}
+ Se $X$ e $Y$ são variáveis aleatórias, então
+ \begin{enumerate}[label=\alph*.]
+  \item $Cov[X,X] = Var[X] \geq 0$. Portanto, $Cov[X,X] = 0$ apenas se $X$ é uma constante.
+  \item $Cov[X,Y] = Cov[Y,X]$.
+  \item $Cov[aX+bY,Z] = aCov[X,Z] + bCov[Y,Z]$.
+ \end{enumerate}
+\end{lemma}
+	
+\begin{lemma}[Cauchy-Schwarz para variáveis aleatórias]
+ \label{lemma:covariance_cauchy_schwarz}
+ $$|Cov[X,Y]| \leq \sqrt{Var[X]}\sqrt{Var[Y]}.$$
+ A igualdade ocorre se e somente se existem $a,b \in \R$ tais que $Y=aX+b$.
+\end{lemma}
+	
+\begin{lemma}[Teorema de Pitágoras para variáveis aleatórias]
+ \label{lemma::pythagorean}
+ $$Var[X+Y] = Var[X]+Var[Y]+2Cov[X,Y]$$
+ Portanto, se $Cov[X,Y]=0$, $Var[X+Y]=Var[X]+Var[Y]$.
+\end{lemma}
+	
+\begin{definition}[Correlação]
+ \label{definition:correlation}
+ $$Corr[X,Y] = \frac{Cov[X,Y]}{\sqrt{Var[X]}\sqrt{Var[Y]}}$$
+\end{definition}
+	
+\subsubsection{Distribuições importantes}
+
+\begin{table}[h]
+ \centering
+ \begin{tabular}{|c|c|c|c|}
+ \hline
+ Variável aleatória $(Y)$ 		& massa: $p_{Y}(y) = P(Y=y)$					& $E[Y]$		& $Var[Y]$								\\
+	\hline
+	Binomial$(n,p)$			& ${n \choose y}p^{y}(1-p)^{n-y}$				& $np$			& $np(1-p)$								\\
+					& $y \in \{0,1,2,\ldots,n\}$					&			&									\\
+	\hline
+	Hipergeométrica$(N,n,k)$		& $\frac{{k \choose y}{N-k \choose n-y}}{{N \choose n}}$	& $n \cdot \frac{k}{N}$	& $n \cdot \frac{k}{N} \cdot (1-\frac{k}{N}) \cdot \frac{N-n}{N-1}$	\\
+					& $\max(0,n-N+k) \leq y \leq \min(n,k)$			&			&									\\
+	\hline
+	Geométrica$(p)$			& $p(1-p)^{y-1}$						& $\frac{1}{p}$		& $\frac{1-p}{p^{2}}$							\\
+					& $y \in \{1,2,3,\ldots\}$					&			&									\\
+	\hline
+	Binomial Negativa$(r,p)$	& ${y-1 \choose r-1}p^{r}(1-p)^{y-r}$				& $r \cdot \frac{1}{p}$	& $r \cdot \frac{1-p}{p^{2}}$ 						\\
+					& $y \in \{r,r+1,r+2,\ldots\}$					&			&									\\
+	\hline
+	Poisson$(\lambda)$		& $\frac{e^{-\lambda}\lambda^{y}}{y!}$				& $\lambda$		& $\lambda$								\\
+					& $y \in \mathbb{N}$						&			&									\\
+	\hline
+ \end{tabular}
+ \caption{Distribuições discretas.}
+ \label{discrete_distributions}
+\end{table}
+		
+\begin{table}[h]
+ \centering
+ \begin{tabular}{|c|c|c|c|}
+ \hline
+  Variável aleatória $(Y)$ 	& densidade: $f_{Y}(y)$										& $\E[Y]$				& $Var[Y]$								\\
+  \hline
+  Uniforme$(a,b)$		& $\frac{1}{b-a}$										& $\frac{a+b}{2}$			& $\frac{(b-a)^{2}}{12}$								\\
+				& $y \in (a,b)$											&					&									\\
+      \hline
+  Exponencial$(\lambda)$	& $\lambda e^{-\lambda y}$							& $\lambda^{-1}$				& $\lambda^{-2}$ \\
+				& $y \in \mathbb{R}^{+}$									&					&									\\
+      \hline
+  Gamma$(k,\lambda)$		& $\frac{\lambda^{k}}{\Gamma(k)} y^{k-1} e^{-y\lambda}$				& $\frac{k}{\lambda}$				& $\frac{k} {\lambda^{2}}$							\\
+				& $y \in \mathbb{R}^{+}$									&					&									\\
+      \hline
+  Beta$(\alpha,\beta)$	& $\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} x^{\alpha-1} (1-x)^{\beta-1}$	& $\frac{\alpha}{\alpha+\beta}$	& $\frac{\alpha \beta}{(\alpha + \beta)^2 (\alpha + \beta +1)}$ 						\\
+				& $y \in (0,1)$											&					&									\\
+      \hline
+  Normal$(\mu,\sigma^{2})$	& $\frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(y-\mu)^{2}}{2\sigma^{2}}}$				& $\mu$					& $\sigma^{2}$								\\
+				& $y \in \mathbb{R}$										&					&									\\
+      \hline
+ \end{tabular}
+ \caption{Distribuições contínuas.}
+ \label{continuous-distributions}
+\end{table}

@@ -1,0 +1,241 @@
+\subsection{Princípio da verossimilhança$^*$}
+Esta seção resume um resultado 
+descoberto em \citet{Birnbaum1962}.
+Birnbaum estudava princípios que orientam o 
+nosso ganho de informação em experimentos.
+Para poder lidar formalmente com este conceito,
+Birnbaum define a função $\text{Inf}(X,x,\theta)$,
+a quantidade de informação que é ganha sobre $\theta$
+ao observar $x$ em um experimento, $X$.
+Birnbaum estuda quais propriedades Inf deve 
+satisfazer para que represente a 
+nossa intuição sobre o que é informação.
+
+Uma das propriedades estudadas por Birnbaum foi
+o princípio da Suficiência.
+Lembre-se que $T(X)$ é uma estatística suficiente 
+para $\theta$ se $X$ e $\theta$ são 
+independentes dado $T$.
+Em outras palavras, a partir de $T$, 
+é possível gerar $X$ usando um método de 
+aleatorização que não depende de $\theta$.
+Birnbaum argumenta que, como 
+um método de aleatoriazação que
+não depende de $\theta$ não 
+traz informação sobre $\theta$, então 
+$T$ resume toda a informação sobre $\theta$ 
+contida em $X$.
+Formalmente, o princípio da Suficiência diz que,
+\begin{definition}[princípio da Suficiência]
+ Se $T(X)$ é uma estatística suficiente para 
+ $\theta$ e $x$ e $x'$ são tais que 
+ $T(x) = T(x')$, então
+ \begin{align*}
+  \text{Inf}(X,x,\theta) &= \text{Inf}(X,x',\theta)
+ \end{align*}.
+\end{definition}
+Em palavras, se $T$ resume $x$ e $x'$ 
+atribuindo a eles o mesmo valor, então 
+estes dois pontos devem trazer 
+a mesma informação sobre $\theta$.
+
+Uma outra propriedade estudada por Birnbaum foi
+o princípio da Condicionalidade.
+Considere que $X_{0}$ e $X_{1}$ são 
+dois experimentos e você decide qual 
+deles irá realizar através do lançamento de 
+uma moeda cujo resultado não depende de $\theta$ ou 
+dos experimentos. Seja $Y \sim \text{Bernoulli}(p)$ 
+o resultado do lançamento da moeda.
+Observe que o procedimento realizado pode ser denotado
+por $X_{Y}$, que é um experimento aleatorizado.
+O princípio da condicionalidade diz que 
+o lançamento da moeda não deve trazer
+informação sobre $\theta$ e, mais especificamente,
+observar os valores da moeda e 
+do experimento realizado no experimento aleatorizado
+deve trazer a mesma informação do que simplesmente 
+observar o resultado do experimento realizado.
+Formalmente, o princípio da condicionalidade é 
+definido da seguinte forma:
+\begin{definition}[princípio da Condicionalidade]
+ Se $Y \in \{0,1\}$ é independente de 
+ $(X_{1}, X_{2}, \theta)$, então 
+ \begin{align*}
+  \text{Inf}((Y,X_{Y}),(i,x),\theta) 
+  &= \text{Inf}(X_{i},x,\theta)
+ \end{align*}
+\end{definition}
+ 
+Birnbaum provou que ambos os princípios são 
+satisfeitos  se e somente se um terceiro 
+princípio é satisfeito.
+Este é o princípio da Verossimilhança.
+O princípio da verossimilhança diz que,
+se $x$ e $y$ são dois pontos em experimentos, 
+$X$ e $Y$, com verossimilhanças proporcionais,
+$L_{x}(\theta) \propto L_{y}(\theta)$, então 
+ambos os pontos devem trazer a 
+mesma informação sobre $\theta$.
+Formalmente,
+\begin{definition}[princípio da Verossimilhança]
+ Se $X$ e $Y$ são dois experimentos com 
+ possíveis observações $x$ e $y$ tais que
+ $L_{x}(\theta) \propto L_{y}(\theta)$, então
+ \begin{align*}
+  \text{Inf}(X,x,\theta) 
+  &= \text{Inf}(Y,y,\theta)
+ \end{align*}
+\end{definition}
+Em outras palavras, a informação trazida por um
+experimento é completamente resumida pela função de verossimilhança.
+\begin{theorem}[Teorema de Birnbaum]
+ Inf satisfaz o princípio da Verossimilhança
+ se e somente se Inf satisfaz 
+ os princípios da Suficiência e 
+ da Condicionalidade.
+\end{theorem}
+
+Um argumento que pode ser articulado a partir
+do Teorema de Birnbaum é o seguinte:
+se você acha que os princípios da Suficiência e 
+da Condicionalidade são razoáveis, então 
+você deveria utilizar procedimentos inferenciais que
+satisfazem o princípio da Verossimilhança.
+Neste sentido, podemos mostrar que 
+a probabilidade a posteriori satisfaz 
+o princípio da verossimilhança.
+
+\begin{lemma}
+ Se definirmos Inf$(X,x,\theta)$ 
+ = $f(\theta_{0}|X=x)$, então 
+ Inf satisfaz o princípio da verossimilhança.
+\end{lemma}
+
+\begin{proof}
+ Considere que 
+ $L_{x}(\theta_{0}) \propto L_{y}(\theta_{0})$.
+ \begin{align*}
+  f(\theta_{0}|x)
+  &\propto f(\theta_{0})f(x|\theta_{0}) \\
+  &= f(\theta_{0})L_{x}(\theta_{0}) \\
+  & \propto f(\theta_{0})L_{y}(\theta_{0}) \\
+  &= f(\theta_{0})f(y|\theta_{0})
+  \propto f(\theta_{0}|y)
+ \end{align*}
+ Como $f(\theta_{0}|x) \propto f(\theta_{0}|y)$ e
+ ambas as funções integram 1, concluímos que
+ $f(\theta_{0}|X=x) = f(\theta_{0}|Y=y)$.
+ Graficamente, a \cref{figura:eleicao} é tal que
+ a posteriori obtida depende apenas do 
+ formato da priori e da verossimilhança.
+\end{proof}
+
+Similarmente, provaremos em um exercício que
+a Estatística frequentista, em geral, 
+não satisfaz o princípio da Verossimilhança.
+Contudo, isto não é um problema tão grave quanto
+se pode imaginar. De fato, vários 
+estatísticos frequentistas indicaram razões 
+pelas quais eles não acreditam que 
+os princípios da Suficiência e da Condicionalidade,
+como descritos pelo Birnbaum, sejam razoáveis.
+Como consequência, o fato de não seguirem 
+o princípio da Verossimilhança não 
+os leva a uma contradição. 
+Você acha os princípios razoáveis?
+ 
+\subsubsection*{Exercícios}
+
+\begin{exercise}
+ Releia os três princípios descritos nesta Seção e
+ tente descrevê-los em suas próprias palavras.
+\end{exercise}
+
+\begin{exercise}[\citet{Wechsler2008}]
+ Considere que $\theta \in (0,1)$:
+ \begin{align*}
+  X_{1}|\theta 
+  &\sim \text{Binomial}(12, \theta) \\
+  X_{2}|\theta 
+  &\sim \text{Binomial-Negativa}(3, \theta)
+ \end{align*}
+ É verdade que $x_{1}=9$ e $x_{2}=9$ tem 
+ verossimilhanças proporcionais?
+ Você está interessada na hipótese 
+ $H_{0}: \theta \leq \frac{1}{2}$.
+ Considere que $\text{Inf}$ é o p-valor obtido 
+ no teste de hipótese.
+ Calcule o p-valor obtido em cada um 
+ dos experimentos.
+ Esta função de informação satisfaz 
+ o princípio da Verossimilhança?
+\end{exercise}
+
+\solution{
+ \textbf{Solução}: Note que
+ \begin{align*}
+  L_{X_{1}=9}(\theta_{0})
+  &= {12 \choose 9}\theta_{0}^{9}(1-\theta_{0})^{3}
+  &\text{\cref{discrete_distributions}} \\
+  &\propto \theta_{0}^{9}(1-\theta_{0})^{3} \\
+  L_{X_{2}=9}(\theta_{0})
+  &= {11 \choose 2}\theta_{0}^{9}(1-\theta_{0})^{3}
+  &\text{\cref{discrete_distributions}} \\
+  &\propto \theta_{0}^{9}(1-\theta_{0})^{3}
+ \end{align*}
+ Assim $x_{1}$ e $x_{2}$ tem 
+ verossimilhanças proporcionais.
+	
+ Lembre-se que o p-valor é a probabilidade de 
+ obter observações tão ou mais extremas que 
+ a que foi observada.
+ No experimento 1, essas observações são $(9,10,11,12)$ e
+ no experimento $2$, elas são $(9,10,11,12,13,\ldots)$.
+ Assim,
+ \begin{align*}
+  \text{Inf}(X_{1},9,\theta)
+  &= \sum_{x=9}^{12}{{12 \choose 9}0.5^{x}(1-0.5)^{12-x}}
+  \approx 0.0729 \\
+  \text{Inf}(X_{2},9,\theta)
+  &= \sum_{x=9}^{12}{ {x+2\choose 2}0.5^{x}(1-0.5)^{12-x}}
+  \approx 0.0327 \\
+ \end{align*}
+ Portanto, ainda que $x_{1}$ e $x_{2}$ tenham
+ verossimilhanças proporcionais,
+ o valor de $\text{Inf}$ é diferente para ambos.
+ Conclua que o p-valor não satisfaz 
+ o princípio da Verossimilhança.
+}{}
+
+\begin{exercise}[\citet{deGroot1986}(p.353)]
+ Defina $\text{Inf}$ como sendo o 
+ estimador de máxima verossimilhança, isto é, 
+ se $X$ é o experimento e $\theta$ a 
+ quantidade incerta de interesse, então 
+ $\text{Inf}(X,x,\theta) = \arg \max_{\theta_{0}}L_{x}(\theta_{0})$.
+ $\text{Inf}$ satisfaz o princípio da verossimilhança?
+\end{exercise}
+
+\solution{
+ \textbf{Solução}: Suponha que 
+ $L_{x}(\theta_{0}) \propto L_{y}(\theta_{0})$.
+ Lembre-se que, se 
+ $L_{x}(\theta_{0}) \propto L_{y}(\theta_{0})$, então
+ existe uma constante, $C$, tal que 
+ $L_{x}(\theta_{0}) = C \cdot L_{y}(\theta_{0})$.
+ Assim,
+ \begin{align*}
+  Inf(X,x,\theta)
+  &= \arg \max_{\theta_{0}} L_{x}(\theta_{0}) \\
+  &= \arg \max_{\theta_{0}} C \cdot L_{x}(\theta_{0}) \\
+  &= \arg \max_{\theta_{0}} L_{y}(\theta_{0}) 
+  = Inf(Y,y,\theta)
+ \end{align*}
+ Conclua que para todo $x$ e $y$ tais que 
+ $L_{x}(\theta_{0}) \propto L_{y}(\theta_{0})$,
+ $Inf(X,x,\theta) = Inf(Y,y,\theta)$.
+ Portanto, o estimador de máxima verossimilhança
+ satisfaz o princípio da Verossimilhança.
+}{}
+

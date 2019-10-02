@@ -1,0 +1,1162 @@
+\subsection{Testes de hipótese}
+
+Um problema de teste de hipótese consiste
+em escolher uma entre duas proposições 
+disjuntas e mutuamente exclusivas.
+Neste contexto, estas proposições recebem
+nomes especiais: uma delas é a hipótese nula e
+a outra é a hipótese alternativa.
+Denotaremos a hipótese nula por $H_{0}$ e
+a hipótese alternativa por $H_{1}$.
+
+\begin{example}
+ \label{example:hyp-binomial}
+ Uma máquina pode estar regulada ou desregulada.
+ Caso a máquina esteja regulada, 
+ ela produz componentes com uma taxa de falha de 5\%.
+ Caso a máquina esteja desregulada,
+ ela produz componentes com uma taxa de falha de 20\%.
+ Uma amostra de $100$ produtos é selecionada e 
+ $9$ deles são defeituosos.
+ 
+ Sejam $X_{1},\ldots,X_{n}$ as indicadoras de que
+ cada peça amostrada é defeituosa e 
+ $\theta$ é a taxa de falha atual da máquina, 
+ $\theta \in \{5\%, 20\%\}$.
+ Consideramos que, dado 
+ $\theta$, $X_{1},\ldots,X_{n}$ são i.i.d. e
+ $\sum_{i=1}^{100}{X_{i}}|\theta \sim \text{Binomial}(100,\theta)$.
+
+ Podemos estar interessados em testar a hipótese de
+ que a máquina está regulada contra 
+ a hipótese de que ela está desregulada.
+ Neste caso, $H_{0} = \{\theta = 5\%\}$ e 
+ $H_{1} = \{\theta = 20\%\}$.
+\end{example}
+
+\begin{example}
+ \label{example:hyp-binomial-predictive}
+ Considere a mesma descrição do \cref{example:hyp-binomial}.
+ Seja $X_{n+1}$ a indicadora de que 
+ uma nova peça produzida pela máquina é defeituosa.
+ Podemos testar a hipótese de que
+ esta peça é defeituosa.
+ Neste caso, $H_{0} = \{X_{n+1}=0\}$ e 
+ $H_{1} = \{X_{n+1}=1\}$.
+\end{example}
+
+\begin{example}
+ \label{example:hyp-logistica}
+ Considere o \cref{ex:normal-mixture}.
+ Seja $\theta$ a indicadora de que 
+ a pessoa selecionada é uma mulher.
+ Podemos testar $H_{0}=\{\theta=0\}$ contra 
+ $H_{1}=\{\theta=1\}$. 
+\end{example}
+
+\begin{example}
+ \label{example:hyp-linear-regression}
+ Em um experimento, 
+ larga-se uma pedra de uma determinada altura e 
+ mede-se a sua posição relativa ao ponto de largada
+ a cada $1$ segundo.
+ Se $Y_{i}$ denota a posição relativa da pedra 
+ no segundo $i$,
+ assumimos que $Y_{i} = -g\frac{i^{2}}{2} + \epsilon_{i}$,
+ onde $\epsilon_{i}$ são i.i.d. e 
+ $\epsilon_{i} \sim N(0,1)$,
+ com $\tau^{2}$ conhecido.
+
+ Podemos testar a hipótese $H_{0} = \{g = 10\}$ contra 
+ a hipótese $H_{1} = \{g \neq 10\}$.
+ Semelhantemente, podemos testar a hipótese 
+ $H_{0} = \{g \geq 10\}$ contra $H_{1} = \{g < 10\}$.
+\end{example}
+
+\begin{table}
+ \centering
+ \begin{tabular}{|c|c|c|}
+  \hline
+  & $\theta \in H_{0}$	& $\theta \in H_{1}$ \\
+  \hline 
+  d=0 & 0 & -1 \\
+  d=1 & -c & 0 \\
+  \hline
+ \end{tabular}
+ \caption{Descrição dos valores da utilidade 
+ $0-1-c$, $U(d,\theta)$.}
+ \label{table:u-0-1-c}
+\end{table}
+
+Você deve escolher entre $H_{0}$ e $H_{1}$.
+Assim, ao tentar expressar um teste de hipótese como
+um problema de decisão,
+é comum definir $\mathcal{A}_{*} = \{0,1\}$,
+onde $0$ significa não rejeitar $H_{0}$ e 
+$1$ significa rejeitar $H_{0}$.
+
+\subsubsection{Hipóteses plenas}
+
+É comum o uso da função de utilidade $0-1-c$,
+descrita na \cref{table:u-0-1-c}.
+Dizemos que rejeitar $H_{0}$ quando 
+$H_{0}$ é verdadeiro é um erro do tipo I.
+Também, não rejeitar $H_{0}$ quando 
+$H_{1}$ é verdadeiro é um erro do tipo II.
+Na \cref{table:u-0-1-c},
+o valor de $c$ indica o quanto o erro de tipo I
+é mais grave que o erro de tipo II.
+Se $c > 1$, o erro de tipo I é mais grave que
+o erro de tipo II.
+Se $c < 1$, o erro de tipo I é menos grave que
+o erro de tipo II.
+Se $c = 1$, então ambos os erros são igualmente graves.
+
+Segundo estas condições,
+podemos calcular uma regra ótima de decisões.
+
+\begin{theorem}
+ \label{thm:0-1-c}
+ Em um problema de teste de hipótese com a utilidade
+ dada pela \cref{table:u-0-1-c},
+ as decisões ótimas, $\delta^{*}$, são tais que
+ \begin{align*}
+  \delta^{*}(x)	&=
+  \begin{cases}
+   0, & \text{ se } 
+   \P(\theta \in H_{0}|x) > (1+c)^{-1} \\
+   1, & \text{ se } 
+   \P(\theta \in H_{0}|x) < (1+c)^{-1}
+  \end{cases}
+ \end{align*}
+\end{theorem}
+
+\begin{proof}
+ Decorre do \cref{theorem:extensive-form} que
+ a decisão ótima, $\delta^{*}$, é aquela que, 
+ para cada valor de $X$, 
+ maximiza $\E[U(d,\theta)|X]$.
+ Para cada valor de $X$, somente existem 
+ $2$ possíveis decisões (0 ou 1).
+ Assim, a $\delta^{*}$ é tal que
+ \begin{align}
+  \label{eqn:0-1-c-1}
+  \delta^{*}(x)	&=
+  \begin{cases}
+   0, & \text{ se } 
+   \E[U(0,\theta)|X] > \E[U(1,\theta)|X] \\
+   1, & \text{ se } 
+   \E[U(0,\theta)|X] < \E[U(1,\theta)|X]
+  \end{cases}
+ \end{align}
+ Note que
+ \begin{align*}
+  \E[U(0,\theta)|X]	
+  &= \E[U(0,\theta)\I(\theta \in H_{0})|X]
+  +\E[U(0,\theta)\I(\theta \in H_{1})|X] \\
+  &= \E[0 \cdot \I(\theta \in H_{0})|X] 
+  +\E[-1 \cdot \I(\theta \in H_{1})|X] \\
+  &= -1 \cdot \E[\I(\theta \in H_{1})|X] 
+  = -\P(\theta \in H_{1}|X)
+ \end{align*}
+ \begin{align*}
+  \E[U(1,\theta)|X]	
+  &= \E[U(1,\theta)\I(\theta \in H_{0})|X] 
+  +\E[U(1,\theta)\I(\theta \in H_{1})|X] \\
+  &=\E[-c \cdot \I(\theta \in H_{0})|X] 
+  +\E[0 \cdot \I(\theta \in H_{1})|X] \\
+  &= -c \cdot \E[\I(\theta \in H_{0})|X] 
+  =-c\P(\theta \in H_{0}|X)
+ \end{align*}
+ Utilizando as expressões derivadas acima 
+ na \cref{eqn:0-1-c-1},
+ obtemos que $\delta^{*}(x) = 0$ quando
+ \begin{align*}
+  -\P(\theta \in H_{1}|X) 
+  &> -c\P(\theta \in H_{0}|X) \\
+  -(1-\P(\theta \in H_{0}|X))
+  &> -c\P(\theta \in H_{0}|X) \\
+  -1 &> -(1+c)\P(\theta \in H_{0}|X) \\
+  \P(\theta \in H_{0}|X) &> (1+c)^{-1}
+ \end{align*}
+ Semelhantemente, a decisão ótima é $1$ 
+ quando $\P(\theta \in H_{0}|X)	< (1+c)^{-1}$.
+\end{proof}
+
+Em palavras, o \cref{thm:0-1-c} indica que 
+a decisão ótima é não rejeitar $H_{0}$ quando 
+sua probabilidade a posteriori é 
+suficientemente grande.
+Em especial, se $c=1$, temos que 
+o erro tipo I é tão grave quanto o erro tipo II.
+Neste caso, a regra de decisão ótima segundo 
+o \cref{thm:0-1-c} é 
+não rejeitar $H_{0}$ quando 
+sua probabilidade a posteriori é 
+maior do que $0.5$.
+
+\begin{example}
+ \label{example:hyp-binomial-2}
+ Considere o \cref{example:hyp-binomial}. 
+ Também considere que, a priori,
+ $\P(H_{0})=\P(H_{1})=0.5$,
+ e o erro de tipo I é considerado $2$ vezes 
+ menos grave que o erro tipo II. Assim $c=0.5$.
+ Neste caso,
+ \begin{align*}
+  \P\left(H_{0}|\sum_{i=1}^{100}{X_i}=9\right)
+  &= \frac{\P(H_{0})P(\sum_{i=1}^{100}{X_i}=9|H_{0})}
+  {\P(H_{0})\P(\sum_{i=1}^{100}{X_i}=9|H_{0})
+  +\P(H_{1})\P(\sum_{i=1}^{100}{X_i}=9|H_{1})} \\
+  &= \frac{0.5 {100 \choose 9}(0.05)^{9}(0.95)^{91}}{0.5 {100 \choose 9}(0.05)^{9}(0.95)^{91} + 0.5 {100 \choose 9}(0.2)^{9}(0.8)^{91}} \\
+  &\approx 0.96
+ \end{align*}
+ Como $\P\left(H_{0}|\sum_{i=1}^{100}{X_i}=9\right) \approx 0.96 > 0.66 \approx (1+c)^{-1}$,
+ a decisão ótima é não rejeitar $H_{0}$.
+\end{example}
+
+\begin{example}
+ Considere o \cref{example:hyp-binomial-predictive}. 
+ Também considere que, a priori, 
+ $\P(H_{0})=\P(H_{1})=0.5$,
+ e o erro de tipo I é considerado $9$ vezes 
+ mais grave que o erro tipo II. Assim $c=9$.
+ Temos
+ \begin{align*}
+  \P\left(X_{n+1}=0|\sum_{i=1}^{n}{X_{i}}=9\right)
+  =& \P\left(X_{n+1}=0,\theta=0.05|\sum_{i=1}^{n}{X_{i}}=9\right)
+  +\P\left(X_{n+1}=0,\theta=0.2|\sum_{i=1}^{n}{X_{i}}=9\right) \\
+  =& \P(X_{n+1}=0|\theta=0.05)
+  \P(\theta=0.05|\sum_{i=1}^{n}{X_{i}}=9)+\\
+  & \P(X_{n+1}=0|\theta=0.2)
+  \P(\theta=0.2|\sum_{i=1}^{n}{X_{i}}=9) \\
+  \approx& 0.05 \cdot 0.96 + 0.2 \cdot 0.04 = 0.056
+ \end{align*}
+ Como $\P\left(X_{n+1}=0|\sum_{i=1}^{n}{X_{i}}=9\right) = 0.056 < 10^{-1} = (1+c)^{-1}$,
+ rejeitamos $H_{0}$.
+\end{example}
+
+\begin{example}
+ Considere o \cref{example:hyp-logistica}. 
+ Também considere que, a priori, 
+ $\P(H_{0})=\P(H_{1})=0.5$,
+ e o erro de tipo I é considerado tão 
+ grave quanto o erro tipo II. Assim $c=1$.
+ Pelo \cref{ex:normal-mixture}, sabemos que
+ \begin{align*}
+  \P(H_{1}|x)
+  &=\frac{1}{1 + \exp\left(\frac{10x-1675}{18}\right)}
+ \end{align*}
+ Pelo \cref{thm:0-1-c}, rejeitamos $H_{0}$ quando
+ $\P(H_{1}|x) > (1+c)^{-1} = 0.5$.
+ Assim, rejeitamos $H_{0}$ se
+ \begin{align*}
+  \frac{1}{1+\exp\left(\frac{10x-1675}{18}\right)} 
+  &> 0.5 \\
+  1
+  &> 0.5 + 0.5\exp\left(\frac{10x-1675}{18}\right) \\
+  \exp\left(\frac{10x-1675}{18}\right) &< 1 \\
+  x &< 167.5
+ \end{align*}
+ Dizemos que esse é um critério de decisão linear,
+ dado que a regra de decisão pode ser 
+ explicada observando se uma reta em função dos dados é
+ maior ou menor que um determinado valor.
+ 
+ Também note que, neste problema,
+ a altura dos homens e mulheres seguem 
+ distribuições normais com média 170cm e 165cm e 
+ variâncias iguais.
+ Assim, não é surpreendente que o critério de decisão
+ é rejeitar que a pessoa é um homem se a sua altura
+ for menor que $167.5$ a média simples entre 170 e 165.
+\end{example}
+
+\begin{comment}
+ \begin{example}
+ Considere o \cref{example:hyp-linear-regression} em que
+ queremos testar $H_{0} = \{g \geq 10\}$ contra $H_{1} = \{g < 10\}$.
+ Também considere que os erros tipo I e II são igualmente graves e
+ que, \emph{a priori}, $g \sim N(0,1)$.
+ 
+ Desejamos achar a distribuição \emph{a posteriori} de 
+ $g|Y_{1},\ldots,Y_{n}$. Defina $x_{i}= -\frac{i^{2}}{2}$.
+ Assim, temos um problema equivalente ao \cref{ex:simple-linear-regression}
+ e obtemos
+ $$g|(x_{1},y_{1}),\ldots,(x_{n},y_{n}) \sim N\left(\frac{\sum_{i=1}^{n}{x_{i}y_{i}}}{\left(1+\sum_{i=1}^{n}{x_{i}^{2}}\right)}, \left(1+\sum_{i=1}^{n}{x_{i}^{2}}\right)^{-1}\right)$$
+ \end{example}
+\end{comment}
+
+\begin{corollary}
+ \label{cor:0-1-c}
+ Em um problema de teste de hipótese com 
+ a utilidade dada pela \cref{table:u-0-1-c},
+ as decisões ótimas, $\delta^{*}$, são tais que
+ \begin{align*}
+  \delta^{*}(x)	&=
+  \begin{cases}
+   0, & \text{ se } 
+   \frac{\P(x|\theta \in H_{0})}{\P(x|\theta \in H_{1})}	
+   > \frac{\P(\theta \in H_{1})}{c\P(\theta \in H_{0})} \\
+   1, & \text{ se } 
+   \frac{\P(x|\theta \in H_{0})}{\P(x|\theta \in H_{1})}
+   < \frac{\P(\theta \in H_{1})}{c\P(\theta \in H_{0})}
+  \end{cases}
+ \end{align*}
+\end{corollary}
+
+\begin{proof}
+ Podemos desenvolver a expressão 
+ $\P(\theta \in H_{0}|x) > (1+c)^{-1}$ 
+ da seguinte forma.
+ \begin{align*}
+  \P(\theta \in H_{0}|x) &> (1+c)^{-1}	\\
+  \frac{\P(\theta \in H_{0})\P(x|\theta \in H_{0})}
+  {\P(\theta \in H_{0})\P(x|\theta \in H_{0}) 
+  +\P(\theta \in H_{1})\P(x|\theta \in H_{1})}
+  &> (1+c)^{-1}	\\
+  \P(\theta \in H_{0})\P(x|\theta \in H_{0})
+  &> (1+c)^{-1}(\P(\theta \in H_{0})\P(x|\theta \in H_{0})
+  +\P(\theta \in H_{1})\P(x|\theta \in H_{1})) \\
+  c(1+c)^{-1}\P(\theta \in H_{0})\P(x|\theta \in H_{0})	
+  &> (1+c)^{-1}\P(\theta \in H_{1})\P(x|\theta \in H_{1})\\
+  \frac{\P(x|\theta \in H_{0})}{\P(x|\theta \in H_{1})}
+  &> \frac{\P(\theta \in H_{1})}{c\P(\theta \in H_{0})}
+ \end{align*}
+ Semelhantemente, $\P(\theta \in H_{0}|x) < (1+c)^{-1}$ 
+ se e somente se
+ $\frac{\P(x|\theta \in H_{0})}{\P(x|\theta \in H_{1})} < \frac{\P(\theta \in H_{1})}{c\P(\theta \in H_{0})}$.
+ O corolário está provado substituindo-se 
+ as expressões encontradas no \cref{thm:0-1-c}.
+\end{proof}
+
+\subsubsection*{Exercícios}
+
+\begin{exercise}
+ Considere o \cref{example:hyp-binomial} e
+ a função de utilidade dada pela \cref{table:u-0-1-c}.
+ \begin{enumerate}[label=(\alph*)]
+  \item Se $\P(H_{0})=\P(H_{1})=0.5$, 
+  como a decisão ótima varia de acordo com 
+  o valor de $c$?
+  \item Se $c=1$, como a decisão ótima varia 
+  em função de $\P(H_{0})$?
+  \item Como a decisão ótima varia conjuntamente 
+  em função de $c$ e $\P(H_{0})$?
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item Neste caso,
+  sabemos do \cref{example:hyp-binomial-2} que
+  $\P(H_{0}|\sum_{i=1}^{100}{X_{i}=9}) \approx 0.96$.
+  Assim, decorre do \cref{thm:0-1-c} que 
+  rejeitamos $H_{0}$ se $0.96 < (1+c)^{-1}$,
+  ou seja, se $c < 0.04$.
+  \item Decorre do \cref{thm:0-1-c} que 
+  rejeitamos $H_{0}$ quando 
+  $\P(H_{0}|\sum_{i=1}^{100}{X_{i}}=9) < (1+c)^{-1}$.
+  Como $c=1$, rejeitamos $H_{0}$ quando
+  $\P(H_{0}|\sum_{i=1}^{100}{X_{i}}=9) < 0.5$.
+  Definindo $p := \P(H_{0})$, obtemos
+  \begin{align*}
+   \P(H_{0}|\sum_{i=1}^{100}{X_{i}}=9) &< 0.5 \\
+   \frac{p(0.05)^{9}(0.95)^{91}}
+   {p(0.05)^{9}(0.95)^{91}+(1-p)(0.2)^{9}(0.8)^{91}} 
+   &< 0.5 \\
+   \frac{1}{1+\frac{(1-p)(0.2)^{9}(0.8)^{91}}
+   {p(0.05)^{9}(0.95)^{91}}} &< 0.5 \\
+   (1-p)(0.2)^{9}(0.8)^{91}	
+   &> p(0.05)^{9}(0.95)^{91} \\
+   p &< \frac{(0.2)^{9}(0.8)^{91}}
+   {(0.05)^{9}(0.95)^{91}+(0.2)^{9}(0.8)^{91}} 
+   \approx 0.04
+  \end{align*}
+  Note que o valor obtido neste item foi 
+  igual ao do item anterior.
+  Você sabe explicar a razão?
+  
+  \item Decorre do \cref{cor:0-1-c} que 
+  rejeita-se $H_{0}$ quando
+  $\frac{\P(x|\theta \in H_{0})}{\P(x|\theta \in H_{1})}	< \frac{\P(\theta \in H_{1})}{c\P(\theta \in H_{0})}$.
+  Definindo $p := \P(H_{0})$, obtemos
+  \begin{align*}
+   \frac{\P(x|\theta \in H_{0})}{\P(x|\theta \in H_{1})}
+   &< \frac{\P(\theta \in H_{1})}{c\P(\theta \in H_{0})} \\
+   \frac{(0.05)^{9}(0.95)^{91}}{(0.2)^{9}(0.8)^{91}}
+   &< \frac{(1-p)}{cp} \\
+   c &< \frac{(1-p)}{23p}
+  \end{align*}
+ \end{enumerate}
+}{}
+
+\begin{exercise}
+ No $2^{o}$ turno de uma eleição presidencial, 
+ existem dois candidatos.
+ Suponha que todo indivíduo dentre os eleitores
+ votará em um dos dois candidatos.
+ O vencedor é aquele que obtiver mais que 50\% dos votos.
+ Considere que a população é extremamente grande e 
+ $n$ indivíduos foram selecionados com reposição.
+ Dentre os indivíduos selecionados, 
+ $a$ votarão no candidato $1$ e
+ $n-a$ votarão no candidato $2$.
+ Considere que, \emph{a priori},
+ você acredita que todas as composições de votos
+ são equiprováveis.
+ Você deseja testar a hipótese 
+ de que o candidato 1 vencerá a eleição.
+ Qual a sua regra de decisão se for tão grave
+ cometer um erro do tipo I quanto um erro do tipo II?
+\end{exercise}
+
+\solution{\textbf{Solução}: Defina
+ \begin{align*}
+  \theta &: \text{ proporção de indivíduos que 
+  votarão no candidato 1.} \\
+  n\bar{X} &: \text{ número de indivíduos na amostra que
+  votarão no candidato 1.}
+ \end{align*}
+ Pela descrição do problema, temos
+ \begin{align*}
+  \theta &\sim \text{Uniforme}(0,1) \\
+  n\bar{X}|\theta &\sim \text{Binomial}(n,\theta)
+ \end{align*}
+ Desejamos testar
+ \begin{align*}
+  H_{0} &: \theta \geq 0.5 \\
+  H_{1} &: \theta < 0.5
+ \end{align*}
+ Assim, se usarmos a utilidade dada 
+ pela \cref{table:u-0-1-c}
+ com $c=1$, o \cref{thm:0-1-c} indica que 
+ $H_{0}$ deve ser rejeitada se
+ $\P(\theta \geq 0.5|n\bar{X}=a) < 0.5$.
+ Pelo \cref{lemma:beta-binomial-2}, sabemos que
+ $\theta|n\bar{X} \sim \text{Beta}(1+a,1+n-a)$.
+ Assim, temos que 
+ $\P(\theta \geq 0.5|n\bar{X}=a) < 0.5$ 
+ se e somente se $1+a < 1+n-a$,
+ ou seja, $a < \frac{n}{2}$.
+}{}
+
+\begin{exercise}
+ \label{ex:ad-effect}
+ Para dois tipos de propaganda, 
+ M analisa o número de visualizações em uma página.
+ Definimos $X_{i,j}$ como o número de visualizações 
+ da página no dia $i$ a partir da propaganda $j$.
+ Também definimos $\theta_{j}$ como 
+ o efeito da propaganda $j$ no número de visualizações.
+ Para este problema, consideramos que, 
+ dado $\theta_{j}$, $X_{i,j}$ são i.i.d.
+ e $X_{i,j} \sim \text{Poisson}(\theta_{j})$.
+ A priori, consideramos que 
+ $\theta_{1}$ e $\theta_{2}$ são i.i.d. e
+ $\theta_{j} \sim \text{Gamma}(a_{j},b_{j})$.
+ M deseja provar que a propaganda $2$ é
+ mais efetiva que a propaganda $1$.
+ M considera o erro tipo I tão grave 
+ quanto o erro tipo II.
+ Como você analisaria esse caso?
+\end{exercise}
+
+\solution{\textbf{Solução}: Definimos 
+ \begin{align*}
+  H_{0}: \theta_{1} \geq \theta_{2}	\\
+  H_{1}: \theta_{1} < \theta_{2}
+ \end{align*}
+ Note que
+ \begin{align*}
+ f(\theta_{1},\theta_{2}|x_{1,1},\ldots,x_{n,1},\ldots,x_{1,2},\ldots,x_{n,2}) 
+  &\propto 
+ f(\theta_{1},\theta_{2})f(x_{1,1},\ldots,x_{n,1},\ldots,x_{1,2},\ldots,x_{n,2}|\theta_{1},\theta_{2}) \\
+  &= f(\theta_{1})f(\theta_{2})\prod_{i=1}^{n}{\prod_{j=1}^{n}{f(x_{i,j}|\theta_{j})}} \\
+  &= \left(f(\theta_{1})\prod_{i=1}^{n}{f(x_{i,1}|\theta_{1})}\right)\left(f(\theta_{2})\prod_{i=1}^{n}{f(x_{i,1}|\theta_{2})}\right) \\
+  &\propto f(\theta_{1}|x_{1,1},\ldots,x_{n,1})f(\theta_{2}|x_{1,2},\ldots,x_{n,2})
+ \end{align*}
+ Portanto, \emph{a posteriori} 
+ $\theta_{1}$ e $\theta_{2}$ são independentes
+ e tem distribuições marginais
+ $f(\theta_{1}|x_{1,1},\ldots,x_{n,1})$ e
+ $f(\theta_{2}|x_{1,2},\ldots,x_{n,2})$.
+ Note que
+ \begin{align*}
+  f(\theta_{j}|x_{1,j},\ldots,x_{n,j})
+  &\propto f(\theta_{j})\prod_{i=1}^{n}{f(x_{1,j}|\theta_{j})}
+  & \text{\cref{lemma:bayes_iid}} \\
+  &\propto \theta_{j}^{a_{j}-1}\exp(-b_{j}\theta_{j})\prod_{i=1}^{n}{\exp(-\theta_{j})\theta_{j}^{x_{i,j}}}	\\
+  &= \theta_{j}^{n\bar{X}_{j}+a_{j}-1}\exp(-(n+b_{j})\theta_{j})
+ \end{align*}
+ Portanto, \emph{a posteriori} 
+ $\theta_{1}$ e $\theta_{2}$ são independentes e 
+ tais que $\theta_{j}|x \sim \text{Gamma}(a_{j}+n\bar{X}_{j},b_{j}+n)$.
+ Usando o \cref{thm:0-1-c}, rejeitamos $H_{0}$ quando 
+ $\P(\theta_{1} \geq \theta_{2}|x) < (1+c)^{-1}$.
+ Como $c=1$, rejeitamos $H_{0}$ quando
+ $\P(\theta_{1} \geq \theta_{2}|x) < 0.5$.
+ 
+ A princípio é difícil calcular a 
+ probabilidade acima analiticamente.
+ Contudo, podemos aproximá-la por simulação.
+ Uma maneira de aproximar a probabilidade acima é
+ pelo código abaixo, escrito em R:
+
+ \begin{align*}
+  \text{mean}(\text{rgamma}(10^6,a_{1}
+  +n\bar{X}_{1},b_{1}+n) >= \text{rgamma}
+  (10^6,a_{2}+n\bar{X}_{2},b_{2}+n))
+ \end{align*}
+
+ Ou seja, simulamos de $10^6$ amostras independentes
+ da posteriori para cada parâmetro 
+ e calculamos, em média, qual a proporção de vezes
+ que $\theta_{1} \geq \theta_{2}$.
+ Esta proporção aproxima 
+ $\P(\theta_{1} \geq \theta_{2}|x)$, 
+ como veremos em seções posteriores.
+}{}
+
+\begin{exercise}
+ \label{ex:bayesian-anova}
+ Existem $2$ tipos de tratamento para 
+ evitar um tipo de contágio em uma plantação: $1$ e $2$.
+ $M$ acredita que o tratamento $2$ é 
+ mais efetivo que o $1$ para prevenir o contágio e,
+ para testar esta hipótese, realiza um experimento.
+ $M$ submete $n$ plantações a cada tipo de tratamento e
+ coleta dados a respeito da taxa de contágio 
+ após o tratamento.
+ Defina $Y_{i,j}$ como a taxa de contágio da 
+ $i$-ésima plantação submetida ao 
+ $j$-ésimo tratamento.
+ 
+ Para analisar os seus dados, 
+ $M$ assume um modelo de ANOVA Bayesiano
+ \citep{Geinitz2013}.
+ Considere que $\mu_{j}$ é 
+ a média da taxa de contágio de uma plantação 
+ submetida ao tratamento $j$.
+ Assumimos que $Y_{i,j} = \mu_{j} + \epsilon_{i,j}$, 
+ onde $\epsilon_{i,j}$ são i.i.d. e 
+ $\epsilon_{i,j} \sim N(0, \tau_{0}^{2})$.
+ Também, $\mu$ é a média de 
+ todas as plantações submetidas a algum tratamento.
+ Assumimos que, $\mu_{j} = \mu + \delta_{j}$, onde
+ $\delta_{j}$ são i.i.d. e 
+ $\delta_{j} \sim N(0,\tau_{1}^{2})$.
+ Note que, até este ponto, o modelo especificado é
+ um modelo ANOVA tradicional com fatores aleatórios.
+ Finalmente, $M$ acredita \emph{a priori} que 
+ $\mu \sim N(\nu,\tau_{2}^{2})$.
+ Considere que $M$ conhece os valores de 
+ $\tau_{0}^{2}, \tau_{1}^{2}$ e $\tau_{2}^{2}$.
+
+ Em termos do seu modelo, 
+ $M$ deseja testar $H_{0}: \mu_{1} \geq \mu_{2}$
+ contra $H_{1}: \mu_{1} < \mu_{2}$.
+\end{exercise}
+
+\solution{\textbf{Solução}: 
+ Decorre do \cref{thm:0-1-c} que,
+ se a utilidade de $M$ é dada pela \cref{table:u-0-1-c},
+ então $M$ deve rejeitar $H_{0}$ quando 
+ $\P(\mu_{1} \geq \mu_{2}|y) < (1+c)^{-1}$.
+ Para calcular esta probabilidade, 
+ $M$ deve achar \emph{a posteriori} conjunta 
+ dos parâmetros dado $y$.
+ Note que
+ \begin{align*}
+  f(\mu,\mu_{1},\mu_{2}|y)
+  &= f(\mu|y)f(\mu_{1},\mu_{2}|y,\mu)
+ \end{align*}
+ Assim, para achar \emph{a posteriori} conjunta 
+ dos parâmetros,
+ é possível achar \emph{a posteriori} de 
+ $\mu$ dado $y$ e \emph{a posteriori} de
+ $(\mu_{1},\mu_{2})$ dado $y$ e $\mu$.
+ A seguir, calculamos $f(\mu|y)$.
+
+ Note que $Y_{i,j} = \mu_{j}+ \epsilon_{i,j}$ e
+ $\mu_{j}= \mu+ \delta_{j}$.
+ Substituindo a segunda equação na primeira, obtemos
+ $Y_{i,j} = \mu + \delta_{j} + \epsilon_{i,j}$.
+ Note que $\delta_{j}$ e $\epsilon_{i,j}$ 
+ são independentes, 
+ $\delta_{j} \sim N(0,\tau_{1}^{2})$ e
+ $\epsilon_{i,j} \sim N(0,\tau_{0}^{2})$. 
+ Assim, dado $\mu$, 
+ $Y_{i,j} \sim N(\mu,(\tau_{0}^{-2}+\tau_{1}^{-2})^{-1})$.
+ Portanto, decorre do \cref{ex:conjugate-normal-normal} que
+ $\mu|y \sim N\left(\frac{\tau_{2}^{2}\nu+ 2n(\tau_{0}^{-2}+\tau_{1}^{-2})^{-1}\bar{y}_{.,.}}{\tau_{2}^{2}+2n(\tau_{0}^{-2}+\tau_{1}^{-2})^{-1}}, \tau_{2}^{2}+2n(\tau_{0}^{-2}+\tau_{1}^{-2})^{-1}\right)$ 
+
+ Para calcular $f(\mu_{1},\mu_{2}|y,\mu)$, 
+ observe que
+ \begin{align*}
+  f(\mu_{1},\mu_{2}|y,\mu) &\propto
+  f(\mu_{1},\mu_{2}|\mu)f(y|\mu_{1},\mu_{2},\mu) \\
+  &= f(\mu_{1},\mu_{2}|\mu)\prod_{i=1}^{n}
+  {\prod_{j=1}^{2}{f(y_{i,j}|\mu_{j})}}	\\
+  &= \left(f(\mu_{1}|\mu)\prod_{i=1}^{n}{f(y_{i,1}|\mu_{1})}\right)\left(f(\mu_{2}|\mu)\prod_{i=1}^{n}{f(y_{i,2}|\mu_{2})}\right)
+ \end{align*}
+ Portanto, semelhantemente ao \cref{ex:ad-effect},
+ dado o valor de $\mu$, $\mu_{1}$ e $\mu_{2}$ são
+ independentes a posteriori e 
+ tem marginais proporcionais a
+ $f(\mu_{j}|\mu)\prod_{i=1}^{n}{f(y_{i,j}|\mu_{j})}$.
+ Assim,
+ \begin{align*}
+  f(\mu_{j}|\mu,y) &\propto
+  f(\mu_{j}|\mu)\prod_{i=1}^{n}{f(y_{i,j}|\mu_{j})} \\
+  &\propto \exp\left(-\frac{\tau_{1}^{2}(\mu_{j}-\mu)^{2}}{2}\right)\exp\left(-\frac{\tau_{0}^{2}\sum_{i=1}^{n}(y_{i,j}-\mu_{j})^{2}}{2}\right)	\\
+  &\propto \exp\left(-\frac{\tau_{1}^{2}\mu_{j}^{2}-2\tau_{1}^{2}\mu\mu_{j}}{2}\right)\exp\left(-\frac{n\tau_{0}^{2}\mu_{j}^{2}-2n\tau_{0}^{2}\bar{y}_{.,j}\mu_{j}}{2}\right) \\
+  &= \exp\left(-\frac{(\tau_{1}^{2}+n\tau_{0}^{2})\mu_{j}^{2} -2(\tau_{1}^{2}\mu+n\tau_{0}^{2}\bar{y}_{.,j})\mu_{j}}{2}\right) \\
+  &\propto \exp\left(-\frac{(\tau_{1}^{2}+n\tau_{0}^{2})\left(\mu_{j}-\frac{\tau_{1}^{2}\mu+n\tau_{0}^{2}\bar{y}_{.,j}}{\tau_{1}^{2}+n\tau_{0}^{2}}\right)^{2}}{2}\right)
+ \end{align*}
+ Assim, dado $\mu$ e $y$, 
+ $\mu_{1}$ e $\mu_{2}$ são independentes e tais que
+ $\mu_{j}|\mu,y \sim N\left(\frac{\tau_{1}^{2}\mu+n\tau_{0}^{2}\bar{y}_{.,j}}{\tau_{1}^{2}+n\tau_{0}^{2}}, \tau_{1}^{2}+n\tau_{0}^{2}\right)$.
+
+ Do calculado anteriormente, 
+ podemos aproximar o valor de 
+ $\P(\mu_{1} \geq \mu_{2}|y)$ 
+ por simulação.
+ Para tal, podemos simular de $\mu|y$ um 
+ grande número de vezes e,
+ para cada valor de $\mu$,
+ simular de $(\mu_{1},\mu_{2})|\mu,y$.
+ Como veremos em seções subsequentes,
+ $\P(\mu_{1} \geq \mu_{2}|y)$ é aproximado pelo
+ número de simulações em que $\mu_{1} \geq \mu_{2}$.
+ Esta simulação é realizada pelo código em $R$ descrito em 
+ \cref{code:simula-anova}.
+
+ \begin{align}
+  \label{code:simula-anova}
+  &\mu = \text{rnorm}\left(10^6, \frac{\tau_{2}^{2}\nu+ 2n(\tau_{0}^{-2}+\tau_{1}^{-2})^{-1}\bar{y}_{.,.}}{\tau_{2}^{2}+2n(\tau_{0}^{-2}+\tau_{1}^{-2})^{-1}}, (\tau_{2}^{2}+2n(\tau_{0}^{-2}+\tau_{1}^{-2})^{-1})^{-2}\right) \nonumber \\
+  &\mu_{1} = \text{rep}(\text{NA}, 10^6) \nonumber\\
+  &\mu_{2} = \text{rep}(\text{NA}, 10^6) \nonumber\\
+  &\text{for}(ii \text{ in } 1:10^{6}) \{ \nonumber\\
+  &\text{  }\mu_{1}[ii] = \text{rnorm}\left(1, \frac{\tau_{1}^{2}\mu[ii]+n\tau_{0}^{2}\bar{y}_{.,1}}{\tau_{1}^{2}+n\tau_{0}^{2}}, (\tau_{1}^{2}+n\tau_{0}^{2})^{-2}\right) \nonumber\\
+  &\text{  }\mu_{2}[ii] = \text{rnorm}\left(1, \frac{\tau_{1}^{2}\mu[ii]+n\tau_{0}^{2}\bar{y}_{.,2}}{\tau_{1}^{2}+n\tau_{0}^{2}}, (\tau_{1}^{2}+n\tau_{0}^{2})^{-2}\right) \nonumber\\
+  &\} \nonumber \\
+  &\text{mean}(\mu_{1} >= \mu_{2})
+ \end{align}
+}{}
+
+\subsubsection{Hipóteses precisas}
+
+Dizemos que uma hipótese é precisa quando 
+ela tem dimensão menor que a do espaço paramétrico.
+Por exemplo, quando $\Theta = \mathbb{R}$,
+$H_{0}: \theta = 0$ é uma hipótese precisa.
+Por outro lado, para o mesmo 
+$\Theta$: $H_{0}: \theta \in (-\epsilon,\epsilon)$
+não é uma hipótese precisa, uma vez que
+$(-\epsilon,\epsilon)$ tem mesma dimensão de $\Theta$.
+
+Um problema ligado a hipóteses precisas é o de que,
+para modelos estatísticos comumente utilizados, 
+se $H_{0}$ é uma hipótese precisa,
+então $\P(H_{0}) = 0$.
+Ademais, $\P(H_{0}|x)$ também é $0$ e, assim,
+se usarmos a função de utilidade 
+dada pela \cref{table:u-0-1-c},
+então, para todo $c>0$, 
+$\P(H_{0}|x) < (1+c)^{-1}$.
+Portanto, de acordo com o \cref{thm:0-1-c},
+$H_{0}$ sempre será rejeitada.
+
+Contudo, é comum que pesquisadores
+desejem testar uma hipótese precisa e
+não achem que é razoável sempre rejeitá-la.
+É possível justificar o seu raciocínio como coerente
+de acordo com a Inferencia Bayesiana?
+Existem duas respostas afirmativas frequentemente 
+utilizadas para essa pergunta.
+
+A primeira resposta consiste em 
+utilizar um modelo tal que
+$\P(H_{0}) > 0$ ainda que $H_{0}$ 
+tenha dimensão menor do que $\Theta$.
+Por exemplo, considere que $H_{0}:\theta=\theta_{0}$.
+É comum escolher a distribuição dos 
+parâmetros e dados, $f(x,\theta)$, como:
+
+\begin{align*}
+ f(x,\theta) &=
+ \begin{cases}
+  p_{0}f(x|\theta), & \text{ se } 
+  \theta = \theta_{0} \\
+  (1-p_{0})f(\theta)f(x|\theta), 
+  & \text{ caso contrário}
+ \end{cases}
+\end{align*}
+
+Em palavras, de acordo com esse modelo, 
+$\P(H_{0}) = p_{0} > 0$. Assim, obtemos que
+
+\begin{align*}
+ \P(H_{0}|x)
+ &= \frac{f(x,\theta_{0})}{f(x,\theta_{0}) 
+ +\int_{\theta \neq \theta_{0}}{f(x,\theta)d\theta}} \\
+ &\frac{p_{0}f(x|\theta_{0})}{p_{0}f(x|\theta_{0}) 
+ +(1-p_{0})\int{f(\theta)f(x|\theta)d\theta}}
+\end{align*}
+
+Portanto, se usarmos a utilidade 
+dada pela \cref{table:u-0-1-c},
+decorre do teorema \cref{thm:0-1-c} que 
+a decisão ótima é rejeitar $H_{0}$ quando
+$\frac{p_{0}f(x|\theta_{0})}{p_{0}f(x|\theta_{0}) +(1-p_{0})\int{f(\theta)f(x|\theta)d\theta}} < (1+c)^{-1}$.
+Similarmente, pelo \cref{cor:0-1-c}, 
+rejeita-se $H_{0}$ quando
+
+\begin{align*}
+ \frac{f(x|\theta_{0})}{\int{f(\theta)f(x|\theta)d\theta}}
+ <\frac{1-p_{0}}{cp_{0}}
+\end{align*}
+
+A expressão $\frac{f(x|\theta_{0})}{\int{f(\theta)f(x|\theta)d\theta}}$ é 
+comumente chamada de Fator de Bayes.
+Pelo critério de decisão encontrado, verificamos que,
+para valores pequenos do fator de Bayes, 
+a hipótese nula é rejeitada.
+O quão pequeno deve ser o Fator de Bayes para que 
+se rejeite $H_{0}$ depende tanto de $p_{0}$ 
+quanto de $c$.
+
+\begin{corollary}[Fator de Bayes]
+ \label{cor:bayes-factor}
+ Considere que $\theta$ segue 
+ uma distribuição contínua fora de $H_{0}$, que
+ $H_{0}: \theta = \theta_{0}$, 
+ que $\P(H_{0}) = p_{0}$ e
+ que usamos a função de perda 
+ dada pela \cref{table:u-0-1-c}.
+ Neste caso, rejeitamos $H_{0}$ se
+ \begin{align*}
+  \frac{f(x|\theta_{0})}
+  {\int{f(\theta)f(x|\theta)d\theta}}
+  &< \frac{1-p_{0}}{cp_{0}}
+ \end{align*}
+ $\frac{f(x|\theta_{0})}{\int{f(\theta)f(x|\theta)d\theta}}$ é 
+ chamado de Fator de Bayes.
+\end{corollary}
+
+Uma outra alternativa para testar 
+hipóteses precisas consiste em 
+considerar outra função de perda que não 
+a da \cref{table:u-0-1-c} \citep{Madruga2001}.
+Esta é uma possível justificativa para 
+o FBST (Full Bayesian Significance Test) 
+\citep{Pereira1999}.
+Ainda que a função de utilidade que gera esse teste 
+não seja tratada nesse curso,
+é possível indicar a regra de decisão induzida por ela.
+Para obter a regra de decisão, constrói-se 
+um HPD (\cref{thm:hpd}) de probabilidade $1-\alpha$ 
+para $\theta$ ($\alpha$ é um valor que 
+é determinado pelo tomador de decisões. 
+Quanto menor o valor de $\alpha$, 
+mais evidência é exigida para que 
+não se rejeite $H_{0}$).
+Caso $H_{0}$ tenha interseção nula com o HPD, 
+então rejeita-se $H_{0}$.
+Neste sentido, o FBST guarda relação com 
+testes de hipótese obtidos por inversão de 
+intervalo de confiança.
+
+\begin{theorem}[FBST]
+ Existe uma função de utilidade \citep{Madruga2001}
+ tal que o melhor teste de hipótese é 
+ obtido da seguinte forma:
+ \begin{enumerate}
+  \item Constrói-se um HPD para $\theta|X$ com
+  credibilidade $1-\alpha$.
+  \item Rejeita-se $H_{0}$ se e somente se
+  nenhum ponto de $H_{0}$ está no HPD.
+ \end{enumerate}
+\end{theorem}
+
+\subsubsection*{Exercícios}
+
+\begin{exercise}
+ Considere que, dado $\mu$, 
+ $X_{1},\ldots,X_{n}$ são i.i.d.,
+ $X_{i}|\theta \sim N(\mu,\tau^{2})$ e
+ $\theta \sim N(0,\tau_{0}^{2})$.
+ Desejamos testar $H_{0}:\mu=0$ contra 
+ $H_{1}:\mu \neq 0$.
+ \begin{enumerate}[label=(\alph*)]
+  \item Obtenha um teste para $H_{0}$ usando 
+  o Fator de Bayes e tomando $p_{0}=95\%$ e $c=1$.
+  \item Obtenha um teste para $H_{0}$ usando o FBST a
+  um nível $1-\alpha=95\%$.
+  \item Compare os testes obtidos.
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item Note que, para todo $\theta_0$,
+  \begin{align}
+   \label{eq:easy-bayes-factor}
+   f(\theta_0|x_1,\ldots,x_n) 
+   &= \frac{f(\theta_0)f(x_1,\ldots,x_n|\theta_0)}
+   {\int{f(\theta)f(x_1,\ldots,x_n|\theta)d\theta}} 
+   \nonumber \\
+   \frac{f(x_1,\ldots,x_n|\theta_0)}
+   {\int{f(\theta)f(x_1,\ldots,x_n|\theta)d\theta}}
+   &= \frac{f(\theta_0|x_1,\ldots,x_n)}{f(\theta_0)}
+  \end{align}
+  Também, decorre do 
+  \cref{ex:conjugate-normal-normal} que
+  $\theta|x_{1},\ldots,x_{n} \sim N\left(\frac{n\tau^{2}\bar{x}}{\tau_{0}^{2}+n\tau^{2}},\tau_{0}^{2}+n\tau^{2}\right)$.
+  Portanto,
+  \begin{align*}
+   \frac{f(x_{1},\ldots,x_{n}|0)}{\int{f(x_{1},\ldots,x_{n}|\theta)d\theta}}	
+   &= \frac{f(0|x_1,\ldots,x_n)}{f(0)}
+   & \text{\cref{eq:easy-bayes-factor}} \\
+   &= \frac{\sqrt{2\pi}^{-1}\sqrt{\tau_0^2+n\tau^2} 
+   \exp\left(-\frac{(\tau_0^2+n\tau^2)
+   \left(\frac{n\tau^2\bar{x}}{\tau_0^2+n\tau^2}\right)^2}{2}\right)}{\sqrt{2\pi}^{-1}\tau_0} \\
+   &= \sqrt{1+\frac{n\tau^2}{\tau_0^2}} \cdot
+   \exp\left(-\frac{(\tau_0^2+n\tau^2)
+   \left(\frac{n\tau^2\bar{x}}{\tau_0^2+n\tau^2}\right)^2}{2}\right)
+  \end{align*}
+  Portanto, decorre do \cref{cor:bayes-factor} que
+  rejeita-se $H_{0}$ quando
+  \begin{align*}
+   \sqrt{1+\frac{n\tau^2}{\tau_0^2}} \cdot
+   \exp\left(-\frac{(\tau_0^2+n\tau^2)
+   \left(\frac{n\tau^2\bar{x}}{\tau_0^2+n\tau^2}\right)^2}{2}\right) 
+   &< \frac{1-p_{0}}{cp_{0}} = 19^{-1} \\
+   \exp\left(-\frac{(\tau_0^2+n\tau^2)
+   \left(\frac{n\tau^2\bar{x}}{\tau_0^2+n\tau^2}\right)^2}{2}\right)
+   &< \frac{1}{19\sqrt{1+\frac{n\tau^2}{\tau_0^2}}} \\
+   \left(\frac{n\tau^2\bar{x}}{\tau_0^2+n\tau^2}\right)^2
+   &> \frac{2\log\left(19\sqrt{1+\frac{n\tau^2}{\tau_0^2}}\right)}{\tau_0^2+n\tau^2} \\
+   \frac{n\tau^2|\bar{x}|}{\tau_0^2+n\tau^2}
+   &> \sqrt{\frac{2\log\left(19\sqrt{1+\frac{n\tau^2}{\tau_0^2}}\right)}{\tau_0^2+n\tau^2}} \\
+   |\bar{x}| &>
+   \frac{\tau_0^2+n\tau^2}{n\tau^2}\sqrt{\frac{2\log\left(19\sqrt{1+\frac{n\tau^2}{\tau_0^2}}\right)}{\tau_0^2+n\tau^2}}
+  \end{align*}
+  Se $\tau_0^2 \approx 0$, então
+  rejeitamos $H_0$ quando
+  \begin{align*}
+   |\bar{x}| 
+   &> \sqrt{\frac{2\log\left(19\sqrt{n\tau^2}\right)}
+   {n\tau^2}}
+  \end{align*}
+  
+  \item Decorre do 
+  \cref{ex:conjugate-normal-normal} que 
+  $\theta|x_{1},\ldots,x_{n} \sim N\left(\frac{n\tau^{2}\bar{x}}{\tau_{0}^{2}+n\tau^{2}},\tau_{0}^{2}+n\tau^{2}\right)$.
+  Como a distribuição normal é simétrica e côncava,
+  sabemos que o HPD é um intervalo simétrico 
+  em torno de $\E[\theta|X]$.
+  Desejamos que o HPD seja de nível $1-\alpha$.
+  Portanto, desejamos que 
+  $\P(\theta \in [\E[\theta|X]-k,\E[\theta|X]+k]) = 1-\alpha$.
+  Por padronização, sabemos que 
+  $k = \frac{z_{\alpha/2}}{\sqrt{\tau_{0}^{2}+n\tau^{2}}}$.
+  Portanto, rejeitamos $H_{0}$ quando
+  \begin{align*}
+   0 \notin 
+   \left[\frac{n\tau^{2}\bar{x}}{\tau_{0}^{2}+n\tau^{2}}-\frac{z_{\alpha/2}}{\sqrt{\tau_{0}^{2}+n\tau^{2}}},
+   \frac{n\tau^{2}\bar{x}}{\tau_{0}^{2}+n\tau^{2}}+\frac{z_{\alpha/2}}{\sqrt{\tau_{0}^{2}+n\tau^{2}}}\right]
+  \end{align*}
+  Como tomamos $\alpha=5\%$, $z_{\alpha/2} = 1.96$. 
+  Ou seja, rejeitamos $H_{0}$ quando
+  \begin{align*}
+   \bigg|\frac{n\tau^{2}\bar{x}}
+   {\tau_{0}^{2}+n\tau^{2}}\bigg| 
+   &> \frac{1.96}{\sqrt{\tau_{0}^{2}+n\tau^{2}}} \\
+   |\bar{x}|
+   &> \frac{1.96\sqrt{\tau_{0}^{2}+n\tau^{2}}}
+   {n\tau^{2}}
+  \end{align*}
+  Se $\tau_{0}^{2} \approx 0$, 
+  então rejeitamos $H_{0}$ quando
+  \begin{align*}
+   |\bar{x}|
+   &> \frac{1.96}{\sqrt{n\tau^{2}}}
+  \end{align*}
+ \end{enumerate}
+}{}
+
+\subsubsection{Coerência em testes de hipótese}
+Em algumas situações,
+realizamos simultaneamente diversos 
+testes de hipótese a respeito de um parâmetro.
+Por simplicidade, uma hipótese do tipo 
+$H_{0}: \theta \in A$ será denotada
+nesta subseção apenas por $A$.
+No contexto de testes múltiplos é 
+útil averiguar quais propriedades lógicas são
+satisfeitas pelos testes conjuntamente.
+Para estudar estas propriedades, 
+\citet{Izbicki2015} considera uma 
+notação capaz de expressar o resultado de 
+vários testes de hipótese simultaneamente.
+$\mathcal{L}(A)(x)$ é a indicadora de que 
+a hipótese $A$ foi rejeitada a partir do dado $x$.
+A partir desta notação, \citet{Izbicki2015} define algumas propriedades lógicas que 
+poderíamos esperar de testes de hipótese.
+
+\begin{definition}[Monotonicidade]
+ Se $A \subset B$, 
+ $\mathcal{L}(A)(x) \geq \mathcal{L}(B)(x)$.
+\end{definition}
+Em palavras, se $A$ é uma hipótese mais 
+específica do que $B$, então, 
+de acordo com a monotonicidade,
+a rejeição de $B$ implica a rejeição de $A$.
+Intuitivamente, como $A$ é mais específica do que $B$,
+acreditar em $A$ implica acreditar em $B$.
+Assim, é estranho acreditar em $A$ (não rejeitar $A$)
+mas não acreditar em $B$ (rejeitar $B$).
+ 
+\begin{definition}[Invertibilidade]
+ Para todo $A$, 
+ $\mathcal{L}(A^{c})(x) = 1-\mathcal{L}(A)(x)$.
+\end{definition}
+Assim, se $A$ não é rejeitado, então 
+$A^{c}$ é rejeitado e vice-versa.
+Intuitivamente, como $A$ e $A^{c}$ são exaustivos e
+mutuamente exclusivos, então 
+um e apenas um deles deveria ser aceito.
+ 
+\begin{definition}[Consonância com a intersecção]
+ Para todo $A$ e $B$, se 
+ $\mathcal{L}(A) = 0$ e $\mathcal{L}(B) = 0$,
+ então $\mathcal{L}(A \cap B) = 0$.
+\end{definition}
+Portanto, se não rejeitamos $A$ e 
+não rejeitamos $B$, então 
+não rejeitamos $A \cap B$.
+O raciocínio é análogo a: 
+se $\theta \in A$ e $\theta \in B$,
+então $\theta \in A \cap B$.
+ 
+\begin{definition}[Consonância com a união]
+ Para todo $A$ e $B$, se 
+ $\mathcal{L}(A) = 1$ e 
+ $\mathcal{L}(B) = 1$, então 
+ $\mathcal{L}(A \cup B) = 1$.
+\end{definition}
+Portanto, se rejeitamos $A$ e 
+rejeitamos $B$, então 
+rejeitamos $A \cup B$.
+Semelhantemente à consonância com a intersecção,
+o raciocínio é análogo a:
+se $\theta \notin A$ e 
+$\theta \notin B$, então 
+$\theta \notin A \cap B$.
+
+\citet{Izbicki2015} ilustra que,
+ainda que essas propriedades sejam desejáveis,
+os testes usualmente utilizados falham 
+uma ou mais delas.
+Por exemplo, em um ANOVA com efeitos 
+$\alpha_{1}$, $\alpha_{2}$ e $\alpha_{3}$,
+é possível não rejeitar 
+$H_{0}: \alpha_{1}=\alpha_{2}$ e não rejeitar
+$H_{0}:\alpha_{2}=\alpha_{3}$ e, ainda assim,
+rejeitar $H_{0}:\alpha_{1}=\alpha_{2}=\alpha_{3}$.
+Estas conclusões podem ser difíceis de explicar a
+um pesquisador. Também, para testes em que 
+a não-rejeição da hipótese nula não 
+pode ser interpretada como a aceitação desta,
+em geral a invertibilidade não é satisfeita.
+Por exemplo, quando os dados são 
+pouco informativos para $\theta$, então, 
+nestes casos, não se rejeita nem $A$ nem $A^{c}$. 
+
+De fato, estas ilustrações são 
+consequências de um resultado ainda mais forte em
+\citet{Izbicki2015}:
+\begin{theorem}
+ \label{thm:izbicki}
+ Sob algumas condições técnicas fracas,
+ todo teste de hipótese que satisfaz as 
+ $4$ propriedades indicadas é 
+ da seguinte forma:
+ \begin{enumerate}
+  \item Escolha um estimador pontual, $\hat{\theta}$.
+  \item Rejeite $A$ se $\hat{\theta} \notin A$ e
+  aceite $A$, caso contrário.
+ \end{enumerate}
+\end{theorem}
+
+O \cref{thm:izbicki} nos indica 
+três possíveis caminhos. 
+\begin{enumerate}
+ \item Aceitamos o teste de hipótese no
+ \cref{thm:izbicki} como o único que 
+ possa ser usado.
+ \item Deixamos de realizar testes de hipótese e
+ substituímo-nos por procedimentos estatísticos que
+ estejam mais próximos de nossos objetivos.
+ \item Revemos o juízo de razoabilidade das 
+ propriedades indicadas e achamos aquelas com 
+ as quais não concordamos.
+ Como consequência devemos interpretar o resultado de
+ um teste de hipótese de forma compatível com 
+ o fato de ele não satisfazer a propriedade escolhida.
+\end{enumerate}
+
+Para efeitos práticos, 
+a primeira posição é equivalente
+a aceitar que o valor do parâmetro
+é aquele assumido por uma estimativa pontual.
+Às vezes, esta pode ser uma boa escolha.
+Contudo, ela ignora a variabilidade do estimador pontual
+e, assim, potencialmente,
+pode não atender às demandas do pesquisador e
+até mesmo ser enganadora.
+
+Por outro lado, ainda que aparentemente radical, 
+a segunda posição tem sido sugerida com frequência.
+Testes de hipótese resumem toda a informação na amostra
+a uma única resposta: rejeitar ou 
+não rejeitar a hipótese.
+Para muitos problemas, este resumo é insuficiente.
+Por exemplo, é possível argumentar que, 
+além de rejeitar ou não rejeitar uma hipótese,
+um teste de hipótese deveria poder indicar
+outras respostas.
+Por exemplo, aceitar, não rejeitar ou 
+não se posicionar em relação à hipótese.
+Assim, a não rejeição de uma hipótese poderia
+ser dividida em dois casos:
+um que há evidência a favor da hipótese e 
+outro em que não há evidência suficiente, 
+nem para rejeitar, nem para aceitar a hipótese.
+Também, um intervalo de confiança ou 
+de credibilidade indica os valores mais verossímeis 
+para o parâmetro.
+Para muitos problemas, um intervalo traz
+mais informação relevante do que 
+o resultado de um teste de hipótese.
+
+A terceira posição pode envolver observar quais 
+propriedades não são satisfeitas por um 
+teste de hipótese proposto e questionar se 
+esta falha prejudica os objetivos do pesquisador.
+A seguir, faremos esta análise para 
+testes de hipótese obtidos pela \cref{table:u-0-1-c}.
+Uma análise para o FBST e para 
+fatores de Bayes pode ser encontrada em
+\citet{Izbicki2015}.
+
+\begin{theorem}
+ \label{thm:0-1-c-desiderata}
+ Em geral, o teste de hipótese obtido pela
+ \cref{table:u-0-1-c} satisfaz monotonicidade,
+ satisfaz invertibilidade se e somente se $c=1$, e
+ não satisfaz consonância com a intersecção ou
+ com a união.
+\end{theorem}
+
+\begin{proof}
+ Obtivemos pelo \cref{thm:0-1-c} que
+ a hipótese $A$ não é rejeitada se 
+ $\P(A|X) > (1+c)^{-1}$.
+ Portanto, se não rejeitamos $A$ e 
+ $A \subset B$, então
+ $\P(B|X) \geq \P(A|X) > (1+c)^{-1}$.
+ Portanto, se não rejeitamos $A$ e 
+ $A \subset B$, então 
+ não rejeitamos $B$.
+ Conclua que o teste obtido pela
+ \cref{table:u-0-1-c} satisfaz monotonicidade.
+ 
+ Similarmente, se $c=1$, então decorre
+ do \cref{thm:0-1-c} que
+ a hipótese $A$ não é rejeitada se $\P(A|X) > 0.5$.
+ Assim, se $c=1$ e $A$ não é rejeitada,
+ então $\P(A^{c}|X) = 1-\P(A|X) < 0.5$.
+ Portanto, nestas condições $A^{c}$ é rejeitada.
+ Também, se $c=1$ e $A$ é rejeitada, 
+ então $\P(A|X) < 0.5$.
+ Portanto, $\P(A^{c}|X) = 1-\P(A|X) > 0.5$.
+ Assim, nestas condições, $A^{c}$ não é rejeitada.
+ Decorre, das últimas sentenças que, se $c=1$,
+ o teste de hipótese derivado da 
+ \cref{table:u-0-1-c} satisfaz monotonicidade.
+ Finalmente, se $c \neq 1$
+ e $\P(A|X) = \P(A^{c}|X) = 0.5$,
+ então $A$ e $A^{c}$ são ambos rejeitados
+ ou ambos não rejeitados.
+ Portanto, se $c \neq 1$,
+ o teste decorrente da \cref{table:u-0-1-c}
+ não satisfaz invertibilidade.
+ Conclua que o teste decorrente da 
+ \cref{table:u-0-1-c} satisfaz invertibilidade 
+ se e somente se $c=1$.
+
+ Considere que $A_{1},\ldots,A_{n}$ são disjuntos,
+ tais que $\cup_{i=1}^{n}{A_{i}} = \Omega$ e
+ $\P(A_{i}|X) = n^{-1}$.
+ Se tomarmos $n$ suficientemente grande,
+ $\P(A_{i}|X) < (1+c)^{-1}$.
+ Portanto, todos os $A_{i}$ são rejeitados.
+ Contudo, $\P(\Omega|X) = 1 > (1+c)^{-1}$.
+ Assim, $\Omega$ não é rejeitado.
+ Portanto, existem $A_{1},\ldots,A_{n}$
+ tais que $A_{i}$ é rejeitado para todo $i$,
+ mas $\cup_{i=1}^{n}{A_{i}}$ não é rejeitado.
+ Portanto, o teste decorrente da 
+ \cref{table:u-0-1-c} não satisfaz 
+ consonância com a união.
+
+ Finalmente, considere os mesmos 
+ $A_{1},\ldots,A_{n}$ usados no parágrafo anterior.
+ Defina $A_{-i} = \cup_{j\neq i}{A_{j}}$.
+ Note que $\P(A_{-i}|X) = \frac{n-1}{n}$.
+ Portanto, tomando $n$ suficientemente grande,
+ $\P(A_{-i}|X) > (1+c)^{-1}$ e
+ $A_{-i}$ não é rejeitado.
+ Contudo, $\cap_{i=1}^{n}{A_{-i}}=\emptyset$
+ e $\P(\emptyset|X) = 0 < (1+c)^{-1}$.
+ Portanto, para todo $i$,
+ $A_{-i}$ não é rejeitado mas
+ $\cap_{i=1}^{n}{A_{-i}}$ é rejeitado.
+ Conclua que o teste decorrente da 
+ \cref{table:u-0-1-c} não satisfaz 
+ consonância com a intersecção.
+\end{proof}
+
+A partir do \cref{thm:0-1-c},
+sabemos que o teste derivado da 
+\cref{table:u-0-1-c} não rejeita uma 
+hipótese se e somente se
+sua probabilidade a posteriori é superior a 
+uma dada constante.
+Assim, este teste de hipótese pode ser
+visto como um resumo que 
+separa as hipóteses cuja probabilidade 
+a posteriori ultrapassa esta constante,
+daquelas em que a constante não é ultrapassada.
+Para avaliar se este teste de hipótese é
+útil ao pesquisador, é 
+necessário verificar se este resumo é 
+suficiente para responder às perguntas deste.
+Como intuição para esta pergunta,
+o \cref{thm:0-1-c-desiderata} mostra
+que é possível que a união de uma 
+coleção de conjuntos ultrapasse o corte mas 
+nenhum deles o ultrapasse.
+Também, é possível achar uma coleção de conjuntos
+tais que cada um deles ultrapassa o corte, mas 
+a intersecção de todos não ultrapassa.
+Assim, o resumo dado pelo teste de hipótese na
+\cref{table:u-0-1-c} não satisfaz as 
+consonâncias com a união e com a intersecção.
+
+\begin{comment}
+ Possivelmente incluir testes agnósticos.
+\end{comment}
