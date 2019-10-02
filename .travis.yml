@@ -1,11 +1,7 @@
 language: r
 cache: packages
-sudo: false
 script: make book
-cache: packages
-r_packages: knitr
-os:
-  - linux
+
 deploy:
   provider: pages
   skip_cleanup: true
