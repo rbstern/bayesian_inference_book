@@ -1,10 +1,9 @@
 language: r
+cache: packages
 sudo: false
 script: make book
 cache: packages
-r_packages:
-  - knitr
-  - tidyverse
+r_packages: knitr
 os:
   - linux
 deploy:

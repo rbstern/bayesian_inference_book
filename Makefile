@@ -19,7 +19,7 @@ FIGUREDIR= figures
 
 
 # these targets will be made by default
-all: $(PDFS)
+book: $(PDFS)
 
 # use this to create R files extracted from RNoWeb files
 purled: $(R_FILES)
@@ -43,6 +43,7 @@ cleanall: clean
 %.pdf: %.Rnw Makefile
 	mkdir -p build
 	Rscript \
+		-e "require(knitr)" \
 		-e "knitr::opts_chunk[['set']](fig.path='$(FIGUREDIR)/$*-')" \
 		-e "knitr::opts_chunk[['set']](cache.path='$(CACHEDIR)/$*-')" \
 		-e "knitr::knit('$*.Rnw', output='build/$*.tex')"
@@ -52,6 +53,7 @@ cleanall: clean
 # extract an R file from an RNoWeb file
 %-purled.R: %.Rnw
 	Rscript \
+		-e "require(knitr)" \
 		-e "knitr::opts_chunk[['set']](fig.path='$(FIGUREDIR)/$*-')" \
 		-e "knitr::opts_chunk[['set']](cache.path='$(CACHEDIR)/$*-')" \
 		-e "knitr::purl('$*.Rnw', '$*-purled.R')"
