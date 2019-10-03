@@ -40,7 +40,9 @@ cleanall: clean
 		-e "require(knitr)" \
 		-e "knitr::opts_chunk[['set']](fig.path='$(FIGUREDIR)/$*-')" \
 		-e "knitr::opts_chunk[['set']](cache.path='$(CACHEDIR)/$*-')" \
-		-e "knitr::knit('$*.Rnw', output='$*.tex')"
+		-e "knitr::knit('$*.Rnw', output='build/$*.tex')"
+	cp config.tex build/config.tex
+	cp book.bib build/book.bib
 
 # extract an R file from an RNoWeb file
 %-purled.R: %.Rnw
