@@ -44,6 +44,7 @@ cleanall: clean
 		-e "knitr::knit('$*.Rnw', output='build/$*.tex')"
 	cp config.tex build/config.tex
 	cp book.bib build/book.bib
+	cp slashbox.sty build/slashbox.sty
 
 # extract an R file from an RNoWeb file
 %-purled.R: %.Rnw
