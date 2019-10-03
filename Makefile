@@ -36,6 +36,7 @@ cleanall: clean
 
 # compile a TEX from a RNoWeb file
 %.tex: %.Rnw Makefile
+	mkdir build
 	Rscript \
 		-e "require(knitr)" \
 		-e "knitr::opts_chunk[['set']](fig.path='$(FIGUREDIR)/$*-')" \
