@@ -54,4 +54,3 @@ cleanall: clean
 # open all PDF's
 open:
 	open -a Skim $(PDFS)
-
