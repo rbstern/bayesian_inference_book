@@ -36,12 +36,11 @@ cleanall: clean
 
 # compile a TEX from a RNoWeb file
 %.tex: %.Rnw Makefile
-	mkdir -p build
 	Rscript \
 		-e "require(knitr)" \
 		-e "knitr::opts_chunk[['set']](fig.path='$(FIGUREDIR)/$*-')" \
 		-e "knitr::opts_chunk[['set']](cache.path='$(CACHEDIR)/$*-')" \
-		-e "knitr::knit('$*.Rnw', output='build/$*.tex')"
+		-e "knitr::knit('$*.Rnw', output='$*.tex')"
 
 # extract an R file from an RNoWeb file
 %-purled.R: %.Rnw
