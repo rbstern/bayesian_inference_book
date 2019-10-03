@@ -4,7 +4,7 @@
 RNW_FILES= $(wildcard *.Rnw)
 
 # these pdf's will be compiled from Rnw and Rmd files
-PDFS= $(RNW_FILES:.Rnw=.pdf) 
+TEX_FILES= $(RNW_FILES:.Rnw=.tex) 
 
 # these R files will be untangled from RNoWeb files
 R_FILES= $(RNW_FILES:.Rnw=-purled.R) 
@@ -17,16 +17,11 @@ FIGUREDIR= figures
 .PHONY: all purled clean cleanall open
 .SUFFIXES: .Rnw .pdf .R .tex
 
-
 # these targets will be made by default
-book: $(PDFS)
+book: $(TEX_FILES)
 
 # use this to create R files extracted from RNoWeb files
 purled: $(R_FILES)
-
-# these tex files will be generate from Rnw files
-TEX_FILES = $(RNW_FILES:.Rnw=.tex) 
-
 
 # remove generated files except pdf and purled R files
 clean:
@@ -36,19 +31,17 @@ clean:
 # run the clean target then remove pdf and purled R files too
 cleanall: clean
 	rm -f *.synctex.gz
-	rm -f $(PDFS)
+	rm -f $(TEX_FILES)
 	rm -f $(R_FILES)
 
-# compile a PDF from a RNoWeb file
-%.pdf: %.Rnw Makefile
+# compile a TEX from a RNoWeb file
+%.tex: %.Rnw Makefile
 	mkdir -p build
 	Rscript \
 		-e "require(knitr)" \
 		-e "knitr::opts_chunk[['set']](fig.path='$(FIGUREDIR)/$*-')" \
 		-e "knitr::opts_chunk[['set']](cache.path='$(CACHEDIR)/$*-')" \
 		-e "knitr::knit('$*.Rnw', output='build/$*.tex')"
-	latexmk -pdf -halt-on-error -output-directory=build build/$*.tex
-	[ -h "$*.pdf" ] || ln -s build/$*.pdf $*.pdf
 
 # extract an R file from an RNoWeb file
 %-purled.R: %.Rnw
