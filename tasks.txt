@@ -1,0 +1,47 @@
+Teoria:
+- Teorema de de Finetti:
+ - caso finito (Diaconis?)
+ - Cadeias de Markov e outros processos (Diaconis1980).
+
+Inferencia:
+- identificabilidade e suficiência
+- olhar o que eu fiz em teoria da decisao que da pra adicionar. Por exemplo, predicao
+- definir e-valor como o menor alpha pro qual o teste por regiao rejeita H0; comparar com pvalor
+- testes que minimizam alpha + beta
+- intervarlos: retirar constantes adicionais inuteis da funcao de perda.
+
+Modelagem (ilustrar falha de conjugacao):
+- aplicacoes mais serias (dados reais)
+- regressao, comparando com minimos quadrados
+- modelo de mistura finita (clustering)
+- bayes nao parametrico (GP)
+
+Computacional:
+- ABC
+- Bayes Variacional
+- SMC
+
+- verificar se exemplos do carlinhos está no degroot
+
+
+- mudar def conjungada para 'todo x'
+
+- lema 4.28 -> mudar x_1
+
+- lemma 4.29 e 4.30: ambos sao necessarios?
+
+- ex beta binomial: interpretar media ponderada
+
+- beta-binomial: add dominio x
+
+- arrumar def 4.32 (multinomial)
+
+- def dirichet: falta indicadora de theta's positivos; hiper parametro: a ao inves de alpha
+
+- conta dirichlet com eleicao
+
+- add explicacao hiperparametro
+
+- arrumar definicao conjugada
+
+- generalizar normal gamma para varios dados

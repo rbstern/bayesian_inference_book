@@ -1,0 +1,1125 @@
+\section{Tomando decisões conscientemente}
+\label{section:decisions}
+
+Você está constantemente tomando decisões.
+Ir ou não ir à próxima aula de Estatística Bayesiana?
+O que comer no jantar?
+Trabalhar ou se divertir?
+Se você pensar com cuidado, 
+geralmente será capaz de identificar
+diversas alternativas para cada uma
+de suas ações.
+A sua ação foi uma decisão
+dentre todas as alternativas possíveis.
+
+Mesmo assim, apesar de sua ação ter alternativas,
+você nem sempre pensa conscientemente sobre
+qual será sua decisão.
+Seja por falta de tempo,
+seja por não conhecer outra forma de fazê-lo,
+muitas vezes você toma decisões intuitivamente,
+alheia aos motivos que tornam a sua escolha
+melhor ou pior do que as alternativas.
+
+Contudo, nossa intuição
+muitas vezes não passaria por
+uma inspeção mais cuidadosa.
+Por exemplo, considere a decisão entre
+comer ou não comer uma barra de chocolate.
+Nós evoluímos de macacos
+em uma guerra permanente para sobreviver à fome.
+Destes mesmos macacos 
+herdamos o impulso de avançar sobre
+a barra de chocolate e comê-la inteira.
+Contudo, a nossa situação é consideravelmente
+diferente da dos macacos.
+Temos maneiras seguras de reservar alimentos
+e ingerí-los mais tarde.
+Para muitos humanos,
+a guerra não é mais sobreviver à fome,
+mas sim à obesidade.
+Portanto, ainda que nosso primeiro impulso seja
+comer a barra de chocolate inteira,
+em muitas situações é possível elaborar argumentos
+que justificariam reservar parte ou a totalidade da
+barra de chocolate para ser comida mais tarde.
+Pensando com cuidado, 
+às vezes você concluirá que a melhor decisão para você
+será diferente de sua intuição inicial.
+
+Neste Capítulo você estudará um processo consciente
+de tomada de decisões.
+Chamaremos este processo de Teoria da Decisão.
+A Teoria da Decisão é dividida em etapas,
+que indicam questões relevantes na tomada de qualquer decisão.
+Quando você completar todas as etapas indicadas,
+a Teoria da Decião sugerirá
+qual ação é a mais proveitosa para você.
+
+\subsection{Elementos da tomada de decisões}
+\label{section:decisions_elements}
+
+A Teoria da decisão lhe indicará qual é a melhor ação
+dentre aquelas que você tem disponíveis.
+Para tal, você terá de especificar determinados elementos,
+detalhados a seguir.
+
+Denotaremos por $\mathcal{A}$ o conjunto de ações ou alternativas
+que você tem disponíveis.
+Essas alternativas deverão ser expressas de tal forma que sejam mutuamente exclusivas,
+ou seja, você somente poderá escolher uma única alternativa.
+Contudo, esta não é uma grande limitação.
+Por exemplo, se você pensar em alternativas $A$ e $B$ que não sejam mutuamente exclusivas,
+poderá obter ``$A \text{ e } B$'',
+``$A \text{ e não } B$'' ,
+``$\text{não } A \text{ e } B$'', e
+``$\text{não } A \text{ e não } B$''
+como alternativas mutuamente exclusivas. Por exemplo, 
+considere que você pode levar um guarda-chuva e 
+uma calculadora à aula de Estatística Bayesiana.
+Ainda que ``levar o guarda-chuva'' e ``levar a calculadora''
+não sejam alternativas mutuamente exclusivas,
+``levar o guarda-chuva e levar a calculadora'',
+``levar o guarda-chuva e não levar a calculadora'',
+``não levar o guarda-chuva e levar a calculadora'', e
+``não levar o guarda-chuva e não levar a calculadora'' o são.
+Sucintamente, denotaremos as alternativas neste exemplo por
+$\mathcal{A} = \{(gc,ca), (gc,\bar{ca}), (\bar{gc},ca), (\bar{gc},\bar{ca})\}$.
+
+É importante que você inclua em $\mathcal{A}$
+todas as alternativas relevantes.
+Se você esquecer de incluir a melhor decisão,
+então o procedimento descrito neste Capítulo
+não será capaz de indicá-la como sendo a melhor decisão.
+De fato, muitas vezes o segredo do protagonista de uma história de sucesso
+foi a capacidade deste de considerar uma alternativa que outros não consideraram.
+A Teoria da Decisão não
+enuncia diretamente qual é $\mathcal{A}$,
+mas reforça a importância de conscientemente analisar com cuidado este aspecto.
+
+Denotamos por $\Theta$ o conjunto de possíveis ocorrências
+que são relevantes para a tomada da sua decisão.
+Similarmente às alternativas possíveis,
+as possibilidades também devem ser
+mutuamente exclusivas e exaustivas. 
+Por exemplo, no caso em que você decide sobre levar o
+guarda-chuva e a calculadora,
+uma variável importante pode ser a
+ocorrência de chuva no dia.
+Assim,  $\Theta$ poderia ser
+o conjunto com os elementos ``chove no dia'', e 
+``não chove no dia''. Denotaremos as
+possibilidades neste exemplo por
+$\Theta = \{ch, \bar{ch}\}$.
+
+Associaremos uma medida de probabilidade, $\P$, a $\Theta$.
+Esta medida indica a plausibilidade que você atribui a cada
+elemento de $\Theta$ no momento da tomada da decisão.
+Note que, caso você tenha observado dados antes
+de tomar a sua decisão, então
+$\P$ será a probabilidade condicionada aos dados,
+a posteriori.
+Suponhamos que você confia no relato metereológico, 
+segundo o qual a probabilidade de chuva é de 10\%.
+Assim, você obteria 
+$\P(\{ch\})=10\%$ e $\P(\{\bar{ch}\})=90\%$.
+
+Finalmente, você atribuirá uma utilidade para
+cada par composto por uma alternativa,
+$a \in \mathcal{A}$ e uma possibilidade,
+$\theta_{0} \in \Theta$.
+Esta utilidade representa o quão é
+desejável para você obter a possibilidade
+$\theta_{0}$ quando você escolheu $a$.
+A utilidade é representada por uma função, 
+$U: \mathcal{A} \times \Theta \rightarrow \mathbb{R}$,
+sendo que $U(a,\theta_{0})$, indica a utilidade da
+ocorrência $\theta_{0}$ tendo decidido por $a$.
+Por exemplo, considere que seu par predileto é
+aquele em que você leva a calculadora e
+não leva o guarda-chuva em um dia sem chuva.
+Também, considere que seu par menos desejado é
+aquele em que você leva a calculadora e
+não leva o guarda-chuva em um dia com chuva.
+Para simplicidade, considere que a utilidade do
+seu par favorito é $1$ e
+a do seu par menos desejado é $0$.
+Assim, para cada um dos demais pares, 
+a utilidade será um número entre $0$ e $1$.
+Neste caso, se a sua utilidade para um
+determinado par é $p$, então
+obter este par será tão desejável quanto
+obter o melhor par com probabilidade $p$
+e o pior par com probabilidade $(1-p)$.
+Quando $\mathcal{A}$ e $\Theta$ são conjuntos finitos,
+$U$ pode ser representado como uma tabela.
+A \cref{table:utilidade} ilustra a utilidade no
+exemplo envolvendo a chuva, o guarda-chuva e
+a calculadora.
+
+\begin{table}
+ \centering
+ \begin{tabular}{|c|c|c|}
+  \hline
+  $\mathcal{A} \backslash \Theta$	& $ch$ & $\bar{ch}$ \\
+  \hline
+  $(gc, ca)$ &	0.5 & 0.9 \\
+  $(gc, \bar{ca})$ & 0.6 & 0.7 \\
+  $(\bar{gc}, ca)$ & 0 & 1 \\
+  $(\bar{gc}, \bar{ca})$ & 0.1 & 0.8 \\
+  \hline
+ \end{tabular}
+ \caption{Utilidade para cada combinação de
+ alternativa em $\mathcal{A}$ e
+ possibilidade em $\Theta$.}
+ \label{table:utilidade}
+\end{table}
+
+\begin{definition}
+ Os elementos de um problema de decisão são:
+ \begin{itemize}
+  \item $\mathcal{A}$: o conjunto das
+  alternativas disponíveis.
+  Você deve escolher exatamente uma destas alternativas.
+  \item $\Theta$: o conjunto de possibilidades que
+  podem ocorrer. Você não escolhe qual
+  destas possibilidades ocorrerá.
+  \item $P$: uma medida de probabilidade sobre $\Theta$.
+  Uma medida do quão plausível é
+  cada possibilidade em $\Theta$.
+  \item $U$: uma função de $\mathcal{A} \times \Theta$ a
+  $\mathbb{R}$ que indica a utilidade de cada par.
+ \end{itemize}
+\end{definition}
+
+\subsection{Avaliando alternativas}
+
+Na \cref{table:utilidade} você encontrará a
+utilidade para cada alternativa e possibilidade em
+um exemplo. Observe que o par favorito é
+$(\bar{gc},ca)$ e $\bar{ch}$, ou seja,
+não trazer o guarda-chuva e trazer a calculadora quando
+não há chuva.
+Assim, se você pudesse garantir que não haveria chuva,
+sua satisfação máxima seria obtida não trazendo o guarda-chuva e trazendo a calculadora.
+Contudo, em geral, não é possível ter certeza sobre qual possibilidade em $\Theta$ ocorrerá.
+Assim, é necessário avaliar qual a alternativa em $\mathcal{A}$ que é mais desejável 
+sem fixar a possibilidade em $\Theta$ que ocorrerá.
+
+A Teoria da decisão fornece uma forma de avaliar a utilidade de uma decisão.
+
+\begin{definition}
+ \label{defn:expected_utility}
+ Considere que, para cada $a \in \mathcal{A}$,
+ $U_{a}:\Theta \rightarrow \mathbb{R}$ é uma variável aleatória tal que
+ $U_{a}(\theta) = U(a,\theta)$. A utilidade de uma alternativa, $a \in \mathcal{A}$, é $\E[U_{a}]$.
+\end{definition}
+
+A \cref{defn:expected_utility} permite que
+você avalie a utilidade de cada
+alternativa disponível sem fixar qual
+possibilidade em $\Theta$ ocorrerá.
+Assim, para achar qual a melhor alternativa,
+basta calcular a utilidade de cada uma delas e escolher
+aquela que atinge a maior utilidade.
+
+\begin{example}
+ \label{example:decision}
+ Considere o Exemplo da seção anterior.
+ Podemos calcular a utilidade de cada
+ alternativa em $\mathcal{A}$
+ usando a \cref{defn:expected_utility}.
+ \begin{align*}
+  \begin{cases}
+   U_{(gc,ca)} &= \P(\{ch\})U((gc,ca), ch) + \P(\bar{ch})U((gc,ca), \bar{ch}) = 0.1 \cdot 0.5 + 0.9 \cdot 0.9 = 0.86 \\
+   U_{(gc,\bar{ca})} &= \P(\{ch\})U((gc,\bar{ca}), ch) + \P(\bar{ch})U((gc,\bar{ca}), \bar{ch}) = 0.1 \cdot 0.6 + 0.9 \cdot 0.7 = 0.69 \\
+   U_{(\bar{gc},ca)} &= \P(\{ch\})U((\bar{gc},ca), ch) + \P(\bar{ch})U((\bar{gc},ca), \bar{ch}) = 0 \cdot 0.5 + 1 \cdot 0.9 = 0.9 \\
+   U_{(\bar{gc},\bar{ca})}	&= \P(\{ch\})U((\bar{gc},\bar{ca}), ch) + \P(\bar{ch})U((\bar{gc},\bar{ca}), \bar{ch}) = 0.1 \cdot 0.1 + 0.9 \cdot 0.8 = 0.73
+  \end{cases}
+ \end{align*}
+ Portanto, no cenário descrito, a melhor decisão é
+ não levar o guarda-chuva e levar a calculadora. 
+\end{example}
+
+Em outros livros \citep{deGroot2005}, 
+a \cref{defn:expected_utility} não é apresentada como
+uma definição.
+É possível obtê-la como uma teorema a partir de
+outras propriedades
+mais elementares envolvendo utilidade.
+Esta técnica é similar àquela que aplicamos para
+obter os axiomas da probabilidade a partir de 
+propriedades sobre apostas.
+Para efeitos deste curso, tomaremos a \cref{defn:expected_utility}
+como um ponto de partida,
+deixando investigações sobre a
+sua razoabilidade por sua conta.
+
+\subsubsection*{Exercícios}
+
+\begin{exercise}
+ Modele o problema de decisão na
+ situação do guarda-chuva, calculadora e chuva
+ usando a sua própria probabilidade e utilidade.
+ Qual a decisão ótima para você?
+\end{exercise}
+
+\begin{exercise}
+ \label{ex:umbrella}
+ Considere que, no \cref{example:decision}, 
+ $\P(\{ch\})=p$.
+ Para cada $p \in [0,1]$,
+ encontre a decisão ótima.
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ Neste caso, teríamos,
+ \begin{align}
+  \label{eqn:umbrella_1}
+  \begin{cases}
+   U_{(gc,ca)} &= 0.5p + 0.9(1-p) \\
+   U_{(gc,\bar{ca})} &= 0.6p + 0.7(1-p)	\\
+   U_{(\bar{gc},ca)} &= (1-p) \\
+   U_{(\bar{gc},\bar{ca})}	&= 0.1p + 0.8(1-p)
+  \end{cases}
+ \end{align}
+ \begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{chapter-decisions-umbrella.pdf}
+  \caption{Utilidade esperada de cada alternativa no
+  \cref{ex:umbrella} em função da probabilidade de chuva.
+  As alternativas são: $1-(gc,ca)$, $2-(gc,\bar{ca})$,
+  $3-(\bar{c},ca)$, $4-(\bar{gc},\bar{ca})$.}
+  \label{fig:umbrella}
+ \end{figure}
+ Observe que a utilidade para cada uma das decisões é
+ uma função linear de $p$.
+ Podemos utilizar o $R$ para visualizar estas funções.
+ A figura \ref{fig:umbrella} apresenta a
+ utilidade esperada de cada uma
+ das alternativas em função de $p$.
+ A reta que está acima de todas as demais progride com
+ o valor de $p$ de
+ $3-(\bar{gc},ca)$, para $1-(gc,ca)$ e, finalmente,
+ para $2-(gc,\bar{ca})$.
+ Assim, se chuva é um evento improvável, a melhor opção é
+ não trazer o guarda-chuva e trazer a calculadora.
+ Quando chuva passa a ser um evento sobre
+ o qual existe mais incerteza,
+ a opção mais moderada, trazer o guarda-chuva e
+ a calculadora, passa a ser a melhor.
+ Finalmente, quando existe uma
+ probabilidade suficientemente grande de que
+ vai haver chuva, a melhor alternativa sob esta condição,
+ levar o guarda-chuva e não a calculadora,
+ passa a ser aquela com maior utilidade esperada.
+ Também note que a reta $1$ está sempre acima da reta $4$.
+ Em outras palavras, levar o guarda-chuva e a calculadora
+ é sempre melhor do que  não levar ambos,
+ não importa qual a ocorrência em $\Theta$.
+
+ Após a inspeção gráfica, podemos determinar exatamente
+ qual a melhor alternativa em $\mathcal{A}$ em
+ função do valor de $p$.
+ Note que a melhor opção é aquela que corresponde à
+ reta acima de todas as outras.
+ Assim, se $p$ está entre $0$ até o ponto em que a reta
+ $3$ encontra a reta $1$, a reta $3$ é a melhor opção.
+ O ponto de encontro das retas pode ser encontrado tomando
+ $U_{(\bar{gc},ca)} = U_{(gc,ca)}$.
+ A partir da \cref{eqn:umbrella_1},
+ este valor de $p$ é encontrado resolvendo
+ \begin{align*}
+  1-p &= 0.5p + 0.9(1-p) \\
+  p = \frac{1}{6}
+ \end{align*}
+ Assim, se $p \in \left[0,\frac{1}{6}\right)$, 
+ a melhor alternativa é $(\bar{gc},ca)$.
+ Também, se $p=\frac{1}{6}$, 
+ as duas melhores opções (empatadas)
+ são $(\bar{gc},ca)$ e $(gc,ca)$.
+ Observamos que, a partir de $p=\frac{1}{6}$,
+ a melhor alternativa é $(gc,ca)$ até o ponto
+ em que a reta $1$ encontra a reta $2$.
+ Este ponto pode ser encontrado tomando
+ $U_{(gc,ca)} = U_{(gc,\bar{ca})}$.
+ A partir da Equação \ref{eqn:umbrella_1},
+ este valor de $p$ é encontrado resolvendo
+ \begin{align*}
+  0.5p + 0.9(1-p) &= 0.6p + 0.7(1-p) \\
+  p = \frac{2}{3}
+ \end{align*}
+ Portanto, se
+ $p \in \left(\frac{1}{6}, \frac{2}{3}\right)$,
+ a melhor alternativa é $(gc, ca)$.
+ Também, se $p=\frac{2}{3}$ as
+ melhores alternativas (empatadas) são
+ $(gc,ca)$ e $(gc,\bar{ca})$.
+ Finalmente, se $p \in \left(\frac{2}{3},1\right]$,
+ então a melhor alternativa é $(gc,\bar{ca})$.
+ A melhor alternativa para cada possível valor de
+ $p$ é resumida na \cref{table:umbrella}.
+ \begin{table}
+  \centering
+  \begin{tabular}{|c|c|c|c|c|c|}
+   \hline
+   $p \in$
+   & $\left[0,\frac{1}{6}\right)$
+   & $\left\{\frac{1}{6}\right\}$
+   & $\left(\frac{1}{6},\frac{2}{3}\right)$
+   & $\left\{\frac{2}{3}\right\}$
+   & $\left(\frac{2}{3},1\right]$ \\
+   \hline
+   $a^{*}$ & $(\bar{gc},ca)$
+   & $(\bar{gc},ca)$ ou $(gc,ca)$
+   & $(gc,ca)$
+   & $(gc,ca)$ ou $(gc,\bar{ca})$
+   & $(gc,\bar{ca})$ \\
+   \hline
+  \end{tabular}
+  \caption{A melhor alternativa, $a^{*} \in \mathcal{A}$,
+  para cada valor de $p$ no \cref{ex:umbrella}.}
+  \label{table:umbrella}
+ \end{table}
+}{}
+
+\begin{exercise}
+ Considere que $\theta \sim \text{Bernoulli}(0.5)$.
+ Suas alternativas são escolher um número real em $[0,1]$.
+ Seja $a$ a sua decisão, sua utilidade é
+ $-(a-\theta)^{2}$. Ou seja, quanto mais próximo de
+ $\theta$, melhor será sua escolha.
+ \begin{enumerate}[label=(\alph*)]
+  \item Indique os elementos do problema de decisão.
+  \item Ache a decisão ótima.
+  \item Se o parâmetro da Bernoulli fosse $p$ ao
+  invés de $0.5$, qual seria a decisão ótima?
+  \item No caso acima,
+  se sua utilidade fosse $-|a-\theta|$,
+  qual seria a decisão ótima?
+  \item Interprete o resultado anterior.
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item
+  \begin{align*}
+   \begin{cases}
+    \mathcal{A} = [0,1]
+    &: \text{os números dentre os quais você
+    pode escolher.} \\
+    \Theta = \{0,1\}
+    &: \text{os possíveis valores de $\theta$.} \\
+    \P(\theta=0)=\P(\theta=1)=0.5 \\
+    U(a,\theta) = -(a-\theta)^{2}
+   \end{cases}
+  \end{align*}
+  \item Para cada a $\in [0,1]$,
+  \begin{align*}
+   \E[U_{a}]
+   &=\P(\theta=0)U(a,0) +\P(\theta=1)U(a,1) \\
+   &= 0.5 \cdot -(a-0)^{2} + 0.5 \cdot -(a-1)^{2} \\
+   & =-a^{2} + a -0.5
+  \end{align*}
+  Esta equação do $2^{o}$ grau é
+  maximizada no ponto $a^{*}=0.5$.
+  Portanto, a alternativa com a maior
+  utilidade esperada é $0.5$
+  e, segundo, a \cref{defn:expected_utility}, 
+  esta é a melhor alternativa.
+  \item Similarmente ao caso anterior,
+  para cada valor de $p$ e $a$, obtemos
+  \begin{align*}
+   \E[U_{a}]
+   &=\P(\theta=0)U(a,0) +\P(\theta=1)U(a,1) \\
+   &= (1-p) \cdot -(a-0)^{2} + p \cdot -(a-1)^{2} \\
+   &= -a^{2} + 2pa -p
+  \end{align*}
+  Portanto, a decisão que maximiza a utilidade 
+  esperada é $a=p$. Segundo a
+  \cref{defn:expected_utility}, esta é
+  a melhor decisão.
+ 
+  Alternativamente, observe que
+  \begin{align*}
+   \E[U_{a}] &= \E[-(\theta-a)^{2}] \\
+   &= -\V[\theta-a] -(\E[\theta]-a)^{2}	\\
+   &= -\V[\theta] -(\E[\theta]-a)^{2}
+  \end{align*}
+  Como $\V[\theta]$ é uma constante (em $a$),
+  a decisão que maximiza a utilidade esperada é
+  aquela que maximiza $-(\E[\theta]-a)^{2}$, ou seja
+  $\E[\theta]=p$.
+  \item Neste caso, temos
+  \begin{align*}
+   \E[U_{a}] &= \E[-|\theta-a|] \\
+   &= -|0-a|\P(\theta=0) -|1-a|\P(\theta=1) \\
+   &= -a(1-p) + (-1+a)p \\
+   &= a(2p-1)-p 
+  \end{align*}
+  Note que $\E[U_{a}]$ é uma reta em função de $a$.
+  Se $2p-1$ for positivo, ou seja $p > \frac{1}{2}$,
+  então esta reta é crescente e é maximizada em $a=1$.
+  Se $2p-1$ for negativo, ou seja, $p < \frac{1}{2}$,
+  então esta reta é decrescente e é maximizada em $a=0$.
+  Finalmente, a reta é constante em $-p$ e
+  todas as alternativas são igualmente desejáveis.
+  Assim, se $p < \frac{1}{2}$, a melhor alternativa é $0$,
+  se $p = \frac{1}{2}$, todas as alternativas são
+  igualmente desejáveis e,
+  se $p > \frac{1}{2}$ a melhor alternativa é $1$.
+ \end{enumerate}
+}{}
+
+\begin{exercise}[\citep{Hacking1972}]
+ Em um dos primeiros usos documentados da
+ Teoria da Decisão, Blaise Pascal argumentou sobre o
+ porquê uma pessoa deve acreditar em Deus.
+ Segundo Pascal, caso Deus exista e você acredite nele,
+ sua recompensa será infinita.
+ Similarmente, Pascal argumenta que, 
+ se Deus existe e você não acredita nele,
+ sua punição será infinita.
+ Finalmente, Pascal completa que,
+ caso Deus não exista,
+ sua utilidade será finita.
+ Destas premissas Pascal argumenta que,
+ por menor que seja a plausibilidade da existência de Deus,
+ sua melhor alternativa é acreditar nele.
+ \begin{enumerate}[label=(\alph*)]
+  \item Identifique os elementos de um
+  problema de decisão na aposta de Pascal.
+  \item Acompanhe o argumento de Pascal.
+  Supondo que suas premissas sejam verdadeiras,
+  a sua conclusão está de acordo com a
+  Teoria da Decisão?
+  \item Você acha que as premissas de Pascal
+  são razoáveis?
+ \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[\citet{Kadane2011}][p.290]]
+ Considere que você tem $R\$kx$.
+ sua utilidade para ter $R\$f$ é $\log(f)$.
+ O custo de uma aposta em $A$ é $x$.
+ Se você comprar a aposta,
+ caso $A$ ocorra, você ganha $R\$1$ e,
+ caso $A$ não ocorra, você ganha $R\$0$.
+ Você acredita que $P(A) = p$.
+ Se você pode comprar quantas unidades da
+ aposta você quiser, qual valor
+ lhe traria maior satisfação?
+\end{exercise}
+
+\begin{exercise}[\citet{Kadane2011}][p.275]]
+ Considere que você deve decidir entre
+ participar ou não de uma aposta.
+ Para participar da aposta, 
+ você deve pagar $R\$a$.
+ A seguir, uma moeda honesta é lançada até a
+ primeira ocorrência de cara. Seja $X$ o
+ número de lançamentos da moeda,
+ sua recompensa é $R\$2^{X}$.
+ Considere que sua utilidade é o seu ganho monetário,
+ caso você participe da aposta, e $0$, caso contrário.
+ \begin{enumerate}[label=(\alph*)]
+  \item Qual é o maior valor de $R\$a$ tal que
+  a melhor opção é participar da aposta?
+  \item A conclusão acima é razoável?
+  Você concorda com todos os elementos
+  do problema de decisão descritos no problema?
+  \item Como a sua resposta para o item (a) seria
+  alterada caso sua utilidade para
+  um ganho monetário, $m$, seja
+  \begin{align*}
+   U(m)	&=
+   \begin{cases}
+    \log(m) & \text{, se $m > 0$} \\
+    0 & \text{, se $m = 0$} \\
+    -\log(-m) & \text{, se $m < 0$}
+   \end{cases}
+  \end{align*}
+ \end{enumerate}
+\end{exercise}
+
+\subsection{Usando dados para avaliar alternativas}
+
+Na \cref{section:decisions_elements},
+analisamos os elementos de um problema de decisão.
+Em todos os exemplos que estudamos nesta seção,
+uma decisão era tomada sem consultar dados.
+Em outras palavras, a decisão era tomada utilizando
+apenas a informação que era conhecida \emph{a priori}
+a respeito de $\theta$.
+
+Agora estudaremos o problema de tomada de
+decisões  a partir de dados.
+Veremos que este tipo de problema
+pode ser tratado igualmente a
+um problema de decisão sem dados.
+Assim, as conclusões obtidas nas seções anteriores
+ainda serão válidas neste tipo de problema.
+Iniciamos nossa análise definindo os elementos de um 
+problema de decisão com dados.
+
+\begin{itemize}
+ \item $X \in \chi$: uma quantidade desconhecida que
+ expressa os dados que serão observados.
+ Os dados assumem valores em $\chi$.
+ \item $\theta \in \Theta$: uma quantidade desconhecida
+ que é relevante para a tomada de decisões.
+ \item $\P$: uma medida de probabilidade conjunta sobre
+ $(X,\theta)$.
+ \item $\mathcal{A}$: o conjunto de
+ alternativas disponíveis para o tomador de decisão.
+ No caso de um problema de decisão com dados, as
+ alternativas são funções que, para cada
+ dado observado, indicam qual decisão será tomada.
+ Mais formalmente, existe um conjunto de
+ alternativas simples, $\mathcal{A}_{*}$,
+ e $\mathcal{A} = \{f(x): \chi \rightarrow \mathcal{A}_{*}\}$.
+ \item $U: \mathcal{A}_{*} \times \Theta \rightarrow \mathbb{R}$:
+ a utilidade de cada alternativa em $\mathcal{A}_{*}$
+ combinada a cada possibilidade em $\Theta$.
+\end{itemize}
+
+\begin{example}
+ \label{ex:guarda-chuva-dados}
+ Todo dia antes de sair de casa,
+ eu decido se colocarei meu guarda-chuva em minha mochila.
+ A princípio, eu acho que a
+ probabilidade de chuva é de 20\%.
+ Contudo, antes de tomar uma decisão,
+ eu consulto a previsão do tempo.
+ Eu acredito que a probabilidade de a
+ previsão do tempo estar correta é de 90\%.
+ Caso não chova e eu não leve meu guarda-chuva,
+ eu ficarei maximamente satisfeito, 
+ atribuindo utilidade $1$ a esse resultado.
+ Caso chova e eu não leve meu guarda-chuva,
+ eu ficarei minimamente satisfeito, 
+ atribuindo utilidade $0$ a esse resultado.
+ Caso chova e eu leve meu guarda-chuva, 
+ a utilidade será $0.6$.
+ Finalmente, caso não chova e 
+ eu leve meu guarda-chuva, 
+ a utilidade é $0.9$.
+
+ Posso traduzir a descrição acima em 
+ um problema de decisão com dados:
+ \begin{itemize}
+  \item $X \in \{0,1\}:$ 
+  a indicadora de que há uma previsão de chuva.
+  \item $\theta \in \{0,1\}:$ 
+  a indicadora de ocorrência de chuva no dia.
+  \item $P$: a função de probabilidade conjunta de
+  $(\theta,X)$ obtida da seguinte forma:
+  \begin{align*}
+   \begin{cases}
+    \P(\theta=0,X=0)	
+    &= \P(\theta=0)\P(X=0|\theta=0)
+    = 0.8 \cdot 0.9 = 0.72 \\
+	\P(\theta=0,X=1)	
+    &= \P(\theta=0)\P(X=1|\theta=0) 
+    = 0.8 \cdot 0.1 = 0.08 \\
+	\P(\theta=1,X=0)	
+    &= \P(\theta=1)\P(X=0|\theta=1) 
+    = 0.2 \cdot 0.1 = 0.02 \\
+	P(\theta=1,X=1)	
+    &= \P(\theta=1)\P(X=1|\theta=1) 
+    = 0.2 \cdot 0.9 = 0.18
+   \end{cases}
+  \end{align*}
+  \item $\mathcal{A}$: 
+  O conjunto de funções que 
+  tomam a decisão de levar ou 
+  não levar o guarda-chuva para
+  cada possível previsão do tempo.
+  Denote ``levar o guarda-chuva'' por ``$g$'' e
+  ``não levar o guarda-chuva'' por ``$\bar{g}$''.
+  Como existem $2$ previsões possíveis e 
+  2 decisões para cada previsão,
+  existe um total de $4$ destas funções.
+  Mais precisamente, $\mathcal{A} = \{\delta: \{0,1\} \rightarrow \{g,\bar{g}\}\}$.
+  O conjunto de alternativas é descrito 
+  na tabela \ref{ex:chuva-dados}.
+  Estas alternativas podem ser interpretadas 
+  em linguagem comum.
+										
+  $\delta_{1}$ nunca leva o guarda-chuva.
+										
+  $\delta_{2}$ leva o guarda-chuva se 
+  é previsto chuva e não leva, caso contrário.
+  
+  $\delta_{3}$ leva o guarda-chuva se é previsto
+  não haver chuva e não leva, caso contrário.
+  
+  $\delta_{4}$ sempre leva o guarda-chuva.
+  \begin{table}
+   \centering
+   \begin{tabular}{|c|l|l|}
+    \hline
+    alternativa & $X=0$ & $X=1$ \\
+	\hline
+	$\delta_{1}$ & $\bar{g}$ & $\bar{g}$ \\
+	$\delta_{2}$ & $\bar{g}$ & $g$ \\
+	$\delta_{3}$ & $g$ & $\bar{g}$ \\
+	$\delta_{4}$ & $g$ & $g$ \\
+	\hline
+   \end{tabular}
+   \caption{Descrição de cada alternativa em
+   $\mathcal{A}$, ou seja,
+   $\delta_{1}, \delta_{2}, \delta_{3}$ e 
+   $\delta_{4}$. Cada alternativa é 
+   descrita indicando a decisão simples que
+   é tomada para cada possível valor 
+   observado de $X$.}
+   \label{ex:chuva-dados}
+  \end{table}
+  \item $U(0,0) = 1$, 
+  $U(0,1) = 0$, $U(1,0) = 0.9$, $U(0,1) = 0.6$.	 
+ \end{itemize}
+\end{example}
+
+Os elementos de um problema de decisão com dados
+são semelhantes àqueles existentes em um problema de decisão sem dados.
+As únicas diferenças são a adição de um novo elemento
+representando os dados, $X$, e 
+a extensão da probabilidade para também incluir os dados.
+Assim, no contexto em que temos dados,
+a melhor alternativa ainda é aquela que
+apresenta a melhor utilidade esperada.
+
+\begin{example}[continuação do \cref{ex:guarda-chuva-dados}]
+ \label{ex:guarda-chuva-dados-2}
+ Existem quatro alternativas em $\mathcal{A}$,
+ conforme descrito na tabela \ref{ex:chuva-dados}.
+ Assim, para determinar qual a melhor delas,
+ podemos calcular a utilidade esperada de cada uma delas.
+ \begin{align*}
+  \E[U_{\delta_{i}}]
+  &= \E[U(\delta_{i}(X),\theta)] \\
+  &= \sum_{\theta_{0}=0}^{1}{\sum_{x=0}^{1}{U(\delta_{i}(x),\theta_{0})P(\theta=\theta_{0},X=x)}} \\
+ \end{align*}
+ \begin{align*}
+  \E[U_{\delta_{1}}]
+  =& U(\delta_{1}(0),0)\P(\theta=0,X=0)
+  +U(\delta_{1}(0),1)\P(\theta=0,X=1) +	\\
+  & U(\delta_{1}(1),0)\P(\theta=1,X=0)
+  + U(\delta_{1}(1),1)\P(\theta=1,X=1) \\
+  =& U(\bar{g},0)\P(\theta=0,X=0)+ 
+  U(\bar{g},0)\P(\theta=0,X=1) + \\
+  & U(\bar{g},1)\P(\theta=1,X=0) +
+  U(\bar{g},1)\P(\theta=1,X=1) \\
+  =& 1 \cdot 0.72 + 1 \cdot 0.08
+  + 0 \cdot 0.02 + 0 \cdot 0.18 = 0.8
+ \end{align*}
+ \begin{align*}
+  \E[U_{\delta_{2}}]
+  =& U(\delta_{2}(0),0)\P(\theta=0,X=0)
+  + U(\delta_{2}(0),1)\P(\theta=0,X=1) + \\
+  & U(\delta_{2}(1),0)\P(\theta=1,X=0) +
+  U(\delta_{2}(1),1)\P(\theta=1,X=1) \\
+  =& U(\bar{g},0)\P(\theta=0,X=0)
+  + U(g,0)\P(\theta=0,X=1) + \\
+  & U(\bar{g},1)\P(\theta=1,X=0) +
+  U(g,1)\P(\theta=1,X=1) \\
+  =& 1 \cdot 0.72 + 0.9 \cdot 0.08
+  + 0 \cdot 0.02 + 0.6 \cdot 0.18 = 0.9
+ \end{align*}
+ \begin{align*}
+  \E[U_{\delta_{3}}]
+  =& U(\delta_{3}(0),0)\P(\theta=0,X=0)
+  + U(\delta_{3}(0),1)\P(\theta=0,X=1) + \\
+  & U(\delta_{3}(1),0)\P(\theta=1,X=0) +
+  U(\delta_{3}(1),1)\P(\theta=1,X=1) \\
+  =& U(g,0)\P(\theta=0,X=0) +
+  U(\bar{g},0)\P(\theta=0,X=1) + \\
+  & U(g,1)\P(\theta=1,X=0) +
+  U(\bar{g},1)\P(\theta=1,X=1) \\
+  =& 0.9 \cdot 0.72 + 1 \cdot 0.08
+  + 0.6 \cdot 0.02 + 0 \cdot 0.18 = 0.72
+ \end{align*}
+ \begin{align*}
+  \E[U_{\delta_{4}}]
+  =& U(\delta_{4}(0),0)\P(\theta=0,X=0) +
+  U(\delta_{4}(0),1)\P(\theta=0,X=1) + \\
+  & U(\delta_{4}(1),0)\P(\theta=1,X=0) +
+  U(\delta_{4}(1),1)\P(\theta=1,X=1) \\
+  =& U(g,0)\P(\theta=0,X=0) +
+  U(g,0)\P(\theta=0,X=1) + \\
+  & U(g,1)\P(\theta=1,X=0) +
+  U(g,1)\P(\theta=1,X=1) \\
+  =& 0.9 \cdot 0.72 + 0.9 \cdot 0.08
+  + 0.6 \cdot 0.02 + 0.6 \cdot 0.18 = 0.84
+ \end{align*}
+ Como $\E[U_{\delta_{2}}] > \E[U_{\delta_{4}}] > \E[U_{\delta_{1}}] > \E[U_{\delta_{2}}]$,
+ decorre da \cref{defn:expected_utility} que as 
+ alternativas são ordenadas de melhor para
+ pior da seguinte forma:
+ $\delta_{2}, \delta_{4}, \delta_{1}$ e $\delta_{3}$.
+ Esta ordenação segue nossa intuição.
+ Como a previsão do tempo é precisa,
+ a melhor alternativa é tomar a decisão de
+ acordo com a previsão do tempo.
+ Em seguida, o melhor é sempre levar o guarda-chuva.
+ Isto ocorre pois existe uma penalidade pequena em
+ levar o guarda-chuva quando não chove.
+ A seguir, temos a alternativa de nunca
+ levar o guarda-chuva.
+ Finalmente, a pior alternativa é tomar a
+ decisão em linha oposta à previsão do tempo.
+\end{example}
+
+Calcular a utilidade esperada para cada uma das alternativas em $\mathcal{A}$
+pode exigir um número considerável de cálculos.
+O número de alternativas disponíveis é
+$|\mathcal{A}| = |\mathcal{A}_{*}|^{|\chi|}$. 
+A seguir, veremos que é possível descobrir a melhor alternativa sem realizar estas contas.
+Esta conclusão é dada pelo seguinte Teorema:
+
+\begin{theorem}
+ \label{theorem:extensive-form}
+ Seja $\delta^{*} \in \mathcal{A}$ a alternativa com a
+ maior utilidade esperada em um
+ problema de decisão com dados.
+ Ou seja, $\delta^{*} = \arg\max_{\delta \in \mathcal{A}}\E[U_{\delta}]$.
+ $\delta^{*}$ é tal que, para cada $x \in \chi$,
+ \begin{align*}
+  \delta^{*}(x)
+  &= \arg\max_{a \in \mathcal{A}_{*}}\E[U_{a}|X=x] \\
+  &= \arg\max_{a \in \mathcal{A}_{*}}\int_{\Theta
+  }{U(a,\theta)f(\theta|x)d\theta}
+ \end{align*}
+\end{theorem}
+
+\begin{proof}
+ Seja $\delta^*$ tal que,  
+ $\delta^{*}(x) = \arg\max_{a \in \mathcal{A}_{*}}\E[U_{a}|X=x]$.
+ Assim, para todo $\delta \in \mathcal{A}^*$,
+ \begin{align*}
+  \E[U(\delta,\theta)|X=x]
+  &\leq \E[U(\delta^*,\theta)|X=x] \\
+  \E[U(\delta,\theta)|X]
+  &\leq \E[U(\delta^*,\theta)|X] \\
+  \E[\E[U(\delta,\theta)|X]
+  &\leq \E[U(\delta^*,\theta)|X]] \\
+  \E[U(\delta,\theta)]
+  &\leq \E[U(\delta^*,\theta)] \\
+  U(\delta) &\leq U(\delta^*)
+ \end{align*}
+\end{proof}
+
+Em palavras, o \cref{theorem:extensive-form} indica que
+a melhor alternativa em um problema com dados é
+tal que, para cada dado observado, ela escolhe a
+alternativa simples com a melhor utilidade esperada
+\emph{a posteriori}. Observe que, para determinar a
+decisão ótima, o \cref{theorem:extensive-form} exige que
+seja calculada uma utilidade esperada para cada
+combinação de alternativa simples e possível dado observado. Assim, enquanto o cálculo direto
+realizado no \cref{ex:guarda-chuva-dados}
+exige $|\mathcal{A}_{*}|^{|\chi|}$ utilidades esperadas,
+o cálculo proposto no \cref{theorem:extensive-form} exige
+$|\mathcal{A}_{*}||\chi|$ utilidades esperadas.
+A redução de um fator exponencial em $|\chi|$ para um
+fator multiplicativo pode tornar a determinação da
+alternativa ótima mais simples.
+A seguir, usaremos o \cref{ex:guarda-chuva-dados} para 
+ilustrar uma aplicação do \cref{theorem:extensive-form}.
+
+\begin{example}[continuação do \cref{ex:guarda-chuva-dados}]
+ Podemos calcular a probabilidade a posteriori para cada
+ possível observação:
+ \begin{align*}
+  \P(\theta=1|X=0)
+  &= \frac{\P(\theta=1,X=0)}
+  {\P(\theta=1,X=0) + \P(\theta=0,X=0)}
+  = \frac{0.02}{0.02 + 0.72} \approx 0.03 \\
+  \P(\theta=1|X=1)
+  &= \frac{\P(\theta=1,X=1)}
+  {\P(\theta=1,X=1) + \P(\theta=0,X=1)}
+  = \frac{0.18}{0.18 + 0.08} \approx 0.69 \\
+ \end{align*}
+ A seguir, podemos calcular a decisão ótima para
+ cada possível valor de $X$. Para $X=0$, temos:
+ \begin{align*}
+  \E[U_{\bar{g}}|X=0]
+  &= U(\bar{g},0)\P(\theta=0|X=0) +
+  U(\bar{g},1)\P(\theta=1|X=0) \\
+  &\approx 1 \cdot 0.97 + 0 \cdot 0.03 = 0.97 \\
+  \E[U_{g}|X=0]
+  &= U(g,0)\P(\theta=0|X=0) + U(g,1)\P(\theta=1|X=0) \\
+  &\approx 0.9 \cdot 0.97 + 0.6 \cdot 0.03 \approx 0.89\\
+ \end{align*}
+ Portanto, como $\E[U_{\bar{g}}|X=0] > \E[U_{g}|X=0]$, 
+ $$\delta^{*}(0) = \bar{g}$$
+ Para $X=1$, temos:
+ \begin{align*}
+  \E[U_{\bar{g}}|X=1]
+  &= U(\bar{g},0)\P(\theta=0|X=1)
+  +U(\bar{g},1)\P(\theta=1|X=1) \\
+  &\approx 1 \cdot 0.31 + 0 \cdot 0.69 = 0.31 \\
+  \E[U_{g}|X=1]
+  &= U(g,0)\P(\theta=0|X=1)
+  +U(g,1)\P(\theta=1|X=1) \\
+  &\approx 0.9 \cdot 0.31 + 0.6 \cdot 0.69
+  \approx 0.69 \\				
+ \end{align*}
+ Portanto, como $\E[U_{g}|X=1] > \E[U_{\bar{g}}|X=1]$, 
+ $$\delta^{*}(1) = g$$
+ Juntando as conclusões obtidas, 
+ temos que $\delta^{*}(0) = \bar{g}$ e
+ $\delta^{*}(1) = g$, ou seja,
+ $\delta^{*} = \delta_{2}$.
+ Obtivemos a mesma alternativa ótima encontrada no
+ \cref{ex:guarda-chuva-dados-2},
+ tal qual preconizado pelo
+ \cref{theorem:extensive-form}.
+\end{example}
+
+ Nas próximas Seções redescreveremos tradicionais
+ problemas da Teoria Estatística a partir da
+ Teoria da Decisão.
+ Os problemas que discutiremos serão:
+ Estimação, Intervalos de Confiança e Testes de Hipótese.
+ Veremos que todos estes problemas podem ser descritos
+ como um problema de decisão.
+ Assim, as suas respectivas análises estatísticas
+ podem ser obtidas diretamente a partir dos resultados
+ que obtivemos nesta Seção.
+
+\subsubsection*{Exercícios}
+
+\begin{exercise}
+ Modele o problema do \cref{ex:guarda-chuva-dados}
+ utilizando suas próprias probabilidades e utilidades.
+ Qual a melhor alternativa para você?
+\end{exercise}
+
+\begin{exercise}
+ Considere que no \cref{ex:guarda-chuva-dados},
+ a probabilidade \emph{a priori} de chuva é $p \in (0,1)$.
+ Ache a melhor alternativa para cada possível
+ valor de $p$.
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ Podemos calcular a probabilidade a posteriori para
+ cada possível observação:
+ \begin{align*}
+  \P(\theta=1|X=0)
+  &= \frac{\P(\theta=1,X=0)}
+  {\P(\theta=1,X=0) + \P(\theta=0,X=0)}
+  = \frac{0.1p}{0.1p + 0.9(1-p)} = \frac{p}{9-8p} \\
+  \P(\theta=1|X=1)
+  &= \frac{\P(\theta=1,X=1)}
+  {\P(\theta=1,X=1) + \P(\theta=0,X=1)}
+  = \frac{0.9p}{0.9p + 0.1(1-p)} = \frac{9p}{1+8p} \\
+ \end{align*}
+ A seguir, podemos calcular a decisão ótima para
+ cada possível valor de $X$.
+ Para $X=0$, temos:
+ \begin{align*}
+  \E[U_{\bar{g}}|X=0]
+  &= U(\bar{g},0)\P(\theta=0|X=0)
+  +U(\bar{g},1)\P(\theta=1|X=0) \\
+  &= 1 \cdot \frac{9-9p}{9-8p} + 0 \cdot \frac{p}{9-8p}
+  = \frac{9-9p}{9-8p} \\
+  \E[U_{g}|X=0]
+  &= U(g,0)\P(\theta=0|X=0) 
+  +U(g,1)\P(\theta=1|X=0) \\
+  &= 0.9 \cdot \frac{9-9p}{9-8p}
+  +0.6 \cdot \frac{p}{9-8p}
+  = \frac{8.1-7.5p}{9-8p} \\
+ \end{align*}
+ Portanto, $\E[U_{\bar{g}}|X=0] > \E[U_{g}|X=0]$
+ se e somente se
+ \begin{align*}
+  \frac{9-9p}{9-8p}
+  &> \frac{8.1-7.5p}{9-8p} \\
+  p &< \frac{3}{5} 
+ \end{align*}
+ Assim, decorre do \cref{theorem:extensive-form} que 
+ a decisão ótima, $\delta^{*}$, é tal que
+ \begin{align*}
+  \delta^{*}(0)	&=
+  \begin{cases}
+   \bar{g} & \text{, se $p < \frac{3}{5}$} \\
+   g & \text{, se $p > \frac{3}{5}$}
+  \end{cases}
+ \end{align*}
+ 
+ Para $X=1$, temos:
+ \begin{align*}
+  \E[U_{\bar{g}}|X=1]
+  &= U(\bar{g},0)\P(\theta=0|X=1)
+  +U(\bar{g},1)\P(\theta=1|X=1) \\
+  &= 1 \cdot \frac{1-p}{1+8p} +0 \cdot \frac{9p}{1+8p}
+  = \frac{1-p}{1+8p} \\
+  \E[U_{g}|X=1]
+  &= U(g,0)\P(\theta=0|X=1)
+  +U(g,1)\P(\theta=1|X=1) \\
+  &= 0.9 \cdot \frac{1-p}{1+8p}
+  + 0.6 \cdot \frac{9p}{1+8p}
+  = \frac{0.9+4.5p}{1+8p}							
+ \end{align*}
+ Portanto, $\E[U_{\bar{g}}|X=1] > \E[U_{g}|X=1]$
+ se e somente se
+ \begin{align*}
+  \frac{1-p}{1+8p} &> \frac{0.9+4.5p}{1+8p}	\\
+  p &< \frac{1}{55}
+ \end{align*} 
+ Assim, decorre do \cref{theorem:extensive-form} que 
+ a decisão ótima, $\delta^{*}$, é tal que
+ \begin{align*}
+  \delta^{*}(1)	&=
+  \begin{cases}
+   \bar{g} & \text{, se $p < \frac{1}{55}$} \\
+   g & \text{, se $p > \frac{1}{55}$}
+  \end{cases}
+ \end{align*}
+}{}
+
+%aqui
+\begin{exercise}
+ Considere que $\theta \sim \text{Bernoulli}(0.5)$.
+ Você observará um dado $X \in \{0,1\}$ tal que,
+ $X|\theta \sim \text{Bernoulli}\left(\frac{2\theta+1}{4}\right)$.
+ Para cada possível dado observado,
+ você deve escolher um número real em $[0,1]$.
+ Seja $a$ a sua decisão, sua utilidade é
+ $-(a-\theta)^{2}$. Ou seja, quanto mais próximo de
+ $\theta$, melhor será sua escolha.
+ \begin{enumerate}[label=(\alph*)]
+  \item Indique os elementos do problema de decisão.
+  \item Ache a decisão ótima.
+  \item Se o parâmetro da Bernoulli fosse
+  $p$ ao invés de $0.5$, qual seria a decisão ótima?
+  \item No caso acima, se sua utilidade fosse
+  $-|\theta-a|$, qual seria a decisão ótima?
+  \item Interprete os resultados anteriores.
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item 
+  \begin{align*}
+   \begin{cases}
+    \theta & \text{ uma quantidade desconhecida, }
+    \theta \in \{0,1\} \\
+    X & \text{ o dado obtido, }
+    X \in \{0,1\}\ \\
+    \mathcal{A}_{*} =& [0,1] \\
+    \mathcal{A} 
+    =& \{f:\{0,1\} \rightarrow \mathcal{A}_{*}\} \\
+    \P(\theta=\theta_{0},X=x)
+    =& 0.5 \left(\frac{1+2\theta_{0}}{4}\right)^{x}\left(\frac{3-2\theta_{0}}{4}\right)^{1-x}\\
+    U(a,\theta) =& -(a-\theta)^{2}
+   \end{cases}
+  \end{align*}
+  \item 
+  \begin{align*}
+   \P(\theta=1|X=0)
+   &= \frac{\P(\theta=1,X=0)}
+   {\P(\theta=0,X=0)+\P(\theta=1,X=0)}
+   = \frac{0.5 \cdot \frac{1}{4}}{0.5 \cdot \frac{3}{4} + 0.5 \cdot \frac{1}{4}} = \frac{1}{4} \\
+   \P(\theta=1|X=1)
+   &= \frac{\P(\theta=1,X=1)}
+   {\P(\theta=0,X=1)+\P(\theta=1,X=1)}
+   = \frac{0.5 \cdot \frac{3}{4}}{0.5 \cdot \frac{1}{4} + 0.5 \cdot \frac{3}{4}} = \frac{3}{4}
+  \end{align*}
+  Assim, temos que
+  \begin{align*}
+   \E[U_{a}|X=0]
+   &=\E[-(a-\theta)^{2}|X=0] \\
+   &= -a^{2}\P(\theta=0|X=0)
+   -(1-a)^{2}\P(\theta=1|X=0) \\
+   &= -\frac{3a^{2}}{4} - \frac{(1-a)^{2}}{4} \\
+   &= -\frac{4a^{2}-2a+1}{4}
+  \end{align*}
+  \begin{align*}
+   \E[U_{a}|X=1]
+   &= \E[-(a-\theta)^{2}|X=1] \\
+   &= -a^{2}\P(\theta=0|X=1)
+   -(1-a)^{2}\P(\theta=1|X=1) \\
+   &= -\frac{a^{2}}{4} - \frac{3(1-a)^{2}}{4} \\
+   &= -\frac{4a^{2}-6a+3}{4}
+  \end{align*}
+  Portanto, $\arg\max_{a}\E[U_{a}|X=0]=\frac{1}{4}$ e
+  $\arg\max_{a}\E[U_{a}|X=1]=\frac{3}{4}$.
+  Assim, decorre do \cref{theorem:extensive-form} que
+  a melhor alternativa é $\delta^{*}$ tal que
+  $\delta^{*}(0) = \frac{1}{4}$ e
+  $\delta^{*}(1) = \frac{3}{4}$.
+  
+  \item Observe que
+  \begin{align*}
+   \E[U_{a}|X]
+   &= \E[-(\theta-a)^{2}|X] \\
+   &= -\V[\theta-a|X]-|\E[\theta|X]-a|^{2} \\
+   &= -\V[\theta] -|\E[\theta|X]-a|^{2}
+  \end{align*}
+  Portanto, como $\V[\theta]$ não depende de $a$,
+  $\E[U_{a}|X]$ é maximizado tomando-se
+  $a=\E[\theta|X]$.
+  \begin{align*}
+   \E[\theta|X=0] &= 1 \cdot \P(\theta=1|X=0) \\
+   &= \frac{\P(\theta=1,X=0)}
+   {\P(\theta=0,X=0)+\P(\theta=1,X=0)} \\
+   &= \frac{p \cdot \frac{1}{4}}{p \cdot \frac{1}{4} + (1-p) \cdot \frac{3}{4}} = \frac{p}{3-2p} \\
+   \E[\theta|X=1] &= 1 \cdot \P(\theta=1|X=1) \\
+   &= \frac{\P(\theta=1,X=1)}
+   {\P(\theta=0,X=1)+\P(\theta=1,X=1)} \\
+   &= \frac{p \cdot \frac{3}{4}}{p \cdot \frac{3}{4} + (1-p) \cdot \frac{1}{4}} = \frac{3p}{1+2p}
+  \end{align*}
+  Assim, decorre do \cref{theorem:extensive-form} que
+  a melhor alternativa, $\delta^{*}$, é tal que
+  $\delta^{*}(0)=\frac{p}{3-2p}$ e
+  $\delta^{*}(1)=\frac{3p}{1+2p}$.
+  
+  \item Observe que
+  \begin{align*}
+   \E[U_{a}|X]
+   &= \E[-|\theta-a||X] \\
+   &= -a\P(\theta=0|X) -(1-a)\P(\theta=1|X) \\
+   &= -\P(\theta=1|X)
+   +a(\P(\theta=1|X)-\P(\theta=0|X)) \\
+   &= -\P(\theta=1|X) +a(2\P(\theta=1|X)-1)
+  \end{align*}
+  Portanto, $\E[U_{a}|X]$ é uma função linear de $a$ e
+  é maximizada em $0$, se $2\P(\theta=1|X)-1 < 0$,
+  em $1$, se $2\P(\theta=1|X)-1 > 0$, e
+  em qualquer valor em $[0,1]$, se 
+  $2\P(\theta=1|X)-1=0$.
+  \begin{align*}
+   2\P(\theta=1|X=0)-1 &> 0 \\
+   \frac{2p}{3-2p}-1 &> 0 \\
+   p &> \frac{3}{4}
+  \end{align*}
+  \begin{align*}
+   2\P(\theta=1|X=1)-1 &> 0 \\
+   \frac{6p}{1+2p}-1 &> 0 \\
+   p &> \frac{1}{4}
+  \end{align*}
+  Portanto, decorre do \cref{theorem:extensive-form} que
+  a melhor alternativa, $\delta^{*}$, é tal que:
+  \begin{align*}
+   \delta^{*}(0) &=
+   \begin{cases}
+    0 & \text{, se $p < \frac{3}{4}$} \\
+    1 & \text{, se $p > \frac{3}{4}$}
+   \end{cases}
+  \end{align*}
+  \begin{align*}
+   \delta^{*}(1) &=
+   \begin{cases}
+    0 & \text{, se $p < \frac{1}{4}$} \\
+    1 & \text{, se $p > \frac{1}{4}$}
+   \end{cases}
+  \end{align*}
+ \end{enumerate}
+}{}
+

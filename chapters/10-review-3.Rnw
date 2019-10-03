@@ -1,0 +1,12 @@
+\section{Revisão final}
+
+\begin{exercise}
+ Considere que $X|\theta \sim \text{Poisson}(\theta)$.
+ Um estatístico deseja usar $\pi(\theta) \propto \theta^{-1}$.
+ \begin{enumerate}[label=(\alph*)]
+  \item A posteriori para $\theta|X=x$ é proporcional a qual função?
+	\item Note que a posteriori para $\theta|X=0$ não é integrável e,
+	      portanto, não é uma densidade de probabilidade.
+				Qual falha permitiu que isso ocorresse?
+ \end{enumerate}
+\end{exercise}

@@ -1,0 +1,619 @@
+\section{Revisão sobre teoria da decisão e 
+         inferência bayesiana}
+
+\begin{exercise}
+ Considere que $\theta$ é a
+ indicadora de que choverá hoje.
+ A priori, você está indiferente entre 
+ a possibilidade de chover ou não chover.
+ Para prever se choverá hoje, 
+ você toma uma medição da umidade relativa do ar, $X$.
+ Considere que $X|\theta=0 \sim N(0.2,100)$ e 
+ $X|\theta=1 \sim N(0.6,100)$,
+ onde $100$ é a \textbf{precisão} da distribuição normal.
+ Considere que sua utilidade é $1$, 
+ caso sua previsão esteja correta,
+ e $0$, caso contrário.
+ \begin{enumerate}[label=(\alph*)]
+  \item Determine $P(\theta=1|X=x)$.
+  \item Qual é a sua decisão ótima em função de $X$?
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item
+  \begin{align*}
+   \P(\theta=1|X=x)	
+   &= \frac{\P(\theta=1)f(x|\theta=1)}{\P(\theta=0)f(x|\theta=0)+\P(\theta=1)f(x|\theta=1)} \\
+   &= \frac{0.5 \cdot 10\sqrt{2\pi}^{-1}\exp\left(-\frac{100(x-0.6)^{2}}{2}\right)}{0.5 \cdot 10\sqrt{2\pi}^{-1}\exp\left(-\frac{100(x-0.2)^{2}}{2}\right)+0.5 \cdot 10\sqrt{2\pi}^{-1}\exp\left(-\frac{100(x-0.6)^{2}}{2}\right)} \\
+   &= \frac{1}{1+\exp\left(-\frac{100(x-0.6)^{2}-100(x-0.2)^{2}}{2}\right)}	\\
+   &= \frac{1}{1+\exp\left(-\frac{-120x+36+80x-4}{2}\right)}\\
+   &= \frac{1}{1+\exp\left(40x-16\right)}
+  \end{align*}
+  Note que $\theta$ segue uma 
+  regressão logística em função de $x$.
+  \item Note que nossa decisão é 
+  a indicadora de que irá chover. 
+  Assim $\mathcal{A}^{*}=\{0,1\}$.
+  O problema também indica que a utilidade é
+  $U(d,\theta)=\I(d=\theta)$.
+  Decorre do \cref{theorem:extensive-form} que 
+  a decisão ótima é $\arg\max_{d}E[U(d,\theta)|X]$.
+  Como somente há duas decisões, 
+  devemos escolher $1$ se 
+  $\E[U(1,\theta)|X] > \E[U(0,\theta)|X]$ e 
+  $0$, caso contrário. Note que
+  \begin{align*}
+   \E[U(1,\theta)|X] &> \E[U(0,\theta)|X] \\
+   \E[\I(\theta=1)|X] &> \E[\I(\theta=0)|X] \\
+   \P(\theta=1|X) &> \P(\theta=0|X) \\
+   \P(\theta=1|X) &> 1-\P(\theta=1|X) \\
+   \P(\theta=1|X) &> 0.5 \\
+   \frac{1}{1+\exp\left(40x-16\right)} &> 0.5 \\
+   40x-16	&> \log(1) \\
+   x &> 0.4
+  \end{align*}
+  Portanto, se $x > 0.4$, 
+  a melhor decisão é prever que choverá e, 
+  se $x < 0.4$, a melhor decisão é prever que 
+  não choverá. Note que $0.4$ é 
+  o ponto médio entre as médias de 
+  $f(x|\theta=0)$ e $f(x|\theta=1)$.
+ \end{enumerate}
+}{}
+
+\begin{exercise}
+ Em uma corrida de cavalos,
+ as apostas oferecidas são as seguintes:
+ \begin{itemize}
+  \item Se ``Preguiça'' vencer, 
+  é pago R\$10 para cada R\$1 que 
+  você apostar em ``Preguiça''.
+  \item Se ``Veloz'' vencer, 
+  é pago R\$1.50 para cada R\$1 que 
+  você apostar em ``Veloz''.
+ \end{itemize}
+ \begin{enumerate}[label=(\alph*)]
+  \item Você acredita que a probabilidade de
+  ``Veloz'' vencer a corrida é $0.6$ e
+  a probabilidade de ``Preguiça'' vencer a corrida é $0.2$.
+  Se você pode realizar até R\$10 em apostas, 
+  qual é a melhor divisão de apostas para você?
+  
+  \item Como a resposta anterior mudaria se 
+  as probabilidades de ``Veloz'' e ``Preguiça'' vencer 
+  fossem $p_{v}$ e $p_{p}$?
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}: Este é um 
+ problema de decisão sem dados.
+ As alternativas são 
+ $\mathcal{A} = \{(a_{p},a_{v}):\mathbb{R}^{2}_{+}: a_{p}+a_{v} \leq 10\}$,
+ isto é, todas as possíveis apostas em 
+ ``Preguiça'' e ``Veloz'' que não ultrapassam R\$10.
+ As possibilidades incertas são $\Theta = \{P,V,N\}$, 
+ ou seja, ``Preguiça'', ``Veloz'' ou
+ nenhum deles vencer a corrida.
+ A utilidade é dada por 
+ $U((a_{p},a_{v}),\theta) = a_{p}(10\I(\theta=P)-1)+a_{v}(1.5\I(\theta=V)-1)$. 
+ \begin{enumerate}[label=(\alph*)]
+  \item Dadas estas circunstâncias, temos
+  \begin{align*}
+   \E[U((a_{p},a_{v}),\theta)]	
+   &= a_{p}(10 \cdot 0.2 -1) + a_{v}(1.5 \cdot 0.6 - 1)	\\
+   &= a_{p} - 0.1 \cdot a_{v}
+  \end{align*}
+  Trata-se de uma função linear que é crescente em 
+  $a_{p}$ e decrescente em $a_{v}$.
+  Assim, decorre da \cref{defn:expected_utility} que 
+  a melhor opção é tomar $a_{p}=10$ e $a_{v}=0$.
+  \item Temos que
+  \begin{align*}
+   \E[U((a_{p},a_{v}),\theta)]	
+   &= a_{p}(10 \cdot p_{v} -1) +a_{v}(1.5 \cdot p_{p} - 1)
+  \end{align*}
+  Trata-se de uma função linear com coeficientes 
+  $10 \cdot p_{v} -1$ e $10 \cdot p_{v} -1$.
+  Assim, se $10 \cdot p_{v} -1 > \max(0, 1.5 \cdot p_{p} -1)$,
+  a melhor opção é apostar $R\$10$ em ``Veloz''.
+  Se $1.5 \cdot p_{p} > \max(0, 10 \cdot p_{v} -1)$,
+  a melhor opção é apostar $R\$10$ em ``Preguiça''.
+  Finalmente, se 
+  $0 > \max(10 \cdot p_{v} -1, 1.5 \cdot p_{p})$,
+  então, em média, perde-se dinheiro realizando apostas.
+  Assim, a melhor opção é não apostar em nenhum dos cavalos,
+  $a_{p}=a_{v}=0$.
+ \end{enumerate}
+}{}
+
+\begin{exercise}
+ O Sr. Bigode contratou você para ajudá-lo a determinar 
+ uma estratégia ótima para o seu negócio.
+ O Sr. Bigode vende \emph{hot dogs} por 
+ R\$5,00 durante partidas de futebol.
+ Os \emph{hot dogs} são perecíveis e, assim,
+ caso o Sr. Bigode leve 
+ mais \emph{hot dogs} do que a demanda,
+ o excesso é desperdiçado.
+ Os componentes necessários para fazer 
+ um \emph{hot dog} custam R\$3,00.
+ Considere que $d$ é o número de \emph{hot dogs} 
+ preparados pelo Sr. Bigode e 
+ $\theta$ é a demanda por \emph{hot dogs} 
+ durante a partida de futebol.
+ A utilidade do Sr. Bigode é dada por 
+ \begin{align*}
+  U(d,\theta) = 5\min(d,\theta) -3d
+ \end{align*}
+ \begin{enumerate}[label=(\alph*)]
+  \item Mostre que
+  \begin{align*}
+   U(d) 
+   &= \E[U(d,\theta)] = 5\left(\sum_{i=0}^{d}{i\P(\theta=i)}
+   +d\P(\theta > d)\right) -3d
+  \end{align*}
+  \item Ache o valor de $k$ tal que 
+  $U(d) > U(d-1)$ se e somente se $\P(\theta < d) < k$.
+  \item Se $\theta \sim \text{Geométrica}(0.01)$, 
+  qual a decisão ótima para o Sr. Bigode?
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item
+  \begin{align*}
+   \E[U(d,\theta)]
+   &= \E[5\min(d,\theta) -3d] \\
+   &= 5\E[\min(d,\theta)]-3d] \\
+   &= 5\sum_{i=0}^{\infty}{\min(d,i)\P(\theta=i)}-3d \\
+   &= 5\left(\sum_{i=0}^{d}{i\P(\theta=i)}
+   +\sum_{i=d+1}^{\infty}{d\P(\theta=i)}\right)-3d \\
+   &= 5\left(\sum_{i=0}^{d}{i\P(\theta=i)}
+   +d\P(\theta>d)\right)-3d
+  \end{align*}
+  \item Para que $U(d)-U(d-1) > 0$ temos que
+  \begin{align*}
+   U(d)-U(d-1) &> 0 \\
+   5\left(\sum_{i=0}^{d}{i\P(\theta=i)}
+   +d\P(\theta>d)\right)-3d
+   -\left(5\left(\sum_{i=0}^{d-1}{i\P(\theta=i)}
+   +(d-1)\P(\theta>d-1)\right)-3(d-1)\right) &> 0 \\
+   5\left(\sum_{i=0}^{d}{i\P(\theta=i)}
+   -\sum_{i=0}^{d-1}{i\P(\theta=i)}
+   +d\P(\theta>d)-(d-1)\P(\theta>d-1)\right)-3 &> 0 \\	
+   5\left(d\P(\theta=d)+d\P(\theta>d)
+   -(d-1)\P(\theta>d-1)\right) &> 0 \\
+   5\left(\P(\theta>d-1)-(d-1)\P(\theta>d-1)\right) &> 0 \\
+   \P(\theta>d-1) &> \frac{3}{5} \\
+   \P(\theta < d) &< \frac{2}{5} 
+  \end{align*}
+	
+  \item Como $\theta \sim \text{Geométrica}(0.01)$, 
+  temos que $\P(\theta < d) = 1-(1-0.01)^{d+1}$. Portanto,
+  \begin{align*}
+   \P(\theta < d) &< \frac{2}{5} \\
+   1-(1-0.01)^{d+1}	&> 0.4 \\
+   (1-0.01)^{d+1} &< 0.6 \\
+   d &< \frac{\log(0.6)}{\log(0.99)}-1 \approx 49.83
+   \end{align*}
+   Portanto, a utilidade esperada é crescente até $d=49$ e,
+   a partir de então, é decrescente.
+   A melhor decisão para o Sr. Bigode é 
+   levar $49$ \emph{hot dogs}.
+ \end{enumerate}
+}{}
+
+\begin{exercise}
+ Considere um problema de estimação com dados 
+ em que $\theta \in \mathbb{R}^{n}$.
+ Ache o melhor estimador quando
+ \begin{enumerate}[label=(\alph*)]
+  \item $U(\hat{\theta},\theta)	= \|\hat{\theta}-\theta\|_{2}^{2} = (\hat{\theta}-\theta)^{T}(\hat{\theta}-\theta) = \sum_{i=1}^{n}{(\hat{\theta}_{i}-\theta_{i})^{2}}$
+	\item $U(\hat{\theta},\theta)	= \|\hat{\theta}-\theta\|_{1} = \sum_{i=1}^{n}{|\hat{\theta}_{i}-\theta_{i}|}$
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item De acordo com o \cref{lemma:conditional_l2_multi} 
+  $\E[\theta|X]$ é o melhor estimador quando
+  $U(\hat{\theta},\theta)=(\hat{\theta}-\theta)^{T}A(\hat{\theta}-\theta)$.
+  Obtemos a utilidade dada neste exercício tomando $A=I$. 
+  Portanto, o melhor estimador é $\E[\theta|X]$.
+  \item Note que
+  \begin{align*}
+   \E[U(\hat{\theta},\theta)|X]	
+   &= \E[\sum_{i=1}^{n}{|\hat{\theta}_{i}-\theta_{i}|}|X] \\
+   &= \sum_{i=1}^{n}{\E[|\hat{\theta}_{i}-\theta_{i}||X]}
+  \end{align*}
+  De acordo com o \cref{thm:estimation_l1},
+  $\E[|\hat{\theta}_{i}-\theta_{i}||X]$ é 
+  minimizado tomando-se 
+  $\hat{\theta}_{i}=Med[\theta_{i}|X]$.
+  Portanto, para cada coordenada, i, 
+  $\hat{\theta}_{i}$ é a mediana da posteriori 
+  para $\theta$ nesta coordenada.
+ \end{enumerate}
+}{}
+
+\begin{exercise}
+ Um estatístico deseja usar uma amostra para
+ estimar um parâmetro, $\theta$.
+ Para tal, ele deve escolher o tamanho da amostra $n$ e
+ o estimador, $\hat{\theta}$.
+ Considere que, uma vez escolhido $n$, a amostra,
+ $X_1,\ldots,X_n$ é tal que dado $\theta$ as 
+ observações são i.i.d. e $X_{1} \sim N(0,1)$.
+ Antes de obter a amostra, o estatístico acredita que
+ $\theta \sim N(0,1)$.
+ Qual a escolha ótima do estatístico se 
+ $U((n,\hat{\theta}),\theta)=-cn-(\hat{\theta}-\theta)^2$?
+\end{exercise}
+
+\solution{\textbf{Solução}: 
+ Escolha um $n \in \mathbb{N}$.
+ Note que
+ \begin{align*}
+  \arg\max_{\hat{\theta}} \ 
+  \E[U((n,\hat{\theta}),\theta)|X]
+  &= \arg\max_{\hat{\theta}} 
+  \E[-cn-(\hat{\theta}-\theta)^2|X] \\
+  &= \arg\max_{\hat{\theta}} 
+  \E[-(\hat{\theta}-\theta)^2|X] \\
+  &= \E[\theta|X] 
+  & \text{\cref{thm:estimation_l2}}
+ \end{align*}
+ Portanto, a escolha ótima é 
+ da forma $(n,\E[\theta|X])$.
+ Note que
+ \begin{align*}
+  U(n,\E[\theta|X]|X) 
+  &= \E[U((n,\E[\theta|X]),\theta)|X] \\
+  &= \E[-cn-(\theta-\E[\theta|X])^2|X] \\
+  &= -cn-\V[\theta|X] = -cn-(n+1)^{-1}
+ \end{align*}
+ Defina $g(n) = -cn-(n+1)^{-1}$.
+ Note que $g(n) \geq g(n-1)$ se e somente se
+ \begin{align*}
+  -cn-(n+1)^{-1} &\geq -c(n-1)-n^{-1} \\
+  n^{-1}(n+1)^{-1} &\geq c \\ 
+  n(n+1) &\leq c^{-1} \\
+  n^2+n-c^{-1} &\leq 0 \\
+  n &\leq \left\lfloor \frac{-1+\sqrt{1+4c^{-1}}}{2} \right\rfloor
+ \end{align*}
+ Portanto, definindo 
+ $n^*=\left\lfloor \frac{-1+\sqrt{1+4c^{-1}}}{2} \right\rfloor$, a escolha ótima é 
+ $(n^*,\E[\theta|X])$, isto é,
+ $\left(n^*,\frac{n^*\bar{X}_n^*}{n^*+1}\right)$.
+}{}
+
+\begin{exercise}
+ Considere que, dado $\theta$, 
+ $X_{1},\ldots,X_{n}$ são i.i.d. e
+ $X_{i} \sim \text{Uniforme}(0,\theta)$.
+ A priori $\theta \sim \text{Pareto}(\alpha,\beta)$.
+ Se $\theta \sim \text{Pareto}(\alpha,\beta)$, então 
+ $f(\theta) = \frac{\alpha \beta^{\alpha}}{\theta^{\alpha+1}}\I(\theta \geq \beta)$.
+ Considere que $\alpha=\beta=1$, $n=10$ e 
+ $\max(x_{1},\ldots,x_{10}) = 9$.
+ \begin{enumerate}[label=(\alph*)]
+  \item Note que 
+  $\theta|X \sim \text{Pareto}(\alpha^{*},\beta^{*})$.
+  Ache os valores de $\alpha^{*}$ e $\beta^{*}$.
+  \item Ache a distribuição acumulada 
+  da Pareto $(\alpha,\beta)$.
+  \item Ache o estimador ótimo, $\hat{\theta}$, 
+  para $\theta$ segundo a utilidade 
+  $$U(\hat{\theta},\theta) = -|\hat{\theta}-\theta|$$
+  \item Ache o estimador ótimo, $\hat{\theta}$, 
+  para $\theta$ segundo a utilidade 
+  $$U(\hat{\theta},\theta) = -(\hat{\theta}-\theta)^{2}$$
+  \item Construa o intervalo de credibilidade ótimo, 
+  $[a,b]$, para $\theta$ segundo a utilidade 
+  \begin{align*}
+   U([a,b],\theta) 
+   =-100((a-\theta)_{+}+(\theta-b)_{+})-5(b-a)
+  \end{align*}
+  \item A distribuição a posteriori de $\theta$ é unimodal?
+  Ache um HPD para $\theta$ com credibilidade $95\%$.
+  \item Teste a hipótese $H_{0}:\theta \geq 10$ usando 
+  a utilidade dada pela tabela \ref{table:u-0-1-c} e 
+  tomando $c=1$.
+  \item Use o FBST ou o fator de bayes para 
+  testar $H_{0}: \theta=10$.
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item Decorre do \cref{ex:pareto-uniform} que
+  $\alpha^{*}=\alpha+n$ e 
+  $\beta^{*}=\max(\beta,x_{(n)})$, ou seja,
+  $\alpha^{*}=11$ e $\beta^{*}=9$.
+  \item Temos que
+  \begin{align*}
+   F_{\alpha,\beta}(t) = \P(\theta \leq t)
+   &= \int_{-\infty}^{t}{f(\theta)d\theta} \\
+   &= \int_{-\infty}^{t}{\frac{\alpha \beta^{\alpha}}{\theta^{\alpha+1}} \I(\theta \geq \beta) d\theta} \\
+   &= \alpha \beta^{\alpha}\int_{\beta}^{t}{\theta^{-(\alpha+1)}d\theta} \\
+   &= \alpha \beta^{\alpha}(-\alpha^{-1}t^{-\alpha}+\alpha^{-1}\beta^{-\alpha}) \\
+   &= 1-\left(\frac{\beta}{t}\right)^{\alpha}
+  \end{align*}
+  \item Decorre do \cref{thm:estimation_l1} que, 
+  neste caso, o estimador ótimo é Med$[\theta|x]$.
+  Note que Med$[\theta|X]$ é o $t$ tal que
+  $F_{\alpha^{*}, \beta^{*}}(t) = 0.5$.
+  \begin{align*}
+   1-\left(\frac{\beta^{*}}{t}\right)^{\alpha^{*}} &= 0.5 \\
+   \left(\frac{\beta^{*}}{t}\right)^{\alpha} &= 0.5 \\
+   \frac{\beta^{*}}{t} &= 0.5^{(\alpha^{*})^{-1}} \\
+   t &= \frac{\beta^{*}}{0.5^{(\alpha^{*})^{-1}}}
+  \end{align*}
+  Substituindo $\alpha^{*}=11$ e $\beta^{*}=9$, 
+  obtemos $Med[\theta|x] \approx 9.58$.
+  \item Decorre do \cref{thm:estimation_l1} que, 
+  neste caso, o estimador ótimo é $E[\theta|x]$.
+  \begin{align*}
+   \E[\theta|x]
+   &= \int_{-\infty}^{\infty}{\theta f(\theta|x)d\theta} \\
+   &= \int_{\beta^{*}}^{\infty}{\theta \frac{\alpha^{*}\beta^{\alpha^{*}}}{\theta^{\alpha^{*}+1}}d\theta} \\
+   &= \frac{\alpha^{*}\beta^{*}}{\alpha^{*}-1}
+  \end{align*}
+  Substituindo $\alpha^{*}=11$ e $\beta^{*}=9$, 
+  obtemos $\E[\theta|x] = 9.9$.
+  \item Decorre do \cref{thm:credible_interval_2} que
+  o intervalo de credibilidade ótimo é tal que
+  $\P(\theta \leq a|x) = \frac{5}{100}$ e 
+  $\P(\theta \leq b|x) = \frac{95}{100}$.
+  Assim, $a=\frac{\beta^{*}}{95\%^{(\alpha^{*})^{-1}}}$ e
+  $b=\frac{\beta^{*}}{5\%^{(\alpha^{*})^{-1}}}$.
+  Substituindo $\alpha^{*}=11$ e $\beta^{*}=9$,
+  obtemos $a \approx 9.04$ e $b \approx 11.81$.
+  \item Note que $f(\theta|x)$ é 
+  estritamente decrescente em $\theta$.
+  Assim, a densidade a posteriori para $\theta$ é unimodal.
+  Portanto, o HPD é um intervalo, [a,b], tal que
+ $a=9$.
+  Assim, para que a credibilidade do HPD seja 95\%, 
+  é necessário que $b$ seja tal que 
+  $\P(\theta \leq b) = 95\%$.
+  Assim, $b=\frac{\beta^{*}}{5\%^{(\alpha^{*})^{-1}}} \approx 11.81$.
+  \item Decorre do \cref{thm:0-1-c} que 
+  $H_{0}$ é rejeitada se 
+  $\P(\theta \geq 10|x) < (1+c)^{-1} = 0.5$.
+  Note que, como $Med[\theta|x]=9.58$, 
+  então $\P(\theta \geq 9.58|x) = 0.5$.
+  Assim, $\P(\theta \geq 10|x) < \P(\theta \geq 9.58|x) =   0.5$.
+  Conclua que a decisão ótima é rejeitar $H_{0}$.
+  \item Pelo item (f), 
+  um HPD com credibilidade 95\% é $[9,11.81]$.
+  Portanto, como $10 \in [9,11.81]$,
+  a nível 95\% não se rejeita $\theta=10$.
+  Observe que o fator de Bayes é 
+  \begin{align*}
+   \frac{f(x|\theta=10)}{\int_{-\infty}^{\infty}{f(x|\theta)d\theta}} 
+   &= \frac{10^{-n}}{\int_{-\infty}^{\infty}{\prod_{i=1}^{n}{\theta^{-1}\I(x_{i} \leq \theta)}d\theta}} \\
+   &= \frac{10^{-n}}{\int_{x_{(n)}}^{\infty}{\theta^{-n}d\theta}} \\
+   &= \frac{(n-1)10^{-n}}{x_{(n)}^{-n+1}} 
+  \end{align*}
+  Substituindo $n=10$ e $x_{(n)}=9$, 
+  obtemos que o fator de Bayes é aproximadamente $0.35$.
+  Se tomarmos $p_{0}=0.95$, então 
+  $\frac{1-p_{0}}{cp_{0}} \approx 0.05$
+  Portanto, como o fator de Bayes é maior que 
+  $\frac{1-p_{0}}{cp_{0}}$,
+  não rejeitamos a hipótese nula.
+ \end{enumerate}
+}{}
+
+\begin{exercise}
+ Considere que, dado $\theta$, 
+ $X_{1},\ldots,X_{n},X_{n+1}$ são i.i.d. e
+ $X_{i} \sim \text{N}(\theta,1)$.
+ A priori $\theta \sim \text{N}(0,1)$.
+ Neste caso, $\theta|X_{1},\ldots,X_{n} \sim \text{N}(\frac{n\bar{X}}{n+1}, n+1)$, onde $n+1$ é 
+ a \textbf{precisão} da distribuição normal.
+ Considere que $\bar{x}=0.5$ e $n=15$.
+ \begin{enumerate}[label=(\alph*)]
+  \item Ache o estimador ótimo, $\hat{\theta}$, 
+  para $\theta$ segundo a utilidade 
+  \begin{align*}
+   U(\hat{\theta},\theta)
+   = -|\hat{\theta}-\theta|
+  \end{align*}
+  \item Ache o estimador ótimo, $\hat{X}_{n+1}$, 
+  para $X_{n+1}$ segundo a utilidade 
+  \begin{align*}
+  U(\hat{X}_{n+1},X_{n+1}) 
+  =-(\hat{X}_{n+1}-X_{n+1})^{2}
+  \end{align*}
+  \item Construa o intervalo de credibilidade ótimo, $[a,b]$, 
+  para $\theta$ segundo a utilidade 
+  \begin{align*}
+   U([a,b],\theta) 
+   = -100((a-\theta)_{+}+(\theta-b)_{+})-5(b-a)
+  \end{align*}
+  \item Ache o HPD para $\theta$ com credibilidade $95\%$.
+  \item Teste a hipótese $H_{0}:\theta \geq 0$ usando 
+  a utilidade $0/1/c$ e tomando $c=1$.
+  \item Use o FBST $(\alpha=5\%)$ para testar $H_{0}: \theta=0$.
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item Decorre do \cref{thm:estimation_l1} que
+  o estimador ótimo é $Med[\theta|X_{1},\ldots,X_{n}]$. 
+  Como a posteriori é uma normal, 
+  $Med[\theta|X_{1},\ldots,X_{n}] = \E[\theta|X_{1},\ldots,X_{n}]$.
+  Assim, o estimador ótimo é $\E[\theta|X_{1},\ldots,X_{n}] = \frac{n\bar{X}}{n+1} \approx 0.47$.
+  \item Decorre do \cref{thm:estimation_l2} que
+  o estimador ótimo é $\E[X_{n+1}|X_{1},\ldots,X_{n}]$.
+  Note que
+  \begin{align*}
+   \E[X_{n+1}|X_{1},\ldots,X_{n}]
+   &= \E[E[X_{n+1}|\theta]|X_{1},\ldots,X_{n}] \\
+   &= \E[\theta|X_{1},\ldots,X_{n}] \\
+   &= \frac{n\bar{X}}{n+1} = 0.47
+  \end{align*}
+  \item Decorre do \cref{thm:credible_interval_2} que 
+  o intervalo ótimo, $[a,b]$, é tal que 
+  $\P(\theta < a|x) = 0.05$ e 
+  $\P(\theta < b|x) = 0.95$. Assim,
+  como a posteriori é uma distribuição 
+  $N(\frac{n\bar{x}}{n+1},n+1)$,
+  obtemos que $[a,b] = \left[\frac{n\bar{x}}{n+1}-\frac{1.64}{\sqrt{n+1}},\frac{n\bar{x}}{n+1}+\frac{1.64}{\sqrt{n+1}}\right]$,
+  ou seja $[a,b] \approx [0.06,0.88]$.
+  \item Como a posteriori segue 
+  a distribuição $N(\frac{n\bar{x}}{n+1},n+1)$ e 
+  a normal é simétrica e unimodal, temos que
+  o HPD é um intervalo de credibilidade $[a,b]$ tal que 
+  $\P(\theta < a|x) = 0.025$ e $P(\theta < b|x) = 0.975$.
+  Conclua que $[a,b] = \left[\frac{n\bar{x}}{n+1}-\frac{1.96}{\sqrt{n+1}},\frac{n\bar{x}}{n+1}+\frac{1.96}{\sqrt{n+1}}\right]$,
+  ou seja $[a,b] = [-0.02,0.96]$.
+  \item Decorre do \cref{thm:0-1-c} que
+  rejeitamos $H_{0}$ se 
+  $\P(H_{0}|x) = \P(\theta \geq 0|x) < (1+c)^{-1} = 0.5$.
+  Como $Med[\theta|X] = 0.47$ e $0 > Med[\theta|X]$,
+  conclua que $\P(\theta \geq 0|x) > \P(\theta > 0.47|x) = 0.5$.
+  Portanto, a decisão ótima é não rejeitar $H_{0}$.
+  \item Decorre do item (d) que 
+  o HPD de credibilidade 0.95 é $[-0.02,0.96]$.
+  Como $0 \in [-0.02,0.96]$,
+  conclua que a decisão ótima segundo o FBST é 
+  não rejeitar $H_{0}: \theta = 0$.
+ \end{enumerate}
+}{}
+
+\begin{exercise}
+ \label{ex:ar-1}
+ Em séries temporais, 
+ um modelo auto-regressivo AR(1) é tal que
+ \begin{align*}
+  X_{n}	&= \theta \cdot X_{n-1} + \epsilon_{n},
+ \end{align*}
+ $\epsilon_{n}$ é independente de $(X_{1},\ldots,X_{n-1})$ 
+ e tal que  $\epsilon_{n} \sim N(0,\tau^{2})$.
+ Considere que $\tau^{2}$ é uma constante conhecida, 
+ que $X_{0}=0$, e que uma amostra, 
+ $x_{1},\ldots,x_{n}$ foi observada.
+ \begin{enumerate}[label=(\alph*)]
+  \item Ache $f(x_{1},\ldots,x_{n}|\theta)$. Note que   
+  $(X_{1},\ldots,X_{n})$ não são i.i.d. dado $\theta$.
+  \item Se \emph{a priori}, $\theta \sim N(\mu_{0},\tau_{0}^{2})$, 
+  qual a distribuição \emph{a posteriori} de
+  $\theta|x_{1},\ldots,x_{n}$?
+  Uma derivação similar pode ser encontrada no 
+  \cref{ex:simple-linear-regression}.
+  \item Ache o estimador pontual para $\theta$ 
+  de acordo com a utilidade 
+  $U(\hat{\theta},\theta) = -(\hat{\theta}-\theta)^{2}$.
+  \item Construa um intervalo de credibilidade para
+  $\theta$ com credibilidade 95\%.
+  \item Ache o estimador pontual para $X_{n+1}$ 
+  de acordo com  a utilidade 
+  $U(\hat{X}_{n+1},X_{n+1}) = -(\hat{X}_{n+1}-X_{n+1})^{2}$.
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item
+  \begin{align*}
+   f(x_{1},\ldots,x_{n}|\theta)	
+   &= \prod_{i=1}^{n}{f(x_{i}|x_{i-1},\theta)} \\
+   &= \prod_{i=1}^{n}{\tau\sqrt{2\pi}^{-1}\exp\left(-\frac{\tau^{2}(x_{i}-\theta x_{i-1})^{2}}{2}\right)} \\
+   &= \tau^{n}\sqrt{2\pi}^{-n}\exp\left(-\frac{\tau^{2}\sum_{i=1}^{n}{(x_{i}-\theta x_{i-1})^{2}}}{2}\right)
+  \end{align*}
+  \item
+  \begin{align*}
+   f(\theta|x_{1},\ldots,x_{n})
+   &\propto	f(\theta)
+   \cdot f(x_{1},\ldots,x_{n}|\theta) \\
+   &\propto	\exp\left(-\frac{\tau_{0}^{2}(\theta-\mu_{0})^{2}}{2}\right)\exp\left(-\frac{\tau^{2}\sum_{i=1}^{n}{(x_{i}-\theta x_{i-1})^{2}}}{2}\right) \\
+   &= \exp\left(-\frac{\tau_{0}^{2}\theta^{2}-2\tau^{2}_0\mu_{0}\theta +\tau^{2}\mu_{0}^{2}}{2}-\frac{\tau^{2}\sum_{i=1}^{n}{(x_{i}^{2}-2\theta x_{i}x_{i-1}+\theta^{2} x_{i-1}^{2})}}{2}\right) \\
+   &\propto \exp\left(-\frac{\tau_{0}^{2}\theta^{2}-2\tau^{2}_0\mu_{0}\theta-\tau^{2}\sum_{i=1}^{n}{(-2\theta x_{i}x_{i-1}+\theta^{2} x_{i-1}^{2})}}{2}\right) \\
+   &= \exp\left(-\frac{(\tau_{0}^{2}+\tau^{2}\sum_{i=1}^{n}{x_{i-1}^{2}})\theta^{2}-2(\tau^{2}_0\mu_{0}+\tau^{2}\sum_{i=1}^{n}{x_{i}x_{i-1}})\theta}{2}\right)	\\
+   &\propto \exp\left(-\frac{(\tau_{0}^{2}+\tau^{2}\sum_{i=1}^{n}{x_{i-1}^{2}})\left(\theta-\frac{\tau^{2}_0\mu_{0}+\tau^{2}\sum_{i=1}^{n}{x_{i}x_{i-1}}}{\tau_{0}^{2}+\tau^{2}\sum_{i=1}^{n}{x_{i-1}^{2}}}\right)^{2}}{2}\right)
+  \end{align*}
+  Portanto, $\theta|X \sim N\left(\frac{\tau^{2}_0\mu_{0}+\tau^{2}\sum_{i=1}^{n}{x_{i}x_{i-1}}}{\tau_{0}^{2}+\tau^{2}\sum_{i=1}^{n}{x_{i-1}^{2}}},\tau_{0}^{2}+\tau^{2}\sum_{i=1}^{n}{x_{i-1}^{2}}\right)$.
+	
+  \item Decorre do \cref{thm:estimation_l2} 
+  que  o estimador ótimo é 
+  $\E[\theta|X] = \frac{\tau^{2}_0\mu_{0}+\tau^{2}\sum_{i=1}^{n}{X_{i}X_{i-1}}}{\tau_{0}^{2}+\tau^{2}\sum_{i=1}^{n}{X_{i-1}^{2}}}$.
+	
+  \item Como observado no \cref{ex:normal-credible}.b, 
+  um possível intervalo com credibilidade 95\% para 
+  a distribuição normal é da forma
+  \begin{align*}
+   \left[\E[\theta|X]-1.96\sqrt{\V[\theta|X]},
+   \E[\theta|X]+1.96\sqrt{\V[\theta|X]}\right]
+  \end{align*}
+  Portanto, obtemos
+  \begin{align*}
+   \left[\frac{\tau^{2}_0\mu_{0}+\tau^{2}\sum_{i=1}^{n}{X_{i}X_{i-1}}}{\tau_{0}^{2}+\tau^{2}\sum_{i=1}^{n}{X_{i-1}^{2}}}-1.96\sqrt{\tau_{0}^{2}+\tau^{2}\sum_{i=1}^{n}{X_{i-1}^{2}}},\frac{\tau^{2}_0\mu_{0}+\tau^{2}\sum_{i=1}^{n}{X_{i}X_{i-1}}}{\tau_{0}^{2}+\tau^{2}\sum_{i=1}^{n}{X_{i-1}^{2}}}+1.96\sqrt{\tau_{0}^{2}+\tau^{2}\sum_{i=1}^{n}{X_{i-1}^{2}}}\right]
+  \end{align*}
+  
+  \item Decorre do  \cref{thm:estimation_l2}
+  que o estimador ótimo é $\E[X_{n+1}|X]$. 
+  Note que
+  \begin{align*}
+   \E[X_{n+1}|X_{1},\ldots,X_{n}]	
+   &= \E[\theta X_{n} + \epsilon_{n+1}|X_{1},\ldots,X_{n}] \\
+   &= X_{n}\E[\theta|X_{1},\ldots,X_{n}] & \E[\epsilon_{n+1}] 
+   = 0 \\
+   &= X_{n}\frac{\tau^{2}_0\mu_{0}+\tau^{2}\sum_{i=1}^{n}{X_{i}X_{i-1}}}{\tau_{0}^{2}+\tau^{2}\sum_{i=1}^{n}{X_{i-1}^{2}}}
+  \end{align*}
+ \end{enumerate}
+}{}
+
+\begin{exercise}[\citet{Schervish2012}]
+ Você deseja testar $H_{0}: \theta \geq k$
+ sob a utilidade $U(d,\theta) = d(\theta-k)_{+} + (1-d)(k-\theta)_{+}$.
+ Qual é a regra de decisão ótima?
+\end{exercise}
+
+\solution{\textbf{Solução}: Note que
+ \begin{align*}
+  \E[U(0,\theta)|x]-\E[U(1,\theta)|x]
+  &= \E[(k-\theta)_{+}|x]-\E[(\theta-k)_{+}|x] \\
+  &= \E[(k-\theta)\I(\theta \leq k)|x]
+  -\E[(\theta-k)\I(\theta > k)|x] \\
+  &= \E[(k-\theta)\I(\theta \leq k)|x]
+  +\E[(k-\theta)\I(\theta > k)|x] \\
+  &= \E[k-\theta|x] = k-\E[\theta|x]
+ \end{align*}
+ Assim, se $\E[\theta|x] < k$, então 
+ $\E[U(0,\theta)|x] > \E[U(1,\theta)|x]$ e 
+ a melhor decisão é não rejeitar $H_{0}$.
+ Se, $\E[\theta|x] > k$, então 
+ $\E[U(0,\theta)|x] < \E[U(1,\theta)|x]$ e 
+ a melhor decisão é rejeitar $H_{0}$.
+}{}
+
+\begin{exercise}
+ Se $H_{0}$ é uma hipótese precisa e
+ $\theta$ segue uma distribuição contínua,
+ descreva em palavras a razão de não testarmos $H_{0}$
+ pelo teste que vimos em classe para hipóteses plenas.
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ Se $H_{0}$ é uma hipótese precisa e
+ $\theta$ segue uma distribuição contínua,
+ então $P(H_{0}) = 0$ e $P(H_{0}|x) = 0$.
+ Portanto, se usarmos o teste decorrente
+ do \cref{thm:0-1-c}, rejeitaremos $H_{0}$ com certeza.
+ Por essa razão, entende-se que não faz sentido
+ testar uma hipótese precisa usando a utilidade 
+ da tabela \ref{table:u-0-1-c} quando
+ o parâmetro segue uma distribuição contínua.
+ As sugestões mais usuais para lidar com esse problema
+ são usar um modelo misto para o parâmetro
+ (Fator de Bayes) ou
+ usar uma utilidade diferente (FBST).
+}{}
+

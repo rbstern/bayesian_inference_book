@@ -1,0 +1,936 @@
+\textsl{}\section{Aprendizado e atualização de incertezas}
+
+\subsection{O Teorema de Bayes}
+
+A probabilidade é a medida usada por você para 
+quantificar sua incerteza sobre proposições.
+Em outras palavras, se $A$ indica a 
+proposição ``Choverá no dia 10/05'', então 
+$\P(A)$ indica o quanto você acredita nesta afirmação.
+Em particular, se $\P(A)=1$, então 
+você tem certeza que choverá no dia 10/05.
+Similarmente, se $\P(A)=0$, então 
+você tem certeza que não choverá neste dia.
+
+Como a probabilidade reflete as suas incertezas,
+para obtê-la, você deve analisar o quanto 
+acredita em diferentes proposições.
+Contudo, nem todas as proposições são 
+igualmente fáceis de avaliar.
+Em particular, considere a situação em que 
+você considera várias hipóteses para 
+explicar como um conjunto de dados foi gerado.
+Nesta situação, você está comumente interessada em
+determinar qual hipótese é 
+a mais razoável dado que 
+você observou certos dados.
+Em particular, seja ``Hipótese'' uma 
+hipótese e ``Dados'' os dados observados.
+Você deseja determinar a probabilidade da 
+hipótese dado  os dados que 
+foram observados, isto é,
+\begin{align*}
+ \P(\text{Hipótese}|\text{Dados})
+\end{align*}
+Em outras palavras, você deseja 
+utilizar os dados para 
+aprender sobre as hipóteses consideradas.
+Por exemplo, considere que pacientes submetidos 
+a um tratamento recuperam-se de uma doença com 
+uma frequência desconhecida.
+Se você observar que um paciente submetido ao 
+tratamento recuperou-se da doença,
+de que forma sua incerteza sobre a 
+frequência de recuperação seria atualizada?
+Os teoremas da Probabilidade fornecem uma 
+ferramenta para guiar o seu aprendizado.
+Lembre-se que:
+\begin{align*}
+ \P(\text{Hipótese}|\text{Dados})
+ &=\frac{\P(\text{Hipótese})\P(\text{Dados}|\text{Hipótese})}{\P(\text{Dados})} \\
+ \P(\text{Dados})
+ &= \int_{\text{Hipótese}^{*}}{\P(\text{Hipótese}^{*})\P(\text{Dados}|\text{Hipótese}^{*})}
+\end{align*}
+Em outras palavras, se você conhece a
+probabilidade das hipóteses antes de observar os dados, $\P(\text{Hipótese})$, e a 
+probabilidade de obter os dados considerando cada 
+uma das hipóteses, $\P(\text{Dados}|\text{Hipótese})$,
+então o aprendizado sobre a hipótese a partir dos 
+dados, $\P(\text{Hipótese}|\text{Dados})$, está 
+unicamente determinado.
+A seguir, ilustramos este procedimento com 
+alguns exemplos:
+
+\begin{example}
+ \label{exemplo:exame}
+ Antes de realizar um exame, 
+ um médico acredita que há probabilidade de 
+ $0.05$ de que seu paciente tenha câncer.
+ O médico realiza o exame e ele indica que
+ o paciente tem câncer.
+ A probabilidade de o exame indicar que 
+ o paciente tem câncer quando ele o tem é $0.8$.
+ A probabilidade de o exame indicar que 
+ o paciente tem câncer quando
+ ele não o tem é $0.1$.
+ Qual é a probabilidade de que o paciente tenha
+ câncer dado que o exame indica que
+ ele tem câncer?
+
+ Considere os seguintes eventos:
+ \begin{itemize}
+  \item C: o paciente tem câncer.
+  \item E: o exame indica que o paciente tem câncer.
+ \end{itemize}
+ Note que $C$ é a hipótese levantada pelo médico e
+ $E$ são os dados obtidos por ele. 
+ Desejamos determinar $\P(C|E)$.
+ Para tal, podemos utilizar o Teorema de Bayes:
+ \begin{align*}
+  \P(C|E)
+  &= \frac{\P(C)\P(E|C)}
+  {\P(C)\P(E|C) +\P(C^{c})\P(E|C^{c})}
+  & \Cref{bayes} \\
+  &= \frac{0.05 \cdot 0.8}
+  {0.05 \cdot 0.8 + 0.95 \cdot 0.1} \\
+  &= \frac{8}{27} 
+ \end{align*}
+ Note que, mesmo após o exame indicar que 
+ o paciente tem câncer, a 
+ probabilidade de que o paciente de fato o 
+ tenha ainda é inferior a 50\%.
+ Em outras palavras, o resultado do exame aumenta a
+ probabilidade da hipótese de câncer, mas 
+ o aumento não é tão grande quanto poderia se esperar.
+ Isso ocorre pois o médico acreditava, a princípio, 
+ que a probabilidade de o paciente ter câncer era baixa.
+ Também o exame pode ter 
+ falsos positivos e falsos negativos.
+ Como resposta ao resultado observado, 
+ o médico poderá receitar novos exames
+ e assim reduzir a sua incerteza sobre o diagnóstico.
+\end{example}
+
+\begin{example}
+ \label{exemplo:eleicao}
+ Dois candidatos participam do segundo turno de
+ uma eleição presidencial, $A$ e $D$.
+ Um analista está interessado em inferir a 
+ respeito da proporção, $\theta$, de
+ eleitores que votarão em $D$.
+ A priori, o analista acredita que 
+ os dois candidatos estão empatados e 
+ atribui $\theta \sim \text{Beta}(5, 5)$.
+ O analista amostra $30$ indivíduos da população e 
+ anota o número, $X$, destes que 
+ declararam o voto em $D$.
+ O resultado obtido foi que 
+ $20$ indivíduos declaram que votarão em $D$ e
+ $10$ que votarão em $A$.
+ O analista acredita que, 
+ caso soubesse o valor de $\theta$,
+ então $X \sim \text{Binomial}(30, \theta)$.
+ Qual a incerteza do analista sobre 
+ $\theta$ após observar a amostra?
+ \begin{align*}
+  f(\theta_{0}|x)	
+  &= \frac{f(\theta_{0}) \cdot f(x|\theta_{0})}
+  {\int_{0}^1{f(\theta) \cdot f(x|\theta)d\theta}}
+  & \Cref{bayes-va}	\\
+  &= \frac{\beta^{-1}(5,5)\theta_{0}^{4}(1-\theta_{0})^{4}
+  \cdot {30 \choose 20}\theta_{0}^{20}(1-\theta_{0})^{10}\I(\theta_{0})_{(0,1)}}{\int_{[0,1]}{\beta^{-1}(5,5)\theta^{4}(1-\theta)^{4} \cdot {30 \choose 20}\theta^{20}(1-\theta)^{10}} d\theta} \\
+  &= \frac{\theta_{0}^{24}(1-\theta_{0})^{14}\I_{(0,1)}(\theta_{0})}{\int_{[0,1]}\theta^{24}(1-\theta)^{14} d\theta} \\
+  &= \beta^{-1}(25,15)\theta_{0}^{25-1}(1-\theta_{0})^{15-1}\I_{(0,1)}(\theta_{0})
+ \end{align*}
+ Portanto, $\theta|X=20$, a distribuição 
+ \emph{a posteriori} do analista para 
+ $\theta$ após observar $X=20$, é
+ uma Beta$(25,15)$.
+ A partir desta distibuição, pode-se calcular, por exemplo, a probabilidade do candidato $D$ vencer a eleição. Esta é dada por $\P(\theta>0.5|X=20)=\P(\mbox{Beta}(25,15)>0.5) \approx 94,59\%$.
+
+ Por conveniência, podemos atribuir alguns 
+ nomes a conceitos estudados neste curso.
+ Chamamos de distribuição \emph{a priori} aquela que
+ é atribuída a $\theta$ antes de observar a amostra.
+ Chamamos de distribuição \emph{a posteriori} aquela que
+ é atribuída a $\theta$ após observar a amostra.
+ Denotamos por $L_{x}(\theta_{0})$ a
+ função de verossimilhança de $\theta$ para
+ o dado $x$ e definimos 
+ $L_{x}(\theta_{0}) = f(x|\theta_{0})$.
+ Note que $L_{x}(\theta_{0})$ é
+ uma função de $\theta_{0}$.
+
+ Podemos utilizar os conceitos definidos acima para
+ estudar graficamente de que forma a
+ distribuição a posteriori é obtida.
+ A \cref{figura:eleicao} ilustra a
+ relação entre os conceitos neste exemplo.
+ Observe que a média da posteriori está entre
+ a média da priori e da verossimilhança.
+ Em outras palavras, a sua opinião sobre
+ o parâmetro após observar os dados está entre
+ a sua opinião anterior e a verossimilhança dos dados.
+ \begin{figure}
+  \centering
+  \includegraphics{chapter-introduction-elections.pdf}
+  \caption{Comparação entre a distribuição a priori,
+  a verossimilhança e a distribuição a posteriori no
+  \cref{exemplo:eleicao}.}
+  \label{figura:eleicao}
+ \end{figure}
+\end{example}
+
+\subsubsection*{Exercícios}
+
+\begin{exercise}
+ No \cref{exemplo:exame}, qual é a 
+ probabilidade de o exame indicar que não há câncer? 
+ (antes de saber o resultado do exame)
+\end{exercise}
+
+\solution{
+ \textbf{Solução}:
+ \begin{align*}
+  \P(E)	
+  &= \P(E \cap C) + \P(E \cap C^{c})
+  &	\Cref{ltp} \\
+  &= \P(C)\P(E|C) + \P(C^{c})\P(E|C^{c}) \\
+  &= 0.05 \cdot 0.8 + 0.95 \cdot 0.1 \\
+  &= 0.135
+ \end{align*}
+ Portanto, conclua do 
+ \cref{lemma:complement_probability} que
+ $\P(E^{c}) = 1-\P(E) = 0.865$.
+}{}
+
+\begin{exercise}
+ Um homicídio foi cometido em uma cidade de
+ aproximadamente $100.000$ habitantes adultos.
+ Antes de observar as evidências do caso, 
+ o juiz acreditava que qualquer um dos habitantes
+ poderia ter cometido o crime com mesma probabilidade.
+ Contudo, a promotoria traz um exame forense como
+ evidência de que o réu cometeu o crime.
+ Por um lado, caso o réu seja culpado, 
+ os resultados do exame seriam 
+ observados com certeza.
+ Por outro lado, caso o réu fosse inocente, 
+ os resultados do exame somente seriam 
+ observados com uma probabilidade de 
+ $1$ em $10.000$.
+ O promotor alega que há
+uma baixa probabilidade de que
+o réu seja inocente, e que ele deve portanto ser condenado.
+ O juiz contrata você como uma
+ perita judicial para ajudá-lo a 
+ entender o argumento do promotor.
+ Qual é a sua análise?
+ 
+ Ressalvadas algumas adaptações, 
+ este argumento jurídico é real e
+ foi apresentado nos Estados Unidos no
+ caso \emph{The People v. Collins}.
+\end{exercise}
+
+\solution{
+ \textbf{Solução}: Considere os seguintes eventos:
+ \begin{itemize}
+  \item $R$: o réu cometeu o crime.
+  \item $E$: o exame forense indica que 
+  o réu cometeu o crime.
+ \end{itemize}
+ O promotor indicou que 
+ $\P(E|R^{c}) = 10^{-4}$ e $\P(E|R) = 1$ e
+ disse que isso é razão suficiente para 
+ acreditar que o réu é 
+ culpado dada a evidência.
+ Contudo, o juiz acreditava, a priori, que
+ $\P(R) = 10^{-5}$.
+ Para determinar a probabilidade a posteriori de que
+ o réu é culpado, $\P(R|E)$, 
+ ele deve usar o teorema de Bayes.
+ \begin{align*}
+  \P(R|E)
+  &= \frac{\P(R)\P(E|R)}{\P(R)\P(E|R)
+  +\P(R^{c})\P(E|R^{c})}
+  & \text{\Cref{bayes}} \\
+  &=\frac{10^{-5} \cdot 1}
+  {10^{-5} \cdot 1 + (1-10^{-5}) \cdot 10^{-4}} \\
+  &=\frac{10^{-5}}
+  {10^{-5}+10^{-4}-10^{-9}}
+  = \frac{1}{10+1-10^{-4}} \approx 11^{-1}
+  \approx 0.091
+ \end{align*}
+ Portanto, dado o resultado do exame forense,
+ a probabilidade de que o réu é culpado ainda é baixa.
+ Isto ocorre dada a baixa probabilidade a priori de que
+ o réu era culpado. O argumento falacioso usado pelo
+ promotor é bem conhecido em Estatística Forense e
+ recebe o nome de \href{https://en.wikipedia.org/wiki/Prosecutor\%27s_fallacy}{``falácia do promotor''}.
+}{}
+
+\begin{exercise}[Monty Hall]
+ Marilyn vos Savant por muitos anos foi considerada
+ a pessoa com o maior QI do mundo (228) pelo
+ livro Guiness. Ela é a autora da coluna 
+ ``Ask Marilyn'', em que responde a 
+ perguntas de seus leitores.
+ Em um episódio célebre,
+ sua resposta a uma pergunta de probabilidade
+ gerou polêmica na época.
+ A pergunta era a seguinte:
+ \begin{quote}
+  Suponha que você está em um programa de televisão.
+  O apresentador te permite escolher entre três portas.
+  Atrás de uma das portas há uma carro e 
+  atrás das outras duas há cabras.
+  Você ganhará o carro caso abra a sua respectiva porta.
+  Considere que, a priori, você acredita ser
+  equiprovável que o carro está atrás de 
+  cada uma das portas.
+  Após você escolher a porta $1$, o apresentador sempre
+  abrirá aleatoriamente (dentre as portas que
+  você não escolheu) uma das portas com uma cabra e
+  te dará a oportunidade de trocar de porta.
+  Digamos que o apresentador abriu a porta $2$.
+  É vantajoso trocar de porta?
+ \end{quote}
+
+ Marylin vos Savant respondeu que era vantajoso.
+ Você concorda com ela?
+\end{exercise}
+
+\solution{
+ \textbf{Solução}: Considere os seguintes eventos:
+ \begin{itemize}
+  \item $Pr_{i}$: O prêmio está atrás da porta $i$.
+  \item $C_{2}$: O apresentador abrirá a porta $2$.
+ \end{itemize}
+ O problema indica que $\P(Pr_{i}) = 3^{-1}$.
+ Note que se o prêmio está atrás da porta $1$, então
+ o apresentador poderia abrir 
+ tanto a porta $2$ quanto a $3$.
+ Como ele toma uma decisão entre 
+ as disponíveis com mesma probabilidade,
+ $\P(C_{2}|Pr_{1}) = 2^{-1}$.
+ Se o prêmio está atrás da porta $2$, então
+ o apresentador certamente não a abrirá, 
+ $\P(C_{2}|Pr_{2}) = 0$.
+ Finalmente, se o prêmio está atrás da porta $3$,
+ então o apresentador não pode abrir a porta que
+ você escolheu ($1$),
+ nem a porta que tem o prêmio ($3$) e, assim,
+ deve abrir a porta $2$, $\P(C_{2}|Pr_{3}) = 1$.
+ Finalmente, podemos usar o 
+ Teorema de Bayes para achar $\P(Pr_{1}|C_{2})$.
+ \begin{align*}
+  \P(Pr_{1}|C_{2})	
+  &= \frac{\P(Pr_{1})\P(C_{2}|Pr_{1})}
+  {\P(Pr_{1})\P(C_{2}|Pr_{1}) 
+  +\P(Pr_{2})P(C_{2}|Pr_{2}) 
+  +\P(Pr_{3})P(C_{2}|Pr_{3})}
+  & \Cref{bayes} \\
+  &= \frac{3^{-1} \cdot 2^{-1}}{3^{-1} \cdot 2^{-1}
+  +3^{-1} \cdot 0 + 3^{-1} \cdot 1} \\
+  &= \frac{1}{1 + 2} = 3^{-1}
+ \end{align*}
+ Realizando as mesmas contas para 
+ as outras portas, obtemos 
+ $\P(Pr_{2}|C_{2}) = 0$ e 
+ $\P(Pr_{3}|C_{2}) = 2 \cdot 3^{-1}$.
+ Portanto, dado que a posteriori a porta $3$ é 
+ mais provável que a $1$,
+ vale a pena trocar de porta.
+}{}
+
+\begin{exercise}
+ Sejam $A_{1},\ldots,A_{n}$ eventos disjuntos tais que
+ $B = \cup_{i=1}^{n}{A_{i}}$.
+ Prove que 
+ \begin{align*}
+  \P(A_{1}|B)
+  &= \frac{\P(A_{1})\P(B|A_{1})}
+  {\sum_{i=1}^{n}{\P(A_{i})\P(B|A_{i})}}
+ \end{align*}
+\end{exercise}
+
+\solution{
+ \textbf{Solução}:
+ \begin{align*}
+  \P(A_{1}|B)
+  &= \frac{\P(A_{1} \cap B)}{\P(B)}
+  & \text{\Cref{conditional_probability}} \\
+  &= \frac{\P(A_{1})\P(B|A_{1})}{\P(B)}
+  & \text{\Cref{conditional_probability}} \\
+  &= \frac{\P(A_{1})\P(B|A_{1})}
+  {\P(B \cap (\cup_{i=1}^{n}{A_{i}}))}	
+  & B = \cup_{i=1}^{n}{A_{i}} \\
+  &= \frac{\P(A_{1})\P(B|A_{1})}
+  {\P(\cup_{i=1}^{n}(B \cap {A_{i}}))} \\
+  &= \frac{\P(A_{1})\P(B|A_{1})}
+  {\sum_{i=1}^{n}\P(B \cap {A_{i}})}
+  &	\text{\Cref{probability}} \\
+  &= \frac{\P(A_{1})\P(B|A_{1})}
+  {\sum_{i=1}^{n}\P(A_{i})\P(B|{A_{i}})}
+  & \text{\Cref{conditional_probability}}
+ \end{align*}
+}{}
+
+\subsection{Modelo estatístico}
+\label{section:stat_model}
+
+O modelo estatístico oferece uma 
+tradução padronizada de problemas envolvendo incerteza
+para um espaço de probabilidade.
+Ele é suficientemente geral para que 
+muitos problemas que envolvem incerteza possam 
+ser traduzidos por meio dele.
+
+Simplificadamente, os elementos do modelo estatístico são
+os dados, denotados por $X$ (que pertencem ao espaço amostral $\mathcal{X}$), e 
+uma quantidade desconhecida de interesse, denotada por
+$\theta$. $\theta$ é comumente chamado de 
+parâmetro do modelo.
+Assumimos que $\theta \in \Theta$ ($\Theta$ é chamado de espaço paramétrico).
+Nosso interesse é em fazer inferência (isto é, fazer afirmações) sobre $\theta$ após observar os dados $X=x$.
+
+
+A essência da abordagem Bayesiana
+para a inferência estatística
+é tratar tanto $X$ quanto $\theta$ como
+quantidades aleatórias. 
+Isso é feito pois,  antes de observar $X$, ambas são
+desconhecidas
+e portanto temos incerteza sobre elas.
+
+Veremos agora como essa perspectiva permite fazer  inferência sobre $\theta$.
+Como $\theta$ e $X$
+são aleatórios,
+eles possuem uma função de
+probabilidade 
+conjunta.
+Na prática Bayesiana, esta probabilidade conjunta é especificada
+por dois elementos:
+(i) a
+probabilidade marginal de $\theta$,
+denotada por $f(\theta_{0})$ 
+(a distribuição \emph{a priori} dos parâmetros, que codifica matematicamente informações anteriores à realização do experimento) e (ii)
+a
+probabilidade dos dados condicional a $\theta$, denotada por $f(x|\theta_{0})$ (a função de verossimilhança, que codifica a informação sobre $\theta$ presente nos dados).\footnote{Note que o modelo Bayesiano está
+especificando
+uma função de
+probabilidade (ou densidade) conjunta para 
+$\theta$ e $X$, $f(x,\theta_{0})$. Em particular, $f(\theta_{0}) := \int{f(x,\theta_{0})dx}$. Ainda que essa distribuição é usualmente especificada como \emph{priori}+verossimilhança, ela poderia ser feita de outras maneiras.}
+Estes dois elementos podem ser combinados através do Teorema de Bayes
+de modo a se obter  $f(\theta_{0}|x)$, que é chamada de distribuição 
+\emph{a posteriori} de $\theta$ e que codifica  a incerteza sobre $\theta$ após a realização do experimento: 
+\begin{align}
+ \label{eqn:bayes}
+ f(\theta_{0}|x)
+ &= \frac{f(\theta_{0})f(x|\theta_{0})}
+ {\int_{\Theta}{f(\theta)f(x|\theta)d\theta}}.
+\end{align}
+Assim, o Teorema de Bayes é a ferramenta matemática que permite combinar  informações anteriores à realização do experimento
+com os dados obtidos, de modo a se atualizar a incerteza sobre $\theta$ após se observar $x$.
+A distribuição \emph{a posteriori} $f(\theta_{0}|x)$
+contém toda a incerteza que temos
+sobre $\theta$ após a realização do experimento.
+
+Observe que $f(\theta_{0}|x)$ é 
+uma função de $\theta_{0}$.
+Também, $\int_{\Theta}{f(\theta)f(x|\theta)d\theta}$ 
+não depende de $\theta_{0}$ ou, em outras palavras, 
+esta integral é a constante que faz com que
+$f(\theta_{0}|x)$ integre $1$.
+Em alguns casos, é possível determinar a 
+distribuição de $\theta|X$ sem 
+calcular diretamente o valor da constante 
+$\int_{\Theta}{f(\theta)f(x|\theta)d\theta}$.
+Nestes casos, a seguinte notação é útil,
+\begin{definition}
+ \label{prop}
+ Dizemos que $f(y) \propto g(y)$
+ se existe alguma constante, $C \in \mathbb{R}$, 
+ tal que $f(y) = C g(y)$.
+\end{definition} 
+
+\begin{lemma}
+ \label{lemma:bayes_prop}
+ \begin{align*}
+  f(\theta_{0}|x)
+  &\propto f(\theta_{0})f(x|\theta_{0})
+ \end{align*}
+ Note que $f(\theta_{0}|x)$ é uma função de 
+ $\theta_{0}$ e que $x$ é uma constante.
+ Isto ocorre pois, no paradigma Bayesiano,
+ os dados, $x$, são conhecidos e a incerteza existe 
+ a respeito de $\theta$.
+ Por isso, $f(x) = \int{f(\theta)f(x|\theta)d\theta}$ 
+ é uma constante.
+ O ``$\theta$'' que aparece na integral é 
+ uma variável de integração.
+\end{lemma}
+
+\begin{example}[``é proporcional a'' no
+ \cref{exemplo:eleicao}]
+ \begin{align*}
+  f(\theta_{0}|x)
+  &\propto f(\theta_{0})f(x|\theta_{0})
+  & \text{\Cref{lemma:bayes_prop}} \\
+  &=\beta^{-1}(5,5)\theta_{0}^{4}(1-\theta_{0})^{4} \cdot {30 \choose 20}\theta_{0}^{20}(1-\theta_{0})^{10}\I(\theta_{0})_{(0,1)} \\
+  &\propto \theta_{0}^{24}(1-\theta_{0})^{14}I(\theta_{0})_{(0,1)}
+ \end{align*}
+ Observe que $\theta_{0}^{24}(1-\theta_{0})^{14}I(\theta_{0})_{(0,1)}$ é
+ a forma funcional de uma distribuição Beta$(25,15)$.
+ Portanto, a única constante que faz com que
+ essa expressão integre $1$
+ é $\beta^{-1}(25,15)$.
+\end{example}
+
+É comum que os dados sejam um vetor de 
+valores observados, $X=(X_{1},\ldots,X_{n})$.
+Ademais, é comum supor-se que
+os elementos deste vetor sejam independentes e
+identicamente distribuídos quando $\theta$ é conhecido.
+Neste caso, podemos escrever
+\begin{align*}
+ f(x|\theta)
+ &= \prod_{i=1}^{n}{f(x_{i}|\theta)}
+\end{align*}
+onde $f(x_{i}|\theta)$ é a distribuição marginal de
+cada elemento do vetor $x$. Neste caso, obtemos,
+\begin{lemma}
+ \label{lemma:bayes_iid}
+ Quando os dados são i.i.d. dado $\theta$, obtemos:
+ \begin{align*}
+  f(\theta_{0}|x)
+  &= \frac{f(\theta_{0})\prod_{i=1}^{n}{f(x_{i}|\theta)}}
+  {\int_{\Theta}{f(\theta)\prod_{i=1}^{n}
+  {f(x_{i}|\theta)}d\theta}} \\
+  &\propto f(\theta_{0})\prod_{i=1}^{n}
+  {f(x_{i}|\theta)}
+ \end{align*}
+\end{lemma}
+
+\subsubsection*{Exercícios}
+
+\begin{exercise}
+ Considere que, a priori, 
+ $\theta \sim \text{Gamma}(2,2)$.
+ Também, $X|\theta \sim \text{Poisson}(\theta)$.
+ Qual é a distribuição a posteriori para 
+ $\theta$ após observar que $X=2$?
+  Use um software computacional para traçar (i) a  distribuição à priori, (ii) a função de verossimilhança e (iii) a distribuição à posteriori
+ em função de 
+ $\theta \in \mathbb{R}^+$.
+ Interprete o gráfico resultante.
+\end{exercise}
+
+\solution{
+ \textbf{Solução}:
+ \begin{align*}
+  f(\theta_{0}|x)
+  &\propto f(\theta_{0}) f(x|\theta_{0}) \\
+  &\propto \theta_{0}\exp(-2\theta_{0})
+  \exp(-\theta_{0}) \theta_{0}^{x} \\
+  &= \theta_{0}^{x+1} \exp(-(2+1)\theta_{0}) \\
+  &= \theta_{0}^{(x+2)-1} \exp(-(2+1)\theta_{0}) 
+ \end{align*}
+ Portanto, $\theta|X=2 \sim \text{Gamma}(4, 3)$.
+}{}
+
+\begin{exercise}
+ \label{exercicio:urna_com_rep}
+ Considere que uma urna tem $3$ bolas.
+ Cada uma das bolas pode ser branca ou azul.
+ Você deseja determinar o número de bolas azuis na urna.
+ A priori, você acredita que 
+ todos os valores em $\{0,1,2,3\}$ são 
+ equiprováveis para o número de bolas azuis.
+ Para aprender mais sobre esta quantidade, você 
+ retira duas bolas com reposição da urna e 
+ observa que as duas são azuis.
+ Qual é o modelo estatístico neste problema?
+ Use o \cref{lemma:bayes_iid} para 
+ obter sua probabilidade a posteriori.
+\end{exercise}
+
+\solution{
+ \textbf{Solução}: Considere as 
+ seguintes variáveis aleatórias:
+ \begin{itemize}
+  \item $\theta$: O número de bolas azuis na urna.
+  \item $X_{i}$: A cor da bola na amostra $i$, 
+  $i \in \{1,2\}$. $X_{i}=1$ se 
+  a bola foi azul e $X_{i}=0$, caso contrário.
+ \end{itemize}
+ Note que foi realizada uma 
+ amostragem simples com reposição. Portanto,
+ $\P(X_{i}=1|\theta=\theta_{0}) = 3^{-1}\theta_{0}$.
+ Também, dado que a amostragem foi 
+ realizada com reposição,
+ os elementos de $X$ são independentes quando
+ o valor de $\theta$ é conhecido.
+ Portanto, podemos aplicar o \cref{lemma:bayes_iid}: 
+ \begin{align*}
+  \P(\theta=0|X_{1}=1, X_{2}=1) 
+  &\propto \P(\theta=0)\P(X_{1}=1|\theta=0)
+  \P(X_{2}=1|\theta=0) \\
+  &= 4^{-1} \cdot 0 \cdot 0 = 0 \\
+  \P(\theta=1|X_{1}=1, X_{2}=1) 
+  &\propto \P(\theta=1)\P(X_{1}=1|\theta=1)
+  \P(X_{2}=1|\theta=1) \\
+  &= 4^{-1} \cdot 3^{-1} \cdot 3^{-1} 
+  = 2^{-2}3^{-2} \\
+  \P(\theta=2|X_{1}=1, X_{2}=1) 
+  &\propto \P(\theta=2)P(X_{1}=1|\theta=2)
+  \P(X_{2}=1|\theta=2) \\
+  &= 4^{-1} \cdot 2 \cdot 3^{-1} \cdot 2 \cdot 3^{-1} 
+  = 3^{-2} \\
+  \P(\theta=3|X_{1}=1, X_{2}=1)
+  &\propto \P(\theta=3)P(X_{1}=1|\theta=3)
+  \P(X_{2}=1|\theta=3) \\
+  &= 4^{-1} \cdot 1 \cdot 1 = 2^{-2}
+ \end{align*}
+ Note que
+ \begin{align*}
+  \P(\theta=0|X_{1}=1, X_{2}=1)
+  +\P(\theta=1|X_{1}=1, X_{2}=1)
+  +\P(\theta=2|X_{1}=1, X_{2}=1)
+  +\P(\theta=3|X_{1}=1, X_{2}=1) = 1
+ \end{align*}
+ Portanto, dividindo cada um dos resultados acima 
+ pela soma dos resultados encontrados,
+ \begin{align*}
+  \begin{cases}
+   \P(\theta=0|X_{1}=1, X_{2}=1)
+   &= \frac{0}{2^{-2}3^{-2} + 3^{-2}+2^{-2}} = 0 \\
+   \P(\theta=1|X_{1}=1, X_{2}=1)
+   &= \frac{2^{-2}3^{-2}}{2^{-2}3^{-2}+ 3^{-2}+ 2^{-2}}
+   \approx 0.071 \\
+   \P(\theta=2|X_{1}=1, X_{2}=1)
+   &= \frac{3^{-2}}{2^{-2}3^{-2}+3^{-2}+2^{-2}}
+   \approx 0.286 \\
+   \P(\theta=3|X_{1}=1, X_{2}=1)
+   &= \frac{2^{-2}}{2^{-2}3^{-2} + 3^{-2} + 2^{-2}}
+   \approx 0.643
+  \end{cases}
+ \end{align*}
+ Alternativamente, temos:
+ \begin{align*}
+  \P(\theta=\theta_{0}|X_{1}=1, X_{2}=1)
+  &\propto \P(\theta=\theta_{0})
+  \P(X_{1}=1|\theta=\theta_{0})
+  \P(X_{2}=1|\theta=\theta_{0}) \\
+  &= \frac{1}{4} \cdot 
+  \left(\frac{\theta_{0}}{3}\right)^{2}
+  = \frac{\theta_{0}^{2}}{36}
+ \end{align*}
+ Usando o fato de que 
+ $\sum_{i=1}^{3}{P(\theta=i|X_{1}=1, X_{2}=1)} = 1$,
+ obtemos:
+ \begin{align*}
+  \P(\theta=\theta_{0}|X_{1}=1, X_{2}=1)
+  &= \frac{\frac{\theta_{0}^{2}}{36}}{\sum_{i=0}^{3}
+  {\frac{i^{2}}{36}}} 
+  =\frac{\theta_{0}^{2}}
+  {\sum_{i=1}^{3}{i^{2}}}
+ \end{align*}
+}{}
+
+\begin{exercise}
+ \label{exercicio:urna_sem_rep}
+ Considere a mesma situação descrita no
+ \cref{exercicio:urna_com_rep}.
+ Contudo, considere que a retirada da urna foi 
+ feita \textbf{sem} reposição.
+ Encontre a sua probabilidade a posteriori. 
+ (Você não pode usar o \cref{lemma:bayes_iid}
+ neste caso!)
+\end{exercise}
+
+\solution{
+ \textbf{Solução}: Considere as 
+ mesmas variáveis aleatórias definidas no
+ \cref{exercicio:urna_com_rep}.
+ Neste caso, $X_{1}$ e $X_{2}$ não são 
+ independentes sabendo o valor o de $\theta$.
+ Em particular, temos que:
+ \begin{align*} 
+  \P(X_{1}=1 \cap X_{2}=1|\theta=\theta_{0}) 
+  &= \frac{\theta_{0}(\theta_{0}-1)}{6}
+ \end{align*}
+ Utilizando o \cref{lemma:bayes_prop}, obtemos:
+ \begin{align*}
+  \P(\theta=\theta_{0}|X_{1}=1, X_{2}=1)
+  &\propto \frac{1}{4} 
+  \cdot \frac{\theta_{0}(\theta_{0}-1)}{6} \\
+  &\propto \theta_{0}(\theta_{0}-1)
+ \end{align*}
+ Como $\sum_{i=0}^{3}{P(\theta=i|X_{1}=1, X_{2}=1)}=1$,
+ obtemos:
+ \begin{align*}
+  \P(\theta=\theta_{0}|X_{1}=1, X_{2}=1)
+  &= \frac{\theta_{0}(\theta_{0}-1)}
+  {\sum_{i=0}^{3}{i(i-1)}}
+ \end{align*}
+}{}
+
+\begin{exercise}
+ Considere que, a priori, a proporção de
+ indivíduos com uma determinada doença em
+ uma população é uma uniforme em $(0,1)$.
+ $100$ indivíduos são selecionados com reposição e
+ verifica-se que $30$ deles tem a doença.
+ Qual é a probabilidade a posteriori para 
+ a proporção de indivíduos com a doença?
+\end{exercise}
+
+\solution{\textbf{Solução}: Definimos
+ \begin{align*}
+  \begin{cases}
+   \theta: \text{proporção de indivíduos com 
+   a doença na população} \\
+   X: \text{número de indivíduos na amostra que 
+   tem a doença}
+  \end{cases}
+ \end{align*}
+ Temos que $\theta \sim \text{Uniforme}(0,1)$ e 
+ $X|\theta \sim \text{Binomial}(100,\theta)$.
+ Portanto,
+ \begin{align*}
+  f(\theta|X=30)
+  &\propto f(\theta)f(X=30|\theta) \\
+  &= \I_{[0,1]}(\theta){100 \choose 30}
+  \theta^{30} (1-\theta)^{70} \\
+  &\propto \theta^{30}(1-\theta)^{70}\I_{[0,1]}(\theta)
+ \end{align*}
+ Portanto, concluímos pela 
+ forma de $f(\theta|X=30)$ que 
+ $\theta|X=30 \sim \text{Beta}(31,71)$.
+}{}
+
+\begin{exercise}
+ \label{ex:introduction-normal}
+ Considere que, a priori, $\sigma^{2}$ tem 
+ distribuição uniforme em $\{1,2\}$.
+ Se $X|\sigma^{2} \sim N(0,\sigma^{2})$, qual 
+ a posteriori de $\sigma^{2}$ dado $X$?
+ Exiba a posteriori exata, não é 
+ o suficiente indicá-la até uma 
+ constante de proporcionalidade.
+ Use um software computacional para traçar o 
+ valor de $\P(\sigma^{2}=1|X=x)$ em função de 
+ $x \in \mathbb{R}$.
+ Interprete o gráfico resultante.
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{align*}
+  f(\sigma^{2}=1|X=x)
+  &= \frac{f(\sigma^{2}=1)f(x|\sigma^{2}=1)}
+  {f(\sigma^{2}=1)f(x|\sigma^{2}=1)
+  +f(\sigma^{2}=2)f(x|\sigma^{2}=2)} \\
+  &= \frac{2^{-1}(\sqrt{2\pi})^{-1}\exp(-\frac{x^{2}}{2})}{2^{-1}(\sqrt{2\pi})^{-1}\exp(-\frac{x^{2}}{2}) +2^{-1}(\sqrt{4\pi})^{-1}\exp(-\frac{x^{2}}{4})} \\
+  &= \frac{\exp(-\frac{x^{2}}{2})}{\exp(-\frac{x^{2}}{2}) +\sqrt{2^{-1}}\exp(-\frac{x^{2}}{4})} \\
+  &= \frac{1}{1+ \sqrt{2^{-1}}\exp(\frac{x^{2}}{4})}
+ \end{align*}
+ A \cref{fig:ex2} mostra que,
+ quanto mais distante de $0$ for o dado observado,
+ menor a probabilidade a posteriori de que
+ $\sigma^{2}=1$.
+ Observe que, quando $\sigma^{2}=1$, a 
+ variância de $X$ é pequena.
+ Assim, esperamos que os dados estejam 
+ concentrados em torno de $0$.
+ Similarmente, quando $\sigma^{2}=2$, 
+ a variância de $X$ é maior. 
+ Assim, esperamos que os dados estejam mais 
+ dispersos ao redor de $0$.
+ A posteriori se adequa a este 
+ comportamento qualitativo, dando maior 
+ probabilidade para $\sigma^{2}=1$ quando 
+ observamos dados que seriam esperados 
+ sob esta hipótese.
+ \begin{figure}
+  %gerado por chapter-introduction-normal-sigma.R
+  \centering
+  \includegraphics[scale=0.5]{chapter-introduction-normal.pdf}
+  \caption{$P(\sigma^{2}=1|X=x)$ para o
+  \cref{ex:introduction-normal}.}
+  \label{fig:ex2}
+ \end{figure}
+}{}
+
+\begin{exercise}
+ O som inicial para uma palavra em 
+ um idioma pode pertencer à categoria 
+ consoante ou à categoria vogal. Considere que, 
+ se o som inicial de um idioma é conhecido, 
+ cada um dos seus descendentes terá o som inicial na
+ mesma categoria do ancestral independentemente e 
+ com probabilidade $0.9$.
+ Considere que os idiomas $B$ e $C$ são 
+ descendentes imediatos do idioma $A$.
+ Contudo, não conhecemos os sons iniciais para 
+ as palavras de $A$. Acreditamos que o som inicial para
+ o sentido ``cachorro'' em $A$ é 
+ uma consoante ou uma vogal com mesma probabilidade.
+ Observamos que o sons iniciais dos
+ idiomas $B$ e $C$ para ``cachorro'' são 
+ ambos consoantes.
+ Estamos interessados em predizer a 
+ categoria do som inicial para 
+ a palavra ``cachorro'' no idioma $A$.
+ \begin{enumerate}[label=(\alph*)]
+  \item Quais são os dados e 
+  os parâmetros neste problema?
+  \item Encontre a posteriori para o parâmetro.
+  \item Qual seria a posteriori se 
+  o som inicial para cada descendente estivesse 
+  em uma categoria diferente?
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item Defina $C$ como consoante e $V$ como vogal.
+  Também,
+  \begin{align*}
+   \begin{cases}
+    \theta: \text{a categoria do som inicial para 
+    a palavra ``cachorro'' no idioma A},
+    \theta \in \{C,V\}	\\
+    X_{1}: \text{a categoria do som inicial para 
+    a palavra ``cachorro'' no idioma B},
+    X_{1} \in \{C,V\} \\
+    X_{2}: \text{a categoria do som inicial para
+    a palavra ``cachorro'' no idioma C},
+    X_{2} \in \{C,V\}
+   \end{cases}
+  \end{align*}
+  Seguindo a convenção usual, $\theta$ é o parâmetro,
+  uma quantidade de interesse desconhecida, e 
+  $X=(X_{1},X_{2})$ são os dados, 
+  quantidades observáveis.
+  
+  \item
+  \begin{align*}
+   \P(\theta=C|X_{1}=C, X_{2}=C)
+   &= \frac{\P(\theta=C)\P(X_{1}=C,X_{2}=C|\theta=C)}
+   {\P(\theta=C)P(X_{1}=C,X_{2}=C|\theta=C)
+   +\P(\theta=V)P(X_{1}=C,X_{2}=C|\theta=V)} \\
+   &= \frac{0.5 \cdot 0.9 \cdot 0.9}
+   {0.5 \cdot 0.9 \cdot 0.9 
+   +0.5 \cdot 0.1 \cdot 0.1}\\
+   &\approx 0.988
+  \end{align*}
+  Como $\P(\theta=C|X_{1}=C, X_{2}=C) + \P(\theta=V|X_{1}=C, X_{2}=C) = 1$, obtemos
+  \begin{align*}
+   \P(\theta=V|X_{1}=C, X_{2}=C) &= 0.012
+  \end{align*}
+  
+  \item
+  \begin{align*}
+   \P(\theta=C|X_{1}=C, X_{2}=V)
+   &= \frac{\P(\theta=C)\P(X_{1}=C,X_{2}=V|\theta=C)}
+   {\P(\theta=C)\P(X_{1}=C,X_{2}=V|\theta=C)
+   +\P(\theta=V)\P(X_{1}=C,X_{2}=V|\theta=V)} \\
+   &= \frac{0.5 \cdot 0.9 \cdot 0.1}
+   {0.5 \cdot 0.9 \cdot 0.1 
+   +0.5 \cdot 0.1 \cdot 0.9} \\
+   &= 0.5
+  \end{align*}
+  Como $\P(\theta=C|X_{1}=C, X_{2}=C) + \P(\theta=V|X_{1}=C, X_{2}=C) = 1$, obtemos
+  \begin{align*}
+   \P(\theta=V|X_{1}=C, X_{2}=C) = 0.5
+  \end{align*}
+ \end{enumerate}
+}{}
+
+\begin{exercise}
+ Considere que um sistema é composto por $3$ peças e 
+ que o sistema falha quando qualquer uma 
+ das peças falhar.
+ Considere que cada peça falha independentemente
+ em um tempo (em dias) determinado pela 
+ mesma taxa de falha.
+ Assuma que, dada a taxa de falha, $\theta$,
+ o tempo para falha de uma peça é uma
+ Exponencial$(\theta)$.
+ \begin{enumerate}[label=(\alph*)]
+  \item Qual é a taxa de falha do sistema?
+  \item Considere que, a priori, 
+  você acreditava que a taxa de falha de 
+  cada componente seguia uma distribuição Gamma$(1,1)$.
+  Se você observou um sistema falhar em $3$ dias,
+  qual é a sua posteriori para a taxa de falha dos
+  componentes?
+  Identifique o nome e os hiperparâmetros da
+  distribuição a posteriori.
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item Defina
+  \begin{align*}
+   \begin{cases}
+    \theta: \text{a taxa de falha dos componentes}.	\\
+    X_{i}: \text{o tempo até o componente $i$ falhar}.\\
+	Y: \text{o tempo até o sistema falhar}.
+   \end{cases}
+  \end{align*}
+  O problema indica que, dado $\theta$,
+  $X_{1},X_{2}$ e $X_{3}$ são independentes e
+  $X_{i} \sim \text{Exponencial}(\theta)$.
+  Temos que
+  \begin{align*}
+   \P(Y \geq t|\theta)
+   &= \P(X_{1} \geq t, X_{2} \geq t, X_{3} \geq t |\theta) \\
+   &= \P(X_{1} \geq t|\theta)\P(X_{2} \geq t|\theta)\P(X_{3} \geq t|\theta) \\
+   &= \exp(-t\theta)\exp(-t\theta)\exp(-t\theta) 
+   =\exp(-t \cdot 3\theta)
+  \end{align*}
+  Portanto, $Y|\theta \sim \text{Exponencial}(3\theta)$.
+  
+  \item
+  \begin{align*}
+   f(\theta|Y=3)
+   &\propto f(\theta)f(Y=y|\theta) \\
+   &\propto \exp(-\theta)3\theta \exp(-9\theta) \\
+   &\propto \theta^{2-1}\exp(-10\theta)
+  \end{align*}
+  Portanto $\theta|Y=3 \sim \text{Gamma}(2,10)$.
+ \end{enumerate}
+}{}
+
+\begin{exercise}
+ Dado $\theta$, $X_{1}, \ldots X_{n}$ são
+ independentes. Mostre que 
+ \begin{align*}
+  f(\theta|x_{1},\ldots,x_{n}) 
+  &\propto f(\theta|x_{1},\ldots,x_{n-1})
+  f(x_{n}|\theta)
+ \end{align*}
+ Em outras palavras, a posteriori obtida após 
+ condicionar nas observações anteriores pode ser 
+ usada como priori na aplicação do Teorema de Bayes para
+ a próxima observação.
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{align*}
+  f(\theta|x_{1},\ldots,x_{n})
+  &\propto f(\theta)f(x_{1},\ldots,x_{n}|\theta)
+  &	\text{\cref{lemma:bayes_prop}} \\
+  &= f(\theta)f(x_{1},\ldots,x_{n-1}|\theta)
+  f(x_{n}|\theta)
+  & \text{indep. dado $\theta$} \\
+  &\propto f(\theta|x_{1},\ldots,x_{n-1})
+  f(x_{n}|\theta)
+  & \text{\cref{lemma:bayes_prop}}
+ \end{align*}
+}{}
+

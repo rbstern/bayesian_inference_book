@@ -1,0 +1,486 @@
+\section{Revisão sobre o teorema de Bayes e
+o modelo estatístico}
+
+\begin{exercise}
+ \label{ex:normal-mixture}
+ A proporção de mulheres em um país é
+ aproximadamente 50\%. Considere que
+ a distribuição da altura das mulheres e
+ dos homens seguem distribuições normais com
+ médias conhecidas, respectivamente, $165$ e $170$ e
+ variâncias iguais a $9$.
+ Se a altura de uma pessoa selecionada
+ aleatoriamente é $167$, qual é a
+ probabilidade de que ela seja uma mulher?
+\end{exercise}
+
+\solution{\textbf{Solução}: Defina
+ \begin{align*}
+  \begin{cases}
+   \theta&:\text{ a indicadora de que a
+   pessoa selecionada é uma mulher, }
+   \theta \in \{0,1\} \\
+   X&:\text{ a altura da pessoa selecionada, }
+   X \in \mathbb{R}.
+  \end{cases}
+ \end{align*}
+ O problema especifica que:
+ \begin{align*}
+  \P(\theta = 1) &= 0.5 \\
+  f(x|\theta=0) &= (\sqrt{18\pi})^{-1}\exp\left(\frac{-(x-170)^{2}}{18}\right) \\
+  f(x|\theta=1) &= (\sqrt{18\pi})^{-1}\exp\left(\frac{-(x-165)^{2}}{18}\right)
+ \end{align*}
+ Portanto, utilizando o teorema de bayes,
+ \begin{align*}
+  \P(\theta=1|X=x)
+  &= \frac{\P(\theta=1)f(x|\theta=1)}
+  {\P(\theta=1)f(x|\theta=1) 
+  +\P(\theta=0)f(x|\theta=0)} \\
+  &= \frac{0.5 \cdot (\sqrt{18\pi})^{-1}\exp\left(\frac{-(x-165)^{2}}{18}\right)}{0.5 \cdot (\sqrt{18\pi})^{-1}\exp\left(\frac{-(x-165)^{2}}{18}\right) + 0.5 \cdot (\sqrt{18\pi})^{-1}\exp\left(\frac{-(x-170)^{2}}{18}\right)} \\
+  &= \frac{1}{1 + \exp\left(\frac{-(x-170)^{2}+(x-165)^{2}}{18}\right)}	\\
+  &= \frac{1}{1 + \exp\left(\frac{10x-1675}{18}\right)}
+ \end{align*}
+ Note que o modelo estatístico usado neste exercício é
+ o de uma análise de discriminante linear
+ \citep{Fisher1936}.
+ Também, a expressão obtida para $\P(\theta=1|X=x)$ é 
+ aquela que consta em uma regressão logística
+ \citep{Cox1958}.
+ A curva $\P(\theta=1|X=x)$ é
+ apresentada na \cref{fig:normal-mixture}.
+ Em particular, obtemos que
+ $\P(\theta=1|X=167) \approx 0.569$.
+ \begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{chapter-revision-1-normal-mixture}
+  \caption{$\P(\theta=1|X=x)$ em função de
+  $x$ para o \cref{ex:normal-mixture}.}
+  \label{fig:normal-mixture}
+ \end{figure}
+}{}
+
+\begin{exercise}
+ Considere que $\mu \in \{\mu_{1},\mu_{2}\}$,
+ onde $\mu_{1}, \mu_{2} \in \mathbb{R}^{n}$ e
+ $\Sigma^{2}$ é uma matriz de variância conhecida.
+ Também, $X|\mu \sim N(\mu,\Sigma^{2})$ e
+ $\P(\mu=\mu_{1})=0.5$.
+ \begin{enumerate}[label=(\alph*)]
+  \item Ache $\P(\mu=\mu_{1}|X=x)$.
+  \item Mostre que
+  $\{x: P(\mu=\mu_{1}|X=x) = 0.5\}$ é um hiperplano.
+ \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+ A proporção de deputados aliados ao governo em
+ um determinado país é aproximadamente 60\%.
+ Para cada projeto de lei,
+ o deputado pode votar contra o projeto,
+ a seu favor ou se abster da votação.
+ Se um deputado é aliado ao governo,
+ a probabilidade de que ele vote a favor de
+ cada lei é 70\%, de que ele se abstenha é 20\% e
+ de que vote contra é 10\%.
+ Similarmente, se o deputado não é aliado ao governo,
+ a probabilidade de que ele vote
+ a favor de cada lei é 40\%, de que ele se abstenha
+ é 10\% e de que vote contra é 50\%.
+ Se um deputado selecionado aleatoriamente
+ votou a favor de 2 projetos, se absteve de 1 projeto
+ e votou contra 1 projeto,
+ qual é a probabilidade de que ele seja
+ aliado ao governo?
+\end{exercise}
+
+\solution{\textbf{Solução}: Defina
+ \begin{align*}
+  \begin{cases}
+   \theta&: \text{ a indicadora de que o deputado é
+   aliado ao governo, }
+   \theta \in \{0,1\} \\
+   X_{i}&:  \text{ o voto dado pelo deputado para
+   a i-ésima proposta de lei, }
+   X_{i} \in \{F,C,A\}
+  \end{cases}
+ \end{align*}
+ Defina
+ \begin{align*}
+  V	&= \{X_{1}=F,X_{2}=F,X_{3}=A,X_{4}=C\}
+ \end{align*}
+ Assumimos que os $X_{i}$ são independentes dado
+ $\theta$. Note que
+ \begin{align*}
+  \P(V|\theta=1)	
+  &= \P(X_{1}=F,X_{2}=F,X_{3}=A,X_{4}=C|\theta=1) \\
+  &=\P(X_{1}=F|\theta=1)\P(X_{2}=F|\theta=1)
+  \P(X_{3}=A|\theta=1)\P(X_{4}=C|\theta=1) \\
+  &= 0.7 \cdot 0.7 \cdot 0.2 \cdot 0.1 = 0.0098 \\
+  \P(V|\theta=0)
+  &= \P(X_{1}=F,X_{2}=F,X_{3}=A,X_{4}=C|\theta=0) \\
+  &= \P(X_{1}=F|\theta=0)
+  \P(X_{2}=F|\theta=0)P(X_{3}=A|\theta=0)
+  \P(X_{4}=C|\theta=0) \\
+  &= 0.4 \cdot 0.4 \cdot 0.1 \cdot 0.5 = 0.008
+ \end{align*}
+ Portanto,
+ \begin{align*}
+  \P(\theta=1|V)
+  &= \frac{\P(\theta=1)\P(V|\theta=1)}
+  {\P(\theta=1)\P(V|\theta=1)
+  +\P(\theta=0)\P(V|\theta=0)} \\
+  &= \frac{0.6 \cdot 0.0098}
+  {0.6 \cdot 0.0098 + 0.4 \cdot 0.008} \approx 0.65
+ \end{align*}
+}{}
+
+\begin{exercise}
+ \label{ex:pareto-uniform}
+ Considere que dado $\theta$,
+ $X_{1} \ldots X_{n}$ são i.i.d. e
+ $X_{i}|\theta \sim \text{Uniforme}(0,\theta)$.
+ Considere que, a priori, temos que,
+ para $\alpha, \beta > 0$,
+ \begin{align*}
+  f(\theta) = \frac{\alpha \beta^{\alpha}}
+  {\theta^{\alpha+1}}\I(\theta)_{(\beta,\infty)}.
+ \end{align*}
+ \begin{enumerate}[label=(\alph*)]
+  \item Ache a posteriori para
+  $\theta|X_{1},\ldots,X_{n}$.
+  Ache a forma exata da posteriori,
+  não basta indicá-la até uma constante de
+  proporcionalidade.
+  \item Calcule $\lim_{n \rightarrow \infty}{\E[\theta|X_{1},\ldots,X_{n}]}$.
+  \item Ache $f(x_{n}|x_{1},\ldots,x_{n-1})$.
+  Lembre-se que esta é a distribuição preditiva, 
+  que não depende de $\theta$.
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}: 
+ \begin{enumerate}[label=(\alph*)]
+  \item
+  \begin{align*}
+   f(\theta|x_{1},\ldots,x_{n})
+   &\propto f(\theta)f(x_{1},\ldots,x_{n}|\theta) \\
+   &= f(\theta)\prod_{i=1}^{n}{f(x_{i}|\theta)} \\
+   &= \frac{\alpha \beta^{\alpha}}
+   {\theta^{\alpha+1}}\I(\theta)_{(\beta,\infty)}
+   \prod_{i=1}^{n}{\theta^{-1}I(x_{i})_{(0,\theta)}}\\
+   &\propto \theta^{-(\alpha+n+1)}
+   \I(\theta)_{(\beta,\infty)}\prod_{i=1}^{n}
+   {\I(\theta)_{(x_{i},\infty)}} \\
+   &= \theta^{-(\alpha+n+1)}
+   \I(\theta)_{(\beta,\infty)}
+   \I(\theta)_{(x_{(n)},\infty)} \\
+   &= \theta^{-(\alpha+n+1)}
+   \I(\theta)_{(\max(\beta,x_{(n)}),\infty)}
+  \end{align*}
+  Portanto, $\theta|X_{1},\ldots,X_{n} \sim \text{Pareto}\left(\alpha+n, \beta^{*}\right)$, onde 
+  $\beta^{*}=\max(\beta,x_{(n)})$.
+  \item Se $\theta \sim \text{Pareto}(\alpha,\beta)$,
+  então
+  \begin{align*}
+   \E[\theta]
+   &= \int{\theta f(\theta) d\theta} \\
+   &= \int{\theta \frac{\alpha \beta^{\alpha}}
+   {\theta^{\alpha+1}}\I(\theta)_{(\beta,\infty)} d\theta} \\
+   &= \alpha \beta^{\alpha}\int{\theta^{-\alpha}\I(\theta)_{(\beta,\infty)} d\theta} \\
+   &= \frac{\alpha \beta^{\alpha}}{(\alpha-1) \beta^{\alpha-1}} = \frac{\alpha \beta}{(\alpha-1)}
+   & \text{Pareto}(\alpha-1,\beta)
+  \end{align*}
+  Portanto,
+  \begin{align*}
+   \lim_{n \rightarrow \infty}
+   {\E[\theta|X_{1},\ldots,X_{n}]}
+   &= \lim_{n \rightarrow \infty}
+   {\frac{(\alpha+n)\beta^{*}}{(\alpha+n-1)}} \\
+   &= \lim_{n}\beta^{*} = \lim_{n}\max(\beta,X_{(n)})
+  \end{align*}
+  Note que, se $\beta$ for suficientemente pequeno,
+  então $\E[\theta|X_{1},\ldots,X_{n}]$ converge
+  para o estimador de máxima verossimilhança,
+  $X_{(n)}$.
+  \item
+  \begin{align*}
+   f(x_{n+1}|x_{1},\ldots,x_{n})
+   &= \int_{0}^{\infty}{f(x_{n+1}|\theta)
+   f(\theta|x_{1},\ldots,x_{n})d\theta}	\\
+   &= \int_{0}^{\infty}{f(x_{n+1}|\theta)
+   f(\theta|x_{1},\ldots,x_{n})d\theta}	\\
+   &= \int_{0}^{\infty}{\theta^{-1}\I_{(0,\theta)}
+   (x_{n+1}) \frac{(\alpha+n) (\beta^{*})^{\alpha+n}}
+   {\theta^{\alpha+n+1}}\I(\theta)_{(\beta^{*},\infty)} d\theta} \\
+   &= (\alpha+n) (\beta^{*})^{\alpha+n}\int_{0}^{\infty}{\frac{I(\theta)_{(\max(\beta^{*},x_{n+1}),\infty)}}{\theta^{\alpha+n+2}} d\theta} \\
+   &= \frac{(\alpha+n) (\beta^{*})^{\alpha+n}}{(\alpha+n+1) (\max(\beta^{*},x_{n+1}))^{\alpha+n+1}}
+   = \frac{(\alpha+n) (\max(\beta,x_{(n)}))^{\alpha+n}}{(\alpha+n+1) (\max(\beta,x_{(n+1)}))^{\alpha+n+1}}
+  \end{align*}
+  Note que, se $n$ for suficientemente grande, então
+  $X_{n+1}|X_{1},\ldots,X_{n} \approx U(0,X_{(n)})$.
+ \end{enumerate}
+}{}
+
+\begin{exercise}
+ Considere que $\beta > 0$ é conhecido e, dado $\alpha$,
+ $X_{1},\ldots,X_{n}$ são i.i.d. e $X_{1} \sim \text{Pareto}(\alpha,\beta)$.
+ Ou seja, $f(x_{1}|\alpha) = \frac{\alpha \beta^{\alpha}}{x^{\alpha+1}}\I_{(\beta,\infty)}(x)$.
+ \begin{enumerate}[label=(\alph*)]
+  \item Mostre que $f(x_1|\alpha)$ faz parte da
+  família exponencial.
+  \item Se $\alpha$ fosse conhecido e
+  $\beta$ desconhecido,
+  $f(x_1|\beta)$ faria parte da família exponencial?
+  \item Se $\alpha \sim \text{Gamma}(\gamma,\delta)$,
+  identifique o nome e os hiperparâmetros da
+  posteriori, $f(\alpha|x_{1},\ldots,x_{n})$.
+  \item Ache $\lim_{n \rightarrow \infty} \E[\alpha|X_{1},\ldots,X_{n}]$.
+  \item Ache uma família conjugada para
+  $f(x_1|\alpha)$.
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}: 
+ \begin{enumerate}[label=(\alph*)]
+  \item 
+  \begin{align*}
+   f(x_1|\alpha)
+   &= \frac{\alpha \beta^{\alpha}}
+   {x^{\alpha+1}}\I_{(\beta,\infty)}(x) \\
+   &= \I_{(\beta,\infty)}(x) \exp\left(-(\alpha+1)\log(x) + \log(\alpha) + \alpha \log(\beta)\right)
+  \end{align*}
+  Portanto, $f(x_1|\alpha)$ pertence à
+  família exponencial tomando
+  \begin{align*}
+   \begin{cases}
+    h(x) &= \I_{(\beta,\infty)}(x) \\
+    T(x) &= \log(x) \\
+    g(\alpha) &= -(\alpha+1) \\
+    A(\alpha) &= -(\log(\alpha) +\alpha \log(\beta))
+   \end{cases}
+  \end{align*}
+  \item Se $\beta$ fosse desconhecido, então
+  o suporte de $f(x_{1}|\beta)$ dependeria
+  do parâmetro. Assim, $f(x_{1}|\beta)$
+  não faria parte da família exponencial.
+  \item
+  \begin{align*}
+   f(\alpha|x_{1},\ldots,x_{n})
+   &\propto f(\alpha)f(x_{1},\ldots,x_{n}|\alpha) \\
+   &=f(\alpha)\prod_{i=1}^{n}{f(x_{i}|\alpha)} \\
+   &\propto \alpha^{\gamma-1}\exp\left(-\delta \alpha\right) \prod_{i=1}^{n}{\frac{\alpha \beta^{\alpha}}{x_{i}^{\alpha+1}}} \\
+   &= \alpha^{n+\gamma-1}\exp\left(-\left(\delta+\sum_{i=1}^{n}{\log\left(\frac{x_{i}}{\beta}\right)} \right)\alpha \right)
+  \end{align*}
+  Portanto, $\alpha|X_{1},\ldots, X_{n} \sim \text{Gamma}\left(n+\gamma, \delta+\sum_{i=1}^{n}{\log\left(\frac{x_{i}}{\beta}\right)}\right)$.
+  \item
+  \begin{align*}
+   \lim_{n \rightarrow \infty}
+   \E[\alpha|X_{1},\ldots,X_{n}]
+   &= \lim_{n \rightarrow \infty}
+   \frac{n+\gamma}{\delta+\sum_{i=1}^{n}
+   {\log\left(\frac{x_{i}}{\beta}\right)}} \\
+   &= \lim_{n \rightarrow \infty}
+   \frac{n}{\sum_{i=1}^{n}{\log\left(\frac{x_{i}}
+   {\beta}\right)}}
+  \end{align*}
+  \item Pelo item (c), provamos que se
+  a priori para $\alpha$ pertence à família Gamma,
+  então a posteriori para $\alpha$ tambem
+  pertence à família Gamma. Portanto,
+  a família Gamma é conjugada para
+  $f(x_{1}|\alpha)$.
+ \end{enumerate}
+}{}
+
+%aqui
+\begin{exercise}
+ Considere que foram colocadas $3$ bolas em uma urna,
+ sendo todas elas azuis ou verdes.
+ Você está interessada em determinar o
+ número de bolas azuis na urna e,
+ a priori, este número pode assumir qualquer um
+ dos valores possíveis com mesma probabilidade.
+ Também considere que esta é uma urna de Polya,
+ ou seja, a cada vez que uma bola é retirada,
+ duas bolas da mesma cor da bola retirada são
+ repostas na urna.
+ Por exemplo, se uma urna de Polya tem
+ $2$ bolas azuis e $2$ verdes
+ e uma bola azul é retirada,
+ então a composição passará a ser
+ $3$ bolas azuis e $2$ verdes.
+ Duas bolas foram retiradas da urna,
+ sendo que suas cores foram, respectivamente:
+ azul e azul.
+ \begin{enumerate}[label=(\alph*)]
+  \item Identifique os elementos do
+  modelo estatístico e os valores que
+  estes podem assumir.
+  \item Dado cada possível valor para o parâmetro,
+  calcule a covariância entre a indicadora de que a
+  primeira bola retirada é azul e a
+  indicadora de que a segunda é azul.
+  As observações são independentes dado o parâmetro?
+  \item Calcule a distribuição a posteriori para
+  o parâmetro do modelo.
+  \item Calcule a probabilidade preditiva de que
+  a próxima bola retirada seja azul.
+  \item Calcule a probabilidade marginal de
+  observar os dados.
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item Defina
+  \begin{align*}
+   \begin{cases}
+    \theta&: \text{ o número de bolas azuis na urna, }
+    \theta \in \{0,1,2,3\} \\
+    X_{i}&: \text{ a indicadora de que a
+    i-ésima bola retirada é azul, }
+    X_{i} \in \{0,1\}
+   \end{cases}
+  \end{align*}
+  \item 
+  \begin{align*}
+   Cov[X_{1},X_{2}|\theta=i]
+   &=\E[X_{1}X_{2}|\theta=i]
+   -\E[X_{1}|\theta=i]\E[X_{2}|\theta=i] \\
+   &= P(X_{1}=1,X_{2}=1|\theta=i)
+   -\P(X_{1}=1|\theta=i)P(X_{2}=1|\theta=i) \\
+   &= \frac{i(i+1)}{12} - \frac{i^{2}}{9} \geq 0
+  \end{align*}
+  Em particular, se $i \in \{1,2\}$,
+  $Cov[X_{1},X_{2}|\theta=i] > 0$.
+  \item
+  \begin{align*}
+   \P(\theta=i|X_{1}=1,X_{2}=1)
+   &= \frac{\P(\theta=i)P(X_{1}=1,X_{2}=1|\theta=i)}
+   {\sum_{j=0}^{4}{\P(\theta=i)
+   \P(X_{1}=1,X_{2}=1|\theta=i)}} \\
+   &= \frac{4^{-1}\P(X_{1}=1,X_{2}=1|\theta=i)}
+   {\sum_{j=0}^{4}{4^{-1}\P(X_{1}=1,X_{2}=1|\theta=i)}}\\
+   &= \frac{\frac{i(i+1)}{12}}{\sum_{j=0}^{4}
+   {\frac{j(j+1)}{12}}} \\
+   &= \frac{i(i+1)}{\sum_{j=0}^{4}{j(j+1)}}
+   =\frac{i(i+1)}{40}
+  \end{align*}
+  \item 
+  \begin{align*}
+   \P(X_{3}=1|X_{1}=1,X_{2}=1)
+   &= \sum_{i=0}^{4}{\P(\theta=i|X_{1}=1,X_{2}=1)
+   \P(X_{3}=1|\theta=i,X_{1}=1,X_{2}=1)} \\
+   &= \sum_{i=0}^{4}{\frac{i(i+1)}{20}
+   \cdot \frac{i+2}{5}} \\
+   &= \sum_{i=0}^{4}{\frac{i(i+1)(i+2)}{100}} = 0.9
+  \end{align*}
+  
+  \item
+  \begin{align*}
+   \P(X_{1}=1,X_{2}=1)
+   &= \sum_{j=0}^{4}
+   {\P(X_{1}=1,X_{2}=1|\theta=j)\P(\theta=j)} \\
+   &= \sum_{j=0}^{4}{\frac{j(j+1)}{12} \cdot \frac{1}{4}}
+   = \frac{20}{48}
+  \end{align*}
+ \end{enumerate}
+}{}
+
+\begin{exercise}
+ \label{ex:simple-linear-regression}
+ Considere que $Y_{i} = \theta x_{i} + \epsilon_{i}$,
+ onde $\epsilon_{i}$ são i.i.d. e
+ $\epsilon_{1} \sim N(0,1)$.
+ Ou seja, dado $\theta$,
+ $Y_{i} \sim N(\theta x_{i}, 1)$.
+ Considere que, a priori,
+ $\theta \sim N(0,1)$.
+ \begin{enumerate}[label=(\alph*)]
+  \item Ache a posteriori para
+  $\theta|(x_{1},y_{1}),\ldots,(x_{n},y_{n})$.
+  \item Ache $\lim_{n \rightarrow \infty}\E[\theta|(x_{1},y_{1}),\ldots,(x_{n},y_{n})]$.
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item
+  \begin{align*}
+   f(\theta|(x_{1},y_{1}),\ldots,(x_{n},y_{n}))
+   &\propto f(\theta)f((x_{1},y_{1}),\ldots,(x_{n},y_{n})|\theta) \\
+   &= f(\theta)\prod_{i=1}^{n}
+   {f((x_{i},y_{i})|\theta)} \\
+   &\propto \exp\left(-\frac{\theta^{2}}{2}\right) \prod_{i=1}^{n}{\exp\left(-\frac{(y_{i}-x_{i}\theta)^{2}}{2}\right)}	\\
+   &= \exp\left(-\frac{\theta^{2}}{2}\right) \exp\left(-\frac{\sum_{i=1}^{n}{(y_{i}-x_{i}\theta)^{2}}}{2}\right)\\
+   &= \exp\left(-\frac{\theta^{2}}{2}\right) \exp\left(-\frac{\theta^{2}\sum_{i=1}^{n}{x_{i}^{2}}-2\theta\sum_{i=1}^{n}{x_{i}y_{i}}+\sum_{i=1}^{n}{y_{i}^{2}}}{2}\right) \\
+   &\propto \exp\left(-\frac{\theta^{2}\left(1+\sum_{i=1}^{n}{x_{i}^{2}}\right)-2\theta\sum_{i=1}^{n}{x_{i}y_{i}}}{2}\right) \\
+   &= \exp\left(-\frac{\theta^{2}-2\theta\frac{\sum_{i=1}^{n}{x_{i}y_{i}}}{\left(1+\sum_{i=1}^{n}{x_{i}^{2}}\right)}}{2\left(1+\sum_{i=1}^{n}{x_{i}^{2}}\right)^{-1}}\right) 
+   \propto \exp\left(-\frac{\left(\theta-\frac{\sum_{i=1}^{n}{x_{i}y_{i}}}{\left(1+\sum_{i=1}^{n}{x_{i}^{2}}\right)}\right)^{2}}{2\left(1+\sum_{i=1}^{n}{x_{i}^{2}}\right)^{-1}}\right)
+  \end{align*}
+  A última passagem completa quadrados, 
+  assim como no \cref{lemma:conjugate_normal_mean}.
+  Note que
+  \begin{align*}
+   \theta|(x_{1},y_{1}),\ldots,(x_{n},y_{n}) \sim N\left(\frac{\sum_{i=1}^{n}{x_{i}y_{i}}}{\left(1+\sum_{i=1}^{n}{x_{i}^{2}}\right)}, \left(1+\sum_{i=1}^{n}{x_{i}^{2}}\right)^{-1}\right)
+  \end{align*}
+  \item 
+  \begin{align*}
+   \lim_{n \rightarrow \infty}
+   \E[\theta|(x_{1},y_{1}),\ldots,(x_{n},y_{n})]
+   &= \lim_{n \rightarrow \infty} \frac{\sum_{i=1}^{n}{x_{i}y_{i}}}{\left(1+\sum_{i=1}^{n}{x_{i}^{2}}\right)} \\
+   & \lim_{n \rightarrow \infty} \frac{\sum_{i=1}^{n}{x_{i}y_{i}}}{\left(\sum_{i=1}^{n}{x_{i}^{2}}\right)}	\\
+   &= \lim_{n \rightarrow \infty} (x^{t}x)^{-1}x^{t}y
+  \end{align*}
+ \end{enumerate}
+}{}
+
+\begin{exercise}
+ Considere que, dado $\nu$,
+ $X \sim \text{N}_{n}(\mu, \nu)$, ou seja,
+ $X$ tem distribuição normal multivariada
+ com média $\mu$ (conhecida) e precisão $\nu$.
+ Se, a priori, $\nu \sim \text{Wishart}(V,a)$,
+ ache o nome da distribuição de $\nu|X$ e
+ seus hiperparâmetros.
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{align*}
+  f(\nu|x) &\propto f(\nu)f(x|\nu) \\
+  &\propto \|\nu\|^{\frac{a-p-1}{2}}\exp\left(-\frac{tr(V^{-1}\nu)}{2}\right) \|\nu\|^{\frac{1}{2}} \exp\left(-\frac{tr((x-\mu)(x-\mu)^{T}\nu)}{2}\right) \\
+  &= \|\nu\|^{\frac{(a+1-p)-1}{2}}\exp\left(-\frac{tr((V^{-1}+(x-\mu)(x-\mu)^{T})\nu)}{2}\right)
+ \end{align*}
+ Portanto, $\nu|x \sim \text{Wishart}(a+1-p, V^{-1}+(x-\mu)(x-\mu)^{T})$.
+}{}
+
+\begin{exercise}[\citet{Gelman2014}]
+ $X_{1}$ e $X_{2}$ são condicionalmente i.i.d.
+ dado $\theta$. Mostre que, se $\V[\E[X_{1}|\theta]] > 0$,
+ então $Cov(X_{1},X_{2}) > 0$.
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{align*}
+  Cov[X_{1},X_{2}]
+  &= \E[X_{1}X_{2}] -\E[X_{1}]\E[X_{2}] \\
+  &= \E[\E[X_{1}X_{2}|\theta]]
+  -\E[\E[X_{1}|\theta]]\E[\E[X_{2}|\theta]] \\
+  &= \E[\E[X_{1}|\theta]\E[X_{2}|\theta]]
+  -\E[\E[X_{1}|\theta]]\E[\E[X_{2}|\theta]]
+  & \text{$X_{1}$ indep. $X_{2}|\theta$} \\
+  &= \E[\E[X_{1}|\theta]\E[X_{1}|\theta]]
+  -\E[\E[X_{1}|\theta]]\E[\E[X_{1}|\theta]]
+  & \text{$X_{1}$ e $X_{2}$ i.d. dado $\theta$} \\
+  &= \E[\E[X_{1}|\theta]^{2}]
+  -\E[\E[X_{1}|\theta]]^{2} \\
+  &= \E[\V[X_{1}|\theta]] \geq 0
+ \end{align*}
+}{}
+
+
+
+\begin{exercise}
+Seja $T(X)$ uma estatística suficiente para $\theta$. Mostre que 
+$f(\theta|T=t(x))=f(\theta|X=x)$. Interprete esse resultado.
+\end{exercise}

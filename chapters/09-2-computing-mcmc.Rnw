@@ -1,0 +1,798 @@
+\subsection{Método de Monte Carlo via cadeias de Markov}
+
+Foi ilustrado na seção passada que
+nem sempre é possível obter de forma eficiente
+uma sequência de variáveis aleatórias i.i.d.
+com distribuição dada pela posteriori. Assim,
+a aplicação do método de Monte Carlo é
+inviável. 
+
+Para contornar este problema, esta seção
+apresenta o método de Monte Carlo via
+cadeias de Markov. Neste método, ao invés de
+você gerar uma sequência i.i.d., você
+gerará uma cadeia de Markov. 
+A \cref{subsec:markov} revisa cadeias de Markov e
+a \cref{subsec:mh} apresenta o algoritmo de
+Metropolis-Hastings, uma implementação geral do
+método de Monte Carlo via cadeias de Markov.
+
+\subsubsection{Cadeias de Markov}
+\label{subsec:markov}
+
+\begin{definition}[Cadeia de Markov]
+ Seja $(T_{n})_{n \in \mathbb{N}}$ uma
+ sequência de variáveis discretas.
+ Dizemos que $(T_{n})_{n \in \mathbb{N}}$ é
+ uma Cadeia de Markov se,
+ para todo $n \in \mathbb{N}$,
+ \begin{align*}
+  \P(T_{n+1}=t_{n+1}|T_{n}=t_{n}, T_{n-1}=t_{n-1},\ldots, T_{1}=t_{1}) 
+  &= \P(T_{n+1}=t_{n+1}|T_{n}=t_{n})
+ \end{align*}
+\end{definition}
+Isto é, dado o passado inteiro da cadeia de Markov, ($T_{n}=t_{n}, T_{n-1}=t_{n-1}, \ldots, T_{1}=t_{1}$),
+apenas o estado imediatamente anterior,
+$(T_{n}=t_{n})$, é usado para determinar o próximo estado $(T_{n+1})$.
+      
+\begin{definition}[Cadeia homogênea]
+ Seja $(T_{n})_{n \in \mathbb{N}}$ uma 
+ cadeia de Markov.  Dizemos que
+ $(T_{n})_{n \in \mathbb{N}}$ é homogênea se,
+ para todo $n$, $\P(T_{n+1}=t_{n+1}|T_{n}=t_{n}) = f(t_{n},t_{n+1})$. 
+ Isto é, a distribuição do próximo estado da
+ cadeia depende do estado anterior, mas não do
+ índice atual. Neste caso, denotamos a função de
+ transição da cadeia,  $\P(T_{n+1}=t_{n+1}|T_{n}=t_{n})$ por
+ $p(t_{n+1}|t_{n})$.
+ A partir deste ponto, consideraremos apenas
+ cadeias de Markov homogêneas. 
+\end{definition}
+
+\begin{definition}[Matriz de transição]
+ \label{defn:transition}
+ Seja $(T_{n})_{n \in \mathbb{N}}$ uma
+ cadeia de Markov. 
+ $\P$ é a matriz de transição para
+ $(T_{n})_{n \in \mathbb{N}}$ se 
+ $\P_{i,j} = \P(T_{n+1}=j|T{n}=i) = p(j|i)$. 
+ Isto é, a intersecção entre a i-ésima linha de
+ $\P$ e a j-ésima coluna contém a probabilidade de
+ a cadeia ir do estado $i$ para o estado $j$. 
+\end{definition}
+
+\begin{example}
+ \label{ex:0-1-chain}
+ Considere uma cadeia de Markov em $\{0,1\}$ com
+ a seguinte matriz de transição:
+ \begin{align*}
+  \P &= \left[
+  \begin{array}{cc}
+   \frac{1}{3} & \frac{2}{3} \\
+   \frac{1}{2} & \frac{1}{2}
+  \end{array} \right ]
+ \end{align*}
+ Isto é, $\P(T_{1}=0|T_{0}=0) = \frac{1}{3}$,
+ $\P(T_{1}=1|T_{0}=0) = \frac{2}{3}$,
+ $\P(T_{1}=0|T_{0}=1) = \frac{1}{2}$ e
+ $\P(T_{1}=1|T_{0}=1) = \frac{1}{2}$. 
+\end{example}
+       
+\begin{definition}[Distribuição estacionária]
+ Seja $(T_{n})_{n \in \mathbb{N}}$ uma
+ cadeia de Markov com matriz de transição, $\P$. 
+ Para cada estado, $i$, definimos
+ \begin{align*}
+  \mu(i) = \limn \P(T_{n} = i|T_{0}=t_{0})
+  = \limn (\P^n)_{t_{0},i}
+ \end{align*}
+ Se o limite for bem definido, dizemos que $\mu$ é a distribuição estacionária da Cadeia.
+ Podemos interpretar $\mu(i)$ como a probabilidade de que, 
+ após um tempo suficientemente grande ter se passado,
+ a cadeia esteja no estado $i$. 
+\end{definition}
+
+A definição de distribuição estacionária envolve
+um limite de multiplicações de matrizes.
+Achar este limite por força bruta pode ser
+muito difícil. Assim, a seguir, definimos uma
+distribuição mais fácil de calcular e provamos que,
+sob certas circunstâncias, ela é equivalente à
+distribuição estacionária.
+
+\begin{definition}[Distribuição invariante]
+ \label{defn:invariant}
+ Seja $(T_{n})_{n \in \mathbb{N}}$ uma
+ cadeia de Markov com matriz de transição, $\P$. 
+ Seja $\mu$ um vetor não-negativo tal que
+ $\sum_{i}{\mu(i)} = 1$. 
+ $\mu$ é a distribuição invariante para $\P$ se
+ \begin{align*}
+  \mu \P = \mu 
+ \end{align*}
+ Isto é, se a sua informação sobre o
+ estado atual da cadeia é $\mu$, então sua
+ informação para o próximo estado da cadeia
+ também é $\mu$. Desta forma,
+ $\mu$ é um ponto fixo de $\P$.
+\end{definition}
+
+\begin{example}
+ Considere o \cref{ex:0-1-chain}.
+ A distribuição invariante deve satisfazer:
+ \begin{align*}
+  \mu &=
+  \mu \cdot \begin{bmatrix}
+   \frac{1}{3} & \frac{2}{3} \\
+   \frac{1}{2} & \frac{1}{2}
+  \end{bmatrix}
+ \end{align*}
+ Do que obtemos o sistema linear:
+ \begin{align*}
+  \begin{cases}
+   \frac{\mu(0)}{3}+\frac{\mu(1)}{2} = \mu(0) \\
+   \frac{2\mu(0)}{3}+\frac{\mu(1)}{2} = \mu(1) \\
+   \mu(0) + \mu(1) = 1
+  \end{cases}
+ \end{align*}
+ Portanto, $\mu(0) = \frac{3}{7}$ e
+ $\mu(1) = \frac{4}{7}$.
+\end{example}
+      
+\begin{definition}[Distribuição reversível]
+ \label{defn:reversible}
+ Seja $(T_{n})_{n \in \mathbb{N}}$ uma
+ cadeia de Markov com
+ matriz de transição $\P$. 
+ Seja $\mu$ um vetor positivo tal que
+ $\sum_{i}{\mu(i)} = 1$. 
+ $\mu$ é a distribuição reversível para
+ $\P$ se,  para todos estados $i$ e $j$,
+ $\mu(i)\P_{i,j} = \mu(j)\P_{j,i}$. 
+\end{definition}
+      
+\begin{example}
+ Considere o \cref{ex:0-1-chain}. 
+ Seja $\mu(0) = \frac{3}{7}$ e
+ $\mu(1) = \frac{4}{7}$.
+ \begin{align*}
+  \mu(0) \P_{0,1}
+  &= \frac{3}{7} \cdot \frac{2}{3}
+  = \frac{2}{7} \\
+  &= \frac{4}{7} \cdot \frac{1}{2}
+  = \mu(1)\P_{1,0}
+ \end{align*}
+ Portanto, $\mu$ é reversível.
+\end{example}
+      
+\begin{lemma}
+ \label{reversibility-implies-invariance}
+ Se $\mu$ é a distribuição reversível para $\P$, 
+ então $\mu$ é a distribuição invariante para $\P$. 
+\end{lemma}
+ 
+\begin{proof}
+ Considere que $\mu$ é a distribuição reversível
+ para $\P$. Portanto, para todo $j$,
+ \begin{align*}
+  (\mu \P)_{j}
+  &= \sum_{i}{\mu(i)\P(i,j)} \\
+  &= \sum_{i}{\mu(j)\P(j,i)}
+  & \text{\cref{defn:reversible}} \\
+  &= \mu(j)\sum_{i}{\P(j,i)} \\
+  &= \mu(j)
+  & \text{\cref{defn:transition}}
+ \end{align*}
+ Isto é, para todo j, $(\mu \P)_{j} = \mu(j)$.
+ Conclua que $\mu \P = \mu$, ou seja,
+ $\mu$ é a distribuição invariante
+ (\cref{defn:invariant}).
+\end{proof}
+
+\begin{example}
+ Seja $(T_{n})_{n \in \mathbb{N}}$ uma 
+ cadeia de Markov de matriz de transição $\P$. 
+ Considere, para quaisquer estados $i$ e $j$, 
+ $\P_{i,j} = \P_{j,i}$. 
+ Defina $\mu(i) = \frac{1}{N}$, onde
+ $N$ é o número total de estados.
+ Observe que $\sum_{i}{\mu(i)} = 1$ e também,
+ \begin{align*}
+  \mu(i) \P_{i,j}
+  &= \frac{1}{N} \cdot \P_{i,j} \\
+  &= \frac{1}{N} \cdot \P_{j,i}
+  = \mu(j) \P_{j,i}
+ \end{align*}
+ Portanto $\mu$ é reversível.
+ Decorre do \cref{reversibility-implies-invariance}
+ que $\mu$ é invariante. 
+ Portanto, sob a condição de que $\mathbb{P}_{i,j} = \mathbb{P}_{j,i}$,
+ a distribuição uniforme é invariante. 
+\end{example}
+
+\begin{theorem}
+ Seja $(T_{n})_{n \in \mathbb{N}}$ uma
+ cadeia de Markov de matriz de transição $\P$. 
+ Sob algumas condições fracas de regularidade
+ sobre $\P$, se $\mu$ é a
+ distribuição invariante para $\P$, então
+ $\mu$ é a distribuição estacionária para
+ $\P$.
+\end{theorem}
+
+\begin{theorem}[Lei dos grandes números e Teorema do limite central para cadeias de Markov {\citep{Jones2004}}]
+ \label{theorem:clt-markov}
+ Seja $(T_{n})_{n \in \mathbb{N}}$ uma 
+ cadeia de Markov,
+ $\mu$ a distribuição estacionária de
+ $(T_{n})_{n \in \mathbb{N}}$ e 
+ $g$ uma função contínua.
+ Sob algumas condições fracas de regularidade,
+ \begin{align*}
+  \frac{\sum_{i=1}^{B}{g(T_{i})}}{B}
+  &\approx \E_{\mu}[g(T)]
+  = \int{g(\theta)\mu(\theta)d\theta} \\
+  \V\left[\frac{\sum_{i=1}^{B}{g(T_{i})}}{B}\right] 
+  &\approx \frac{\V[g(T_{i})]+2\sum_{k=1}^{\infty}{Cov[g(T_{i}),g(T_{i+k})]}}{B} \\
+  \frac{\frac{\sum_{i=1}^{B}{g(T_{i})-E_{\mu}[g(T)]}}{B}}{\sqrt{Var\left[\frac{\sum_{i=1}^{B}{g(T_{i})}}{B}\right]}} &\approx N(0,1)
+ \end{align*}
+ Portanto,
+ \begin{align*}
+  \left[\frac{\sum_{i=1}^{B}{g(T_{i})}}{B}+\psi^{-1}(\alpha/2)\sqrt{\V\left[\frac{\sum_{i=1}^{B}{g(T_{i})}}{B}\right]},\frac{\sum_{i=1}^{B}{g(T_{i})}}{B}-\psi^{-1}(\alpha/2)\sqrt{\V\left[\frac{\sum_{i=1}^{B}{g(T_{i})}}{B}\right]}\right]
+ \end{align*}
+ É um intervalo de confiança $1-\alpha$ para
+ $\int{g(\theta)\mu(\theta)d\theta}$.
+\end{theorem}
+
+\subsubsection{O algoritmo de Metropolis-Hastings}
+\label{subsec:mh}
+
+O \cref{theorem:clt-markov} mostra que,
+se você construir uma cadeia de Markov, $T_{1},\ldots,T_{B}$,
+com distribuição estacionária $f(\theta|x)$,
+então $\frac{\sum_{i=1}^{B}{g(T_{i})}}{B}$ é um
+estimador consistente para
+$\int{g(\theta)f(\theta|x)d\theta} = \E[g(\theta)|X]$.
+O \cref{theorem:clt-markov} também permite que 
+você avalie a margem de erro para
+esse estimador a partir
+de $\V\left[\frac{\sum_{i=1}^{B}{g(T_{i})}}{B}\right]$.
+Assim, se você obtiver uma cadeia de Markov com 
+distribuição invariante igual à posteriori,
+$f(\theta|x)$, então
+poderá fazer Inferência Estatística.
+Nesta subseção, você estudará como obter esta cadeia.
+
+Para tal, considere o algoritmo de
+Metropolis-Hastings, descrito a seguir:
+
+\begin{algorithm2}[Metropolis-Hastings] \
+ \label{alg:m-h}
+ \begin{enumerate}
+  \item Defina um valor arbitrário para $T_{1}$.
+  \item Para $i$ de $2$ até $B$:
+  \begin{enumerate}[label=\alph*.]
+   \item Obtenha $T_{i}^{*}$ da distribuição
+   $h(t_{i}^*|T_{i-1})$,
+   $h$ é uma distribuição condicional arbitrária.
+   \item Obtenha $R_i=\frac{f(\theta=T_i^{*}|x)h(T_{i-1}|T_{i}^*)}{f(\theta=T_{i-1}^{*}|x)h(T_{i}^*|T_{i-1})}$.
+   \item Gere $U_i \sim \text{Uniforme}(0,1)$.
+   \item Defina:
+   \begin{align*}
+    T_{i} &=
+    \begin{cases}
+     T_{i}^{*} & \text{, se } U_i \leq R_i \\
+     T_{i-1} & \text{, caso contrário.}
+    \end{cases}
+   \end{align*}
+  \end{enumerate}
+ \end{enumerate}
+\end{algorithm2}
+
+Em primeiro lugar, note que, para obter $R_i$,
+utiliza-se $f(\theta|x)$. Contudo, você está estudando
+métodos computacionais justamente por não ser
+possível calcular a posteriori analiticamente.
+Assim, poderá parecer que o algoritmo acima não é
+operacional. Contudo, observe que:
+
+\begin{align}
+ \label{eq:m-h-2}
+ R_i &=\frac{f(\theta=T_i^{*}|x)h(T_{i-1}|T_{i}^*)}
+ {f(\theta=T_{i-1}^{*}|x)h(T_{i}^*|T_{i-1})} \nonumber \\
+ &=\frac{\frac{f(\theta=T_i^{*})f(x|\theta=T_i^*)}{f(x)}h(T_{i-1}|T_{i}^*)}{\frac{f(\theta=T_{i-1}^{*})f(x|\theta=T_{i-1}^{*})}{f(x)}h(T_{i}^*|T_{i-1})} \nonumber \\
+ &= \frac{f(\theta=T_i^{*})f(x|\theta=T_i^*)h(T_{i-1}|T_{i}^*)}{f(\theta=T_{i-1}^{*})f(x|\theta=T_{i-1}^{*})h(T_{i}^*|T_{i-1})}
+\end{align}
+
+Assim, uma vez que $R_i$ envolve uma razão de
+posterioris, é possível calculá-lo utilizando
+$f(\theta)f(x|\theta)$ ao invés de $f(\theta|x)$.
+Em geral, enquanto que é possível obter a primeira quantidade analiticamente, não é possível obter a segunda. Assim, calcular $R_i$ a partir da 
+\cref{eq:m-h-2} torna o algoritmo operacional.
+
+Também note que, a cada iteração, $T_i$ é gerado
+utilizando-se apenas as variáveis aleatórias
+$T_{i-1}$ e $U_{i}$. Assim,
+$T_{1},\ldots,T_{B}$ é uma cadeia de Markov.
+Além disso, você também pode demonstrar que
+$f(\theta|x)$ é a distribuição invariante 
+desta cadeia.
+Para tal, mostrará primeiro que 
+$f(\theta|x)$ é a distribuição reversível de
+$T_{1},\ldots,T_{B}$.
+
+\begin{lemma}
+ \label{lemma:mh-reversible}
+ $f(\theta|x)$ é a distribuição reversível para
+ a cadeia de Markov gerada pelo \cref{alg:m-h}.
+\end{lemma}
+
+\begin{proof}
+ Para quaisquer estados, $a$ e $b$,
+ \begin{align}
+  \label{eq:m-h-1}
+  f(\theta=a|x)f(T_{i}=b|T_{i-1}=a)
+  &= f(\theta=a|x)f(T^{*}_i=b|T_{i-1}=a)
+  f(T_{i}=b|T^{*}_{i}=b,T_{i-1}=a) \nonumber \\
+  &= f(\theta=a|x)h(b|a)
+  f\left(U_i \leq \frac{f(\theta=b|x)h(a|b)}
+  {f(\theta=a|x)h(b|a)}\right) \nonumber \\
+  &= f(\theta=a|x)h(b|a)
+  \min\left(1,\frac{f(\theta=b|x)h(a|b)}
+  {f(\theta=a|x)h(b|a)}\right)
+ \end{align}
+ Note que, se $\frac{f(\theta=b|x)h(a|b)}{f(\theta=a|x)h(b|a)}=1$, então:
+ \begin{align*}
+  f(\theta=a|x)f(T_{i}=b|T_{i-1}=a) &=
+  f(\theta=a|x)h(b|a)
+  & \text{\cref{eq:m-h-1}},
+  \frac{f(\theta=b|x)h(a|b)}{f(\theta=a|x)h(b|a)}=1\\
+  &= f(\theta=b|x)h(a|b)
+  &\frac{f(\theta=b|x)h(a|b)}{f(\theta=a|x)h(b|a)}=1\\
+  &= f(\theta=b|x)f(T_{i}=a|T_{i-1}=b)
+  & \text{\cref{eq:m-h-1}},
+  \frac{f(\theta=b|x)h(a|b)}{f(\theta=a|x)h(b|a)}=1
+ \end{align*}
+ Agora, sem perda de generalidade, suponha que
+ $\frac{f(\theta=b|x)h(a|b)}{f(\theta=a|x)h(b|a)}<1$.
+ Neste caso,
+ \begin{align*}
+  f(\theta=a|x)f(T_{i}=b|T_{i-1}=a) &=
+  f(\theta=a|x)h(b|a)
+  \frac{f(\theta=b|x)h(a|b)}
+  {f(\theta=a|x)h(b|a)}
+  & \text{\cref{eq:m-h-1}},
+  \frac{f(\theta=b|x)h(a|b)}{f(\theta=a|x)h(b|a)}<1\\
+  &= f(\theta=b|x)h(a|b) \\
+  &= f(\theta=b|x)h(a|b)
+  \min\left(1,\frac{f(\theta=a|x)h(b|a)}
+  {f(\theta=b|x)h(a|b)}\right)
+  &\frac{f(\theta=a|x)h(b|a)}{f(\theta=b|x)h(a|b)}>1\\
+  &=f(\theta=b|x)f(T_i=a|T_{i-1}=b)
+  & \text{\cref{eq:m-h-1}}
+ \end{align*}
+ Assim, usando a \cref{defn:reversible},
+ conclua dos dois casos anteriormente
+ analisados que $f(\theta|x)$ é a 
+ distribuição reversível para a cadeia de Markov
+ gerada pelo \cref{alg:m-h}.
+\end{proof}
+
+\begin{theorem}
+ \label{thm:mh-invariant}
+ $f(\theta|x)$ é a distribuição invariante para
+ a cadeia de Markov gerada pelo \cref{alg:m-h}.
+\end{theorem}
+
+\begin{proof}
+ Decorre dos \cref{reversibility-implies-invariance,lemma:mh-reversible}.
+\end{proof}
+
+Como resultado do \cref{thm:mh-invariant}, 
+você obteve que o \cref{alg:m-h} gera uma
+cadeia de Markov, $T_{1},\ldots,T_{B}$, de 
+medida invariante $f(\theta|x)$.
+Portanto, utilizando o \cref{theorem:clt-markov}, 
+você pode utilizar $T_{1},\ldots,T_{B}$ para
+aproximar $\E[g(\theta|x)]$, para
+qualquer $g$ contínua.
+Assim, você pode resolver problemas de Inferência,
+ainda que não consiga calcular a
+posteriori analiticamente.
+O \cref{ex:m-h-r}, a seguir, ilustra uma
+implementação genérica do \cref{alg:m-h} no R.
+Vários exemplos a seguir utilizam esta
+implementação para ilustrar o funcionamento do
+\cref{alg:m-h}.
+
+\begin{example}[Implementação genérica do \cref{alg:m-h} no R] \
+ \label{ex:m-h-r}
+<<>>=
+####################################################################################
+## retorna: um vetor que forma uma cadeia de Markov.                              ##
+## B: o tamanho da cadeia retornada.                                              ##
+## inicio: a posicao inicial da cadeia retornada.                                 ##
+## rprop: uma funcao que recebe como argumento elementos da cadeia e retorna uma  ##
+## proposta gerada a partir deste elemento                                        ##
+## ldprop: o log da densidade condicional da proposta utilizada.                  ##
+## ldpost: o log de uma funcão proporcional à                                     ## 
+## densidade correspondente à distribuição invariante da cadeia gerada.           ##
+####################################################################################
+metropolis <- function(B, start, rprop, ldprop, ldtgt)
+{
+  chain <- as.list(rep(NA, B))
+  chain[[1]] <- start
+  for(ii in 2:B)
+  {
+    prop <- rprop(chain[[ii-1]])
+    lratio <- ldtgt(prop)-ldtgt(chain[[ii-1]])+
+              ldprop(prop,chain[[ii-1]])-
+              ldprop(chain[[ii-1]],prop)
+    if(log(runif(1)) <= lratio) chain[[ii]] <- prop
+    else chain[[ii]] <- chain[[ii-1]]
+  }
+  return(chain)
+}
+@
+\end{example}
+
+\begin{example}
+ Digamos que $\mu \sim \text{T}_{1}$,
+ isto é, uma distribuição $T$ com 1 grau de liberdade
+ (também conhecida como distribuição Cauchy).
+ Também, dado $\mu$, $X_1,\ldots,X_n$ são i.i.d.
+ e $X_1 \sim N(\mu,1)$.
+ Você deseja estimar $\mu$ minimizando a 
+ perda quadrática. Note que:
+ \begin{align*}
+  f(\mu|\x)
+  &= f(\mu)f(\x|\mu)
+  = f(\mu)\prod_{i=1}^{n}{f(x_i|\mu)} \\
+  &\propto f(\mu)\prod_{i=1}^{n}{\exp\left(-\frac{(x_i-\mu)^2}{2}\right)} \\
+  &= f(\mu){\exp\left(-\sum_{i=1}^{n}{\frac{(x_i-\mu)^2}{2}}\right)} \\
+  &= f(\mu)\exp\left(-\sum_{i=1}^{n}{\frac{(x_i-\bar{x})^2}{2}}-\frac{n(\bar{x}-\mu)^2}{2}\right) \\
+  &\propto f(\mu)\exp\left(-\frac{n(\bar{x}-\mu)^2}{2}\right)
+ \end{align*}
+ Portanto, existe uma função proporcional a
+ $f(\mu|x)$, $\tilde{f}(\mu|x)$, tal que
+ \begin{align*}
+  \log(\tilde{f}(\mu|\x))
+  &= \log(f(\mu))-\frac{n(\bar{x}-\mu)^2}{2}
+ \end{align*}
+ Digamos que você observou uma amostra de
+ tamanho $100$ e $\bar{x}=3.14$.
+ Assim, pode implementar uma das
+ entradas do \cref{ex:m-h-r} como:
+<<>>=
+ldpost <- function(mu) log(dt(mu,df=1))-(100*(3.14-mu)^2)/2
+@
+Existe uma variedade enorme de propostas que
+você pode utilizar. Uma possibilidade é
+sugerir como proposta a observação anterior
+somada a ruído branco. Neste caso, obtenha,
+<<>>=
+rprop <- function(ant) ant+rnorm(1)
+ldprop <- function(ant,prop) log(dnorm(prop,mean=ant))
+@
+Dado que você está usando a perda quadrática,
+o estimador ótimo é $\E[\theta|x]$.
+Decorre do \cref{theorem:clt-markov} que
+você pode aproximar esta quantidade por
+$\frac{\sum_{i=1}^{n}{T_{i}}}{B}$, que é
+obtida por
+<<cache = TRUE>>=
+mean(unlist(metropolis(10^5,0,rprop,ldprop,ldpost)))
+@
+\end{example}
+
+\subsubsection{Monte Carlo para cadeias de Markov na prática}
+
+Contudo, para que ambas essas estratégias sejam possíveis,
+é necessário cumprir dois requisitos:
+\begin{enumerate}
+ \item Construir uma Cadeia de Markov de distribuição estacionária $\int{g(\theta)\pi(\theta|x)d\theta}$.
+ \item Estimar $\V\left[\frac{\sum_{i=1}^{B}{g(T_{i})}}{B}\right]$.
+\end{enumerate}
+Nesta seção, discutiremos bibliotecas
+na linguagem $R$ que realizam ambas estas tarefas
+para uma variedade grande casos.
+
+Em primeiro lugar, 
+estudaremos como construir uma Cadeia de Markov
+que tenha a posteriori como a distribuição estacionária.
+Para tal, usaremos o pacote ``rstan'' no R.
+Mais informações sobre esse pacote 
+podem ser encontradas em \citet{Gelman2014} e \citet{Stan2015}.
+O primeiro passo consiste em criar um arquivo
+que especifique o modelo de probabilidade do qual se deseja simular.
+Por exemplo, considere o modelo em que $X_{i}|\theta \sim N(\theta,1)$
+e $\theta \sim N(0,1)$. 
+Este modelo poderia ser descrito num arquivo ``normal-normal.stan'' da seguinte forma:
+
+\begin{verbatim}
+data {
+ int<lower=0> J;        //numero de observacoes, minimo=0.
+ real x[J];             //vetor de observacoes reais.
+}
+
+parameters {
+ real theta;            //parametro eh um numero real.
+}
+
+model {
+ theta ~ normal(0, 1);  //priori.
+ x ~ normal(theta, 1);  //verossimilhanca.
+}
+\end{verbatim}
+
+Para obter a amostra de uma Cadeia de Markov
+que tem como distribuição estacionária $\theta|X$,
+podemos usar o seguinte código em $R$
+
+\begin{verbatim}
+library("rstan")
+J <- 100            //100 dados.
+x <- rnorm(J,10,1)  //gerar dados a partir de uma N(10,1).
+amostra <- stan(file="normal-normal.stan", 
+                data=c("J", "x"), iter=10^4, chains=1) //B=10^4.
+\end{verbatim}
+
+Utilizando o código acima, 
+a variável amostra conterá diversas informações
+da Cadeia de Markov que foi gerado pelo Stan.
+Por exemplo, rodando
+\begin{verbatim}
+ summary(amostra)
+ 
+ stats
+ parameter  mean sd     2.5%  25%   50%   75%   97.5%
+ theta      9.86 0.098  9.67  9.80  9.86  9.93  10.06
+\end{verbatim}
+obtemos diversas medidas resumo da posteriori
+que são estimadas a partir do Método de Monte Carlo.
+Neste caso, observamos a média e variância da posteriori,
+bem como vários de seus percentis.
+Além da função summary, também podemos rodar, por exemplo,
+\begin{verbatim}
+ plot(amostra, outer_level=0.95) //credibilidade=0.95.
+\end{verbatim}
+que exibirá estimativas para os intervalos de credibilidade ($\alpha=5\%$)
+do modelo descrito (figura \ref{fig:stan-1}).
+O próximo exemplo considera um modelo um pouco mais interessante. 
+\begin{figure}
+ \centering
+ \includegraphics[scale=0.4]{chapter-computing-stan-1}
+ \caption{Exemplo de intervalo de credibilidade estimado usando
+          o pacote Stan.}
+ \label{fig:stan-1}
+\end{figure}
+
+\cprotEnv \begin{example}
+ \label{ex:ar-k}
+ Considere que, dado $\theta$, 
+ $X_{i}= \alpha + \sum_{j=1}^{k}{\beta_{j}X_{i-j}} + \epsilon_{i}$,
+ onde $\epsilon_{i}$ são i.i.d. e $\epsilon_{i} \sim N(0,1)$.
+ Este é um modelo AR(k), 
+ uma generalização do modelo que vimos no \cref{ex:ar-1}.
+ Considere que $X_{i}=0$ para $1 \leq i \leq k$ e que, a priori,
+ $\theta_{i}$ são i.i.d. e $\theta_{i} \sim N(0,1)$.
+ Podemos especificar este modelo no stan da seguinte forma:
+ \begin{verbatim}
+data {
+ int<lower=1> k;  //AR(k)
+ int<lower=0> n;  //numero de observacoes, minimo=0.
+ real y[n];       //vetor de observacoes reais.
+}
+
+parameters {
+ real alpha;     //media geral.
+ real beta[k];   //parametros autoregressivos.
+}
+
+model {
+ for(ii in (k+1):n) {
+  real mu;
+  mu <- alpha;
+  for(jj in 1:k) {
+   mu <- mu + y[ii-jj]*beta[jj];
+  }
+  y[ii] ~ normal(mu, 1);
+ }
+}
+ \end{verbatim}
+ Este modelo pode ser rodado no R usando os seguintes comandos:
+\begin{verbatim}
+k <- 2
+n <- 100
+y <- rep(0, n)
+alpha <- 10
+beta <- c(0.2,0.3)
+for(ii in 3:n) y[ii] <- rnorm(1,alpha+sum(y[(ii-k):(ii-1)]*beta[k:1]),1)
+amostra <- stan(file="ar-k.stan", 
+                data=c("k", "n", "y"), iter=10^4, chains=1)
+plot(amostra)
+\end{verbatim}
+Os intervalos de credibilidade estimados pelo stan
+podem ser encontrados na figura \ref{fig:stan-2}.
+\begin{figure}
+ \centering
+ \includegraphics[scale=0.4]{chapter-computing-stan-2}
+ \caption{Exemplo de intervalo de credibilidade estimado pelo stan
+          para os parâmetros do \cref{ex:ar-k}.}
+ \label{fig:stan-2}
+\end{figure}
+\end{example}
+
+A saída do stan também permite recuperar a Cadeia de Markov.
+Por exemplo, no \cref{ex:ar-k}, a Cadeia de Markov para o parâmetro $\alpha$
+pode ser recuperada pelo comando
+\begin{verbatim}
+cadeia <- extract(amostra, "alpha")[["alpha"]]
+\end{verbatim}
+Podemos usar esta cadeia para estimar a variância de sua média,
+assim como no \cref{theorem:clt-markov}.
+Para tal, utilizaremos o pacote ``mcmc'' \citep{Geyer2015}.
+A variância da média da cadeia é estimada por
+\begin{verbatim}
+library("mcmc")
+olbm(cadeia, 100) //tomamos 100 como 0.01 do tamanho da cadeia.
+[1,] 0.0001342983
+\end{verbatim}
+Podemos também estimar a variância do estimador
+para uma função de $\alpha$, como no exemplo $\alpha^{2}$, por
+\begin{verbatim}
+olbm(cadeia^2, 100)
+[1,] 0.05281069
+\end{verbatim}
+
+Vimos que, usando o pacote ``rstan''
+é possível simular Cadeias de Markov que tem
+como distribuição estacionária a posteriori.
+Este pacote também estima diversas funções da posteriori,
+como seus percentis, média e variância.
+Também, o pacote ``mcmc'' permite avaliar a
+precisão das estimativas acima.
+Unindo estes dois pacotes, é possível aplicar a
+inferência bayesiana para uma classe ampla de problemas.
+
+\subsubsection{Exercícios}
+
+\begin{exercise}
+ \label{ex:anova-stan}
+ Considere o \cref{ex:bayesian-anova}.
+ \begin{enumerate}[label=(\alph*)]
+  \item Gere dados no R considerando que $\mu_{1}=50$, $\mu_{2}=10$, $n=100$ e $\tau_{0}^{2}=1$.
+	\item Exiba o código para obter uma Cadeia de Markov para $\mu_{1}$ e $\mu_{2}$ no stan,
+	      considerando que $\nu = 20$, $\tau_{1}^{2}=25$ e $\tau_{2}^{2}=10$.
+	\item Estime $\mu_{1}$ e $\mu_{2}$ usando a utilidade derivada do erro quadrático.
+	\item Construa um intervalo de credibililidade de 95\% para cada parâmetro.
+	      Interprete a razão de os intervalos para $\mu_{1}$ e $\mu_{2}$ serem menores 
+				do que o intervalo para $\mu$.
+	\item Teste a hipótese de M usando a utilidade na tabela \ref{table:u-0-1-c} e $c=1$.
+	\item Teste $H_{0}: \mu \geq 20$ usando a utilidade na tabela \ref{table:u-0-1-c} e $c=1$.
+ \end{enumerate}
+\end{exercise}
+
+\cprotect \solution{\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item É possível gerar dados para este problema usando o seguinte código em R:
+	\begin{verbatim}
+y1 <- rnorm(100,50,1)
+y2 <- rnorm(100,10,1)
+data <- data.frame(y1,y2)
+	\end{verbatim}
+	\item É possível obter uma Cadeia de Markov para $\mu_{1}$ e $\mu_{2}$
+	      usando o seguinte código em stan.
+	\begin{verbatim}
+data {
+ int<lower=0> N1;   //numero de observacoes para o tratamento 1.
+ int<lower=0> N2;   //numero de observacoes para o tratamento 2.
+ real y1[N1];       //vetor de observacoes para o tratamento 1.
+ real y2[N2];       //vetor de observacoes para o tratamento 2.
+}
+
+parameters {
+ real mu1;          //contaminacao media sob o tratamento 1.
+ real mu2;          //contaminacao media sob o tratamento 2.
+ real mu;           //contaminacao media global.
+}
+
+model {
+ mu ~ normal(20, 10);
+ mu1 ~ normal(mu, 25);
+ mu2 ~ normal(mu, 25);
+ y1 ~ normal(mu1, 1);
+ y2 ~ normal(mu2, 1);
+}
+	\end{verbatim}
+	
+	\item Utilizando o \cref{thm:estimation_l2},
+        sabemos que, sob a utilidade obtida pelo erro quadrático,
+				o estimador ótimo é a média a posteriori, 
+				ou seja $E[\mu_{1}|y]$ e $E[\mu_{2}|y]$.
+				Também, decorre do \cref{theorem:clt-markov} que
+				$E[\mu_{i}|y]$ pode ser aproximado pela média
+				dos valores obtidos na Cadeia de Markov que
+				tem como distribuição estacionária $\pi(\mu_{i}|y)$.
+				Portanto, para gerar esta Cadeia de Markov e
+				aproximar os valores de $E[\mu_{i}|y]$,
+				usamos o seguinte código:
+	\begin{verbatim}
+amostra <- stan(file="anova.stan", 
+                data=c("N1", "N2", "y1", "y2"), iter=10^4, chains=1)	
+est_mu1 <- mean(extract(amostra, "mu1")[["mu1"]])
+est_mu2 <- mean(extract(amostra, "mu2")[["mu2"]])
+c(est_mu1,est_mu2)
+[1] 50.12020 10.07273
+	\end{verbatim}
+  Portanto, $\hat{\mu}_{1} = E[\mu_{1}|y] \approx 50.1$ e 
+	$\hat{\mu}_{2} = E[\mu_{2}|y] \approx 10.0$.
+	\item Intervalos de credibilidade 95\% podem ser obtidos diretamente pelo comando
+	\begin{verbatim}
+plot(amostra)
+	\end{verbatim}
+  \begin{figure}
+	 \centering
+   \includegraphics[scale=0.5]{chapter-computing-stan-anova}
+	 \caption{Intervalos de credibilidade para $\mu_1$, $\mu_2$ e $\mu$
+	          no \cref{ex:anova-stan}.}
+	 \label{fig:anova-stan}
+	\end{figure}
+	O resultado é exibido na figura \ref{fig:anova-stan}.
+	Note que os intervalos para $\mu_{1}$ e $\mu_{2}$ são menores
+	que o intervalo para $\mu$.
+	Para entender este fenômeno, observe que $y_{i,j}|\mu_{i} \sim N(\mu_{i},1)$.
+	Também, $\mu_{i}|\mu \sim N(\mu,25)$.
+	Em outras palavras, segundo este modelo,
+	$y_{i,j}$ trazem informação sobre os $\mu_{i}$ e
+	os $\mu_{i}$ trazem informação sobre $\mu$.
+	Como há mais valores de $y_{i,j} (200)$ do que de $\mu_{i} (2)$
+	e os $y_{i,j}$ tem variância $(1)$ menor que os $\mu_{i} (25)$,
+	é razoável esperar que o intervalo de credibilidade para $\mu_{1}$ e $\mu_{2}$
+	seja menor que aquele de $\mu$.
+	
+	\item Desejamos testar $H_{0}: \mu_{1} \leq \mu_{2}$.
+	      Decorre do, \cref{thm:0-1-c} que, como $c=1$,
+				rejeitamos $H_{0}$ se $P(H_{0}|y) < 0.5$.
+				Também, decorre do \cref{theorem:clt-markov} que
+				podemos usar uma Cadeia de Markov para aproximar $P(H_{0}|y)$.
+				Para tal, podemos construir uma Cadeia $(a_{i},b_{i})$ que 
+				tem como distribuição estacionária a 
+				posteriori conjunta de $\mu_{1}$ e $\mu_{2}$.
+				Sob estas condições, a frequência com que $a_{i} \leq b_{i}$
+				aproxima $P(\mu_{1} \leq \mu_{2}|y)$, ou seja $P(H_{0}|y)$.
+				Podemos obter esta estimativa usando o seguinte código em R:
+\begin{verbatim}
+mu1 <- extract(amostra, "mu1")[["mu1"]]
+mu2 <- extract(amostra, "mu2")[["mu2"]]
+mean(mu1 <= mu2)
+[1] 0
+\end{verbatim}
+	     Assim, obtemos que $P(H_{0}|y) \approx 0$ e rejeitamos $H_{0}$.
+			
+  \item Similarmente ao item anterior, obtemos:
+	\begin{verbatim}
+mu <- extract(amostra, "mu")[["mu"]]
+mean(mu >= 20)
+[1] 0.6086
+olbm(mu >= 20, 250)
+[1] 4.579868e-05
+	\end{verbatim}
+	Portanto, como $P(H_{0}|y) \approx 0.6 > 0.5$
+	(e olbm indica que o erro de aproximação do
+	 Monte Carlo é baixo),
+	não rejeitamos $H_{0}$.
+ \end{enumerate}
+}{}
+
+\begin{exercise}
+ Considere o \cref{ex:ad-effect}.
+ \begin{enumerate}[label=(\alph*)]
+  \item Gere dados no R considerando que $\theta_{1}=100$ e $\theta_{2}=150$ e $n=30$.
+	\item Exiba o código para obter uma Cadeia de Markov para $\theta_{1}$ e $\theta_{2}$ no stan, usando $a_1 = a_2 = b_1 = b_2 = 1$.
+	\item Construa um intervalo de credibililidade de 95\% para cada parâmetro.
+	\item Teste a hipótese de M usando a utilidade na tabela \ref{table:u-0-1-c} e $c=1$.
+	\item Como você levaria em conta que o número de acessos pode ser influenciado pelo dia da semana?
+	      Sugira um modelo que leve este efeito em consideração e rode-o no stan.
+ \end{enumerate}
+\end{exercise}

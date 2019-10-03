@@ -1,0 +1,1094 @@
+\newpage
+
+\section{Coerência e Probabilidade: 
+como evitar prejuízos certos?}
+
+\subsection{Probabilidade marginal}
+
+Em cursos anteriores,
+você usou a probabilidade como
+uma forma de representar a sua incerteza.
+Contudo, possivelmente você não viu o porquê
+de essa representação ser razoável.
+Por que é razoável assumir
+que a representação da sua incerteza satisfaz
+os axiomas da probabilidade (\cref{probability})?
+
+\begin{enumerate}
+ \item (Não-negatividade) Para todo $A$, 
+ $\P(A) \geq 0$.
+ \item (Aditividade) Se $(A_{n})_{n \in \mathbb{N}}$ é
+ uma sequência de conjuntos disjuntos, então
+ $\P(\cup_{n \in \mathbb{N}}{A_{n}}) = \sum_{n \in \mathbb{N}}{\P(A_{n})}$.
+ \item (Normalização) $\P(\Omega) = 1$.
+\end{enumerate}
+
+Neste Capítulo, 
+discutiremos a questão acima.
+Para tal, faremos uso de um experimento mental.
+Considere que $A$ é uma proposição 
+sobre a qual você tem incerteza.
+Por exemplo, $A$ pode designar o
+evento de que choverá amanhã.
+Também considere uma aposta tal que 
+o vendedor deve pagar $R\$1$ ao comprador se $A$ ocorrer e
+$R\$0$, caso contrário.
+Qual seria o preço tal que você aceitaria
+tanto comprar quanto vender esta aposta?
+Chamaremos este preço de $\text{Pr}(A)$.
+
+Note que $\text{Pr}$ é uma representação da sua incerteza.
+Quanto maior o valor de $\text{Pr}(A)$,
+mais você acredita que $A$ irá ocorrer.
+Também, o seu valor de $\text{Pr}$ não necessariamente
+é o mesmo de seus colegas, 
+cada um podendo coerentemente ter os seus próprios preços.
+Isto significa que você pode coerentemente designar
+qualquer valor a $\text{Pr}(A)$?
+
+Para responder a esta pergunta,
+é necessário definir coerência.
+Dizemos que uma designação de preços é
+incoerente se ela é tal que você pode
+perder dinheiro com certeza.
+Observar que você está incorrendo em perda certa
+provavelmente te daria incentivo suficiente
+para rever seus preços e a incerteza
+das proposições ligadas a estes.
+Portanto, investigaremos sob quais condições 
+você incorre em perda certa.
+
+Para tal, faremos uso da \cref{indicator_function}.
+Lembre-se que $\I_{A}$ é a função indicadora
+da proposição $A$, 
+uma variável aleatória que assume o valor
+$1$, quando $A$ ocorre, e $0$, caso contrário.
+Assim, o seu lucro após comprar a aposta em $A$
+pode ser escrito como $\I_{A}-\text{Pr}(A)$.
+O resultado desta variável aleatória é resumido
+na Tabela \ref{table:aposta_comprar}.
+Note que, se $\text{Pr}(A) > 1$,
+então o seu ganho obtido é sempre menor do que $0$.
+Em outras palavras, você está tendo prejuízo certo.
+Assim, para que $\text{Pr}(A)$ 
+seja uma representação coerente da sua incerteza,
+é necessário que $\text{Pr}(A) \leq 1$.
+
+\begin{table}
+ \centering
+ \begin{tabular}{|l|l|}
+  \hline
+  & $\I_{A}-\text{Pr}(A)$ \\
+  \hline
+  $A$ ocorre & $1-\text{Pr}(A)$ \\
+  $A$ não ocorre & $-\text{Pr}(A)$ \\
+  \hline
+ \end{tabular}
+ \caption{Ganho obtido comprando uma aposta em $A$.}
+ \label{table:aposta_comprar}
+\end{table}
+
+Similarmente, podemos considerar o caso em que 
+você vende a aposta em $A$.
+Neste caso, o seu lucro é dado por 
+$-(I_{A}-\text{Pr}(A))$.
+Esta variável é resumida na \cref{table:aposta_vender}.
+Observe que, se $\text{Pr}(A) < 0$, 
+então $-(\I_{A}-\text{Pr}(A))$ é sempre menor que $0$.
+Novamente, este caso te levaria a um prejuízo certo.
+Portanto, também podemos concluir que,
+se $\text{Pr}$ representa coerentemente a sua incerteza,
+então $\text{Pr}(A) \geq 0$.
+As considerações apresentadas acima 
+nos levam ao resultado no \cref{lemma:sure_loss_1}.
+
+\begin{table}
+ \centering
+ \begin{tabular}{|l|l|}
+ \hline
+  & $-(\I_{A}-\text{Pr}(A))$ \\
+  \hline
+  $A$ ocorre & $\text{Pr}(A)-1$ \\
+  $A$ não ocorre & $\text{Pr}(A)$ \\
+  \hline
+ \end{tabular}
+ \caption{Ganho obtido vendendo uma aposta em $A$.}
+ \label{table:aposta_vender}
+\end{table}
+
+\begin{lemma}
+ \label{lemma:sure_loss_1}
+ Se existe $A$ tal que $\text{Pr}(A) < 0$ ou
+ $\text{Pr}(A) > 1$, então 
+ você pode ser levada a prejuízo certo.
+\end{lemma}
+
+Para prosseguir na análise,
+consideraremos a composição de apostas.
+Em outra palavras, avaliaremos o resultado
+de você compor apostas, comprando e 
+vendendo apostas em eventos individuais.
+Formalmente, para quaisquer números,
+$\alpha_{1}, \ldots, \alpha_{n}$,
+e eventos, $A_{1}, \ldots, A_{n}$,
+denotamos um portfólio de apostas por $(\alpha_{i},A_{i})_{1 \leq i \leq n}$.
+Este portfólio é tal que,
+se $\alpha_{i} > 0$, então você 
+comprará $\alpha_{i}$ unidades da aposta em $A_{i}$ e,
+se $\alpha_{i} < 0$, então você 
+venderá $\alpha_{i}$ unidades desta aposta.
+Note que o seu balanço dado pelo portfólio $(\alpha_{i},A_{i})_{1 \leq i \leq n}$ é 
+$\sum_{i=1}^{n}{\alpha_{i}(\I_{A_{i}}-\text{Pr}(A_{i}))}$.
+Em outras palavras, $\sum_{i=1}^{n}{\alpha_{i}(\I_{A_{i}}-\text{Pr}(A_{i}))}$ é 
+a soma do resultado de todas as apostas 
+em que você participou.
+
+\begin{definition}
+ Você pode ser levada a prejuízo certo se 
+ existe um portfólio de apostas,
+ $(\alpha_{i},A_{i})_{1 \leq i \leq n}$,
+ tal que você perde dinheiro com certeza. 
+ Isto é, para todo $\omega \in \Omega$,
+ $\sum_{i=1}^{n}{\alpha_{i}(\I_{A_{i}}(w)-\text{Pr}(A_{i}))} < 0$.
+\end{definition}
+
+O próximo lema será uma ferramenta importante
+para provar que certas atribuições de preços
+levam a prejuízo certo.
+Ele mostra que, como você está disposta tanto
+a comprar quanto a vender quaisquer apostas,
+então um portfólio com balanço constante e
+diferente de $0$ a levará a prejuízo certo.
+
+\begin{lemma}
+ \label{lemma:constant_balance}
+ Considere que para todo $\omega \in \Omega$,
+ $\sum_{i=1}^{n}{\alpha_{i}(\I_{A_{i}(w)}-\text{Pr}(A_{i}))}$
+ assume um valor constante, $c$.
+ Se $c \neq 0$, então você pode ser levada 
+ a prejuízo certo.
+\end{lemma}
+
+\begin{proof}
+ Se $c < 0$, então o portfólio
+ $(\alpha_{i},A_{i})_{1 \leq i \leq n}$
+ traz um balanço $c$ e a leva a prejuízo certo.
+ Se $c > 0$, então note que 
+ o balanço do portfólio 
+ $(-\alpha_{i},A_{i})_{1 \leq i \leq n}$ é:
+ \begin{align*}
+  &\sum_{i=1}^{n}{-\alpha_{i}(\I_{A_{i}(w)}-\text{Pr}(A_{i}))} \\
+  =&-\sum_{i=1}^{n}{\alpha_{i}(\I_{A_{i}(w)}-\text{Pr}(A_{i}))} = -c
+ \end{align*}
+ Portanto, existe um portfólio, 
+ $(-\alpha_{i},A_{i})_{1 \leq i \leq n}$,
+ que a leva a prejuízo certo.
+\end{proof}
+
+O \cref{lemma:constant_balance} nos permite provar
+mais resultados a respeito da 
+atribuição coerente de preços.
+
+\begin{lemma}
+ \label{lemma:sure_loss_2}
+ Se $\text{Pr}(\Omega) \neq 1$,
+ então você pode ser levada a prejuízo certo.
+\end{lemma}
+
+\begin{proof}
+ Note que o balanço da compra de 
+ uma unidade de $\Omega$, 
+ $((1,\Omega))$, é dado por 
+ $\I_{\Omega}-\text{Pr}(\Omega)$.
+ Também, $\I_{\Omega}$ é outra forma de escrever $1$.
+ Assim, o balanço de $((1,\Omega))$ é
+ $1-\text{Pr}(\Omega)$, uma constante.
+ Portanto, o \cref{lemma:constant_balance} garante que,
+ se $1-\text{Pr}(\Omega) \neq 0$,
+ então seus preços a levam a prejuízo certo.
+ Em outras palavras, para evitar prejuízo certo
+ é necessário que $\text{Pr}(\Omega) = 1$.
+\end{proof}
+
+\begin{lemma}
+ \label{lemma:sure_loss_3}
+ Se existem $A$ e $B$ disjuntos tais que
+ \begin{align*}
+  \text{Pr}(A \cup B) \neq \text{Pr}(A)+\text{Pr}(B)
+ \end{align*}
+ então você pode ser levada a prejuízo certo.
+\end{lemma}
+
+\begin{proof}
+ Como $A$ e $B$ são disjuntos, 
+ existem três possíveis ocorrências:
+ $A$, $B$ ou $(A \cup B)^{c}$ 
+ (como $A$ e $B$ são disjuntos, $A \cap B$ é impossível).
+ Portanto, o balanço de comprar $A$, 
+ comprar $B$ e vender $A \cup B$ é 
+ resumido pela \cref{table:aposta_uniao}.
+ Note que o balanço do portfólio
+ $((1,A),(1,B),(-1,A \cup B))$ é 
+ constante e igual a 
+ $\text{Pr}(A \cup B)-\text{Pr}(A)-\text{Pr}(B)$.
+ Portanto, pelo \cref{lemma:constant_balance}, se
+ $\text{Pr}(A \cup B)-\text{Pr}(A)-\text{Pr}(B) \neq 0$,
+ você pode ser levada a prejuízo certo.
+\end{proof}
+
+\begin{table}
+ \centering
+ \begin{tabular}{|l|l|l|l|l|}
+  \hline
+  & $\I_{A}(w)-\text{Pr}(A)$
+  & $\I_{B}(w)-\text{Pr}(B)$
+  & $-(\I_{(A \cup B)}-\text{Pr}(A \cup B))$
+  & portfólio (soma) \\
+  \hline
+  $\omega \in A$
+  & $1-\text{Pr}(A)$
+  & $-\text{Pr}(B)$
+  & $\text{Pr}(A \cup B)-1$
+  &	$\text{Pr}(A \cup B)-\text{Pr}(A)-\text{Pr}(B)$ \\
+  $\omega \in B$ 
+  & $-\text{Pr}(A)$
+  & $1-\text{Pr}(B)$
+  &	$\text{Pr}(A \cup B)-1$
+  &	$\text{Pr}(A \cup B)-\text{Pr}(A)-\text{Pr}(B)$ \\
+  $\omega \in (A \cup B)^{c}$
+  & $-\text{Pr}(A)$
+  & $-\text{Pr}(B)$
+  & $\text{Pr}(A \cup B)$
+  & $\text{Pr}(A \cup B)-\text{Pr}(A)-\text{Pr}(B)$ \\
+  \hline
+ \end{tabular}
+ \caption{Ganho obtido por um portfólio que 
+ compra $A$, compra $B$ e vende $A \cup B$, 
+ quando $A$ e $B$ são disjuntos.}
+ \label{table:aposta_uniao}
+\end{table}
+
+Resumindo os \cref{lemma:sure_loss_1,lemma:sure_loss_2,lemma:sure_loss_3},
+obtemos condições que $\text{Pr}$ necessariamente deve obedecer para que você não possa ser levada
+a prejuízo certo.
+
+\begin{lemma}
+ \label{lemma:sure_loss_additivity}
+ Se $\text{Pr}$ é tal que 
+ você não pode ser levada a prejuízo certo, então 
+ é necessário que:
+ \begin{enumerate}
+  \item (Não-negatividade) Para todo $A$, 
+  $0 \leq \text{Pr}(A) \leq 1$.
+  \item (Aditividade) Se $A$ e $B$ são disjuntos, então
+  $\text{Pr}(A \cup B) = \text{Pr}(A)+\text{Pr}(B)$.
+  \item (Normalização) $\text{Pr}(\Omega) = 1$.
+ \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+ Decorre dos \cref{lemma:sure_loss_1,lemma:sure_loss_2,lemma:sure_loss_3}.
+\end{proof}
+
+\subsubsection*{Exercícios}
+
+\begin{exercise}[{\citet[p.8]{Kadane2011}}]
+ Considere os seguintes eventos:
+ \begin{itemize}
+  \item $A_{1}$: Choverá amanhã e 
+  a temperatura máxima será superior a $25^o$ C.
+  \item $A_{2}$: Choverá amanhã e 
+  a temperatura máxima não será superior a $25^o$ C.
+  \item $A_{3}$: Não choverá amanhã e 
+  a temperatura máxima será superior a $25^o$ C.
+  \item $A_{4}$: Não choverá amanhã e 
+  a temperatura máxima não será superior a $25^o$ C.
+ \end{itemize}
+ Quais seriam os preços que 
+ você definiria para cada proposição e
+ qual a sua linha de raciocínio?
+ Os seus preços são coerentes?
+ Se não, você estaria disposta a revê-los?
+\end{exercise}
+
+\solution{
+ \textbf{Solução}: Este exercício visa enfatizar que
+ a probabilidade é subjetiva e, assim, 
+ é possível que diversas pessoas tenham
+ probabilidades diferentes, todas elas sendo coerentes.
+ Contudo, note que algumas probabilidades tem 
+ maior poder de convencimento do que outras.
+ Uma pessoa que meramente indica preços coerentes,
+ sem dar justificativas por trás deles, 
+ dificilmente convencerá seus colegas.
+ Por outro lado, neste exercício,
+ preços baseados em conhecimento climático e 
+ histórico da região provavelmente terão 
+ maior poder de convencimento.
+}{}
+
+\begin{exercise}
+ Mostre que se $\text{Pr}(\emptyset) \neq 0$,
+ então você pode ser levada a prejuízo certo.
+\end{exercise}
+
+\solution{
+ \textbf{Solução}: Considere a compra de 
+ uma aposta em $\emptyset$.
+ O balanço desta aposta é dado por 
+ $\I_{\emptyset}-\text{Pr}(\emptyset)$.
+ Como $\emptyset$ nunca ocorre, 
+ $\I_{\emptyset}=0$ e 
+ o balanço da aposta é simplesmente 
+ $-\text{Pr}(\emptyset)$.
+ Portanto, esta aposta tem balanço constante.
+ Conclua pelo \cref{lemma:constant_balance} que,
+ se $\text{Pr}(\emptyset) \neq 0$,
+ então você pode ser levada a prejuízo certo.
+}{}
+
+\begin{exercise}
+ Se o prêmio das apostas fosse modificado de 
+ $R\$1,00$ para $R\$2,00$, 
+ alguma das condições para 
+ a coerência de preços seria modificada?
+ De que forma a sua resposta afeta a 
+ sua interpretação do quanto é razoável 
+ a analogia de apostas?
+\end{exercise}
+
+\solution{
+ \textbf{Solução}: Se o prêmio ganho nas apostas 
+ fosse modificado para $R\$2,00$,
+ então o balanço de uma aposta $(\alpha_{i},A_{i})$ seria
+ dado por $\alpha_{i}(2\I_{A_{i}}-\text{Pr}(A_{i}))$.
+ Acompanhando os mesmos portfólios utilizados
+ nos \cref{lemma:sure_loss_1,lemma:sure_loss_2,lemma:sure_loss_3},
+ obtem-se que são condições necessárias para 
+ evitar perda certa que:
+ \begin{enumerate}
+  \item para todo $A$, 
+  $0 \leq \text{Pr}(A) \leq 2$.
+  \item $\text{Pr}(\Omega) = 2$.
+  \item Se $A$ e $B$ são disjuntos, então
+  $\text{Pr}(A \cup B) = \text{Pr}(A)+\text{Pr}(B)$.
+ \end{enumerate}
+ Note que $\frac{\text{Pr}}{2}$ satisfaz 
+ todos os axiomas da probabilidade.
+ Mais especificamente, $\text{Pr}$ ainda pode 
+ ser visto como uma representação de sua incerteza,
+ dado que, quanto maior sua confiança em $A$, 
+ mais estaria disposta a pagar para obter 
+ $\alpha_{i}(2\I_{A_{i}}-\text{Pr}(A_{i}))$.
+ Neste sentido, o prêmio de $R\$1,00$ é 
+ uma condição que faz com que $\text{Pr}(\Omega)=1$ e,
+ assim, normaliza os preços obtidos.
+}{}
+
+\begin{exercise}
+ Mostre que, se 
+ $Pr(A \cup B) \neq Pr(A) + Pr(B) - Pr(A \cap B)$,
+ então você pode ser levada a prejuízo certo.
+\end{exercise}
+
+\subsection{Probabilidade condicional}
+
+Na seção passada, 
+discutimos uma analogia entre
+os axiomas da probabilidade e apostas.
+Contudo, esta analogia não nos permite obter
+o axioma da probabilidade condicional.
+Em outras palavras, o sistema de apostas
+que estudamos não permite estudar de que
+forma a incerteza é alterada com o aprendizado
+de novos fatos.
+Nesta seção, discutiremos uma extensão
+da analogia de apostas que permite obter
+o axioma da probabilidade condicional na \cref{conditional_probability}.
+
+\begin{enumerate}
+ \item $\P(A \cap B) = \P(B)\P(A|B)$
+\end{enumerate}
+
+Que tipo de aposta seria avaliada de acordo
+com a sua incerteza em $A$ dado que $B$ ocorreu?
+Para responder a essa pergunta,
+é importante considerar qual o resultado da aposta
+quando $B$ não acontece.
+Uma saída é dizer que o comprador (e o vendedor)
+tem um balanço de $0$ quando $B$ não acontece.
+Assim, a aposta somente tem 
+efeito sobre os apostadores quando $B$ ocorre.
+Finalmente, para completar a aposta, quando $B$ ocorre,
+consideramos uma aposta em que o comprador ganha 
+$R\$1$ quando $A$ acontece e 
+$R\$0$ quando $A$ não acontece.
+Dizemos que a aposta definida acima é de 
+$A$ condicional a $B$
+e o seu preço para comprá-la é $\text{Pr}(A|B)$.
+Observe que a aposta de $A$ condicional a $B$ é similar
+à aposta da seção passada,
+com a exceção de que ela só surte efeitos quando 
+$B$ ocorre.
+O balanço de comprar esta aposta pode ser resumido por $\I_{A \cap B} - \text{Pr}(A|B)\I_{B}$.
+A \cref{table:aposta_a|b} ilustra este balanço.
+
+\begin{table}
+ \centering
+ \begin{tabular}{|c|c|}
+  \hline
+  & $\I_{A \cap B} - \text{Pr}(A|B)\I_{B}$ \\
+  \hline
+  $A$ ocorre e $B$ ocorre
+  & $1-\text{Pr}(A|B)$ \\
+  $A$ não ocorre e $B$ ocorre
+  & $-\text{Pr}(A|B)$ \\
+  $B$ não ocorre
+  & $0$ \\
+  \hline
+ \end{tabular}
+ \caption{Balanço da compra da aposta de 
+ $A$ condicional a $B$.} 
+ \label{table:aposta_a|b}
+\end{table}
+
+Para obter um resultado a partir da aposta condicional,
+também generalizaremos a definição anterior de 
+portfólio de apostas.
+Um portfólio de apostas será definido
+como $(\alpha_{i},A_{i},B_{i})_{1 \leq i \leq n}$, 
+onde $\alpha_{i}$ são números reais e
+$A_{i}$ e $B_{i}$ são eventos.
+Ao contrário da seção anterior, 
+cada aposta em um portfólio é definida a partir 
+de dois eventos.
+Isto ocorre pois estamos comprando apostas de 
+$A_{i}$ condicional a $B_{i}$.
+Também é permitido que $\alpha_{i}$ seja 
+qualquer número real.
+A interpretação é similar ao caso anterior.
+Por exemplo, se $\alpha_{i}=0.5$, compra-se 
+$0.5$ unidade de uma aposta de
+$A_{i}$ condicional a $B_{i}$.
+Similarmente, se $\alpha_{i}=-0.37$, vende-se 
+$0.37$ de uma unidade de uma aposta de 
+$A_{i}$ condicional a $B_{i}$.
+O balanço de um portfólio é dado pela
+soma das apostas individuais,
+isto é, ele é igual a $\sum_{i=1}^{n}{\alpha_{i}\left(\I_{A_i \cap B_i}-\text{Pr}(A_{i}|B_{i})\I_{B_i}\right)}$.
+
+Antes de prosseguirmos, note que 
+uma aposta de $A$ condicional a $\Omega$
+tem exatamente o mesmo balanço que uma aposta em $A$.
+Este é o caso pois $\Omega$ sempre ocorre.
+Desta forma, para toda proposição $A$, definimos que 
+$\text{Pr}(A) := \text{Pr}(A|\Omega)$.
+Com essa definição, poderemos mostrar que 
+$\text{Pr}(A \cap B) = \text{Pr}(B)\text{Pr}(A|B)$ é 
+uma condição necessária para que 
+você não possa ser levada a uma perda certa.
+
+\begin{table}
+ \centering
+ \begin{tabular}{|c|c|c|c|}
+  \hline
+  & $(1,A,B)$
+  & $(1, A^{c} \cap B, \Omega)$
+  &	$(1-\text{Pr}(A|B),B^{c},\Omega)$ \\
+  \hline
+  $A$ ocorre e $B$ ocorre
+  & $1-\text{Pr}(A|B)$
+  &	$-\text{Pr}(A^{c} \cap B)$
+  & $-(1-\text{Pr}(A|B))\text{Pr}(B^{c})$ \\
+  $A$ não ocorre e $B$ ocorre
+  & $-\text{Pr}(A|B)$
+  & $1-\text{Pr}(A^{c} \cap B)$
+  & $-(1-\text{Pr}(A|B))\text{Pr}(B^{c})$ \\
+  $B$ não ocorre
+  &	$0$
+  & $-\text{Pr}(A^{c} \cap B)$
+  & $(1-\text{Pr}(A|B))(1-\text{Pr}(B^{c}))$ \\
+  \hline
+ \end{tabular}
+ \caption{Balanço da compra de 
+ diversas apostas condicionais.} 
+ \label{table:portfolio_a|b}
+\end{table}
+
+Para tal, considere um portfólio que 
+consiste em comprar uma unidade de $A$ condicional a $B$,
+comprar uma unidade de $B^{c}$ (condicional a $\Omega$) e 
+comprar $(1+\text{Pr}(A|B))$ unidades de 
+$A^{c} \cap B$ (condicional a $\Omega$).
+A \cref{table:portfolio_a|b} resume os balanços para 
+cada uma destas apostas.
+Somando as colunas em cada uma das linhas, 
+observamos que o balanço deste portfólio é 
+constante e igual a
+\begin{align*}
+ 1-\text{Pr}(A|B)-\text{Pr}(B^{c})
+ -\text{Pr}(A^{c} \cap B)
+ +\text{Pr}(A|B)\text{Pr}(B^{c})
+\end{align*}
+Utilizando o \cref{lemma:constant_balance}, observe que, como o portfólio tem balanço constante,
+para que você possa evitar prejuízo certo é 
+necessário que
+\begin{align}
+ \label{eqn:sure_loss_prob_condicional_1}
+ 0 = 1-\text{Pr}(A|B)-\text{Pr}(B^{c})
+ -\text{Pr}(A^{c} \cap B)
+ +\text{Pr}(A|B)\text{Pr}(B^{c})
+\end{align}
+Também, decorre do \cref{lemma:sure_loss_additivity} que,
+para evitar prejuízo certo, é 
+necessário que $\text{Pr}(B^{c}) = 1-\text{Pr}(B)$ e
+$\text{Pr}(A^{c} \cap B) = \text{Pr}(B)-\text{Pr}(A \cap B)$. 
+Realizando estas substituições na
+\cref{eqn:sure_loss_prob_condicional_1},  obtemos:
+\begin{align}
+ \label{eqn:sure_loss_prob_condicional_2}
+ 0 &= 1-\text{Pr}(A|B)-(1-\text{Pr}(B))
+ -(\text{Pr}(B)-\text{Pr}(A \cap B))
+ +\text{Pr}(A|B)(1-\text{Pr}(B)) \nonumber \\
+ 0 &= \text{Pr}(A \cap B) 
+ -\text{Pr}(B)\text{Pr}(A|B) \nonumber \\
+ \text{Pr}(A \cap B) &= \text{Pr}(B)\text{Pr}(A|B)
+\end{align}
+Assim, para que você não possa ser 
+levada a prejuízo certo,
+é necessário que a 
+\cref{eqn:sure_loss_prob_condicional_2} 
+seja satisfeita.
+
+\begin{lemma}
+ \label{lemma:sure_loss_conditional}
+ Se \text{Pr} é tal que você não pode 
+ ser levada a prejuízo certo, então:
+ \begin{align*}
+  \text{Pr}(A \cap B)
+  &= \text{Pr}(B)\text{Pr}(A|B)
+ \end{align*}
+\end{lemma}
+
+\subsubsection*{Exercícios}
+
+\begin{exercise}[{\citet{deGroot1986}[p.63]}]
+ Se $A$ e $B$ são disjuntos e $\P(B) > 0$, 
+ qual o valor de $\P(A|B)$?
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{align*}
+  \P(A \cap B) 	
+  &= \P(B)\P(A|B)	
+  & \text{\cref{lemma:sure_loss_conditional}} \\
+  \P(\emptyset)	
+  &= \P(B)\P(A|B)
+  & \text{A e B disjuntos} \\
+  0 &= \P(B)\P(A|B) \\
+  0 &= \P(A|B) & \P(B) > 0
+ \end{align*}
+}{}
+
+\begin{exercise}[\citep{deGroot1986}(p.63)]
+ Se $A$ e $B$ são independentes, 
+ $\P(A)=0.3$ e $\P(B^{c}) > 0$,
+ qual o valor de $\P(A^{c}|B^{c})$?
+\end{exercise}
+
+\solution{\textbf{Solução}: Note que, 
+ como $A$ e $B$ são independentes,
+ temos que $A^{c}$ e $B^{c}$ são independentes. 
+ Assim,
+ \begin{align*}
+  \P(B^{c})\P(A^{c}|B^{c})
+  &= \P(A^{c} \cap B^{c})
+  & \text{\cref{lemma:sure_loss_conditional}} \\
+  \P(B^{c})\P(A^{c}|B^{c})
+  &= \P(A^{c})\P(B^{c})
+  & A^{c}\text{ e }B^{c}\text{ independentes} \\
+  \P(A^{c}|B^{c})
+  &= \P(A^{c}) 
+  & \P(B^{c}) > 0 \\
+  \P(A^{c}|B^{c}) &= 1-\P(A) = 0.7
+ \end{align*}
+}{}
+
+\begin{exercise}
+ Suponha que $\text{Pr}(B)=0$, 
+ $\text{Pr}(A \cap B) = 0$ e 
+ $\text{Pr}(A|B) = 0.9$.
+ Estes preços satisfazem a 
+ propriedade do \cref{lemma:sure_loss_conditional}?
+ Note que $\text{Pr}(A|B)$ estaria indefinido se 
+ usássemos a fórmula 
+ $\text{Pr}(A|B) = \frac{\text{Pr}(A \cap B)}{\text{Pr}(B)}$.
+\end{exercise}
+
+\solution{\textbf{Solução}: Como $\text{Pr}(B)=0$ e
+$\text{Pr}(A \cap B) = 0$, temos que 
+$\text{Pr}(A \cap B) = \text{Pr}(B)\text{Pr}(A|B)$,
+não importa qual seja o valor de $\text{Pr}(A|B)$.
+Temos que $\text{Pr}(A|B)$ está definido mesmo
+quando $\text{Pr}(B) = 0$, podendo 
+assumir qualquer valor neste caso.
+}{}
+
+\begin{exercise}[\citep{Kadane2011}(p.33)]
+ Exiba um exemplo tal que 
+ $\P(A|B) \neq \P(B|A)$.
+\end{exercise}
+
+\solution{\textbf{Solução}: Considere que 
+ $P(A) = 0.5$ e $B=\Omega$.
+ \begin{align*}
+  \begin{cases}
+   \P(A|\Omega)	
+   &= \frac{\P(A \cap \Omega)}{\P(\Omega)} = 0.5 \\
+   \P(\Omega|A)	
+   &= \frac{\P(A \cap \Omega)}{\P(A)} = 1
+  \end{cases}
+ \end{align*}
+}{}
+
+\begin{exercise}
+ Suponha que $\text{Pr}(B) > 0$.
+ Mostre que, se $\text{Pr}(\emptyset|B) \neq 0$,
+ então você pode ser levada a prejuízo certo.
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ Para que você não possa ser levada a prejuízo certo é
+ necessário que $\text{Pr}(\emptyset \cap B) = P(B)\text{Pr}(\emptyset|B)$.
+ Pelo que provamos na seção passada,
+ para evitar prejuízo certo é necessário que 
+ $\text{Pr}(\emptyset) = 0$.
+ Assim, temos que é necessário que 
+ $P(B)\text{Pr}(\emptyset|B) = 0$.
+ Como $P(B) > 0$, obtemos que, 
+ para evitar prejuízo certo é necessário que 
+ $\text{Pr}(\emptyset|B) = 0$.
+}{}
+
+\begin{exercise}[\citep{Kadane2011}(p.34)]
+ Seja $A$ um evento tal que $\P(A) > 0$.
+ Prove que:
+ \begin{enumerate}
+  \item Para todo $B$, 
+  $0 \leq \P(B|A) \leq 1$. 
+  \item $\P(\Omega|A) = 1$.
+  \item Se $B$ e $C$ são disjuntos, então 
+  $\P(B \cup C|A) = \P(B|A) +\P(C|A)$.
+ \end{enumerate}
+ Em outras palavras, $P(\cdot|A)$ satisfaz 
+ todos os axiomas da probabilidade marginal
+ descritos na \cref{probability}.
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{enumerate}
+  \item $\P(B|A) = \frac{\P(A \cap B)}{\P(A)}$. 
+  Como $A \cap B \subset A$, temos que 
+  $\P(A \cap B) \leq \P(A)$.
+  Também, $\P(A \cap B) > 0$ e $\P(A) > 0$. Portanto, 
+  $0 \leq \P(B|A) \leq 1$.
+  \item $\P(\Omega|A) = \frac{\P(\Omega \cap A)}{\P(A)} = \frac{\P(A)}{\P(A)} = 1$.
+  \item
+  \begin{align*}
+   \P(B \cup C|A)
+   &= \frac{\P((B \cup C) \cap A)}{\P(A)}
+   & \text{\cref{conditional_probability}} \\
+   &= \frac{\P((B \cap A) \cup (C \cap A))}{\P(A)} \\
+   &= \frac{\P(B \cap A)+\P(C \cap A)}{\P(A)}
+   & \text{$B \cap A$ e $C \cap A$ disjuntos,
+   \cref{probability}} \\
+   &= \frac{\P(B \cap A)}{\P(A)} 
+   +\frac{\P(C \cap A)}{\P(A)} \\
+   &= \P(B|A) + \P(C|A)
+   & \text{\cref{conditional_probability}}
+  \end{align*}
+ \end{enumerate}
+}{}
+
+\subsection{Caracterização da coerência}
+
+Note que as condições expressas no 
+\cref{lemma:sure_loss_additivity} e no \cref{lemma:sure_loss_conditional}
+são necessárias para que se evite prejuízo certo.
+Também, estas condições são muito semelhantes
+àquelas expressas na \cref{probability}.
+Portanto, é razoável perguntar se 
+estas condições também são
+suficientes para que você evite o prejuízo certo.
+A resposta para esta pergunta é dada a seguir.
+
+\begin{definition}
+ Dizemos que um conjunto de 
+ subconjuntos de $\Omega$, $\mathcal{A}$, 
+ é uma álgebra se:
+ \begin{enumerate}
+  \item $\Omega \in \mathcal{A}$.
+  \item Se $A \in \mathcal{A}$ e 
+  $B \in \mathcal{A}$, então 
+  $A \cup B \in \mathcal{A}$.
+  \item Se $A \in \mathcal{A}$, então 
+  $A^{c} \in \mathcal{A}$.
+ \end{enumerate}
+\end{definition}
+
+\begin{lemma}
+ \label{lemma:additivity_sure_loss}
+ Considere que os eventos aos quais você 
+ atribuiu preços formam uma álgebra.
+ Se seus preços satisfazem as condições no
+ \cref{lemma:sure_loss_additivity} e
+ no \cref{lemma:sure_loss_conditional}, então 
+ você não pode ser levada a prejuízo certo.
+\end{lemma}
+
+\begin{proof}
+ Por hipótese, você atribuiu preços, $\text{Pr}$, 
+ sobre eventos que formam uma álgebra e 
+ seus preços satisfazem a condição no \cref{lemma:sure_loss_additivity}.
+ Portanto, podemos definir uma probabilidade, $P$,
+ tal que para todos os eventos $A$ e $B$ sobre 
+ os quais você atribuiu preços,
+ $\P(A|B) = \text{Pr}(A|B)$.
+ Fixe um portfólio arbitrário,
+ $(\alpha_{i},A_{i},B_{i})_{1 \leq i \leq n}$.
+ A esperança (segundo P) do balanço deste portfólio é:
+ \begin{align*}
+  \E_{P}\left[\sum_{i=1}^{n}{\alpha_i (\I_{A_{i} \cap B_i}
+  -\text{Pr}(A_i|B_{i})\I_{B_i})}\right]
+  &= \sum_{i=1}^{n}{\alpha_i(\E_{P}\left[\I_{A_{i} \cap B_i}\right]-\text{Pr}(A_i|B_i)\E_{P}[\I_{B_{i}}])}
+  & \text{linearidade} \\
+  &= \sum_{i=1}^{n}{\alpha_i(\P(A_{i} \cap B_{i})
+  -\text{Pr}(A_i|B_i)\P(B_i))} \\
+  &= \sum_{i=1}^{n}{\alpha_i(\text{Pr}(A_{i} \cap B_{i})
+  -\text{Pr}(A_i|B_i)\text{Pr}(B_i))}	
+  & \text{Pr} \equiv P \\
+  &= \sum_{i=1}^{n}{\alpha_i(\text{Pr}(A_{i} \cap B_{i})
+  -\text{Pr}(A_i \cap B_i))}
+  & \text{\cref{lemma:sure_loss_conditional}} \\
+  &= 0
+ \end{align*}
+ Portanto \citep[p.24]{Kadane2011}, existe 
+ $\omega \in \Omega$, tal que 
+ $\sum_{i=1}^{n}{\alpha_i \I_{B_{i}(\omega)}(\I_{A_{i}(\omega)}-\text{Pr}(A_i|B_{i}))} \geq 0$ e
+ $(\alpha_{i},A_{i},B_{i})_{1 \leq i \leq n}$ não 
+ leva a prejuízo certo.
+ Como $(\alpha_{i},A_{i},B_{i})_{1 \leq i \leq n}$ era
+ arbitrário, conclua que 
+ você não pode ser levada a prejuízo certo.
+\end{proof}
+
+\begin{theorem}[\citet{deFinetti1931}]
+ \label{theorem:coherence}
+ Considere que os eventos aos quais 
+ você atribuiu preços formam uma álgebra.
+ Você não pode ser levada a prejuízo certo 
+ se e somente se:
+ \begin{enumerate}
+  \item (Não-negatividade) Para todo $A$, 
+  $0 \leq \text{Pr}(A) \leq 1$.
+  \item (Aditividade) Se $A$ e $B$ são disjuntos, então
+  $\text{Pr}(A \cup B) = \text{Pr}(A)+\text{Pr}(B)$.
+  \item (Normalização) $\text{Pr}(\Omega) = 1$.
+  \item (Multiplicação) $\text{Pr}(A \cap B) = \text{Pr}(A)\text{Pr}(B|A)$.
+ \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+ Decorre dos \cref{lemma:sure_loss_additivity,lemma:sure_loss_conditional,lemma:additivity_sure_loss}.
+\end{proof}
+
+Com base na analogia entre apostas e 
+representação de incerteza, o 
+\cref{theorem:coherence} nos leva a 
+uma possível justificativa para os 
+axiomas da probabilidade.
+Incidentalmente, esta analogia também 
+pode ser usada para que 
+você avalie quais são suas probabilidades
+(a partir dos preços que 
+você aceitaria para cada aposta).
+
+\subsubsection*{Exercícios}
+
+\begin{exercise}
+ \normalfont
+ O conjunto de todas as possíveis ocorrências em
+ um sorteio é $\Omega=\{1,2,3,4\}$.
+ O Sr. Falido está vendendo apostas no 
+ evento $\{1,2\}$ por R\$0.25,
+ no evento $\{2,3\}$ por R\$0.65 e 
+ no evento $\{4\}$ por R\$0.05.
+ Se você compra uma aposta em um evento e
+ ele ocorre o seu ganho é R\$1.
+ \begin{enumerate}[label=(\alph*)]
+  \item Mostre que é possível levar 
+  o Sr. Falido a prejuízo certo.
+  \item Existe uma probabilidade tal que 
+  $\P(\{1,2\}) = 0.25$, $\P(\{2,3\})=0.65$ e 
+  $\P(\{4\})=0.05$?
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item O seu balanço ao comprar as apostas em 
+  $\{1,2\}$, $\{2,3\}$ e $\{4\}$ é:
+  \begin{align*}
+   & (\I(\{1,2\})-0.25) + (\I(\{2,3\})-0.65) 
+   +(\I(\{4\})-0.05) \\
+   &= \I(\{1,2\})+\I(\{2,3\})+\I(\{4\}) -0.95 \\
+   &\geq 1 - 0.95 = 0.05
+   & \I(\{1,2\})+\I(\{2,3\})+\I(\{4\}) \geq 1
+  \end{align*}
+  Portanto, como você ganha ao menos 0.05 certamente,
+  conclua que o Sr. Falido perde ao menos 0.05 certamente.
+  \item Como os preços das apostas levam 
+  o Sr. Falido a perda certa, decorre do
+  \cref{lemma:additivity_sure_loss} que 
+  não existe uma probabilidade sobre $\{1,2,3,4\}$ que
+  extenda os preços especificados.
+ \end{enumerate}
+}{}
+
+\begin{exercise}[Desafio]
+ No \cref{lemma:additivity_sure_loss} usamos 
+ a condição de que os eventos sobre os quais 
+ você atribuiu preços formam uma álgebra.
+ Exiba um exemplo em que esta condição não é satisfeita,
+ que os preços, $Pr$, satisfazem todos 
+ os axiomas da probabilidade,
+ e que você pode ser levada a prejuízo certo.
+\end{exercise}
+
+\subsubsection{Infinitas apostas*}
+
+No \cref{theorem:coherence}, 
+obtemos que, para evitar prejuízo certo,
+é necessário que para quaisquer $A$ e $B$ disjuntos,
+$\P(A \cup B) = \P(A) + \P(B)$. 
+Esta condição é chamada de aditividade finita e 
+é mais fraca do que a aditividade enumerável,
+descrita a seguir: 
+se $A_{1},\ldots,A_{n},\ldots$ é 
+uma sequência de eventos disjuntos, então 
+$\P(\cup_{i=1}^{\infty}A_i) = \sum_{i=1}^{\infty}{\P(A_i)}$.
+Note que, nos axiomas da probabilidade, 
+temos a aditividade enumerável.
+Assim, o \cref{theorem:coherence} obtém 
+uma caracterização de coerência que 
+exige propriedades mais fracas 
+dos axiomas da probabilidade.
+
+Neste sentido, uma possível linha de pesquisa consiste
+em investigar outras apostas que caracterizam os
+axiomas da probabilidade como 
+condições necessárias e suficientes para a coerência.
+Neste sentido, pode-se estudar os efeitos de 
+permitir um número enumerável de apostas
+\citep{Stern2015}.
+Intuitivamente, se um número finito de apostas permite
+obter aditividade finita, então 
+é razoável que um número enumerável de apostas permita
+obter aditividade enumerável.
+
+Uma dificuldade inicial consiste em definir quais
+apostas são permitidas quando se 
+considera um número enumerável de apostas.
+Por exemplo, tome um evento, $A$, tal que 
+$\P(A) = 0.5$. Podemos considerar um 
+portfólio de apostas que consiste em 
+sucessivamente vender e comprar $A$, infinitamente.
+Assim, obteríamos o portfólio 
+$((-1)^{i},A_{i})_{i \in \mathbb{N}}$.
+Se $\omega \in A$, então o balanço deste portfólio é $\sum_{i=1}^{\infty}{(-0.5)^{i}}$.
+Se $\omega \notin A$, então 
+o balanço deste portfólio é 
+$\sum_{i=1}^{\infty}{(-0.5)^{i+1}}$.
+Em ambos os casos, o balanço não converge.
+Assim, é razoável restringir a análise ao menos 
+aos portfólios de aposta cujos balanços convergem.
+
+\citet{Stern2015} considera várias possíveis
+restrições aos portfólios de apostas válidos.
+Nesta seção, replicaremos a análise quando
+consideramos apenas os potfolios de aposta,
+$(\alpha_{i},A_{1,i},A_{2,i})_{i \in \mathbb{N}}$,
+tais que o preço da aposta satisfaz
+$\sum_{i=1}^{\infty}{|\alpha_{i}|\P(A_{1,i}|A_{2,i})} < \infty$ e
+$\sum_{i=1}^{\infty}{\alpha_{i}\I_{A_{2,i}}(\I_{A_{1,i}}-\P(A_{1,i}|A_{2,i}))}$ converge para 
+todo $\omega \in \Omega$.
+Com base neste espaço de apostas, 
+obteremos o seguinte teorema:
+
+\begin{theorem}
+ \label{th:countable_coherence}
+ Considere que um preço, $P$, é 
+ definido sobre uma álgebra de eventos.
+ $P$ é coerente se e somente se
+ ele satisfaz todos os axiomas da probabilidade. 
+\end{theorem}
+
+\begin{proof}
+ Decorre dos \cref{lemma:countable_coherence,lemma:coherence_countable}, a seguir.
+\end{proof}
+
+\begin{lemma}
+ \label{lemma:countable_coherence}
+ Se um preço, $\P$, é coerente, então 
+ ele satisfaz todos os axiomas da probabilidade.
+\end{lemma}
+
+\begin{proof}
+ Note que o espaço de apostas enumeráveis inclui 
+ o espaço de apostas finitas.
+ Portanto, decorre dos \cref{lemma:sure_loss_additivity,lemma:sure_loss_conditional} que,
+ se $\P$ é coerente, então $\P$ é finitamente aditivo.
+
+ Portanto, basta provar que, se $\P$ é coerente,
+ então $\P$ também é enumeravalmente aditivo. 
+ Considere eventos disjuntos arbitrários,
+ $A_{1},\ldots,A_{n},\ldots$,
+ Defina um portfólio, 
+ $(\beta_{i},B_{i},\Omega)_{i \in \mathbb{N}}$, tal que
+ $\beta_{1} = 1$ e 
+ $B_{1} = \cup_{i=1}^{\infty}{A_{i}}$ e,
+ para todo $i > 1$, 
+ $\beta_{i} = -1$ e $B_{i} = A_{i-1}$.
+ Em outras palavras, o portfólio compra
+ $\cup_{i=1}^{\infty}{A_{i}}$ e
+ vende todos os $A_{i}$ separadamente.
+ Mostraremos que este é um portfólio válido e, com ele,
+ provaremos que $P$ é enumeravelmente aditivo.
+
+ Primeiramente, mostraremos que 
+ o portfólio construído é válido.
+ Como $\P$ é finitamente aditivo, para todo $n$,
+ $\sum_{i=1}^{n}{\P(A_{i})} \leq 1$.
+ Portanto, $\sum_{i=1}^{\infty}{\P(A_{i})} < 1$.
+ Conclua que $\sum_{i=1}^{\infty}{|\beta_{i}|\P(B_{i})} \leq 1+\P(B_{1}) < \infty$.
+ Também, para todo $\omega \in \Omega$,
+ $\sum_{i=1}^{\infty}{\beta_{i}\I_{B_{i}}} = 0$.
+ Portanto, para todo $\omega \in \Omega$,
+ $\sum_{i=1}^{\infty}{\beta_{i}(\I_{B_{i}}(w)-\P(B_{i}))}$
+ converge.
+ 
+ A seguir, note que o balanço do portfólio considerado é
+ $-\P(\cup_{i=1}^{\infty}{A_{i}})+\sum_{i=1}^{\infty}{\P(A_{i})}$, uma constante.
+ Assim, decorre do \cref{lemma:constant_balance} que,
+ se $\P$ é coerente, então
+ $\sum_{i=1}^{\infty}{\P(A_{i})}=\P(\cup_{i=1}^{\infty}{A_{i}})$.
+ Como os $A_{i}$ eram arbitrários, conclua que, 
+ se $\P$ é coerente,
+ então $\P$ é enumeravelmente aditivo.
+\end{proof}
+
+\begin{lemma}
+ \label{lemma:coherence_countable}
+ Considere que um preço, $\P$, é 
+ definido sobre uma álgebra de eventos.
+ Se $\P$ satisfaz os axiomas da probabilidade, então 
+ ele é coerente.
+\end{lemma}
+
+\begin{proof}
+ Como $\P$ satisfaz todos os axiomas da probabilidade e
+ está definido sobre uma álgebra de eventos, 
+ então decorre do Teorema de Carathéodory
+ \citep{Billingsley1986} que 
+ $\P$ admite uma extensão para 
+ a sigma-álgebra gerada por esta álgebra.
+ Defina esta extensão por $\P^{*}$.
+ 
+ Tome um portfólio de apostas válido arbitrário,
+ $(\alpha_{i},A_{1,i},A_{2,i})_{i \in \mathbb{N}}$.
+ Considere que 
+ $(\beta_{i},B_{1,i},B_{2,i})_{i \in \mathbb{N}}$ é 
+ a subsequência de 
+ $(\alpha_{i},A_{1,i},A_{2,i})_{i \in \mathbb{N}}$ 
+ tal que $\alpha_{i} > 0$.
+ Similarmente, 
+ $(\gamma_{i},C_{1,i},C_{2,i})_{i \in \mathbb{N}}$ 
+ é a subsequência tal que $\alpha_{i} < 0$.
+ Decorre do Teorema da Convergência Monotônica 
+ \citep[p.211]{Billingsley1986} que
+ \begin{align*}
+  \sum_{i=1}^{\infty}{\E_{P^{*}}\left[\beta_{i}\I_{B_{1,i} \cap B_{2,i}}\right]}
+  &= \sum_{i=1}^{\infty}{\beta_{i}\P(B_{1,i} \cap B_{2,i})}
+  \leq \sum_{i=1}^{\infty}{|\alpha_{i}|\P(A_{1,i}|A_{2,i})} < \infty \\
+  \sum_{i=1}^{\infty}{-\E_{P^{*}}\left[\gamma_{i} \I_{C_{1,i} \cap C_{2,i}}\right]} 
+  &= \sum_{i=1}^{\infty}{-\gamma_{i}\P(C_{1,i} \cap C_{2,i})} 
+  \leq \sum_{i=1}^{\infty}{|\alpha_{i}|\P(A_{1,i}|A_{2,i})} < \infty \\
+  \E_{P^{*}}\left[\sum_{i=1}^{\infty}{\beta_{i}\I_{B_{2,i}}\P(B_{1,i}|B_{2,i})}\right]
+  &= \sum_{i=1}^{\infty}{\beta_{i}\P(B_{1,i}|B_{2,i})\E_{P^{*}}[\I_{B_{2,i}}]}
+  \leq \sum_{i=1}^{\infty}{|\alpha_{i}|\P(A_{1,i}|A_{2,i})} < \infty \\
+  \E_{P^{*}}\left[\sum_{i=1}^{\infty}{-\gamma_{i}\I_{C_{2,i}}\P(C_{1,i}|C_{2,i})}\right]
+  &= \sum_{i=1}^{\infty}{-\gamma_{i}\P(C_{1,i}|C_{2,i})\E_{P^{*}}[\I_{C_{2,i}}]}
+  \leq \sum_{i=1}^{\infty}{|\alpha_{i}|\P(A_{1,i}|A_{2,i})} < \infty
+ \end{align*}
+ Portanto, se chamarmos $X_{1} = \sum_{i=1}^{\infty}{\beta_{i}\I_{B_{1,i} \cap B_{2,i}}}$, 
+ $X_{2} = \sum_{i=1}^{\infty}{-\gamma_{i}\I_{C_{1,i} \cap C_{2,i}}}$,
+ $X_{3} = \sum_{i=1}^{\infty}{\beta_{i}\I_{B_{2,i}}\P(B_{1,i}|B_{2,i})}$ e
+ $X_{4} = \sum_{i=1}^{\infty}{-\gamma_{i}\I_{C_{2,i}}\P(C_{1,i}|C_{2,i})}$,
+ estas variáveis estão definidas a.s. $P^{*}$.
+ Portanto,
+ \begin{align*}
+  \E_{P^{*}}\left[\sum_{i=1}^{\infty}{\alpha_{i}\I_{A_{2,i}}(\I_{A_{1,i}}
+  -\P(A_{1,i}|A_{2,i}))}\right]
+  &= \E_{P^{*}}[X_{1}-X_{2}-X_{3}+X_{4}] \\
+  &= \E_{P^{*}}[X_{1}]-\E_{P^{*}}[X_{2}]
+  -\E_{P^{*}}[X_{3}]+\E_{P^{*}}[X_{4}] \\
+  &= \sum_{i=1}^{\infty}{\beta_{i}\P(B_{1,i} \cap B_{2,i})}
+  + \sum_{i=1}^{\infty}{\gamma_{i}\P(C_{1,i} \cap C_{2,i})} \\ 
+  &-\sum_{i=1}^{\infty}
+  {\beta_{i}\P(B_{1,i}|B_{2,i})\P(B_{2,i})}
+  -\sum_{i=1}^{\infty}
+  {\gamma_{i}\P(C_{1,i}|C_{2,i})\P(C_{2,i})} \\
+  &= \sum_{i=1}^{\infty}{\beta_{i}(\P(B_{1,i} \cap B_{2,i})-\P(B_{1,i}|B_{2,i})\P(B_{2,i}))} +\\
+  &  \sum_{i=1}^{\infty}{\gamma_{i}(\P(C_{1,i} \cap C_{2,i})-\P(C_{1,i}|B_{2,i})\P(C_{2,i}))} = 0
+ \end{align*}
+ Portanto, existe $\omega \in \Omega$ tal que 
+ $\sum_{i=1}^{\infty}{\alpha_{i}I_{A_{2,i}}(\omega)(\I_{A_{1,i}}(w)-\P(A_{1,i}|A_{2,i}))} > 0$ e
+ o portfólio $(\alpha_{i},A_{1,i},A_{2,i})$ não 
+ acarreta prejuízo certo.
+ Como o portfólio $(\alpha_{i},A_{1,i},A_{2,i})$ era
+ arbitrário, conclua que $\P$ é coerente.
+\end{proof}
+
+\subsubsection*{Exercícios}
+
+\begin{exercise}[Desafio]
+ \label{ex:coherence-adams}
+ Considere que só são aceitos portfólios de apostas, 
+ $(\alpha_i, A_{1,i}, A_{2,i})_{i \in \mathbb{N}}$,
+ tais que, para todo $\omega \in \Omega$,
+ $\sum_{i=1}^{\infty}{|\alpha_i \I_{A_{2,i}}(\I_{A_{1,i}}-\P(A_{1,i}|A_{2,i}))|} < \infty$.
+ Esta condição foi estudada em \citet{Adams1962}.
+ Mostre que $\P$ é coerente se e somente se 
+ satisfaz todos os axiomas da probabilidade.
+\end{exercise}
+
+\begin{exercise}[Desafio]
+ \label{ex:coherence-beam}
+ Considere que são aceitos todos 
+ os portfólios de apostas, 
+ $(\alpha_i, A_{1,i}, A_{2,i})_{i \in \mathbb{N}}$,
+ tais que, para todo $\omega \in \Omega$,
+ $\sum_{i=1}^{\infty}{\alpha_i \I_{A_{2,i}}(\I_{A_{1,i}}-\P(A_{1,i}|A_{2,i}))} < \infty$.
+ Mostre que, se $\Omega = \{1,2,\ldots\}$,
+ então $\P(\{i\}) = 2^{-i}$ não é coerente.
+ Se muitos portfólios de apostas são permitidos,
+ então os axiomas da probabilidade não são suficientes
+ para evitar prejuízo certo.
+\end{exercise}
+
+\begin{exercise}[Desafio]
+ Usando as mesmas condições 
+ para apostas do \cref{ex:coherence-beam},
+ ache condições necessárias e suficientes para que 
+ $\P$ seja coerente.
+\end{exercise}

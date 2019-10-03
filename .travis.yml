@@ -1,0 +1,16 @@
+language: r
+cache: packages
+services: docker
+
+script: 
+  - docker run --mount src=$TRAVIS_BUILD_DIR,target=$TRAVIS_BUILD_DIR,type=bind dxjoke/tectonic-docker
+  - make book
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: master
+

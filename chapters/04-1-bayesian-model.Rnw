@@ -1,0 +1,1141 @@
+\section{Explorando o modelo estatístico}
+\subsection{Predições usando o modelo estatístico}
+
+A \cref{section:stat_model} introduziu 
+o modelo estatístico usado em estatística bayesiana.
+Este modelo tem características diferentes daquele que 
+é tipicamente usado na estatística frequentista.
+Nesta seção desenvolveremos a sua compreensão do
+modelo estatístico bayesiano pela 
+exploração de algumas de suas propriedades.
+O \cref{example:uniform-marginal-data} ilustra uma
+destas propriedades.
+
+\begin{example}
+ \label{example:uniform-marginal-data}
+ A primeira vez que vi este Exemplo, ele foi 
+ apresentado oralmente pelo 
+ Professor Carlos Alberto de Bragança Pereira, um 
+ dos precursores da Inferência Bayesiana no Brasil 
+ (e no mundo).
+
+ Considere que, dado $\theta$, 
+ $X_{1}$ e $X_{2}$ são i.i.d. e
+ $X_{i} \sim \text{Uniforme}(\theta-0.5,\theta+0.5)$.
+ A princípio, você acredita que é plausível que 
+ $\theta$ seja qualquer número real, 
+ $\theta \in \mathbb{R}$.
+ Assim, como $\theta-0.5 \leq X_{2} \leq \theta+0.5$ e 
+ $\theta \in \mathbb{R}$,
+ a princípio, $X_{2} \in \mathbb{R}$.
+ 
+ Agora, suponha que você observa $X_{1}=0$. 
+ Como $\theta-0.5 \leq X_{1} \leq \theta+0.5$,
+ deduza que 
+ $X_{1}-0.5 \leq \theta \leq X_{1}+0.5$.
+ Também, como $X_{1}=0$, deduza que 
+ $-0.5 \leq \theta \leq 0.5$.
+ Assim, como $\theta-0.5 \leq X_{2} \leq \theta + 0.5$,
+ conclua que $X_{2} \in [-1,1]$.
+
+ Assim, antes de observar $X_{1}=0$, você 
+ acreditava que $X_{2}$ poderia ser 
+ qualquer número real. 
+ Contudo, após observar $X_{1}=0$, 
+ você acredita que $X_{2}$ é um 
+ número entre $-1$ e $1$.
+ Portanto, observar o valor de $X_{1}$ traz 
+ informação a respeito de $X_{2}$.
+ 
+ A seguir, você verá como o modelo Bayesiano
+ leva em conta esta informação,
+ uma vez que induz dependência
+ entre $X_{1}$ e $X_{2}$.
+ Assim, permite calcular,
+ usando os axiomas da probabilidade,
+ de que forma a observação de $X_{1}$ altera a 
+ sua incerteza a respeito de $X_{2}$.
+\end{example}
+
+A seguir, consideraremos o caso em que os dados
+são condicionalmente i.i.d. dado que 
+$\theta$ é conhecido.
+Neste caso, temos a seguinte igualdade:
+\begin{align}
+ \label{eqn:ciid}
+ f(x_{1},\ldots,x_{n}|\theta) 
+ &= \prod_{i=1}^{n}{f(x_{i}|\theta)}
+\end{align}
+Em particular, temos que
+\begin{align*}
+ f(x_{2}|x_{1},\theta)
+ &= \frac{f(x_{1},x_{2}|\theta)}{f(x_{1}|\theta)}
+ & \text{\cref{conditional_probability}} \\
+ &= \frac{f(x_{1}|\theta)f(x_{2}|\theta)}
+ {f(x_{1}|\theta)}
+ & \text{equação \ref{eqn:ciid}} \\
+ &= f(x_{2}|\theta)
+\end{align*}
+Em palavras, quando $\theta$ é conhecido,
+$X_{1}$ não traz informação a respeito de $X_{2}$.
+E se $\theta$ é desconhecido?
+Ainda é verdade que $X_{1}$ não traz 
+informação a respeito de $X_{2}$?
+No modelo estatístico Bayesiano, 
+$\theta$ é uma variável aleatória.
+Portanto, podemos obter a densidade marginal dos dados
+diretamente do \cref{ltp}.
+\begin{align}
+ f(x_{1},\ldots,x_{n})	&= \int_{\Theta}
+ {f(x_{1},\ldots,x_{n}|\theta)\pi(\theta)d\theta}			
+ & \nonumber \\
+ &= \int_{\Theta}{\prod_{i=1}^{n}
+ {f(x_{i}|\theta)}f(\theta)d\theta}
+ & \text{\cref{eqn:ciid}}
+\end{align}
+Em particular, a densidade marginal de 
+$X_{2}$ é dada por
+\begin{align}
+ \label{eqn:x2_prior}
+ f(x_{2})
+ &= \int_{\Theta}{f(x_{2}|\theta)f(\theta)d\theta}
+\end{align}
+Também, quando $\theta$ é desconhecido, temos que 
+a densidade de $X_{2}$ dado $X_{1}$ é dada por
+\begin{align}
+ \label{eqn:x2_posterior}
+ f(x_{2}|x_{1})	
+ &= \frac{f(x_{1},x_{2})}{f(x_{1})} \nonumber \\
+ &= \frac{\int_{\Theta}
+ {f(x_{1}|\theta)f(x_{2}|\theta)f(\theta)d\theta}}
+ {\int_{\Theta}{f(x_{1}|\theta)f(\theta)d\theta}}
+ & \text{\cref{eqn:ciid}} \nonumber	\\
+ &= \int_{\Theta}
+ {f(x_{2}|\theta)\left(\frac{f(\theta)f(x_{1}|\theta)}
+ {\int_{\theta}{f(\theta)f(x_{1}|\theta)}}\right)d\theta}	
+ \nonumber \\
+ &= \int_{\Theta}{f(x_{2}|\theta)f(\theta|x_{1})d\theta}
+ & \text{\cref{eqn:bayes}}
+\end{align}
+Comparando as \cref{eqn:x2_prior,eqn:x2_posterior},
+podemos observar de que forma $X_{1}$ traz 
+informação a respeito de $X_{2}$.
+Enquanto que a distribuição marginal de $X_{2}$ é 
+obtida integrando a densidade de $X_{2}$ dado $\theta$ 
+com respeito à priori para $\theta$,
+a distribuição de $X_{2}$ dado $X_{1}$ é obtida
+integrando a densidade de $X_{2}$ dado $\theta$ com
+respeito à posteriori para $\theta$ dado $X_{1}$.
+Especificamente, $\theta$ traz informação a
+respeito de $X_{2}$.
+Assim, quando $X_{1}$ traz informação a
+respeito de $\theta$, também traz 
+informação a respeito de $X_{2}$.
+
+Para ilustrar estas relações de dependência,
+considere o caso de um diagnóstico médico.
+\begin{example}
+ Sabemos que são sintomas frequentes da dengue
+ a dor atrás dos olhos e a perda do paladar.
+ Considere as seguintes variáveis aleatórias:
+ \begin{itemize}
+  \item $\theta$: A indicadora de que 
+  a paciente está infectada pela dengue.
+  \item $X_{1}$: A indicadora de que
+  a paciente sente dor atrás dos olhos.
+  \item $X_{2}$: A indicadora de que
+  a paciente teve perda do paladar.
+ \end{itemize}
+ Considere que a probabilidade de 
+ cada sintoma é aumentada, se soubermos que 
+ a paciente está infectada pela dengue.
+ Também, se soubermos que a paciente está 
+ infectada ou não pela dengue, então 
+ os sintomas ocorrem independentemente.
+ Especificamente, considere que:
+ \begin{itemize}
+  \item $\P(X_{1}=x_{1},X_{2}=x_{2}|\theta=t)
+  =\P(X_{1}=x_{1}|\theta=t)\P(X_{2}=x_{2}|\theta=t)$
+  \item $\P(X_{i}=1|\theta=1) = 0.9$
+  \item $\P(X_{i}=1|\theta=0) = 0.01$
+  \item $\P(\theta=1) = 0.01$
+ \end{itemize}
+ Observe que
+ \begin{align*}
+  \P(X_{i}=1)
+  &=\P(X_{i}=1|\theta=1)\P(\theta=1)
+  +\P(X_{i}=1|\theta=0)P(\theta=0) \\
+  &= 0.9 \cdot 0.01 + 0.01 \cdot 0.99 \approx 0.019
+ \end{align*}
+ Portanto, a priori, a probabilidade de uma
+ paciente sofrer um dos sintomas é relativamente baixa.
+ Continuando, o raciocínio, podemos calcular de que 
+ forma a paciente ter dor atrás dos olhos afeta
+ o diagnóstico da médica em relação à dengue.
+ \begin{align*}
+  \P(\theta=1|X_{1}=1)
+  &= \frac{\P(\theta=1)\P(X_{1}=1|\theta=1)}
+  {\P(X_{1}=1)}
+  & \text{\cref{bayes}} \\
+  &\approx \frac{0.01 \cdot 0.9}{0.019} 
+  \approx 0.47
+ \end{align*}
+ Observamos que, após observar que 
+ a paciente tem dor atrás dos olhos,
+ a probabilidade de a paciente ter dengue aumenta 
+ de $0.01$ para $0.47$.
+ Assim, é razoável acreditar que 
+ a médica passará a acreditar que o sintoma
+ de perda de paladar é mais provável após 
+ observar a dor atrás dos olhos.
+ De fato, como $X_{1}$ e $X_{2}$ são i.i.d. dado 
+ $\theta$, obtemos
+ \begin{align*}
+  \P(X_{2}=1|X_{1}=1)
+  &= \P(X_{2}=1|\theta=1)\P(\theta=1|X_{1}=1)
+  +\P(X_{2}=1|\theta=0)\P(\theta=0|X_{1}=1)
+  & \text{\cref{eqn:x2_posterior}} \\
+  &\approx 0.9 \cdot 0.47 + 0.01 \cdot 0.53 \approx 0.42
+ \end{align*}
+ Assim, dado que uma pessoa está infectada pela dengue,
+ saber que ela sente dor atrás dos olhos 
+ não traz informação a respeito de ela ter 
+ perdido o paladar.
+ Contudo, se não soubermos que 
+ uma pessoa está infectada pela dengue,
+ observar um dos sintomas da dengue aumenta a 
+ probabilidade dos demais sintomas.
+ Mais especificamente, observar um 
+ sintoma da dengue aumenta a probabilidade de 
+ haver um caso de dengue e, assim, aumenta a
+ probabilidade dos demais sintomas da dengue.
+\end{example}
+
+A equação \ref{eqn:x2_posterior} pode ser 
+generalizada para o seguinte resultado
+
+\begin{theorem}
+ \label{theorem:exchangeable_predictive}
+ Se $X_{1},\ldots,X_{n},X_{n+1},\ldots,X_{n+m}$ são 
+ independentes dado $\theta$, então:
+ \begin{align*}
+  f(x_{n},\ldots,x_{n+m}|x_{1},\ldots,x_{n-1})
+  &= \int_{\Theta}
+  {f(x_{n},\ldots,x_{n+m}|\theta)
+  f(\theta|x_{1},\ldots,x_{n-1})d\theta}
+ \end{align*}
+\end{theorem}
+
+\begin{proof}
+ \begin{align*}
+  f(x_{n},\ldots,x_{n+m}|x_{1},\ldots,x_{n-1})
+  &= \frac{f(x_{1},\ldots,x_{n+m})}
+  {f(x_{1},\ldots,x_{n-1})} 
+  & \text{\cref{conditional_probability}} \\
+  &= \frac{\int_{\Theta}
+  {f(x_{1},\ldots,x_{n+m}|\theta)f(\theta)d\theta}}
+  {f(x_{1},\ldots,x_{n-1})}
+  & \text{\cref{ltp}} \\
+  &= \frac{\int_{\Theta}{f(x_{1},\ldots,x_{n-1}|\theta)f(x_{n},\ldots,x_{n+m}|\theta)f(\theta)d\theta}}{f(x_{1},\ldots,x_{n-1})}
+  & \text{independência dado $\theta$} \\
+  &= \int_{\Theta}{f(x_{n},\ldots,x_{n+m}|\theta) \left(\frac{f(x_{1},\ldots,x_{n-1}|\theta)f(\theta)}{f(x_{1},\ldots,x_{n-1})} \right)d\theta} \\
+  &= \int_{\Theta}{f(x_{n},\ldots,x_{n+m}|\theta)f(\theta|x_{1},\ldots,x_{n-1})d\theta}
+  & \text{\cref{bayes-va}}
+ \end{align*}
+\end{proof}
+
+\subsubsection*{Exercícios}
+
+\begin{exercise}
+ Considere que, dado $\theta$, 
+ $X \sim \text{Bernoulli}(\theta)$.
+ Também, $\theta \sim \text{Uniforme}(0,1)$.
+ \begin{enumerate}[label=(\alph*)]
+  \item Calcule $f(x)$.
+  \item Calcule $\E[X]$.
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item Temos que $X \in \{0,1\}$.
+  Portanto, $f(0) = 1-f(1)$. Note que
+  \begin{align*}
+   f(1)	&= \int_{[0,1]}{f(1|\theta)\pi(\theta)d\theta} \\
+   &= \int_{[0,1]}{\P(X=1|\theta)d\theta} \\
+   &= \int_{[0,1]}{\theta d\theta} = 0.5
+  \end{align*}
+  Portanto, $f(1)=f(0)=0.5$.
+  \item Um erro frequentemente cometido neste 
+  exercício é responder que $``E[\X] = \theta''$.
+  Note que como $\E[X]$ é a esperança de 
+  uma variável aleatória, ela é um número real.
+  Por outro lado, $\theta$ é uma variável aleatória que 
+  não é constante. Assim, não é o caso de que 
+  $\E[X]$ seja $\theta$.
+  
+  Existem ao menos duas formas de 
+  resolver este exercício. Observe que
+  \begin{align*}
+   \E[X] &= \sum_{x}{x \P(X=x)} \\
+   &= 0 \cdot f(0) + 1 \cdot f(1) = 0.5
+  \end{align*}
+  Alternativamente,
+  \begin{align*}
+   \E[X] &= \E[\E[X|\theta]] = \E[\theta] = 0.5
+  \end{align*}
+ \end{enumerate}
+}{}
+
+\begin{exercise}
+ \label{exercise:predictive_1}
+ Considere o caso de eleição no \cref{exemplo:eleicao}.
+ Neste caso, cada indivíduo pode ter a
+ intenção de votar em $A$ ou $D$.
+ A priori, um analista acreditava que 
+ a proporção de indivíduos votando em $D$
+ seguia uma distribuição Beta$(a,b)$.
+ O analista escolhe $n$ indivíduos usando uma 
+ amostragem simples com reposição e
+ observa que $n_{D}$ deles tem 
+ a intenção de votar em $D$ e
+ $n-n_{D}$ deles tem a intenção de votar em $A$.
+ \begin{enumerate}[label=(\alph*)]
+  \item Calcule a probabilidade a posteriori para $\theta$.
+  \item Se o analista sortear (com mesma probabilidade)
+  mais um indivíduo da população, qual a
+  probabilidade de que ele tenha a 
+  intenção de votar em $D$?
+  \item Se, em uma amostragem simples com reposição, o 
+  analista sortear mais $2$ indivíduos da população, qual é 
+  a probabilidade de que nenhum deles tenha
+  a intenção de votar em $D$?
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}: Podemos definir:
+ \begin{align*}
+  \begin{cases}
+   \theta: \text{a proporção de indivíduos que tem a
+   intenção de votar em $D$ na população,
+   $\theta \in [0,1]$}. \\
+   X_{i}: \text{a indicadora de que
+   o i-ésimo indivíduo selecionado com reposição tem a
+   intenção de voltar em $D$,
+   $X_i \in \{0,1\}$}.
+  \end{cases}
+ \end{align*}
+ \begin{enumerate}[label=(\alph*)]
+  \item O problema nos indica que
+  $\sum_{i=1}^{n}{X_{i}=n_{D}}$.
+  Observe que, dado $\theta$, os
+  $X_{i}$ são independentes e tais que
+  $X_{i} \sim \text{Bernoulli}(\theta)$.
+  Portanto, dado $\theta$, 
+  $\sum_{i=1}^{n}{X_{i}} \sim \text{Binomial}(n,\theta)$.
+  Usando essa informação, podemos calcular a
+  posteriori para $\theta$:
+  \begin{align*}
+   f(\theta|x)
+   &\propto f(\theta)
+   f\left(\sum_{i=1}^{n}{X_{i}=n_{D}}|\theta\right) \\
+   &= \beta(a,b)^{-1}\theta^{a-1}(1-\theta)^{b-1}{n \choose n_{d}}\theta^{n_{D}}(1-\theta)^{n-n_{D}} \\
+   &\propto \theta^{a+n_{D}-1}(1-\theta)^{b+n-n_{D}-1}
+  \end{align*}
+  Como a posteriori deve integrar $1$,
+  podemos concluir que
+  $\theta|\sum_{i=1}^{n}{X_{i}=n_{D}} \sim \text{Beta}(a+n_{D},b+n-n_{D})$.
+  \item Defina $Y_{1} = \sum_{i=1}^{n}{X_{i}}$ e $Y_{2}=X_{n+1}$.
+  $Y_{1}$ e $Y_{2}$ são independentes
+  dado $\theta$ e tais que
+  $Y_{1} \sim \text{Binomial}(n,\theta)$ e
+  $Y_{2} \sim \text{Bernoulli}(\theta)$.
+  Portanto,
+  \begin{align*}
+   \P(Y_{2}=1|Y_{1}=n_{D})
+   &= \int_{[0,1]}
+   {f(Y_{2}=1|\theta)f(\theta|Y_{1}=n_{D}) d\theta}
+   & \text{\cref{theorem:exchangeable_predictive}} \\
+   &= \int_{[0,1]}
+   {\theta \cdot f(\theta|Y_{1}=n_{D}) d\theta}
+   & Y_{2}|\theta \sim \text{Bernoulli}(\theta) \\
+   &= \int_{[0,1]}{\theta \beta^{-1}(a+n_{D},b+n-n_{D})
+   \theta^{a+n_{D}-1} (1-\theta)^{b+n-n_{D}-1} d\theta}
+   & \text{\cref{exercise:predictive_1}.a} \\
+   &= \beta^{-1}(a+n_{D},b+n-n_{D})
+   \int_{[0,1]}
+   {\theta^{a+n_{D}} (1-\theta)^{b+n-n_{D}-1} d\theta} \\
+   &= \beta^{-1}(a+n_{D},b+n-n_{D})
+   \beta(a+n_{D}+1,n+n-n_{D})
+   & \text{Beta}(a+n_{D}+1,b+n-n_{D}) \\
+   &= \frac{\Gamma(a+b+n)}
+   {\Gamma(a+n_{D})\Gamma(b+n-n_{D})}
+   \cdot \frac{\Gamma(a+n_{D}+1)\Gamma(b+n-n_{D})}
+   {\Gamma(a+b+n+1)} \\
+   &= \frac{a+n_{D}}{a+b+n} 
+   = \frac{a+b}{a+b+n} \cdot
+   \frac{a}{a+b}+\left(1-\frac{a}{a+b+n}\right)
+   \frac{n_{D}}{n}
+  \end{align*}
+  Note que $\frac{a+b}{a+b+n} \cdot \frac{a}{a+b} + \left(1-\frac{a}{a+b+n}\right)\frac{n_{D}}{n}$
+  é uma média ponderada entre $\frac{a}{a+b}$,
+  a média a priori para $\theta$, e
+  $\frac{n_{D}}{n}$ a proporção amostral de indivíduos com
+  a intenção de votar em $D$.
+  Também, se $a$ e $b$ forem 
+  relativamente pequenos em relação a $n$, então
+  $\P(Y_{2}=1|Y_{1}=n_{D}) \approx \frac{n_{D}}{n}$,
+  que é a proporção amostral de indivíduos que
+  tem a intenção de votar em $D$.
+	
+  \item Defina $Y_{1} = \sum_{i=1}^{n}{X_{i}}$ e
+  $Y_{2}=X_{n+1}+X_{n+2}$. $Y_{1}$ e $Y_{2}$ são
+  independentes dado $\theta$ e tais que
+  $Y_{1} \sim \text{Binomial}(n,\theta)$ e
+  $Y_{2} \sim \text{Binomial}(2, \theta)$.
+  Note que $\{X_{n+1}=0,X_{n+2}=0\}=\{Y_{2}=0\}$.
+  Portanto, desejamos calcular
+  \begin{align*}
+   \P(Y_{2}=0|Y_{1}=n_{D})
+   &= \int_{[0,1]}
+   {f(Y_{2}=0|\theta)f(\theta|Y_{1}=n_{D}) d\theta}
+   & \text{\cref{theorem:exchangeable_predictive}} \\
+   &= \int_{[0,1]}
+   {(1-\theta)^{2} \cdot f(\theta|Y_{1}=n_{D}) d\theta}
+   & Y_{2}|\theta \sim \text{Binomial}(2, \theta) \\
+   &= \beta^{-1}(a+n_{D},b+n-n_{D})
+   \int_{[0,1]}
+   {\theta^{a+n_{D}-1} (1-\theta)^{b+n-n_{D}+1} d\theta}
+   & \text{\cref{exercise:predictive_1}.a} \\
+   &= \beta^{-1}(a+n_{D},b+n-n_{D})
+   \beta(a+n_{D},b+n-n_{D}+2)
+   & \text{Beta}(a+n_{D}+1,b+n-n_{D}) \\
+   &= \frac{\Gamma(a+b+n)}
+   {\Gamma(a+n_{D})\Gamma(b+n-n_{D})}
+   \cdot \frac{\Gamma(a+n_{D})\Gamma(b+n-n_{D}+2)}
+   {\Gamma(a+b+n+2)} \\
+   &= \frac{(b+n-n_{D}+1)(b+n-n_{D})}{(a+b+n+1)(a+b+n)}
+  \end{align*}
+  Semelhantemente ao item anterior,
+  quando $a$ e $b$ são comparativamente pequenos em 
+  relação a $n$,
+  \begin{align*}
+   \P(Y_{2}=0|Y_{1}=n_{D})
+   \approx \left(1-\frac{n_{D}}{n}\right)^{2}
+  \end{align*}
+ \end{enumerate}
+}{}
+
+\begin{exercise}
+ Considere que uma urna grande tem 
+ $10$ bolas azuis e $10$ bolas verdes.
+ $4$ bolas são retiradas com reposição da urna grande.
+ A seguir, colocam-se em uma urna média 
+ $4$ bolas de mesmas cores que 
+ aquelas obtidas na amostra com reposição.
+ $2$ bolas são retiradas sem reposição da urna média. 
+ \begin{enumerate}[label=(\alph*)]
+  \item Qual é a distribuição para 
+  o total de bolas azuis na urna média?
+  \item Qual a distribuição marginal da
+  amostra obtida a partir da urna média?
+  \item Se a primeira bola obtida na 
+  amostragem realizada na urna média for azul,
+  qual é a probabilidade de que a segunda bola 
+  também o seja?
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}: Defina:
+ \begin{align*}
+  \begin{cases}
+   \theta: \text{O total de bolas azuis
+   na urna média}. \\
+   X_{1}: \text{A indicadora de que
+   a primeira bola retirada da urna média é azul}. \\
+   X_{2}: \text{A indicadora de que
+   a segunda bola retirada da urna média é azul}.
+  \end{cases}
+ \end{align*} 
+ \begin{enumerate}[label=(\alph*)]
+  \item $\theta$ é o total de bolas azuis obtido em
+  uma amostragem com reposição de uma urna com
+  $10$ bolas azuis e $10$ bolas verdes.
+  Como o tamanho da amostra é $4$, temos 
+  $\theta \sim \text{Binomial}(4,0.5)$.
+  \item Observe que, como a amostra da 
+  urna média foi feita sem reposição,
+  $X_{1}$ e $X_{2}$ não são independentes dado $\theta$.
+  Podemos calcular sua 
+  distribuição preditiva da seguinte forma:
+  \begin{align*}
+   \P(X_{1}=x_{1}, X_{2}=x_{2})
+   &= \sum_{t=0}^{4}
+   {\P(X_{1}=x_{1}, X_{2}=x_{2}|\theta=t)\P(\theta=t)} \\
+   &= \sum_{t=x_{1}+x_{2}}^{2+x_{1}+x_{2}}{\left(\frac{t}{4}\right)^{x_{1}}\left(1-\frac{t}{4}\right)^{1-x_{1}}\left(\frac{t-x_{1}}{3}\right)^{x_{2}}\left(1-\frac{t-x_{1}}{3}\right)^{1-x_{2}}{4 \choose t}\frac{1}{2^{4}}} \\
+   &= \frac{1}{2^{4}}\sum_{t=x_{1}+x_{2}}^{2+x_{1}+x_{2}}{\frac{t!}{(t-x_{1}-x_{2})!} \frac{(4-t)!}{(2-t+x_{1}+x_{2})!} \frac{1}{12} \frac{4!}{t!(4-t)!}} \\
+   &= \frac{1}{2^{4}}\sum_{t=x_{1}+x_{2}}^{2+x_{1}+x_{2}}{\frac{2}{(t-x_{1}-x_{2})!(2-t+x_{1}+x_{2})!}}	\\
+   &= \frac{1}{2^{4}}\sum_{y=0}^{2}{\frac{2}{y!(2-y)!}}
+   & y=t-x_{1}-x_{2} \\
+   &= \frac{1}{2^{4}}\sum_{y=0}^{2}{{2 \choose y}}
+   = \frac{2^{2}}{2^{4}}
+   = \frac{1}{4}
+  \end{align*}
+  Portanto, para todo valor de $x_{1}$ e $x_{2}$,
+  $\P(X_{1}=x_{1},X_{2}=x_{2})=\frac{1}{4}$.
+  Assim, $X_{1}$ e $X_{2}$ são i.i.d. e, também, 
+  $X_{i} \sim \text{Bernoulli}(0.5)$.
+  Note que, dado $\theta$,
+  $X_{1}$ e $X_{2}$ são dependentes.
+  Contudo, quando $\theta$ é desconhecido,
+  eles são independentes.
+  \item
+  \begin{align*}
+   \P(X_{2}=1|X_{1}=1)
+   &= \P(X_{2} = 1) = 0.5
+  \end{align*}
+ \end{enumerate}
+}{}
+
+\begin{exercise}
+ Em uma mesa há $2$ caixas.
+ A primeira caixa tem
+ $3$ bolas azuis e $2$ bolas vermelhas.
+ A segunda caixa tem
+ $3$ bolas azuis e $4$ bolas vermelhas.
+ Considere que uma das caixas é escolhida aleatoriamente
+ (com igual probabilidade entre elas) e 
+ duas bolas são retiradas desta com reposição.
+ Defina $X_{i}$ como a indicadora de que
+ a $i$-ésima bola retirada era azul.
+ \begin{enumerate}[label=(\alph*)]
+  \item Ache a distribuição marginal de
+  $(X_{1},X_{2})$.
+  \item Ache $Cov(X_{1},X_{2})$.
+  $X_{1}$ e $X_{2}$ são independentes?
+  Este resultado é compatível com
+  a amostragem ter sido feita com reposição?
+  \item Dado que as duas bolas retiradas foram azuis,
+  qual a probabilidade a posteriori de
+  elas terem sido retiradadas da primeira caixa?
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item Defina $\theta$ como a indicadora de que
+  a $2^{a}$ caixa foi retirada.
+  Para todo $(i,j) \in \{0,1\}^{2}$,
+  \begin{align*}
+   \P(X_{1}=i,X_{2}=j)
+   &=\P(X_{1}=i,X_{2}=j|\theta=0)\P(\theta=0) 
+   +\P(X_{1}=i,X_{2}=j|\theta=1)\P(\theta=1) \\
+   &=\P(X_{1}=i|\theta=0)\P(X_{2}=j|\theta=0)\P(\theta=0)
+   +\P(X_{1}=i|\theta=1)\P(X_{2}=j|\theta=1)\P(\theta=1)
+  \end{align*}
+  Calculando para cada valor de
+  $i$ e $j$, obtemos:
+  \begin{align*}
+   \P(X_{1}=0,X_{2}=0)
+   &= \frac{2 \cdot 2}{5 \cdot 5} \cdot 0.5 
+   +\frac{4 \cdot 4}{7 \cdot 7} \cdot 0.5
+   \approx 0.25 \\
+   \P(X_{1}=0,X_{2}=1)
+   &= \frac{2 \cdot 3}{5 \cdot 5} \cdot 0.5
+   +\frac{4 \cdot 3}{7 \cdot 7} \cdot 0.5
+   \approx 0.24 \\
+   \P(X_{1}=1,X_{2}=0)
+   &= \frac{3 \cdot 2}{5 \cdot 5} \cdot 0.5
+   +\frac{3 \cdot 4}{7 \cdot 7} \cdot 0.5
+   \approx 0.24 \\
+   \P(X_{1}=1,X_{2}=1)
+   &= \frac{3 \cdot 3}{5 \cdot 5} \cdot 0.5 
+   +\frac{3 \cdot 3}{7 \cdot 7} \cdot 0.5
+   \approx 0.27
+  \end{align*}
+  \item
+  \begin{align*}
+   Cov(X_{1},X_{2})
+   &= \E[X_{1}X_{2}] - \E[X_{1}]\E[X_{2}] \\
+   &= \P(X_{1}=1,X_{2}=1) -\P(X_{1}=1)\P(X_{2}=1) \\
+   &= 0.27 - (0.27+0.24)^{2} \approx 0.01
+  \end{align*}
+  Como $Cov(X_{1},X_{2}) \neq 0$,
+  $X_{1}$ e $X_{2}$ não são independentes.
+  Dada a amostragem com reposição,
+  $X_{1}$ e $X_{2}$ seriam independentes caso 
+  soubéssemos de qual caixa as bolas eram retiradas.
+  Contudo, como não sabemos qual é esta caixa,
+  $X_{1}$ traz informação sobre ela e, assim,
+  traz informação sobre $X_{2}$.
+	
+  \item 
+  \begin{align*}
+   \P(\theta=0|X_{1}=1,X_{2}=1)
+   &= \frac{\P(\theta=0)\P(X_{1}=1,X_{2}=1|\theta=0)}
+   {\P(X_{1}=1,X_{2}=1)} \\
+   &\approx \frac{0.5 \cdot \frac{3 \cdot 3}{5 \cdot 5}}
+   {0.27}
+   \approx 0.67
+  \end{align*}
+ \end{enumerate}
+}{}
+
+\begin{exercise}
+ Considere que $X_{1},\ldots,X_{n},X_{n+1}$ são 
+ i.i.d. dado $\theta$ e
+ $X_{i}|\theta \sim \text{Poisson}(\theta)$.
+ Também, a distribuição a priori para $\theta$ é dada por 
+ $\theta \sim \text{Gamma}(1,1)$.
+ Ache $\P(x_{n+1}|x_{1},\ldots,x_{n})$.
+\end{exercise}
+
+\solution{\textbf{Solução}:
+ \begin{align*}
+  f(\theta|x_{1},\ldots,x_{n})
+  &\propto f(\theta)f(x_{1},\ldots,x_{n}|\theta) \\
+  &\propto f(\theta)\prod_{i=1}^{n}{f(x_{i}|\theta)}
+  & \text{equação \ref{eqn:ciid}} \\
+  &\propto \exp(-\theta)\prod_{i=1}^{n}{\exp(-\theta)\theta^{x_{i}}} \\
+  &= \theta^{n\bar{x}}\exp(-(n+1)\theta)
+ \end{align*}
+ Pela forma da distribuição, obtemos 
+ $\theta|(X_{1},\ldots,X_{n}) \sim \text{Gamma}(n\bar{x}+1,n+1)$.
+ Finalmente, obtemos que:
+ \begin{align*}
+  f(x_{n+1}|x_{1},\ldots,x_{n})
+  &= \int_{0}^{\infty}{f(x_{n+1}|\theta)f(\theta|x_{1},\ldots,x_{n})}
+  & \text{\cref{theorem:exchangeable_predictive}} \\
+  &= \int_{0}^{\infty}{\frac{\exp(-\theta)\theta^{x_{n+1}}}{x_{n+1}!}}
+  \cdot \frac{(n+1)^{n\bar{x}+1}}{\Gamma(n\bar{x}+1)} \theta^{n\bar{x}}\exp(-(n+1)\theta) \\
+  &= \frac{(n+1)^{n\bar{x}+1}}{\Gamma(n\bar{x}+1) x_{n+1}!} \int_{0}^{\infty}
+  {\theta^{n\bar{x}+x_{n+1}} \exp(-(n+2)\theta)} \\
+  &= \frac{(n+1)^{n\bar{x}+1}}{\Gamma(n\bar{x}+1) x_{n+1}!}
+  \cdot \frac{\Gamma(n\bar{x}+x_{n+1}+1)}{(n+2)^{n\bar{x}+x_{n+1}+1}} \\
+  &= \frac{\Gamma(n\bar{x}+x_{n+1}+1)}{\Gamma(n\bar{x}+1) x_{n+1}!}
+  \cdot \frac{(n+1)^{n\bar{x}+1}}{(n+2)^{n\bar{x}+x_{n+1}+1}} \\
+  &= {n\bar{x}+x_{n+1} \choose x_{n+1}} \left(\frac{1}{n+2}\right)^{x_{n+1}}
+  \left(\frac{n+1}{n+2}\right)^{n\bar{x}+1}
+ \end{align*}
+ Note que
+ $X_{n+1}|(X_{1},\ldots,X_{n}) \sim \text{Binomial Negativa}\left(n\bar{X}+1, \frac{1}{n+2}\right)$.
+}{}
+
+\begin{exercise}
+ Considere que $X_1, \ldots X_{n+1}$ são i.i.d. dado $\theta$,
+ $X_i|\theta \sim \text{Binomial}(n,\theta)$
+ e $\theta \sim \text{Beta}(a,b)$.
+ Determine $\P(x_{n+1}|x_{1},\ldots,x_{n})$.
+\end{exercise}
+
+\subsection{Permutabilidade*}
+
+Nesta subseção, você estudará os fundamentos e
+a interpretação dos componentes do Modelo Estatístico.
+Na \cref{section:stat_model}, você viu que
+o Modelo Estatístico tem $2$ objetos desconhecidos:
+os dados, $X$, e uma
+quantidade não observada associada, $\theta$.
+Uma vez que os dados são observáveis,
+em geral é fácil descrever e interpretá-los.
+Contudo, o mesmo pode não ser verdadeiro de $\theta$.
+Considere o \cref{ex:permutabilidade_votos}.
+
+\begin{example}
+ \label{ex:permutabilidade_votos}
+ Uma moeda é lançada $100$ vezes.
+ Defina $X_{i}$ como a indicadora de que
+ o $i$-ésimo lançamento da moeda seja cara.
+ Ao analisar os dados obtidos, 
+ um estatístico supõe que, dado $\theta$,
+ $X_{1},\ldots,X_{100}$ são i.i.d. 
+ $\text{Bernoulli}(\theta)$.
+\end{example}
+
+O que é $\theta$? 
+Note que $\theta$ não é a probabilidade de que 
+um lançamento da moeda seja cara.
+De fato, enquanto que a probabilidade de um 
+evento deve ser um número,
+$\theta$ é uma variável aleatória.
+Neste modelo, $\theta$ não é uma 
+característica da moeda que
+possa ser medida diretamente.
+É necessário usar os dados para 
+aprender a respeito de $\theta$.
+Mas se você não for capaz de interpretar $\theta$,
+como poderá colocar uma distribuição sobre $\theta$ que
+reflete a sua incerteza sobre esta quantidade?
+Nesta subseção você verá ao menos uma forma de
+interpretar $\theta$ no modelo do
+\cref{ex:permutabilidade_votos}.
+
+Para tal, considere a definição de permutabilidade.
+
+\begin{definition}[Permutabilidade finita]
+ $X_{1},\ldots,X_{n}$ são permutáveis se,
+ para qualquer permutação, $\pi$, dos índíces 
+ $\{1,\ldots,n\}$ e $A_{i} \subset \mathbb{R}$,
+ \begin{align*}
+  \P(X_{1} \in A_{1},\ldots,X_{n} \in A_{n})
+  = P(X_{\pi(1)} \in A_{1},\ldots,X_{\pi(n)} \in A_{n})
+ \end{align*}
+ Note que a suposição de permutabilidade diz respeito à
+ distribuição conjunta dos dados.
+ Ela não se refere a $\theta$ ou 
+ qualquer objeto não-observável.
+\end{definition}
+
+\begin{lemma}
+ \label{lemma:exchangeability-iid}
+ Se $X_{1},\ldots,X_{n}$ são i.i.d.,
+ então também são permutáveis.
+\end{lemma}
+
+\begin{proof}
+ Seja $\pi$ uma permutação arbitrária de $\{1,\ldots,n\}$. 
+ Temos
+ \begin{align*}
+  \P(X_{1} \in A_{1}, \ldots, X_{n} \in A_{n})
+  &= \prod_{i=1}^{n}{\P(X_{i} \in A_{i})}
+  & \text{independência} \\
+  &= \prod_{i=1}^{n}{\P(X_{\pi(i)} \in A_{i})}
+  &	\text{i.d.} \\
+  &= \P(X_{\pi(1)} \in A_{1},\ldots,X_{\pi(n)} \in A_{n})
+  & \text{independência}
+ \end{align*}
+\end{proof}
+
+\begin{lemma}
+ \label{lemma:exchangeability-id}
+ Se $X_{1},\ldots,X_{n}$ são permutáveis, então 
+ são identicamente distribuídos.
+\end{lemma}
+
+Combinando os \cref{lemma:exchangeability-iid,lemma:exchangeability-id},
+pode-se concluir que permutabilidade é uma
+propriedade mais forte que i.d. e mais fraca que
+i.i.d.
+
+\begin{proof}
+ Para todo $n \geq 2$ e $A \subset \mathbb{R}$, temos
+ \begin{align*}
+  \P(X_{1} \in A)
+  &= \P(X_{1} \in A, X_{2} \in \mathbb{R}, \ldots, X_{n} \in \mathbb{R}) \\
+  &= \P(X_{1} \in \mathbb{R}, X_{2} \in \mathbb{R}, \ldots, X_{n} \in A) = \P(X_{n} \in A)
+ \end{align*}
+\end{proof}
+
+\begin{example}
+ \label{example:exchangeable-not-iid}
+ Considere que duas bolas são retiradas sem reposição de
+ uma urna com $2$ bolas azuis e $2$ bolas brancas.
+ Defina $X_{i}$ como a indicadora de que a 
+ i-ésima bola retirada é azul.
+ \begin{table}
+  \centering
+  \begin{tabular}{|c|c|c|}
+   \hline
+   \backslashbox{$X_1$}{$X_2$} & 0 & 1 \\
+   \hline
+   0 & $\frac{1}{6}$ & $\frac{1}{3}$ \\
+   1 & $\frac{1}{3}$ & $\frac{1}{6}$	\\
+   \hline
+  \end{tabular}
+  \caption{Distribuição conjunta de $X_{1}$ e 
+  $X_{2}$ no \cref{example:exchangeable-not-iid}.}
+  \label{table:exchangeable-not-idd}
+ \end{table}
+ Usando a \cref{table:exchangeable-not-idd}, é 
+ possível mostrar que $X_{1}$ e $X_{2}$ são 
+ permutáveis mas não são independentes.
+ Como $X_{1}$ e $X_{2}$ são variáveis Bernoulli e 
+ $\P(X_{1}=1,X_{2}=0)=\P(X_{1}=0,X_{2}=1)=\frac{1}{3}$, 
+ temos que $X_{1}$ e $X_{2}$ são permutáveis.
+ Também, como $\P(X_{1}=1,X_{2}=1)=\frac{1}{6} \neq \frac{1}{4}=\P(X_{1}=1)\P(X_{2}=1)$,
+ $X_{1}$ e $X_{2}$ não são independentes.
+
+ Combinando-se este exemplo ao 
+ \cref{lemma:exchangeability-iid},
+ conclua que i.i.d. é uma propriedade mais forte que
+ permutabilidade.
+ Isto é, se $X_{1},\ldots,X_{n}$ são i.i.d., então 
+ são permutáveis.
+ Contudo, a relação inversa não 
+ necessariamente é verdadeira.
+\end{example}
+
+\begin{definition}[Permutabilidade infinita]
+ $X_{1},\ldots,X_{n},\ldots$ são 
+ infinitamente permutáveis se, para todo
+ $m \in \mathbb{N}$, $X_{1} ,\ldots, X_{m}$ são
+ permutáveis.
+\end{definition}
+
+A seguir, a definição de permutabilidade infinita é
+conectada ao  modelo do \cref{ex:permutabilidade_votos}.
+Esta conexão se dá pelo \cref{theorem:definetti-01}.
+
+\begin{theorem}[\citet{Finetti1931}]
+ \label{theorem:definetti-01}
+ Considere que $X_{1},\ldots,X_{n},\ldots$ são
+ tais que $X_i \in \{0,1\}$.
+ $X_{1},\ldots,X_{n},\ldots$ são
+ infinitamente permutáveis se e somente se
+ existe uma variável aleatória,
+ $\theta \in [0,1]$ tal que, dado $\theta$,
+ $X_{1},\ldots,X_{n},\ldots$ são i.i.d.
+ $\text{Ber}(\theta)$.
+ Isto é, para todo $n \geq 1$ e
+ $x_{1},\ldots,x_{n} \in \{0,1\}^n$,
+ \begin{align*}
+  P(X_{1}=x_{1},X_{2}=x_{2},\ldots,X_{n}=x_{n}) = \int_{[0,1]}{\theta^{n\bar{x}}(1-\theta)^{n(1-\bar{x})}P_{\theta}(d\theta)}
+ \end{align*}
+ Ademais $\theta = \lim_{n \rightarrow \infty}\bar{X}_{n}$.
+ Chama-se $\lim_{n \rightarrow \infty}\bar{X}_{n}$ de
+ média assintótica da sequência. 
+ Ela corresponde ao limite das frequências de $1$ 
+ observadas.
+\end{theorem}
+
+Em palavras, dada a média assintótica
+de uma sequência infinitamente permutável de Bernoullis,
+esta sequência é i.i.d. com média igual à
+média assintótica.
+Em geral, a média assintótica é desconhecida e, assim,
+é uma variável aleatória.
+Esta variável aleatória é precisamente o 
+parâmetro do modelo do 
+\cref{ex:permutabilidade_votos}!
+
+O \cref{theorem:definetti-01} será provado em duas etapas.
+Primeiramente, será mostrado que 
+existe uma subsequência de
+$\bar{X}_{n}$ que converge quase certamente.
+A seguir, este fato e uma aproximação da
+distribuição hipergeométrica pela 
+distribuição binomial serão usados para 
+completar o Teorema de Representação.
+Esta demonstração é baseada naquelas que
+se encontram em
+\citet[pp.34-38]{Schervish2012} e \citet{Heath1976}.
+
+\begin{theorem}
+ \label{thm:exchangeable-lgn}
+ Considere que $X_{1},\ldots,X_{n},\ldots$ 
+ é uma sequência infinitamente permutável tal que
+ $-\infty < E[X_{1}X_{2}] = m_{2} < \infty$ e
+ $E[X_{1}^{2}] = \mu_{2} < \infty$. 
+ $\bar{X}_{8^{k}} = \frac{\sum_{i=1}^{8^{k}}{X_i}}{8^{k}}$
+ converge quase certamente.
+\end{theorem}
+
+\begin{proof}
+ Note que 
+ \begin{align*}
+  \P(|\bar{X}_{8^{k}}-\bar{X}_{8^{k+1}}| > 2^{-k})
+  &= \P(|\bar{X}_{8^{k}}-\bar{X}_{8^{k+1}}|^{2} 
+  >4^{-k}) \\
+  &\leq \frac{\E[|\bar{X}_{8^{k}}-\bar{X}_{8^{k+1}}|^{2}]}
+  {4^{-k}}
+  & \text{Markov} \\
+  &=\frac{\E[\bar{X}_{8^{k}}^{2}]
+  +\E[\bar{X}_{8^{k+1}}^{2}]
+  -2\E[\bar{X}_{8^{k}}\bar{X}_{8^{k+1}}]}{4^{-k}} \\
+  &= \frac{8^{-2k}(8^{k}\mu_{2}+8^{k}(8^{k}-1)m_{2})}
+  {4^{-k}} +\frac{8^{-2(k+1)}(8^{k+1}\mu_{2}+8^{k+1}
+  (8^{k+1}-1)m_{2})}{4^{-k}} \\
+  & -2\frac{8^{-(2k+1)}(8^{k}\mu_{2}+8^{k}
+  (8^{k}-1)m_{2}+8^{2k}m_{2})}{4^{-k}} \\
+  &= \frac{(8^{-k}-8^{-(k+1)})(\mu_{2}+m_{2})}{4^{-k}}
+  < 2^{-k}(\mu_{2}+m_{2})
+ \end{align*}
+ Defina $A_{k} =\{w \in \Omega: |\bar{X}_{8^{k}}-\bar{X}_{8^{k+1}}| > 2^{-k}\}$.
+ Defina $A = \{A_{k} \text{ } i.v.\} = \cap_{i=1}^{\infty}\cup_{j=i}^{\infty}A_{j}$. 
+ Como 
+ \begin{align*}
+  \sum_{i=1}^{\infty}{\P(A_{i})}
+  < \sum_{i=1}^{\infty}{2^{-i}(\mu_{2}+m_{2})}
+  = (\mu_{2}+m_{2}) < \infty
+ \end{align*}
+ conclua por Borel-Cantelli que $\P(A) = 0$.
+ Finalmente, para mostrar que $
+ \bar{X}_{8^{k}}$ converge quase certamente,
+ mostraremos que para todo $\omega \in A^{c}$,
+ $\bar{X}_{8^{k}}(w)$ é uma sequência de Cauchy.
+ Isto é, para todo $\epsilon > 0$, existe 
+ $N$ tal que, para todo $n,m > N$,
+ $|\bar{X}_{8^{n}}(\omega)-\bar{X}_{8^{m}}(\omega)| < \epsilon$.
+ Considere um $\epsilon > 0$ arbitrário.
+ Tome $\omega \in A^{c}$. 
+ Por definição, existe um $l_{\omega}$ tal que,
+ para todo $n > l_{\omega}$,
+ $|\bar{X}_{8^{n}}(\omega)-\bar{X}_{8^{n+1}}(\omega)| < 2^{-k}$.
+ Para todo $m > n > l_{\omega}$, temos
+ \begin{align*}
+  |\bar{X}_{8^{n}}(\omega)-\bar{X}_{8^{m}}(\omega)|
+  &\leq \sum_{k=n}^{m}{|\bar{X}_{8^{k}}(\omega)
+  -\bar{X}_{8^{k+1}}(\omega)|} \\
+  &\leq \sum_{k=n}^{\infty}{|\bar{X}_{8^{k}}(\omega)
+  -\bar{X}_{8^{k+1}}(\omega)|} \\
+  &\leq  \sum_{k=n}^{\infty}{2^{-k}} < 2^{-n+1}
+ \end{align*}
+ Portanto, para todo 
+ $n,m > \max(l_{\omega},\log_{2}\epsilon) = N$, obtemos
+ $|\bar{X}_{8^{n}}(\omega)-\bar{X}_{8^{m}}(\omega)| < \epsilon$.
+ Conclua que $\bar{X}_{8^{k}}(\omega)$ é uma 
+ sequência de Cauchy e, assim, uma 
+ sequência convergente.
+ Como $\omega \in A^{c}$ era arbitrário e 
+ $\P(A^{c}) = 1$, conclua que 
+ $\bar{X}_{8^{k}}$ converge quase certamente.
+\end{proof}
+
+\begin{proof}[Prova do \cref{theorem:definetti-01}]
+ Defina $N = 8^k$ e note que
+ \begin{align*}
+  \P(X_{1}=x_{1},\ldots,X_{n}=x_{n})	
+  &=\P(X_{1}=1,\ldots,X_{n\bar{x}}=1,X_{n\bar{x}+1}=0,\ldots,X_{n}=0) \\
+  &= \sum_{i=0}^{N}{\P(X_{1}=1,\ldots,X_{n\bar{x}}=1,X_{n\bar{x}+1}=0,\ldots,X_{n}=0|N\bar{X}_{N} = i)\P(N\bar{X}_{N}=i)} \\
+  &= \sum_{i=0}^{N} \frac{{N-n \choose i-n\bar{x}_n}}{{N \choose i}} \P(N\bar{X}_{N}=i) \\
+  &= \E \left[ \frac{{N-n \choose N\bar{X}_N - n\bar{x}_n}}{{N \choose N\bar{X}_N}} \right] \\
+  &= \E \left[ \frac{\frac{(N-n)!}{(N\bar{X}_N - n\bar{x}_n)!(N(1-\bar{X}_N)-n(1-\bar{x}_n))!}}
+  {\frac{N!}{(N\bar{X}_N)!(N(1-\bar{X}_N))!}} \right] \\
+  &= \E \left[ \frac{ \frac{(N\bar{X}_N)!}{(N\bar{X}_N - n\bar{x}_n)!}
+  \frac{(N(1-\bar{X}_N))!}{(N(1-\bar{X}_N)-n(1-\bar{x}_n))!} }  {\frac{N!}{(N-n)!}} \right]
+ \end{align*}
+ 
+ Como a igualdade vale para todo $N$, obtemos
+ \begin{align*}
+  \P(X_{1}=x_{1},\ldots,X_{n}=x_{n})
+  &= \lim_N \E \left[ \frac{ \frac{(N\bar{X}_N)!}{(N\bar{X}_N - n\bar{x}_n)!}
+  \frac{(N(1-\bar{X}_N))!}{(N(1-\bar{X}_N)-n(1-\bar{x}_n))!} }  {\frac{N!}{(N-n)!}} \right] \\
+  &= \E \left[\lim_N \frac{ \frac{(N\bar{X}_N)!}{(N\bar{X}_N - n\bar{x}_n)!}
+  \frac{(N(1-\bar{X}_N))!}{(N(1-\bar{X}_N)-n(1-\bar{x}_n))!} }  {\frac{N!}{(N-n)!}} \right] \\
+  &= \E \left[\lim_N \frac{(N\bar{X}_N)^{n\bar{x}_n} \cdot (N(1-\bar{X}_N))^{n(1-\bar{x}_n)}}{N^n}\right] \\
+  &= \E \left[\lim_N \bar{X}_N^{n\bar{x}_n}(1-\bar{X}_N)^{n(1-\bar{x}_n)} \right] \\
+  &= \E \left[\theta^{n\bar{x}_n}(1-\theta)^{n(1-\bar{x}_n)} \right]
+  & \text{\cref{thm:exchangeable-lgn}} \\
+  &= \int_{[0,1]}{\theta^{n\bar{x}_n}(1-\theta)^{n(1-\bar{x}_n)}P_{\theta}(d\theta)}
+ \end{align*}
+\end{proof}
+
+O \cref{theorem:definetti-01} mostra que,
+para toda sequência infinitamente permutável
+de quantidades aleatórias em \{0,1\},
+existe uma quantidade aleatória, $\theta$,
+tal que, dado $\theta$, a sequência é i.i.d.
+Poderíamos perguntar se o mesmo resultado vale
+para quantidades aleatórias em $\mathbb{R}$.
+A resposta afirmativa é provada em
+\citet{Finetti1937} e enunciada a seguir.
+
+\begin{theorem}[\citet{Finetti1937}]
+ \label{thm:definetti-geral}
+ Considere que $X_1,\ldots,X_n,\ldots$ são
+ tais que $X_i \in \mathbb{R}$.
+ $X_1,\ldots,X_n,\ldots$ são
+ infinitamente permutáveis se e somente se
+ existe uma medida de probabilidade, $\mu$,
+ sobre as funções de distribuição acumulada tal que
+ para todo $n \geq 1$ e $x_1, \ldots, x_n$
+ \begin{align*}
+  \P(X_1 \leq x_1, \ldots, X_n \leq, x_n)
+  &= \int \left(\prod_{i=1}^n F(x_i)\right) d\mu(F)
+ \end{align*}
+ Isto é, existe uma função de distribuição acumulada aleatória, $F$,
+ dada a qual $X_1, \ldots, X_n$ são i.i.d. com distribuição $F$.
+\end{theorem}
+
+Além destes teoremas, muitas outras extensões do 
+Teorema de Bruno de Finetti foram provadas.
+Por exemplo, \citet{Kingman1978,Aldous1985} revisam
+a bibliografia sobre o tema.
+
+\subsubsection*{Exercícios}
+
+\begin{exercise}[urna de Polya]
+ \label{ex:polya}
+ Considere que, inicialmente, uma urna tem
+ $1$ bola branca e $1$ bola azul. A cada iteração,
+ retira-se uma bola da urna e, em seguida, 
+ recoloca-se $2$ bolas da mesma cor na urna.
+ Assim, por exemplo, se a primeira bola retirada for azul,
+ na segunda iteração haverá $1$ bola branca e
+ $2$ bolas azuis na urna. Considere que
+ $X_{i}$ é a indicadora de que a
+ $i$-ésima bola retirada é azul.
+ \begin{enumerate}[label=(\alph*)]
+  \item Para cada $n \in \mathbb{N}$, ache a
+  distribuição conjunta de $(X_{1},\ldots,X_{n})$.
+  \item Mostre que $X_{1},\ldots,X_{n},\ldots$ é
+  infinitamente permutável.
+  \item De acordo com o \cref{conditional_probability},
+  dado $\lim_{n}\bar{X}_{n}$,
+  $X_{1},\ldots,X_{n}$ são i.i.d. e
+  $X_{1} \sim \text{Bernoulli}(\lim_{n}\bar{X}_{n})$.
+  Use os itens anteriores para determinar a
+  distribuição de $\lim_{n}\bar{X}_{n}$.
+ \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+ Refaça o \cref{ex:polya} considerando que, inicialmente,
+ a urna tem ``$a$'' bolas azuis e
+ ``$b$'' bolas brancas e que, a cada iteração,
+ recoloca-se na urna ``$c$'' bolas 
+ da mesma cor da bola retirada. 
+\end{exercise}
+
+\begin{exercise}[\citet{Rodrigues1993}]
+ Considere que $X_{1},\ldots,X_{n}$
+ é uma sequência infinitamente permutável de
+ variáveis aleatórias em $\{0,1\}$.
+ Defina $r(i) = \P(X_{i}=1|X_{i-1}=0,\ldots,X_{1}=0)$ e 
+ $r(1) = P(X_{1}=1)$.
+ \begin{enumerate}[label=(\alph*)]
+  \item Mostre que $r(1) \geq r(2)$.
+  \item Mostre que $r(i)$ é decrescente.
+ \end{enumerate}
+\end{exercise}
+
+\solution{\textbf{Solução}:
+\begin{enumerate}[label=(\alph*)]
+ \item Note que
+ \begin{align*}
+  r(1) = \P(X_{1}=1)
+  &= \int_{0}^{1}
+  {\theta^1(1-\theta)^0\P_{\theta}(d\theta)}
+  & \text{\cref{theorem:definetti-01}} \\
+  &=\E[\theta]
+ \end{align*}
+ Também
+ \begin{align*}
+  r(2) = \P(X_{2}=1|X_{1}=0)
+  &= \frac{\P(X_{1}=0,X_{2}=1)}{\P(X_{1}=0)}
+  &	\text{\cref{conditional_probability}} \\
+  &= \frac{\int_{0}^{1}
+  {\theta^1(1-\theta)^1}\P_{\theta}(d\theta)}
+  {\int_{0}^{1}{(1-\theta)^1}\P_{\theta}(d\theta)}
+  & \text{\cref{theorem:definetti-01}} \\
+  &= \frac{\E[\theta(1-\theta)]}{\E[1-\theta]} 
+ \end{align*}
+ Portanto,
+ \begin{align*}
+  r(1) - r(2)
+  &= \E[\theta] - \frac{\E[\theta(1-\theta)]}
+  {\E[1-\theta]} \\
+  &= \frac{\E[\theta]\E[1-\theta] -\E[\theta(1-\theta)}
+  {\E[1-\theta]} \\
+  &= \frac{\E[\theta^{2}]-\E[\theta]^{2}}{\E[1-\theta]} \\
+  &= \frac{\V[\theta]}{\E[1-\theta]} \geq 0
+  & \theta \in [0,1]
+ \end{align*}
+
+ \item Note que
+ \begin{align*}
+  r(i) = \P(X_{i}=1|X_{i-1}=0,\ldots,X_{1}=0)
+  &= \frac{\P(X_{1}=0,\ldots,X_{i-1}=0,X_{i}=1)}
+  {\P(X_{1}=0,\ldots,X_{i-1}=0)} \\
+  &= \frac{\int_{0}^{1}
+  {\theta(1-\theta)^{i-1}}\P_{\theta}(d\theta)}
+  {\int_{0}^{1}{(1-\theta)^{i-1}}\P_{\theta}(d\theta)}
+  & \text{\cref{theorem:definetti-01}} \\
+  &= \frac{\E[\theta(1-\theta)^{i-1}]}
+  {\E[(1-\theta)^{i-1}]}
+ \end{align*}
+ Para continuar, 
+ definiremos o seguinte produto interno entre
+ variáveis aleatórias: $\langle X,Y\rangle = \E[XY]$.
+ \begin{align}
+  \label{eqn:rodrigues1}
+  r(i)-r(i+1)
+  &= \frac{\E[\theta(1-\theta)^{i-1}]}
+  {\E[(1-\theta)^{i-1}]}-\frac{\E[\theta(1-\theta)^{i}]}
+  {\E[(1-\theta)^{i}]} \nonumber \\
+  &= \frac{\E[\theta(1-\theta)^{i-1}]\E[(1-\theta)^{i}]
+  -\E[\theta(1-\theta)^{i}]\E[(1-\theta)^{i-1}]}
+  {\E[(1-\theta)^{i-1}]\E[(1-\theta)^{i}]} \nonumber \\
+  &= \frac{\E[\theta(1-\theta)^{i-1}]\E[(1-\theta)(1-\theta)^{i-1}]-\E[\theta(1-\theta)(1-\theta)^{i-1}]\E[(1-\theta)^{i-1}]}{\E[(1-\theta)^{i-1}]\E[(1-\theta)^{i}]}
+ \end{align}
+ Note que, como $\theta \in [0,1]$,
+ o denominador da \cref{eqn:rodrigues1} é
+ maior que $0$. Também, o numerador é tal que
+ \begin{align*}
+  & \E[\theta(1-\theta)^{i-1}]\E[(1-\theta)(1-\theta)^{i-1}]-\E[\theta(1-\theta)(1-\theta)^{i-1}]\E[(1-\theta)^{i-1}] \\
+  =& \E[\theta(1-\theta)^{i-1}](\E[(1-\theta)^{i-1}]-\E[\theta(1-\theta)^{i-1}])-(\E[\theta(1-\theta)^{i-1}]-\E[\theta^2(1-\theta)^{i-1}])\E[(1-\theta)^{i-1}] \\
+  =& \E[\theta^2(1-\theta)^{i-1}]\E[(1-\theta)^{i-1}] - \E[\theta(1-\theta)^{i-1}]^{2} \\
+  =& \langle\theta(1-\theta)^{(i-1)/2},\theta(1-\theta)^{(i-1)/2}\rangle\langle(1-\theta)^{(i-1)/2},(1-\theta)^{(i-1)/2}\rangle - \langle\theta(1-\theta)^{(i-1)/2},(1-\theta)^{(i-1)/2}\rangle^{2}	\\
+  =& \|\theta(1-\theta)^{(i-1)/2}\|^{2}\|(1-\theta)^{(i-1)/2}\|^{2} - \langle\theta(1-\theta)^{(i-1)/2},(1-\theta)^{(i-1)/2}\rangle^{2} \geq 0
+ \end{align*}
+ A última linha corresponde à desigualdade de \href{https://en.wikipedia.org/wiki/Cauchy\%E2\%80\%93Schwarz_inequality}{Cauchy-Schwarz}.
+ Como o numerador e o denominador na
+ \cref{eqn:rodrigues1} são maiores ou iguais a 0,
+ conclua que $r(i)-r(i+1) \geq 0$.
+ \end{enumerate}
+}{}
+
+\begin{exercise}[\citet{Neill2005}]
+ Considere que, dado $\theta$,
+ $X_{1},\ldots,X_{n}$ são i.i.d. e 
+ $X_{i} \sim \text{Bernoulli}(\theta)$.
+ Também, $\theta$ e $(1-\theta)$ são permutáveis,
+ ou seja, a distribuição de $\theta$ é
+ simétrica em relação a $0.5$.
+ Mostre que,
+ \begin{align*}
+  \P(X_{n+1}=1|X_{1}=x_{1},\ldots,X_{n}=x_{n}) > 0.5
+  \text{ se e somente se }
+  \sum_{i=1}^{n}{x_i} > \frac{n}{2}.
+ \end{align*}
+\end{exercise}
+
+\begin{exercise}[\citet{Bonassi2015}]
+ Dizemos que $Y \sim \text{CMP-Binomial}(n,p,\nu)$ 
+ \citep{Kadane2016} se
+ \begin{align*}
+  \P(Y=y) \propto {n \choose y}^{\nu}p^{y}(1-p)^{n-y}
+ \end{align*}
+ Considere que $X_{1},\ldots,X_{n+1}$ são permutáveis e
+ $\sum_{i=1}^{n+1}{X_{i}} \sim \text{CMP-Binomial}(n+1,0.5,\nu)$.
+ \begin{enumerate}[label=(\alph*)]
+  \item Mostre que, se $\nu > 1$ e
+  $\sum_{i=1}^{n}{x_i} > \frac{n}{2}$, então
+  $\P(X_{n+1}=1|X_{1}=x_{1},\ldots,X_{n}=x_{n}) > 0.5$.
+  \item Mostre que, se $\nu < 1$ e
+  $\sum_{i=1}^{n}{x_i} > \frac{n}{2}$, então
+  $\P(X_{n+1}=1|X_{1}=x_{1},\ldots,X_{n}=x_{n}) < 0.5$.
+ \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Permutabilidade e covariância] \
+ \begin{enumerate}[label=(\alph*)]
+  \item Considere que $X_{1},\ldots,X_{n},\ldots$ é
+  uma sequência infinitamente permutável tal que
+  $X_{i} \in \{0,1\}$.
+  Mostre que, para qualquer $i \neq j$,
+  $Cov(X_{i},X_{j}) \geq 0$.
+  
+  \item Considere que $X_{1},\ldots,X_{n}$ é
+  uma sequência permutável. Mostre que
+  \begin{align*}
+   Corr(X_{i},X_{j}) 
+   =\frac{Cov(X_{i},X_{j})}
+   {\sqrt{Var[X_{i}]Var[X_{j}]}} \geq -(n-1)^{-1}.
+  \end{align*}
+  Para provar este resultado,
+  defina $Y = \sum_{i=1}^{n}{X_{i}}$ e
+  tome como ponte de partida a desigualdade
+  $\V[Y] \geq 0$.
+	
+  \item Para todo $n \in \mathbb{N}$, 
+  construa um exemplo tal que
+  $X_{1},\ldots,X_{n}$ é permutável e,
+  para todo $i \neq j$, $Cov(X_{i},X_{j}) < 0$.
+ \end{enumerate}
+\end{exercise}
+
+%\begin{exercise}[\citet{Diaconis1980}]
+%\end{exercise}
+
+\pagebreak
