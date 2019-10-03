@@ -3,8 +3,9 @@ cache: packages
 services: docker
 
 script: 
-  - docker run --mount src=$TRAVIS_BUILD_DIR,target=$TRAVIS_BUILD_DIR,type=bind dxjoke/tectonic-docker
   - make book
+  - docker run --mount src=$TRAVIS_BUILD_DIR/build,target=/usr/src/tex,type=bind dxjoke/tectonic-docker
+  - tectonic book.tex
 
 deploy:
   provider: pages
