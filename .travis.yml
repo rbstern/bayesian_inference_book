@@ -5,7 +5,7 @@ services: docker
 script: 
   - make book
   - docker run --mount src=$TRAVIS_BUILD_DIR/build,target=/usr/src/tex,type=bind dxjoke/tectonic-docker
-  - tectonic book.tex
+  - /bin/sh -c "tectonic book.tex"
 
 deploy:
   provider: pages
