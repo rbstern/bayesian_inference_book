@@ -37,15 +37,17 @@ cleanall: clean
 # compile a TEX from a RNoWeb file
 %.tex: %.Rnw Makefile
 	mkdir build
+	cp config.tex build/config.tex
+	cp book.bib build/book.bib
+	cp slashbox.sty build/slashbox.sty
+	mkdir build/figures
+	cp -a ./figures/. ./build
 	Rscript \
 		-e "require(knitr)" \
 		-e "knitr::opts_chunk[['set']](fig.path='$(FIGUREDIR)/$*-')" \
 		-e "knitr::opts_chunk[['set']](cache.path='$(CACHEDIR)/$*-')" \
 		-e "knitr::knit('$*.Rnw', output='build/$*.tex')"
-	cp config.tex build/config.tex
-	cp book.bib build/book.bib
-	cp slashbox.sty build/slashbox.sty
-
+	
 # extract an R file from an RNoWeb file
 %-purled.R: %.Rnw
 	Rscript \
