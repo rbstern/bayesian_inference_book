@@ -1,0 +1,116 @@
+\documentclass[11pt]{scrartcl}
+
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+
+%É necessário declarar os teoremas antes de invocar nameref, hyperref ou cleveref?!
+\usepackage{nameref}
+\usepackage[colorlinks=true, urlcolor=blue, citecolor=blue, linkcolor=blue]{hyperref}
+\usepackage{amsfonts, amsmath, amssymb, amsthm, thmtools}
+\usepackage{cleveref}
+
+\declaretheorem[name=Teorema, refname={Teorema, Teoremas}, Refname={Teorema, Teoremas}, parent=section]{theorem}
+\declaretheorem[name=Algoritmo, refname={Algoritmo, Algoritmos}, Refname={Algoritmo, Algoritmos}, sibling=theorem, style=definition]{algorithm2}
+\declaretheorem[name=Corolário, refname={Corolário, Corolários}, Refname={Corolário, Corolários}, sibling=theorem]{corollary}
+\declaretheorem[name=Definição, refname={Definição, Definições}, Refname={Definição, Definições}, sibling=theorem, style=definition]{definition}
+\declaretheorem[name=Exemplo, refname={Exemplo, Exemplos}, Refname={Exemplo, Exemplos}, sibling=theorem, style=definition]{example}
+\declaretheorem[name=Lema, refname={Lema, Lemas}, Refname={Lema, Lemas}, sibling=theorem]{lemma}
+\declaretheorem[name=Exercício, refname={Exercício, Exercícios}, Refname={Exercício, Exercícios}, sibling=theorem, style=definition]{exercise}
+
+\crefname{section}{seção}{seções}
+\Crefname{section}{Seção}{Seções}
+\crefname{table}{tabela}{tabelas}
+\Crefname{table}{Tabela}{Tabelas}
+
+\newcommand{\crefpairconjunction}{ e }
+%\newcommand{\crefmiddleconjunction}{hconjunctioni}
+\newcommand{\creflastconjunction}{ e }
+
+\usepackage{color, enumitem, fancyhdr, float, layout, multirow, setspace, slashbox, verbatim}
+\usepackage{algorithm2e, algorithmicx, listings}
+\usepackage{caption, subcaption}
+\usepackage[authoryear]{natbib}
+\usepackage[all]{xy}
+\usepackage{authblk}
+\usepackage{cprotect}
+\bibpunct[; ]{(}{)}{,}{a}{,}{;}
+
+%\usepackage{enumerate}
+
+\usepackage{graphicx}
+\graphicspath{{figures/}{../figures/}}
+\renewcommand{\floatpagefraction}{.9}%
+
+\usepackage{ifthen}
+\newboolean{noShowSolutions}
+\setboolean{noShowSolutions}{true}
+\newcommand{\solutioncmd}[2]{{{#1}}{{#2}}}
+\newcommand{\solution}[2]{\ifthenelse {\boolean{noShowSolutions}} {\solutioncmd{#2}}{\solutioncmd{#1}}}
+
+\def\X{***ATTN***}
+\newcommand{\red}[1]{\textbf{\color{red} ***ATTN*** #1}}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+\def\limn{\lim_{n \rightarrow \infty}}
+\def\I{{\mathbb I}}
+\def\P{{\mathbb P}}
+\def\E{{\mathbb E}}
+\def\V{{\mathbb V}}
+\def\R{{\mathbb R}}
+\def\X{{\vec{X}}}
+\def\x{{\vec{x}}}
+\def\Z{{\vec{Z}}}
+\def\z{{\vec{z}}}
+
+\DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
+\newcommand{\irchi}[2]{\raisebox{\depth}{$#1\chi$}} % inner command, used by \rchi
+
+\textheight25cm \footskip0.5cm \topmargin-1.5cm \headsep0.2cm
+\oddsidemargin-1.5cm \evensidemargin-1.5cm
+\marginparwidth0cm \marginparsep = 0pt
+\textwidth19cm
+\onehalfspacing
+
+\title{Inferência Bayesiana \\[8mm]}
+\subtitle{Notas de Aula \\[8mm]}
+\author{Luís Gustavo Esteves e Rafael Bassi Stern}
+\date{Última revisão: \today \\[8mm]
+Por favor, enviem comentários, typos e erros para rbstern@gmail.com}
+
+\begin{document}
+\maketitle
+
+\vspace{20mm}
+
+\textbf{Agradecimentos}: Grato pelas sugestões de
+Michelangelo dos Anjos, Yuri Benites, Ian Danilevicz, Andressa Dantas, Thales Egydio, Luís Esteves, Rafael Izbicki, Jeremias Leão, Tarcísio Lobato, Rafael Paixão, Carlos Pereira, João Poloniato,  Aimée Shirozono, João Silva, Julio Stern, Aline Tonon, Sergio Wechsler e Victor Zoré.
+
+\newpage
+ 
+\tableofcontents
+  
+\newpage
+
+\include{chapters/chapter-requirements}
+\include{chapters/chapter-probability}
+\include{chapters/chapter-introduction}
+\include{chapters/chapter-bayesian-model}
+\include{chapters/chapter-conjugacao}
+
+\include{chapters/chapter-review-1}
+
+\include{chapters/chapter-decisions}
+\include{chapters/chapter-inference-estimation}
+\include{chapters/chapter-inference-credible}
+\include{chapters/chapter-inference-hypothesis}
+\include{chapters/chapter-likelihood-principle}
+\include{chapters/chapter-review-2}
+
+\include{chapters/chapter-computing-mc}
+\include{chapters/chapter-computing-mcmc}
+\include{chapters/chapter-review-3}
+
+\bibliographystyle{apalike}
+\bibliography{chapters/booklet}
+
+\end{document}
