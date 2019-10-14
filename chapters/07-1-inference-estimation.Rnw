@@ -1,8 +1,17 @@
 \section{Inferência Bayesiana}
-\subsection{Estimação}
+
+Neste capítulo, veremos como
+a Teoria da Decisão pode ser usada para
+criar procedimentos para resumir a informação a posteriori disponível em um problema. Neste capítulo, $\Theta$,
+o conjunto de possíveis ocorrências
+que são relevantes para a tomada da sua decisão estudado no Capítulo \ref{section:decisions}, é justamente o espaço paramétrico.
+Assim, $f(\theta|x)$
+representa a distribuição a posteriori.
+
+\subsection{Estimação Pontual}
 
 O problema de estimação consiste em 
-escolher a partir dos dados 
+escolher, a partir dos dados, 
 um valor próximo ao parâmetro do modelo estatístico.
 O valor escolhido é chamado de estimador do parâmetro e
 será denotado por $\hat{\theta}$.
@@ -12,12 +21,11 @@ Para capturar a ideia de que
 o valor escolhido deve estar próximo ao parâmetro,
 estudaremos utilidades do tipo 
 $U(a,\theta) = -w(\theta)d(a,\theta)$,
-onde $w(\theta)$ é uma função não-negativa que i
-ndica a importância de acertar o valor $\theta$ e
+onde $w(\theta)$ é uma função não-negativa que indica a importância de acertar o valor $\theta$ e
 $d(a,\theta)$ é uma distância entre $a$ e $\theta$.
 
 Para algumas utilidades deste tipo é possível derivar
-precisamente qual o melhor estimador.
+precisamente qual o melhor estimador (isto é, o estimador que maximiza a utilidade esperada).
 A seguir, estudaremos alguns destes casos.
 
 \subsubsection{Distância quadrática}
@@ -346,7 +354,7 @@ Para o desvio absoluto, obtemos o seguinte resultado
    &= \E[-(m^{-1}\bar{X}-\theta)^2|X] \\
    &= -\V[\theta-m^{-1}\bar{X}|X]
    -(\E[\theta|X]-m^{-1}\bar{X})^{2} \\
-   &= -\V[\theta|X]]
+   &= -\V[\theta|X]
    -(\E[\theta|X]-m^{-1}\bar{X})^{2}
   \end{align*}
   Similarmente,
@@ -374,7 +382,7 @@ Para o desvio absoluto, obtemos o seguinte resultado
  Considere que, dado $\theta$, 
  $X_{1},\ldots,X_{n}$ são i.i.d. e
  $X_{i} \sim N(\theta,1)$. 
- Se \emph{a priori} $\mu \sim N(0,1)$,
+ Se \emph{a priori} $\theta \sim N(0,1)$,
  \begin{enumerate}[label=(\alph*)]
   \item Ache $\hat{\theta}^{*}_{2}$, 
   o melhor estimador para $\theta$ sob 

@@ -1,0 +1,55 @@
+^^E^^L 
+ \label{ex:ar-k}
+ Considere que, dado $\theta$,
+ $X_{i}= \alpha + \sum_{j=1}^{k}{\beta_{j}X_{i-j}} + \epsilon_{i}$,
+ onde $\epsilon_{i}$ são i.i.d. e $\epsilon_{i} \sim N(0,1)$.
+ Este é um modelo AR(k),
+ uma generalização do modelo que vimos no \cref{ex:ar-1}.
+ Considere que $X_{i}=0$ para $1 \leq i \leq k$ e que, a priori,
+ $\theta_{i}$ são i.i.d. e $\theta_{i} \sim N(0,1)$.
+ Podemos especificar este modelo no stan da seguinte forma:
+ \begin{verbatim}
+data {
+ int<lower=1> k;  //AR(k)
+ int<lower=0> n;  //numero de observacoes, minimo=0.
+ real y[n];       //vetor de observacoes reais.
+}
+
+parameters {
+ real alpha;     //media geral.
+ real beta[k];   //parametros autoregressivos.
+}
+
+model {
+ for(ii in (k+1):n) {
+  real mu;
+  mu <- alpha;
+  for(jj in 1:k) {
+   mu <- mu + y[ii-jj]*beta[jj];
+  }
+  y[ii] ~ normal(mu, 1);
+ }
+}
+ \end{verbatim}
+ Este modelo pode ser rodado no R usando os seguintes comandos:
+\begin{verbatim}
+k <- 2
+n <- 100
+y <- rep(0, n)
+alpha <- 10
+beta <- c(0.2,0.3)
+for(ii in 3:n) y[ii] <- rnorm(1,alpha+sum(y[(ii-k):(ii-1)]*beta[k:1]),1)
+amostra <- stan(file="ar-k.stan",
+                data=c("k", "n", "y"), iter=10^4, chains=1)
+plot(amostra)
+\end{verbatim}
+Os intervalos de credibilidade estimados pelo stan
+podem ser encontrados na figura \ref{fig:stan-2}.
+\begin{figure}
+ \centering
+ \includegraphics[scale=0.4]{chapter-computing-stan-2}
+ \caption{Exemplo de intervalo de credibilidade estimado pelo stan
+          para os parâmetros do \cref{ex:ar-k}.}
+ \label{fig:stan-2}
+\end{figure}
+^^E^^L 
