@@ -7,7 +7,8 @@ cache: packages
 sudo: required
 services: docker
 
-script: 
+script:
+  - make cleanall
   - make book
   - docker run --mount src=$TRAVIS_BUILD_DIR/build,target=/usr/src/tex,type=bind dxjoke/tectonic-docker /bin/sh -c "tectonic book.tex"
   - make copybook
