@@ -11,7 +11,7 @@ R_FILES= $(RNW_FILES:.Rnw=-purled.R)
 
 # cache and figure directories
 CACHEDIR= cache
-FIGUREDIR= figures
+FIGUREDIR= test
 
 
 .PHONY: all purled clean cleanall open
@@ -36,17 +36,17 @@ cleanall: clean
 
 # compile a TEX from a RNoWeb file
 %.tex: %.Rnw Makefile
-	mkdir build
-	cp config.tex build/config.tex
-	cp book.bib build/book.bib
-	cp slashbox.sty build/slashbox.sty
-	mkdir build/figures
-	cp -a ./figures/. ./build
+	mkdir build	
 	Rscript \
 		-e "require(knitr)" \
 		-e "knitr::opts_chunk[['set']](fig.path='$(FIGUREDIR)/$*-')" \
 		-e "knitr::opts_chunk[['set']](cache.path='$(CACHEDIR)/$*-')" \
 		-e "knitr::knit('$*.Rnw', output='build/$*.tex')"
+	cp config.tex build/config.tex
+	cp book.bib build/book.bib
+	cp slashbox.sty build/slashbox.sty
+	mkdir build/figures
+	cp -a ./figures/. ./build/figures/
 	
 # extract an R file from an RNoWeb file
 %-purled.R: %.Rnw
@@ -59,3 +59,4 @@ cleanall: clean
 # open all PDF's
 open:
 	open -a Skim $(PDFS)
+
