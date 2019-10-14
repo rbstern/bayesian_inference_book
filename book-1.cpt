@@ -1,0 +1,44 @@
+
+ \textbf{Solução}: Podemos escolher
+ $\tilde{f}(\theta) = \I(\theta_{1}^{2}+\theta_{2}^{2}+\theta_{3}^{2} \leq 1)$.
+ Se usarmos como propostas a uniforme no cubo de
+ aresta $1$ e centro na origem, então
+ $h(\theta) = 8^{-1}\I(|\theta_{i}| \leq 1, i \in \{1,2,3\})$.
+ Assim, $\tilde{f}(\theta) \leq 8h(\theta)$ e
+ tomamos $M=8$.
+ Neste caso, $\frac{\tilde{f}(\theta)}{8h(\theta)} = \tilde{f}(\theta)$.
+ Portanto, o método da rejeição pode ser implementado
+ da seguinte forma
+
+\begin{lstlisting}[language=R]
+simula_esfera_rejeicao <- function(B) # retorna: pontos uniformemente
+{                                     # da esfera de raio 1 centrada na origem.
+ amostra <- vector(mode="list", length=B)
+ for(ii in 1:B)
+ {
+  T <- runif(3,-1,1)
+  while(sum(T^2) > 1) T <- runif(3,-1,1)
+	amostra[[ii]] <- T
+ }
+ return(amostra)
+}
+\end{lstlisting}
+
+Se usarmos o \cref{algo:monte_carlo}, obtemos
+
+\begin{lstlisting}[language=R]
+ B <- 10^4
+ g <- function(coord) sqrt(sum(coord^2))
+ monte_carlo(simula_esfera_rejeicao, B, g)
+
+ estimador
+ [1] 0.7484544
+\end{lstlisting}
+
+ Note que a distância média de um ponto ao centro da
+ esfera de raio $1$ é aproximadamente $0.75$.
+ Assim, a distância média não é a metade do raio.
+ Isto ocorre pois o volume da esfera a partir da
+ metade do raio é maior do que o volume da esfera até
+ a metade do raio.
+^^E^^L 

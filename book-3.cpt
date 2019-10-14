@@ -1,0 +1,80 @@
+\textbf{Solução}:
+ O problema determina que
+ $h(\theta) = \I(0 \leq \theta \leq 1)$.
+ Podemos tomar $f(\theta) = \tilde{f}(\theta) = dbeta(\theta,a,b)$.
+ Note que a moda da Beta$(a,b)$ é
+ $\frac{a-1}{a+b-2}$. Portanto,
+ $\tilde{f}(\theta) \leq \tilde{f}\left(\frac{a-1}{a+b-2}\right)h(\theta)$.
+ Assim, as condições na amostragem por rejeição
+ estão satisfeitas tomando
+ $M= \tilde{f}\left(\frac{a-1}{a+b-2}\right)$.
+ Portanto, podemos simular da Beta$(a,b)$ da
+ seguinte forma
+ \begin{lstlisting}[language=R]
+simula_beta_rejeicao <- function(B,alpha,beta)
+{
+ M <- dbeta((alpha-1)/(alpha+beta-2),alpha,beta)
+ amostra <- vector(mode="list", length=B)
+ for(ii in 1:B)
+ {
+  T <- runif(1,0,1)
+	rejeicoes <- 0
+  while(runif(1,0,1) > dbeta(T,alpha,beta)/M)
+	{
+	 T <- runif(1,0,1)
+   rejeicoes <- rejeicoes+1
+	}
+	amostra[[ii]] <- c(T, rejeicoes)
+ }
+ return(amostra)
+}
+ \end{lstlisting}
+
+ Para entender de que forma o número de rejeições se
+ comporta de acordo com $a$ e $b$,
+ geraremos amostradores para os casos em que $a=b$,
+ para diversos valores de $a$ entre $2$ e $10$.
+ O código está exibido abaixo.
+
+ \begin{lstlisting}[language=R]
+rejeicoes <- function(x) x[2]
+param <- 2:10
+estimadores <- rep(NA, length(param))
+for(ii in 1:length(param))
+{
+ estimadores[ii] <- monte_carlo(simula_beta_rejeicao, 10^4, rejeicoes,
+                                param[ii], param[ii])[["estimador"]]
+}
+dados <- data.frame(parametros=param, rejeicoes=estimadores)
+ggplot(data=dados, aes(x=parametros, y=rejeicoes))+
+geom_point()+
+geom_smooth(method='lm',formula=y~x)
+ \end{lstlisting}
+
+ \begin{figure}
+  \centering
+  \includegraphics[scale=0.3]{chapter-computing-beta-rejections}
+  \caption{Variação da taxa de rejeição
+  de acordo com o valor de $a$
+  (\cref{ex:rejection-beta-a-b}).}
+  \label{fig:rejection-beta-a-b-1}
+ \end{figure}
+
+ A \cref{fig:rejection-beta-a-b-1} mostra que,
+ quanto maiores os valores de $a$ e $b$,
+ maior a taxa de rejeição.
+ Isto ocorre pois a distribuição da Beta(a,b)
+ fica mais ``diferente'' da distribuição Uniforme(0,1)
+ à medida que o valor de $a$ e $b$ aumentam.
+ Este fato é ilustrado na
+ \cref{fig:rejection-beta-a-b-2}.
+
+ \begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{chapter-computing-rejection-beta-a-b}
+  \caption{Ilustração das regiões de rejeição
+  para a Beta(2,2) (roxo), a Beta(4,4) (azul),
+  a Beta(8,8) (verde) e a Beta(16,16) (marrom).}
+  \label{fig:rejection-beta-a-b-2}
+ \end{figure}
+^^E^^L 

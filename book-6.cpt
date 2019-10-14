@@ -1,0 +1,111 @@
+\textbf{Solução}:
+ \begin{enumerate}[label=(\alph*)]
+  \item É possível gerar dados para este problema usando o seguinte código em R:
+	\begin{verbatim}
+y1 <- rnorm(100,50,1)
+y2 <- rnorm(100,10,1)
+data <- data.frame(y1,y2)
+	\end{verbatim}
+	\item É possível obter uma Cadeia de Markov para $\mu_{1}$ e $\mu_{2}$
+	      usando o seguinte código em stan.
+	\begin{verbatim}
+data {
+ int<lower=0> N1;   //numero de observacoes para o tratamento 1.
+ int<lower=0> N2;   //numero de observacoes para o tratamento 2.
+ real y1[N1];       //vetor de observacoes para o tratamento 1.
+ real y2[N2];       //vetor de observacoes para o tratamento 2.
+}
+
+parameters {
+ real mu1;          //contaminacao media sob o tratamento 1.
+ real mu2;          //contaminacao media sob o tratamento 2.
+ real mu;           //contaminacao media global.
+}
+
+model {
+ mu ~ normal(20, 10);
+ mu1 ~ normal(mu, 25);
+ mu2 ~ normal(mu, 25);
+ y1 ~ normal(mu1, 1);
+ y2 ~ normal(mu2, 1);
+}
+	\end{verbatim}
+
+	\item Utilizando o \cref{thm:estimation_l2},
+        sabemos que, sob a utilidade obtida pelo erro quadrático,
+				o estimador ótimo é a média a posteriori,
+				ou seja $E[\mu_{1}|y]$ e $E[\mu_{2}|y]$.
+				Também, decorre do \cref{theorem:clt-markov} que
+				$E[\mu_{i}|y]$ pode ser aproximado pela média
+				dos valores obtidos na Cadeia de Markov que
+				tem como distribuição estacionária $\pi(\mu_{i}|y)$.
+				Portanto, para gerar esta Cadeia de Markov e
+				aproximar os valores de $E[\mu_{i}|y]$,
+				usamos o seguinte código:
+	\begin{verbatim}
+amostra <- stan(file="anova.stan",
+                data=c("N1", "N2", "y1", "y2"), iter=10^4, chains=1)
+est_mu1 <- mean(extract(amostra, "mu1")[["mu1"]])
+est_mu2 <- mean(extract(amostra, "mu2")[["mu2"]])
+c(est_mu1,est_mu2)
+[1] 50.12020 10.07273
+	\end{verbatim}
+  Portanto, $\hat{\mu}_{1} = E[\mu_{1}|y] \approx 50.1$ e
+	$\hat{\mu}_{2} = E[\mu_{2}|y] \approx 10.0$.
+	\item Intervalos de credibilidade 95\% podem ser obtidos diretamente pelo comando
+	\begin{verbatim}
+plot(amostra)
+	\end{verbatim}
+  \begin{figure}
+	 \centering
+   \includegraphics[scale=0.5]{chapter-computing-stan-anova}
+	 \caption{Intervalos de credibilidade para $\mu_1$, $\mu_2$ e $\mu$
+	          no \cref{ex:anova-stan}.}
+	 \label{fig:anova-stan}
+	\end{figure}
+	O resultado é exibido na figura \ref{fig:anova-stan}.
+	Note que os intervalos para $\mu_{1}$ e $\mu_{2}$ são menores
+	que o intervalo para $\mu$.
+	Para entender este fenômeno, observe que $y_{i,j}|\mu_{i} \sim N(\mu_{i},1)$.
+	Também, $\mu_{i}|\mu \sim N(\mu,25)$.
+	Em outras palavras, segundo este modelo,
+	$y_{i,j}$ trazem informação sobre os $\mu_{i}$ e
+	os $\mu_{i}$ trazem informação sobre $\mu$.
+	Como há mais valores de $y_{i,j} (200)$ do que de $\mu_{i} (2)$
+	e os $y_{i,j}$ tem variância $(1)$ menor que os $\mu_{i} (25)$,
+	é razoável esperar que o intervalo de credibilidade para $\mu_{1}$ e $\mu_{2}$
+	seja menor que aquele de $\mu$.
+
+	\item Desejamos testar $H_{0}: \mu_{1} \leq \mu_{2}$.
+	      Decorre do, \cref{thm:0-1-c} que, como $c=1$,
+				rejeitamos $H_{0}$ se $P(H_{0}|y) < 0.5$.
+				Também, decorre do \cref{theorem:clt-markov} que
+				podemos usar uma Cadeia de Markov para aproximar $P(H_{0}|y)$.
+				Para tal, podemos construir uma Cadeia $(a_{i},b_{i})$ que
+				tem como distribuição estacionária a
+				posteriori conjunta de $\mu_{1}$ e $\mu_{2}$.
+				Sob estas condições, a frequência com que $a_{i} \leq b_{i}$
+				aproxima $P(\mu_{1} \leq \mu_{2}|y)$, ou seja $P(H_{0}|y)$.
+				Podemos obter esta estimativa usando o seguinte código em R:
+\begin{verbatim}
+mu1 <- extract(amostra, "mu1")[["mu1"]]
+mu2 <- extract(amostra, "mu2")[["mu2"]]
+mean(mu1 <= mu2)
+[1] 0
+\end{verbatim}
+	     Assim, obtemos que $P(H_{0}|y) \approx 0$ e rejeitamos $H_{0}$.
+
+  \item Similarmente ao item anterior, obtemos:
+	\begin{verbatim}
+mu <- extract(amostra, "mu")[["mu"]]
+mean(mu >= 20)
+[1] 0.6086
+olbm(mu >= 20, 250)
+[1] 4.579868e-05
+	\end{verbatim}
+	Portanto, como $P(H_{0}|y) \approx 0.6 > 0.5$
+	(e olbm indica que o erro de aproximação do
+	 Monte Carlo é baixo),
+	não rejeitamos $H_{0}$.
+ \end{enumerate}
+^^E^^L 
