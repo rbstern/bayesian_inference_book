@@ -49,6 +49,9 @@
 \def\limn{\lim_{n \rightarrow \infty}}
 \def\convas{\stackrel{a.s.}{\longrightarrow}}
 
+\DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
+\newcommand{\irchi}[2]{\raisebox{\depth}{$#1\chi$}}
+
 \def\I{{\mathbb I}}
 \def\P{{\mathbb P}}
 \def\E{{\mathbb E}}
@@ -60,9 +63,6 @@
 \def\x{{\vec{x}}}
 \def\Z{{\vec{Z}}}
 \def\z{{\vec{z}}}
-
-\DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
-\newcommand{\irchi}[2]{\raisebox{\depth}{$#1\chi$}}
 
 \makeatletter
 \def\maxwidth{ %

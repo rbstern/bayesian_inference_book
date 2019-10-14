@@ -560,7 +560,7 @@ Medimos então $X$, a altura de um brasileiro selecionado ao acaso.
 Se $X|\mu \sim N(\mu,1/25)$ e observamos um indivíduo com $1,8m$ (i.e., $x=180$), então
 $\mu|x   \sim N(177,0.05)$. A Figura \ref{fig:normal_normal} mostra a distribuição a priori e a distribuição a posteriori. Note que a posteriori tem a maior parte de sua massa para valores de $\mu$ mais próximos do dado observado. 
 
- <<normal_normal,cache=TRUE, fig.pos="t", fig.height=3, fig.width=4, fig.cap="Distribuições a priori e a posteriori (depois de observamos um indivíduo com 1,8m) para a altura média de um brasileiro",fig.path="../",fig.align="center">>=
+ <<normal_normal,cache=TRUE, fig.pos="t", fig.height=3, fig.width=4, fig.cap="Distribuições a priori e a posteriori (depois de observamos um indivíduo com 1,8m) para a altura média de um brasileiro",fig.path="./figures/",fig.align="center">>=
 library(ggplot2)
 grid_mu <- seq(100,200,length.out = 1000)
 
@@ -586,7 +586,6 @@ data_plot <- rbind(data_plot,
                    data.frame(mu=grid_mu,
                               density=dnorm(grid_mu,mu_linha,1/sqrt(tau_linha_2)),
                                             distribution="Posteriori"))
-
 
 ggplot(data_plot)+
   geom_line(aes(x=mu,y=density,color=distribution),size=1.2)+
