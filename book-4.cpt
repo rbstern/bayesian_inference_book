@@ -1,0 +1,54 @@
+\textbf{Solução}:
+ Se $f(\theta) = dbeta(a,b)$ e
+ $h(\theta) = dbeta(a^{*},b^{*})$, então
+ \begin{align*}
+  \frac{f(\theta)}{h(\theta)}
+  &= \frac{Beta^{-1}(a,b)\theta^{a-1}(1-\theta)^{b-1}}{Beta^{-1}(a^{*},b^{*})\theta^{a^{*}-1}(1-\theta)^{b^{*}-1}} \\
+  &= \frac{Beta(a^{*},b^{*})}
+  {Beta(a,b)} \theta^{a-a^{*}}(1-\theta)^{b-b^{*}}
+ \end{align*}
+ Note que, se $a < a^{*}$, então
+ $\frac{f(\theta)}{h(\theta)}$ pode ser
+ arbitrariamente grande tomando-se $\theta \approx 0$.
+ Similarmente, se $b < b^{*}$, então
+ $\frac{f(\theta)}{h(\theta)}$ pode ser
+ arbitrariamente grande tomando-se $\theta \approx 1$.
+ Nestes casos, não existe $M$ tal que
+ $f(\theta) \leq Mh(\theta)$.
+ Portanto, se $a< a^{*}$ ou $b < b^{*}$,
+ então não é possível amostrar de uma Beta$(a,b)$
+ a partir de uma Beta$(a^{*},b^{*})$.
+
+ Contudo, se $a>a^{*}$ e $b>b^{*}$,
+ então $\frac{f(\theta)}{h(\theta)}$ é
+ proporcional à densidade de uma
+ Beta$(a-a^{*}+1,b-b^{*}+1)$.
+ Portanto, $\frac{f(\theta)}{h(\theta)}$ tem
+ seu valor maximizado em
+ $\theta = \frac{a-a^{*}}{a-a^{*}+b-b^{*}}$.
+ Assim, obtemos,
+ \begin{align*}
+  \frac{f(\theta)}{h(\theta)}
+  &\leq \frac{Beta(a^{*},b^{*})}{Beta(a,b)} \left(\frac{a-a^{*}}{a-a^{*}+b-b^{*}}\right)^{a-a^{*}}\left(1-\frac{a-a^{*}}{a-a^{*}+b-b^{*}}\right)^{b-b^{*}} \\
+  f(\theta) &\leq \frac{Beta(a^{*},b^{*})}{Beta(a,b)} \left(\frac{a-a^{*}}{a-a^{*}+b-b^{*}}\right)^{a-a^{*}}\left(1-\frac{a-a^{*}}{a-a^{*}+b-b^{*}}\right)^{b-b^{*}} h(\theta)
+ \end{align*}
+ Portanto, podemos tomar $\tilde{f}(\theta)=f(\theta)$ e
+ $M=\frac{Beta(a^{*},b^{*})}{Beta(a,b)} \left(\frac{a-a^{*}}{a-a^{*}+b-b^{*}}\right)^{a-a^{*}}\left(1-\frac{a-a^{*}}{a-a^{*}+b-b^{*}}\right)^{b-b^{*}}$.
+
+ Assim, obtemos o código:
+
+ \begin{lstlisting}[language=R]
+# retorna uma beta(a1, b1) pelo metodo da rejeicao
+# por meio de uma beta(a2,b2)
+simula_beta_via_beta <- function(B,a1,b1,a2,b2) {
+ M <- ((a1-a2)/(a1-a2+b1-b2))^(a1-a2)*(1-(a1-a2)/(a1-a2+b1-b2))^(b1-b2)
+ amostra <- vector(mode="list", length=B)
+ for(ii in 1:B) {
+  T <- rbeta(1,a2,b2)
+  while(runif(1) > T^(a1-a2)*(1-T)^(b1-b2)/M)  T <- rbeta(1,a2,b2)
+  amostra[[ii]] <- T
+ }
+ return(amostra)
+}
+ \end{lstlisting}
+^^E^^L 
