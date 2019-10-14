@@ -11,8 +11,7 @@ R_FILES= $(RNW_FILES:.Rnw=-purled.R)
 
 # cache and figure directories
 CACHEDIR= cache
-FIGUREDIR= test
-
+FIGUREDIR= figures
 
 .PHONY: all purled clean cleanall open
 .SUFFIXES: .Rnw .pdf .R .tex
@@ -33,6 +32,11 @@ cleanall: clean
 	rm -f *.synctex.gz
 	rm -f $(TEX_FILES)
 	rm -f $(R_FILES)
+	rm -rf ./build
+
+copybook:
+	cp build/book.tex ./
+
 
 # compile a TEX from a RNoWeb file
 %.tex: %.Rnw Makefile
