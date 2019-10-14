@@ -1,4 +1,8 @@
 language: r
+r_packages:
+  - magrittr
+  - tidyverse
+
 cache: packages
 sudo: required
 services: docker
