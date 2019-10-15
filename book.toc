@@ -28,24 +28,24 @@
 \contentsline {subsection}{\numberline {6.2}Avaliando alternativas}{81}{subsection.6.2}
 \contentsline {subsection}{\numberline {6.3}Usando dados para avaliar alternativas}{85}{subsection.6.3}
 \contentsline {section}{\numberline {7}Infer\IeC {\^e}ncia Bayesiana}{93}{section.7}
-\contentsline {subsection}{\numberline {7.1}Estima\IeC {\c c}\IeC {\~a}o}{93}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.1}Estima\IeC {\c c}\IeC {\~a}o Pontual}{93}{subsection.7.1}
 \contentsline {subsubsection}{\numberline {7.1.1}Dist\IeC {\^a}ncia quadr\IeC {\'a}tica}{93}{subsubsection.7.1.1}
 \contentsline {subsubsection}{\numberline {7.1.2}Desvio absoluto}{95}{subsubsection.7.1.2}
-\contentsline {subsection}{\numberline {7.2}Regi\IeC {\~o}es de credibilidade}{99}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.2}Regi\IeC {\~o}es de credibilidade}{100}{subsection.7.2}
 \contentsline {subsubsection}{\numberline {7.2.1}Intervalos de credibilidade}{100}{subsubsection.7.2.1}
-\contentsline {subsubsection}{\numberline {7.2.2}Regi\IeC {\~o}es de credibilidade}{103}{subsubsection.7.2.2}
-\contentsline {subsection}{\numberline {7.3}Testes de hip\IeC {\'o}tese}{107}{subsection.7.3}
-\contentsline {subsubsection}{\numberline {7.3.1}Hip\IeC {\'o}teses plenas}{108}{subsubsection.7.3.1}
+\contentsline {subsubsection}{\numberline {7.2.2}Regi\IeC {\~o}es de credibilidade}{104}{subsubsection.7.2.2}
+\contentsline {subsection}{\numberline {7.3}Testes de hip\IeC {\'o}tese}{108}{subsection.7.3}
+\contentsline {subsubsection}{\numberline {7.3.1}Hip\IeC {\'o}teses plenas}{109}{subsubsection.7.3.1}
 \contentsline {subsubsection}{\numberline {7.3.2}Hip\IeC {\'o}teses precisas}{115}{subsubsection.7.3.2}
 \contentsline {subsubsection}{\numberline {7.3.3}Coer\IeC {\^e}ncia em testes de hip\IeC {\'o}tese}{118}{subsubsection.7.3.3}
-\contentsline {subsection}{\numberline {7.4}Princ\IeC {\'\i }pio da verossimilhan\IeC {\c c}a$^*$}{120}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.4}Princ\IeC {\'\i }pio da verossimilhan\IeC {\c c}a$^*$}{121}{subsection.7.4}
 \contentsline {section}{\numberline {8}Revis\IeC {\~a}o sobre teoria da decis\IeC {\~a}o e infer\IeC {\^e}ncia bayesiana}{123}{section.8}
-\contentsline {section}{\numberline {9}Estat\IeC {\'\i }stica Bayesiana Computacional}{131}{section.9}
-\contentsline {subsection}{\numberline {9.1}M\IeC {\'e}todo de Monte Carlo}{132}{subsection.9.1}
-\contentsline {subsubsection}{\numberline {9.1.1}O m\IeC {\'e}todo da rejei\IeC {\c c}\IeC {\~a}o}{133}{subsubsection.9.1.1}
-\contentsline {subsection}{\numberline {9.2}M\IeC {\'e}todo de Monte Carlo via cadeias de Markov}{142}{subsection.9.2}
-\contentsline {subsubsection}{\numberline {9.2.1}Cadeias de Markov}{143}{subsubsection.9.2.1}
-\contentsline {subsubsection}{\numberline {9.2.2}O algoritmo de Metropolis-Hastings}{145}{subsubsection.9.2.2}
-\contentsline {subsubsection}{\numberline {9.2.3}Monte Carlo para cadeias de Markov na pr\IeC {\'a}tica}{148}{subsubsection.9.2.3}
-\contentsline {subsubsection}{\numberline {9.2.4}Exerc\IeC {\'\i }cios}{152}{subsubsection.9.2.4}
-\contentsline {section}{\numberline {10}Revis\IeC {\~a}o final}{154}{section.10}
+\contentsline {section}{\numberline {9}Estat\IeC {\'\i }stica Bayesiana Computacional}{132}{section.9}
+\contentsline {subsection}{\numberline {9.1}M\IeC {\'e}todo de Monte Carlo}{133}{subsection.9.1}
+\contentsline {subsubsection}{\numberline {9.1.1}O m\IeC {\'e}todo da rejei\IeC {\c c}\IeC {\~a}o}{134}{subsubsection.9.1.1}
+\contentsline {subsection}{\numberline {9.2}M\IeC {\'e}todo de Monte Carlo via cadeias de Markov}{143}{subsection.9.2}
+\contentsline {subsubsection}{\numberline {9.2.1}Cadeias de Markov}{144}{subsubsection.9.2.1}
+\contentsline {subsubsection}{\numberline {9.2.2}O algoritmo de Metropolis-Hastings}{146}{subsubsection.9.2.2}
+\contentsline {subsubsection}{\numberline {9.2.3}Monte Carlo para cadeias de Markov na pr\IeC {\'a}tica}{149}{subsubsection.9.2.3}
+\contentsline {subsubsection}{\numberline {9.2.4}Exerc\IeC {\'\i }cios}{153}{subsubsection.9.2.4}
+\contentsline {section}{\numberline {10}Revis\IeC {\~a}o final}{155}{section.10}

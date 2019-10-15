@@ -6205,6 +6205,7 @@ Por exemplo, no caso em que você decide sobre levar o
 guarda-chuva e a calculadora,
 uma variável importante pode ser a
 ocorrência de chuva no dia.
+Não queremos molhar a calculadora, mas por outro lado levar o guarda-chuvas quando não chove também não é agradável.
 Assim,  $\Theta$ poderia ser
 o conjunto com os elementos ``chove no dia'', e 
 ``não chove no dia''. Denotaremos as
@@ -6321,6 +6322,7 @@ possibilidade em $\Theta$ ocorrerá.
 Assim, para achar qual a melhor alternativa,
 basta calcular a utilidade de cada uma delas e escolher
 aquela que atinge a maior utilidade.
+A melhor alternativa é chamada de \emph{alternativa de Bayes}.
 
 \begin{example}
  \label{example:decision}
@@ -6598,7 +6600,7 @@ sua razoabilidade por sua conta.
  \end{enumerate}
 \end{exercise}
 
-\begin{exercise}[\citet{Kadane2011}][p.290]]
+\begin{exercise}[\citet{Kadane2011}][p.290]
  Considere que você tem $R\$kx$.
  sua utilidade para ter $R\$f$ é $\log(f)$.
  O custo de uma aposta em $A$ é $x$.
@@ -6611,7 +6613,7 @@ sua razoabilidade por sua conta.
  lhe traria maior satisfação?
 \end{exercise}
 
-\begin{exercise}[\citet{Kadane2011}][p.275]]
+\begin{exercise}[\citet{Kadane2011}][p.275]
  Considere que você deve decidir entre
  participar ou não de uma aposta.
  Para participar da aposta, 
@@ -7225,10 +7227,19 @@ ilustrar uma aplicação do \cref{theorem:extensive-form}.
  
 
 \section{Inferência Bayesiana}
-\subsection{Estimação}
+
+Neste capítulo, veremos como
+a Teoria da Decisão pode ser usada para
+criar procedimentos para resumir a informação a posteriori disponível em um problema. Neste capítulo, $\Theta$,
+o conjunto de possíveis ocorrências
+que são relevantes para a tomada da sua decisão estudado no Capítulo \ref{section:decisions}, é justamente o espaço paramétrico.
+Assim, $f(\theta|x)$
+representa a distribuição a posteriori.
+
+\subsection{Estimação Pontual}
 
 O problema de estimação consiste em 
-escolher a partir dos dados 
+escolher, a partir dos dados, 
 um valor próximo ao parâmetro do modelo estatístico.
 O valor escolhido é chamado de estimador do parâmetro e
 será denotado por $\hat{\theta}$.
@@ -7238,12 +7249,11 @@ Para capturar a ideia de que
 o valor escolhido deve estar próximo ao parâmetro,
 estudaremos utilidades do tipo 
 $U(a,\theta) = -w(\theta)d(a,\theta)$,
-onde $w(\theta)$ é uma função não-negativa que i
-ndica a importância de acertar o valor $\theta$ e
+onde $w(\theta)$ é uma função não-negativa que indica a importância de acertar o valor $\theta$ e
 $d(a,\theta)$ é uma distância entre $a$ e $\theta$.
 
 Para algumas utilidades deste tipo é possível derivar
-precisamente qual o melhor estimador.
+precisamente qual o melhor estimador (isto é, o estimador que maximiza a utilidade esperada).
 A seguir, estudaremos alguns destes casos.
 
 \subsubsection{Distância quadrática}
@@ -7572,7 +7582,7 @@ Para o desvio absoluto, obtemos o seguinte resultado
    &= \E[-(m^{-1}\bar{X}-\theta)^2|X] \\
    &= -\V[\theta-m^{-1}\bar{X}|X]
    -(\E[\theta|X]-m^{-1}\bar{X})^{2} \\
-   &= -\V[\theta|X]]
+   &= -\V[\theta|X]
    -(\E[\theta|X]-m^{-1}\bar{X})^{2}
   \end{align*}
   Similarmente,
@@ -7600,7 +7610,7 @@ Para o desvio absoluto, obtemos o seguinte resultado
  Considere que, dado $\theta$, 
  $X_{1},\ldots,X_{n}$ são i.i.d. e
  $X_{i} \sim N(\theta,1)$. 
- Se \emph{a priori} $\mu \sim N(0,1)$,
+ Se \emph{a priori} $\theta \sim N(0,1)$,
  \begin{enumerate}[label=(\alph*)]
   \item Ache $\hat{\theta}^{*}_{2}$, 
   o melhor estimador para $\theta$ sob 
@@ -7745,6 +7755,12 @@ Para o desvio absoluto, obtemos o seguinte resultado
  Determine o estimador ótimo.
 \end{exercise}
 
+
+\begin{exercise}
+Considere que $\Theta$ é discreto. Qual é o estimador pontual de Bayes para $\theta$
+com relação à utilidade $U(\hat \theta,\theta)=-\I(\hat{\theta}\neq \theta)$?
+Interprete essa utilidade.
+\end{exercise}
 
 
 \subsection{Regiões de credibilidade}
@@ -11594,7 +11610,7 @@ obtida por
 \hlkwd{mean}\hlstd{(}\hlkwd{unlist}\hlstd{(}\hlkwd{metropolis}\hlstd{(}\hlnum{10}\hlopt{^}\hlnum{5}\hlstd{,}\hlnum{0}\hlstd{,rprop,ldprop,ldpost)))}
 \end{alltt}
 \begin{verbatim}
-## [1] 3.135545
+## [1] 3.134518
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
