@@ -34,12 +34,13 @@
 \contentsline {subsection}{\numberline {7.2}Regi\IeC {\~o}es de credibilidade}{100}{subsection.7.2}
 \contentsline {subsubsection}{\numberline {7.2.1}Intervalos de credibilidade}{100}{subsubsection.7.2.1}
 \contentsline {subsubsection}{\numberline {7.2.2}Regi\IeC {\~o}es de credibilidade}{104}{subsubsection.7.2.2}
+\contentsline {subsubsection}{\numberline {7.2.3}Regi\IeC {\~o}es de credibilidade com credibilidade especificada}{105}{subsubsection.7.2.3}
 \contentsline {subsection}{\numberline {7.3}Testes de hip\IeC {\'o}tese}{108}{subsection.7.3}
 \contentsline {subsubsection}{\numberline {7.3.1}Hip\IeC {\'o}teses plenas}{109}{subsubsection.7.3.1}
-\contentsline {subsubsection}{\numberline {7.3.2}Hip\IeC {\'o}teses precisas}{115}{subsubsection.7.3.2}
-\contentsline {subsubsection}{\numberline {7.3.3}Coer\IeC {\^e}ncia em testes de hip\IeC {\'o}tese}{118}{subsubsection.7.3.3}
+\contentsline {subsubsection}{\numberline {7.3.2}Hip\IeC {\'o}teses precisas}{116}{subsubsection.7.3.2}
+\contentsline {subsubsection}{\numberline {7.3.3}Coer\IeC {\^e}ncia em testes de hip\IeC {\'o}tese}{119}{subsubsection.7.3.3}
 \contentsline {subsection}{\numberline {7.4}Princ\IeC {\'\i }pio da verossimilhan\IeC {\c c}a$^*$}{121}{subsection.7.4}
-\contentsline {section}{\numberline {8}Revis\IeC {\~a}o sobre teoria da decis\IeC {\~a}o e infer\IeC {\^e}ncia bayesiana}{123}{section.8}
+\contentsline {section}{\numberline {8}Revis\IeC {\~a}o sobre teoria da decis\IeC {\~a}o e infer\IeC {\^e}ncia bayesiana}{124}{section.8}
 \contentsline {section}{\numberline {9}Estat\IeC {\'\i }stica Bayesiana Computacional}{132}{section.9}
 \contentsline {subsection}{\numberline {9.1}M\IeC {\'e}todo de Monte Carlo}{133}{subsection.9.1}
 \contentsline {subsubsection}{\numberline {9.1.1}O m\IeC {\'e}todo da rejei\IeC {\c c}\IeC {\~a}o}{134}{subsubsection.9.1.1}

@@ -91,7 +91,7 @@ Note que é possível tomar $k$ de tal forma que
 $\P(\theta \in [a,b]|X) = 1-\alpha$.
 Neste caso, dizemos que construímos um 
 intervalo de credibilidade com 
-credibilidade $1-\alpha$ (veja Seção \ref{sec:credibilidade}).
+credibilidade $1-\alpha$.
 
 Outra possível função utilidade é
 \begin{align*}
@@ -348,22 +348,10 @@ ou seja, tenha um volume pequeno.
 \end{theorem}
 
 
-\subsubsection{Regiões de credibilidade com credibilidade especificada}
- \label{sec:credibilidade}
- 
- 
-Na prática, é comum criar uma região de credibilidade
-de modo que a probabilidade (a posteriori) do parâmetro estar nessa região
-seja um valor pré-especificado $1-\alpha$. Este valor de cobertura é chamado de 
-\emph{credibilidade} dessa região:
 \begin{definition}
 Dizemos que uma região $R \subset \Theta$ tem credibilidade $1-\alpha$
 se $\P(\theta \in R|\x)=1-\alpha$.
 \end{definition}
-
-Assim, é comum escolher o formato da região desejada usando 
-alguma das funções de perda apresentadas nesta seção, e então buscar, dentre essas regiões,
-aquela que tem a credibilidade desejada.
 
 \subsubsection*{Exercícios}
 
