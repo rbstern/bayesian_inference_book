@@ -45,3 +45,5 @@ Computacional:
 - arrumar definicao conjugada
 
 - generalizar normal gamma para varios dados
+
+- adicionar curvas com EQM de \bar X e n\BarX/(n+1) no exercício 7.9 (estimativa pontual no caso normal)
