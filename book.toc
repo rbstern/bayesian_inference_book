@@ -6,8 +6,8 @@
 \contentsline {subsubsection}{\numberline {1.2.1}Probabilidade}{6}{subsubsection.1.2.1}
 \contentsline {subsubsection}{\numberline {1.2.2}Vari\IeC {\'a}veis aleat\IeC {\'o}rias}{7}{subsubsection.1.2.2}
 \contentsline {subsubsection}{\numberline {1.2.3}Distribui\IeC {\c c}\IeC {\~o}es importantes}{10}{subsubsection.1.2.3}
-\contentsline {section}{\numberline {2}Aprendizado e atualiza\IeC {\c c}\IeC {\~a}o de incertezas}{11}{section.2}
-\contentsline {subsection}{\numberline {2.1}O Teorema de Bayes}{11}{subsection.2.1}
+\contentsline {section}{\numberline {2}Aprendizado e atualiza\IeC {\c c}\IeC {\~a}o de incertezas}{10}{section.2}
+\contentsline {subsection}{\numberline {2.1}O Teorema de Bayes}{10}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Modelo estat\IeC {\'\i }stico}{15}{subsection.2.2}
 \contentsline {section}{\numberline {3}Coer\IeC {\^e}ncia e Probabilidade: como evitar preju\IeC {\'\i }zos certos?}{23}{section.3}
 \contentsline {subsection}{\numberline {3.1}Probabilidade marginal}{23}{subsection.3.1}
@@ -35,18 +35,18 @@
 \contentsline {subsubsection}{\numberline {7.2.1}Intervalos de credibilidade}{100}{subsubsection.7.2.1}
 \contentsline {subsubsection}{\numberline {7.2.2}Regi\IeC {\~o}es de credibilidade}{104}{subsubsection.7.2.2}
 \contentsline {subsubsection}{\numberline {7.2.3}Regi\IeC {\~o}es de credibilidade com credibilidade especificada}{105}{subsubsection.7.2.3}
-\contentsline {subsection}{\numberline {7.3}Testes de hip\IeC {\'o}tese}{108}{subsection.7.3}
-\contentsline {subsubsection}{\numberline {7.3.1}Hip\IeC {\'o}teses plenas}{109}{subsubsection.7.3.1}
-\contentsline {subsubsection}{\numberline {7.3.2}Hip\IeC {\'o}teses precisas}{116}{subsubsection.7.3.2}
-\contentsline {subsubsection}{\numberline {7.3.3}Coer\IeC {\^e}ncia em testes de hip\IeC {\'o}tese}{119}{subsubsection.7.3.3}
-\contentsline {subsection}{\numberline {7.4}Princ\IeC {\'\i }pio da verossimilhan\IeC {\c c}a$^*$}{121}{subsection.7.4}
-\contentsline {section}{\numberline {8}Revis\IeC {\~a}o sobre teoria da decis\IeC {\~a}o e infer\IeC {\^e}ncia bayesiana}{124}{section.8}
-\contentsline {section}{\numberline {9}Estat\IeC {\'\i }stica Bayesiana Computacional}{132}{section.9}
-\contentsline {subsection}{\numberline {9.1}M\IeC {\'e}todo de Monte Carlo}{133}{subsection.9.1}
-\contentsline {subsubsection}{\numberline {9.1.1}O m\IeC {\'e}todo da rejei\IeC {\c c}\IeC {\~a}o}{134}{subsubsection.9.1.1}
-\contentsline {subsection}{\numberline {9.2}M\IeC {\'e}todo de Monte Carlo via cadeias de Markov}{143}{subsection.9.2}
-\contentsline {subsubsection}{\numberline {9.2.1}Cadeias de Markov}{144}{subsubsection.9.2.1}
-\contentsline {subsubsection}{\numberline {9.2.2}O algoritmo de Metropolis-Hastings}{146}{subsubsection.9.2.2}
-\contentsline {subsubsection}{\numberline {9.2.3}Monte Carlo para cadeias de Markov na pr\IeC {\'a}tica}{149}{subsubsection.9.2.3}
-\contentsline {subsubsection}{\numberline {9.2.4}Exerc\IeC {\'\i }cios}{153}{subsubsection.9.2.4}
-\contentsline {section}{\numberline {10}Revis\IeC {\~a}o final}{155}{section.10}
+\contentsline {subsection}{\numberline {7.3}Testes de hip\IeC {\'o}tese}{111}{subsection.7.3}
+\contentsline {subsubsection}{\numberline {7.3.1}Hip\IeC {\'o}teses plenas}{111}{subsubsection.7.3.1}
+\contentsline {subsubsection}{\numberline {7.3.2}Hip\IeC {\'o}teses precisas}{118}{subsubsection.7.3.2}
+\contentsline {subsubsection}{\numberline {7.3.3}Coer\IeC {\^e}ncia em testes de hip\IeC {\'o}tese}{121}{subsubsection.7.3.3}
+\contentsline {subsection}{\numberline {7.4}Princ\IeC {\'\i }pio da verossimilhan\IeC {\c c}a$^*$}{123}{subsection.7.4}
+\contentsline {section}{\numberline {8}Revis\IeC {\~a}o sobre teoria da decis\IeC {\~a}o e infer\IeC {\^e}ncia bayesiana}{126}{section.8}
+\contentsline {section}{\numberline {9}Estat\IeC {\'\i }stica Bayesiana Computacional}{134}{section.9}
+\contentsline {subsection}{\numberline {9.1}M\IeC {\'e}todo de Monte Carlo}{135}{subsection.9.1}
+\contentsline {subsubsection}{\numberline {9.1.1}O m\IeC {\'e}todo da rejei\IeC {\c c}\IeC {\~a}o}{136}{subsubsection.9.1.1}
+\contentsline {subsection}{\numberline {9.2}M\IeC {\'e}todo de Monte Carlo via cadeias de Markov}{145}{subsection.9.2}
+\contentsline {subsubsection}{\numberline {9.2.1}Cadeias de Markov}{146}{subsubsection.9.2.1}
+\contentsline {subsubsection}{\numberline {9.2.2}O algoritmo de Metropolis-Hastings}{148}{subsubsection.9.2.2}
+\contentsline {subsubsection}{\numberline {9.2.3}Monte Carlo para cadeias de Markov na pr\IeC {\'a}tica}{151}{subsubsection.9.2.3}
+\contentsline {subsubsection}{\numberline {9.2.4}Exerc\IeC {\'\i }cios}{155}{subsubsection.9.2.4}
+\contentsline {section}{\numberline {10}Revis\IeC {\~a}o final}{157}{section.10}
