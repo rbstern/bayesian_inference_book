@@ -329,22 +329,24 @@ consideraremos a seguinte função de utilidade
 \begin{align*}
 U(R(X),\theta)	
 &= \I(\theta \in R(X)) 
--k\int_{x \in R(x)}{1 \cdot dx}
+-k\int_{x \in R(x)}{1 \cdot d\theta_0}
 & k > 0
 \end{align*}
 O elemento $\I(\theta \in R(X))$ indica que 
 é desejável que $\theta$ esteja 
 na região de credibilidade, $R(X)$.
-Por outro lado,  $\int_{x \in R(x)}{dx}$ indica que
+Por outro lado,  $\int_{x \in R(x)}{d\theta_0}$ indica que
 é desejável que a região $R(x)$ seja pequena, 
 ou seja, tenha um volume pequeno.
 \begin{theorem}
 \label{thm:hpd}
-Se $U(R(X),\theta)	= \I(\theta \in R(X)) - k\int_{x \in R(x)}{1 \cdot dx}$, então 
+Se $U(R(X),\theta)	= \I(\theta \in R(X)) - k\int_{x \in R(x)}{1 \cdot d\theta_0}$, então 
 a melhor região de credibilidade é tal que 
 $R(X) = \{\theta \in \Theta: f(\theta|X) \geq k\}$.
 Dizemos que $R(X)$ é um HPD (highest posterior density) 
 de $f(\theta|X)$.
+Entre todas as regiões que têm uma dada probabilidade,
+$R(X)$ também é a menor delas.
 \end{theorem}
 
 
