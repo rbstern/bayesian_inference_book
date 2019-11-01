@@ -15,6 +15,11 @@ Michelangelo dos Anjos, Yuri Benites, Ian Danilevicz, Andressa Dantas, Thales Eg
   
 \newpage
 
+<<>>=
+ opts_chunk$set(cache=TRUE,fig.path="./figures/")
+@
+
+
 <<child = 'chapters/01-requirements.Rnw'>>=
 @
 

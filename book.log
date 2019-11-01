@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  14 OCT 2019 11:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  22 OCT 2019 11:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1370,18 +1370,18 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 40.
  [2]
-Overfull \hbox (1.095pt too wide) detected at line 42
- []\OT1/cmss/bx/n/10.95 123
- []
-
-
 Overfull \hbox (1.095pt too wide) detected at line 43
- []\OT1/cmss/bx/n/10.95 131
+ []\OT1/cmss/bx/n/10.95 126
  []
 
 
-Overfull \hbox (1.095pt too wide) detected at line 51
- []\OT1/cmss/bx/n/10.95 154
+Overfull \hbox (1.095pt too wide) detected at line 44
+ []\OT1/cmss/bx/n/10.95 134
+ []
+
+
+Overfull \hbox (1.095pt too wide) detected at line 52
+ []\OT1/cmss/bx/n/10.95 157
  []
 
 )
@@ -1393,49 +1393,51 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 16.
  [3]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 21.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 19.
+(babel)             in language  on input line 28.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 22.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 35.
+(babel)             in language  on input line 31.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 44.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 Package hyperref Info: bookmark level for unknown example defaults to 0 on inpu
-t line 40.
+t line 49.
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 52.
+nput line 61.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 98.
+(babel)             in language  on input line 101.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 98.
+(babel)             in language  on input line 101.
  [4]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 108.
+(babel)             in language  on input line 117.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 162.
+(babel)             in language  on input line 167.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 162.
+(babel)             in language  on input line 167.
  [5]
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
-t line 177.
+t line 186.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 201.
+(babel)             in language  on input line 210.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 203.
+(babel)             in language  on input line 212.
 Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
-line 216.
+line 225.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 243.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 243.
  [6]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 285.
+(babel)             in language  on input line 294.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 330.
+(babel)             in language  on input line 329.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 330.
+(babel)             in language  on input line 329.
 
 [7]
 Package babel Info: Redefining portuges shorthand "|
@@ -1444,241 +1446,244 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 398.
  [8]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 474.
+(babel)             in language  on input line 475.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 474.
+(babel)             in language  on input line 475.
  [9]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 489.
+(babel)             in language  on input line 498.
 
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 497.
+(amsmath)                 on input line 506.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 544.
+(babel)             in language  on input line 553.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 546.
+(babel)             in language  on input line 555.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 557.
+(babel)             in language  on input line 567.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 557.
+(babel)             in language  on input line 567.
 [10]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 640.
+(babel)             in language  on input line 634.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 640.
+(babel)             in language  on input line 634.
  [11]
-<figures/chapter-introduction-elections.pdf, id=461, 505.89pt x 361.35pt>
+<figures/chapter-introduction-elections.pdf, id=467, 505.89pt x 361.35pt>
 File: figures/chapter-introduction-elections.pdf Graphic file (type pdf)
 <use figures/chapter-introduction-elections.pdf>
 Package pdftex.def Info: figures/chapter-introduction-elections.pdf  used on in
-put line 719.
+put line 728.
 (pdftex.def)             Requested size: 505.88875pt x 361.34912pt.
-Package hyperref Info: bookmark level for unknown exercise defaults to 0 on inp
-ut line 730.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 733.
+(babel)             in language  on input line 734.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 733.
+(babel)             in language  on input line 734.
  [12]
+Package hyperref Info: bookmark level for unknown exercise defaults to 0 on inp
+ut line 739.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 772.
+(babel)             in language  on input line 781.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 772.
+(babel)             in language  on input line 781.
  [13 <./figures/chapter-introduction-elections.pdf>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 889.
+(babel)             in language  on input line 898.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 889.
+(babel)             in language  on input line 898.
  [14]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 923.
+(babel)             in language  on input line 932.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 971.
+(babel)             in language  on input line 980.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 971.
+(babel)             in language  on input line 980.
 
 [15]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1056.
+(babel)             in language  on input line 1057.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1056.
+(babel)             in language  on input line 1057.
  [16]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1184.
+(babel)             in language  on input line 1193.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1184.
+(babel)             in language  on input line 1193.
  [17]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1256.
+(babel)             in language  on input line 1265.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1256.
+(babel)             in language  on input line 1265.
  [18]
-<figures/chapter-introduction-normal.pdf, id=598, 505.89pt x 505.89pt>
+<figures/chapter-introduction-normal.pdf, id=604, 505.89pt x 505.89pt>
 File: figures/chapter-introduction-normal.pdf Graphic file (type pdf)
 <use figures/chapter-introduction-normal.pdf>
 Package pdftex.def Info: figures/chapter-introduction-normal.pdf  used on input
- line 1308.
+ line 1317.
 (pdftex.def)             Requested size: 252.94437pt x 252.94437pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1336.
+(babel)             in language  on input line 1345.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1336.
+(babel)             in language  on input line 1345.
  [19]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1394.
+(babel)             in language  on input line 1403.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1394.
+(babel)             in language  on input line 1403.
  [20 <./figures/chapter-introduction-normal.pdf>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1459.
+(babel)             in language  on input line 1468.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1459.
+(babel)             in language  on input line 1468.
 
 [21]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1482.
+(babel)             in language  on input line 1491.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1482.
+(babel)             in language  on input line 1491.
  [22]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1485.
+(babel)             in language  on input line 1494.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1487.
+(babel)             in language  on input line 1496.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1626.
+(babel)             in language  on input line 1635.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1626.
+(babel)             in language  on input line 1635.
  [23]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1755.
+(babel)             in language  on input line 1764.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1755.
+(babel)             in language  on input line 1764.
  [24]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1868.
+(babel)             in language  on input line 1877.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1868.
+(babel)             in language  on input line 1877.
  [25]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1875.
+(babel)             in language  on input line 1884.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1960.
+(babel)             in language  on input line 1969.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1960.
+(babel)             in language  on input line 1969.
  [26]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2073.
+(babel)             in language  on input line 2082.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2073.
+(babel)             in language  on input line 2082.
  [27]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2193.
+(babel)             in language  on input line 2202.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2193.
+(babel)             in language  on input line 2202.
  [28]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2194.
+(babel)             in language  on input line 2203.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2255.
+(babel)             in language  on input line 2264.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2255.
+(babel)             in language  on input line 2264.
  [29]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2338.
+(babel)             in language  on input line 2347.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2338.
+(babel)             in language  on input line 2347.
  [30]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2349.
+(babel)             in language  on input line 2358.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2461.
+(babel)             in language  on input line 2470.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2461.
+(babel)             in language  on input line 2470.
  [31]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2554.
+(babel)             in language  on input line 2563.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2554.
+(babel)             in language  on input line 2563.
  [32]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2578.
+(babel)             in language  on input line 2587.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2579.
+(babel)             in language  on input line 2588.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2655.
+(babel)             in language  on input line 2664.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2655.
+(babel)             in language  on input line 2664.
  [33]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2734.
+(babel)             in language  on input line 2743.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2734.
+(babel)             in language  on input line 2743.
  [34]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2821.
+(babel)             in language  on input line 2830.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2821.
+(babel)             in language  on input line 2830.
  [35]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2880.
+(babel)             in language  on input line 2889.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2880.
+(babel)             in language  on input line 2889.
 
 [36]
-Overfull \hbox (33.54794pt too wide) detected at line 3005
+Overfull \hbox (33.54794pt too wide) detected at line 3014
 []
  []
 
 
-Overfull \hbox (16.84824pt too wide) detected at line 3005
+Overfull \hbox (16.84824pt too wide) detected at line 3014
 []
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3005.
+(babel)             in language  on input line 3014.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3005.
+(babel)             in language  on input line 3014.
 [37]
-Overfull \hbox (13.22862pt too wide) detected at line 3005
+Overfull \hbox (13.22862pt too wide) detected at line 3014
 []
  []
 
 
-Overfull \hbox (1.09698pt too wide) detected at line 3076
+Overfull \hbox (1.09698pt too wide) detected at line 3085
 []
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3076.
+(babel)             in language  on input line 3085.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3076.
+(babel)             in language  on input line 3085.
 [38]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3160.
+(babel)             in language  on input line 3169.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3160.
+(babel)             in language  on input line 3169.
  [39]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3200.
+(babel)             in language  on input line 3209.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3200.
+(babel)             in language  on input line 3209.
  [40]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3208.
+(babel)             in language  on input line 3217.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3283.
+(babel)             in language  on input line 3292.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3283.
+(babel)             in language  on input line 3292.
  [41]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3376.
+(babel)             in language  on input line 3385.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3376.
+(babel)             in language  on input line 3385.
  [42]
-Overfull \hbox (2.47983pt too wide) in paragraph at lines 3402--3408
+Overfull \hbox (2.47983pt too wide) in paragraph at lines 3411--3417
 []\OT1/cmr/bx/n/10.95 Teorema 4.17. []\OT1/cmr/m/it/10.95 Con-si-dere que $\OML
 /cmm/m/it/10.95 X[]; [] ; X[]; []$ \OT1/cmr/m/it/10.95 ^^Se uma sequ^encia in-f
 i-ni-ta-mente per-mut^^Savel tal que $\OMS/cmsy/m/n/10.95 ^^@1 \OML/cmm/m/it/10
@@ -1686,43 +1691,43 @@ i-ni-ta-mente per-mut^^Savel tal que $\OMS/cmsy/m/n/10.95 ^^@1 \OML/cmm/m/it/10
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3469.
+(babel)             in language  on input line 3478.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3469.
+(babel)             in language  on input line 3478.
 [43]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 3502
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 3511
 .
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3502.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3511.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3525.
+(babel)             in language  on input line 3534.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3525.
+(babel)             in language  on input line 3534.
  [44]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3654.
+(babel)             in language  on input line 3663.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3654.
+(babel)             in language  on input line 3663.
  [45]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3675.
+(babel)             in language  on input line 3684.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3675.
+(babel)             in language  on input line 3684.
 
 [46]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3719.
+(babel)             in language  on input line 3728.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3719.
+(babel)             in language  on input line 3728.
  [47]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3721.
+(babel)             in language  on input line 3730.
 
-Overfull \hbox (14.92455pt too wide) in paragraph at lines 3778--3785
+Overfull \hbox (14.92455pt too wide) in paragraph at lines 3787--3794
 \OT1/cmr/m/n/10.95 No Exem-plo [][]2.2[][], ob-ser-va-mos que $\OML/cmm/m/it/10
 .95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 )\OML/cmm/
 m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OMS/cmsy/m/n/10.95 j\OML/
@@ -1731,375 +1736,414 @@ i^^Xc~ao Beta(25,15). As-sim, $[] []$
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3822.
+(babel)             in language  on input line 3831.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3822.
+(babel)             in language  on input line 3831.
 [48]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3913.
+(babel)             in language  on input line 3922.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3913.
+(babel)             in language  on input line 3922.
  [49]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3913.
+(babel)             in language  on input line 3922.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3992.
+(babel)             in language  on input line 4001.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3992.
+(babel)             in language  on input line 4001.
  [50]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4117.
+(babel)             in language  on input line 4126.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4117.
+(babel)             in language  on input line 4126.
  [51]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4124.
+(babel)             in language  on input line 4133.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4154.
+(babel)             in language  on input line 4163.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4154.
+(babel)             in language  on input line 4163.
  [52]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4225.
+(babel)             in language  on input line 4234.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4225.
+(babel)             in language  on input line 4234.
  [53]
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 4286.
-
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4317.
+(babel)             in language  on input line 4326.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4317.
+(babel)             in language  on input line 4326.
  [54]
-<./figures/normal_normal-1.pdf, id=1399, 289.08pt x 216.81pt>
+<./figures/normal_normal-1.pdf, id=1404, 289.08pt x 216.81pt>
 File: ./figures/normal_normal-1.pdf Graphic file (type pdf)
 <use ./figures/normal_normal-1.pdf>
-Package pdftex.def Info: ./figures/normal_normal-1.pdf  used on input line 4319
+Package pdftex.def Info: ./figures/normal_normal-1.pdf  used on input line 4328
 .
 (pdftex.def)             Requested size: 289.07928pt x 216.81938pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4357.
+(babel)             in language  on input line 4366.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4357.
+(babel)             in language  on input line 4366.
  [55]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4391.
+(babel)             in language  on input line 4400.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4391.
+(babel)             in language  on input line 4400.
  [56 <./figures/normal_normal-1.pdf>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4438.
+(babel)             in language  on input line 4447.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4438.
+(babel)             in language  on input line 4447.
 
 [57]
 
 LaTeX Warning: Reference `fig:normal_gamma' on page 58 undefined on input line 
-4456.
+4465.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4560.
+(babel)             in language  on input line 4569.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4560.
+(babel)             in language  on input line 4569.
 [58]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4560.
+(babel)             in language  on input line 4569.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4560.
+(babel)             in language  on input line 4569.
  [59]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4605.
+(babel)             in language  on input line 4614.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4619.
+(babel)             in language  on input line 4628.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4619.
+(babel)             in language  on input line 4628.
  [60]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4689.
+(babel)             in language  on input line 4698.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4689.
+(babel)             in language  on input line 4698.
  [61]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4781.
+(babel)             in language  on input line 4790.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4781.
+(babel)             in language  on input line 4790.
  [62]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4894.
+(babel)             in language  on input line 4903.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4894.
+(babel)             in language  on input line 4903.
  [63]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4944.
+(babel)             in language  on input line 4953.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4944.
+(babel)             in language  on input line 4953.
  [64]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5048.
+(babel)             in language  on input line 5057.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5048.
+(babel)             in language  on input line 5057.
  [65]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5058.
+(babel)             in language  on input line 5067.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5058.
+(babel)             in language  on input line 5067.
  [66]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5061.
+(babel)             in language  on input line 5070.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5177.
+(babel)             in language  on input line 5186.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5177.
+(babel)             in language  on input line 5186.
  [67]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5310.
+(babel)             in language  on input line 5319.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5310.
+(babel)             in language  on input line 5319.
  [68]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5390.
+(babel)             in language  on input line 5399.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5390.
+(babel)             in language  on input line 5399.
  [69]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5475.
+(babel)             in language  on input line 5484.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5475.
+(babel)             in language  on input line 5484.
  [70]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5584.
+(babel)             in language  on input line 5593.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5584.
+(babel)             in language  on input line 5593.
  [71]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5613.
-<figures/chapter-revision-1-normal-mixture.pdf, id=1692, 505.89pt x 505.89pt>
+(babel)             in language  on input line 5622.
+<figures/chapter-revision-1-normal-mixture.pdf, id=1697, 505.89pt x 505.89pt>
 File: figures/chapter-revision-1-normal-mixture.pdf Graphic file (type pdf)
 <use figures/chapter-revision-1-normal-mixture.pdf>
 Package pdftex.def Info: figures/chapter-revision-1-normal-mixture.pdf  used on
- input line 5672.
+ input line 5681.
 (pdftex.def)             Requested size: 252.94437pt x 252.94437pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5681.
+(babel)             in language  on input line 5690.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5681.
+(babel)             in language  on input line 5690.
  [72]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5747.
+(babel)             in language  on input line 5756.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5747.
+(babel)             in language  on input line 5756.
 
 [73 <./figures/chapter-revision-1-normal-mixture.pdf>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5834.
+(babel)             in language  on input line 5843.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5834.
+(babel)             in language  on input line 5843.
  [74]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5905.
+(babel)             in language  on input line 5914.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5905.
+(babel)             in language  on input line 5914.
  [75]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5930.
+(babel)             in language  on input line 5939.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5930.
+(babel)             in language  on input line 5939.
  [76]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6000.
+(babel)             in language  on input line 6009.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6000.
+(babel)             in language  on input line 6009.
  [77]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6050.
+(babel)             in language  on input line 6059.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6050.
+(babel)             in language  on input line 6059.
 
 [78]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6100.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6149.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6149.
- [79]
+(babel)             in language  on input line 6109.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 6158.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6258.
+(babel)             in language  on input line 6158.
+ [79]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6258.
+(babel)             in language  on input line 6167.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6268.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6268.
  [80]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6294.
+(babel)             in language  on input line 6304.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6356.
+(babel)             in language  on input line 6367.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6356.
+(babel)             in language  on input line 6367.
  [81]
-<figures/chapter-decisions-umbrella.pdf, id=1825, 505.89pt x 505.89pt>
+<figures/chapter-decisions-umbrella.pdf, id=1830, 505.89pt x 505.89pt>
 File: figures/chapter-decisions-umbrella.pdf Graphic file (type pdf)
 <use figures/chapter-decisions-umbrella.pdf>
 Package pdftex.def Info: figures/chapter-decisions-umbrella.pdf  used on input 
-line 6484.
+line 6495.
 (pdftex.def)             Requested size: 252.94437pt x 252.94437pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6484.
+(babel)             in language  on input line 6495.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6484.
+(babel)             in language  on input line 6495.
  [82 <./figures/chapter-decisions-umbrella.pdf>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6573.
+(babel)             in language  on input line 6584.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6573.
+(babel)             in language  on input line 6584.
  [83]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6573.
+(babel)             in language  on input line 6584.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6573.
+(babel)             in language  on input line 6584.
 
 [84]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6645.
+(babel)             in language  on input line 6656.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6671.
+(babel)             in language  on input line 6682.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6671.
+(babel)             in language  on input line 6682.
  [85]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6793.
+(babel)             in language  on input line 6804.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6793.
+(babel)             in language  on input line 6804.
  [86]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6855.
+(babel)             in language  on input line 6866.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6855.
+(babel)             in language  on input line 6866.
  [87]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6943.
+(babel)             in language  on input line 6954.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6943.
+(babel)             in language  on input line 6954.
  [88]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7083.
+(babel)             in language  on input line 7094.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7083.
+(babel)             in language  on input line 7094.
  [89]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7083.
+(babel)             in language  on input line 7094.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7083.
+(babel)             in language  on input line 7094.
  [90]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7224.
+(babel)             in language  on input line 7235.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7224.
+(babel)             in language  on input line 7235.
  [91]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7224.
+(babel)             in language  on input line 7235.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7224.
+(babel)             in language  on input line 7235.
  [92]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7227.
+(babel)             in language  on input line 7238.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7228.
+(babel)             in language  on input line 7248.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7249.
+(babel)             in language  on input line 7268.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7291.
+(babel)             in language  on input line 7297.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7291.
+(babel)             in language  on input line 7297.
  [93]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7393.
+(babel)             in language  on input line 7380.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7393.
+(babel)             in language  on input line 7380.
  [94]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7396.
+(babel)             in language  on input line 7415.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7467.
+(babel)             in language  on input line 7455.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7467.
+(babel)             in language  on input line 7455.
  [95]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7549.
+(babel)             in language  on input line 7531.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7549.
+(babel)             in language  on input line 7531.
  [96]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7615.
+(babel)             in language  on input line 7617.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7615.
+(babel)             in language  on input line 7617.
  [97]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7684.
+(babel)             in language  on input line 7685.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7684.
+(babel)             in language  on input line 7685.
  [98]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7750.
+(babel)             in language  on input line 7751.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7767.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7767.
+(babel)             in language  on input line 7751.
 
 [99]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7781.
+(babel)             in language  on input line 7775.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7851.
+(babel)             in language  on input line 7806.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7851.
+(babel)             in language  on input line 7820.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7820.
  [100]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7918.
+(babel)             in language  on input line 7907.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7918.
+(babel)             in language  on input line 7907.
  [101]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7986.
+(babel)             in language  on input line 7952.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7986.
+(babel)             in language  on input line 7952.
  [102]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8006.
-<figures/chapter-decisions-normal-mixture.pdf, id=2150, 505.89pt x 505.89pt>
+(babel)             in language  on input line 8024.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8024.
+ [103]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8031.
+<figures/chapter-decisions-normal-mixture.pdf, id=2164, 505.89pt x 505.89pt>
 File: figures/chapter-decisions-normal-mixture.pdf Graphic file (type pdf)
 <use figures/chapter-decisions-normal-mixture.pdf>
 Package pdftex.def Info: figures/chapter-decisions-normal-mixture.pdf  used on 
-input line 8041.
+input line 8066.
 (pdftex.def)             Requested size: 252.94437pt x 252.94437pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8097.
+(babel)             in language  on input line 8092.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8097.
- [103]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8213.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8213.
+(babel)             in language  on input line 8092.
  [104 <./figures/chapter-decisions-normal-mixture.pdf>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8270.
+(babel)             in language  on input line 8125.
+
+
+LaTeX Warning: Reference `intervalos' on page 105 undefined on input line 8149.
+
+
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 816
+6.
+(/usr/share/R/share/texmf/tex/latex/omscmtt.fd
+File: omscmtt.fd 
+)
+LaTeX Font Info:    Font shape `OMS/cmtt/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8166.
+
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8270.
+(babel)             in language  on input line 8232.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8232.
  [105]
-<figures/chapter-decisions-bimodal-beta.pdf, id=2195, 505.89pt x 505.89pt>
+Underfull \vbox (badness 10000) detected at line 8232
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 8232
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8232.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8232.
+[106]
+<./figures/intervalos-1.pdf, id=2191, 289.08pt x 216.81pt>
+File: ./figures/intervalos-1.pdf Graphic file (type pdf)
+<use ./figures/intervalos-1.pdf>
+Package pdftex.def Info: ./figures/intervalos-1.pdf  used on input line 8234.
+(pdftex.def)             Requested size: 289.07928pt x 216.81938pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8361.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8361.
+ [107 <./figures/intervalos-1.pdf>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8361.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8361.
+ [108]
+<figures/chapter-decisions-bimodal-beta.pdf, id=2223, 505.89pt x 505.89pt>
 File: figures/chapter-decisions-bimodal-beta.pdf Graphic file (type pdf)
 <use figures/chapter-decisions-bimodal-beta.pdf>
 Package pdftex.def Info: figures/chapter-decisions-bimodal-beta.pdf  used on in
-put line 8270.
+put line 8418.
 (pdftex.def)             Requested size: 252.94437pt x 252.94437pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8300.
+(babel)             in language  on input line 8421.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8300.
- [106 <./figures/chapter-decisions-bimodal-beta.pdf>]
-Overfull \hbox (9.6888pt too wide) in paragraph at lines 8336--8336
+(babel)             in language  on input line 8421.
+ [109 <./figures/chapter-decisions-bimodal-beta.pdf>]
+Overfull \hbox (9.6888pt too wide) in paragraph at lines 8484--8484
 \OT1/cmr/m/n/10.95 Conclua que, se $(\OML/cmm/m/it/10.95 a[]; b[]\OT1/cmr/m/n/1
 0.95 )$ ma-xi-miza a uti-li-dade es-pe-rada, ent~ao $[][] [] = [][] []$, isto ^
 ^Se, $\OML/cmm/m/it/10.95 F[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 a[]\OMS/cm
@@ -2107,42 +2151,42 @@ sy/m/n/10.95 j\OML/cmm/m/it/10.95 X\OT1/cmr/m/n/10.95 ) =
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8339.
+(babel)             in language  on input line 8487.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8359.
+(babel)             in language  on input line 8497.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8359.
-[107]
+(babel)             in language  on input line 8497.
+[110]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8436.
+(babel)             in language  on input line 8584.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8489.
+(babel)             in language  on input line 8617.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8489.
- [108]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8572.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8572.
- [109]
-Package hyperref Info: bookmark level for unknown corollary defaults to 0 on in
-put line 8629.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8663.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8663.
- [110]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8731.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8731.
+(babel)             in language  on input line 8617.
  [111]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8858.
+(babel)             in language  on input line 8699.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8858.
+(babel)             in language  on input line 8699.
  [112]
-Overfull \hbox (12.87418pt too wide) in paragraph at lines 8858--8858
+Package hyperref Info: bookmark level for unknown corollary defaults to 0 on in
+put line 8777.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8791.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8791.
+ [113]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8879.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8879.
+ [114]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9006.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9006.
+ [115]
+Overfull \hbox (12.87418pt too wide) in paragraph at lines 9006--9006
 \OT1/cmr/m/n/10.95 Portanto, \OT1/cmr/m/it/10.95 a pos-te-ri-ori $\OML/cmm/m/it
 /10.95 ^^R[]$ \OT1/cmr/m/n/10.95 e $\OML/cmm/m/it/10.95 ^^R[]$ \OT1/cmr/m/n/10.
 95 s~ao in-de-pen-den-tes e tem dis-tri-bui^^Xc~oes mar-gi-nais $\OML/cmm/m/it/
@@ -2153,188 +2197,181 @@ mr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R[]\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8985.
+(babel)             in language  on input line 9133.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8985.
-[113]
+(babel)             in language  on input line 9133.
+[116]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8985.
+(babel)             in language  on input line 9133.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8985.
- [114]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8986.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9057.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9057.
- [115]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9227.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9227.
- [116]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9227.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9227.
+(babel)             in language  on input line 9133.
  [117]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9228.
+(babel)             in language  on input line 9134.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9327.
+(babel)             in language  on input line 9205.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9327.
+(babel)             in language  on input line 9205.
  [118]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9453.
+(babel)             in language  on input line 9375.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9453.
+(babel)             in language  on input line 9375.
  [119]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9503.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 9503.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 9503.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 9503.
-
+(babel)             in language  on input line 9375.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9563.
+(babel)             in language  on input line 9375.
+ [120]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9563.
-[120]
+(babel)             in language  on input line 9376.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9655.
+(babel)             in language  on input line 9475.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9655.
+(babel)             in language  on input line 9475.
  [121]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9743.
+(babel)             in language  on input line 9601.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9743.
+(babel)             in language  on input line 9601.
  [122]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9747.
+(babel)             in language  on input line 9651.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 9651.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 9651.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 9651.
+
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9810.
+(babel)             in language  on input line 9711.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9810.
- [123]
+(babel)             in language  on input line 9711.
+[123]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9906.
+(babel)             in language  on input line 9803.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9906.
+(babel)             in language  on input line 9803.
  [124]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9961.
+(babel)             in language  on input line 9891.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9961.
+(babel)             in language  on input line 9891.
  [125]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10048.
+(babel)             in language  on input line 9895.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10048.
+(babel)             in language  on input line 9958.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9958.
  [126]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10156.
+(babel)             in language  on input line 10054.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10156.
+(babel)             in language  on input line 10054.
  [127]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10165.
+(babel)             in language  on input line 10109.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10165.
+(babel)             in language  on input line 10109.
  [128]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10242.
+(babel)             in language  on input line 10196.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10242.
+(babel)             in language  on input line 10196.
  [129]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10317.
+(babel)             in language  on input line 10304.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10317.
+(babel)             in language  on input line 10304.
  [130]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10367.
+(babel)             in language  on input line 10313.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10387.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10387.
+(babel)             in language  on input line 10313.
  [131]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10388.
-Package hyperref Info: bookmark level for unknown algorithm2 defaults to 0 on i
-nput line 10471.
+(babel)             in language  on input line 10390.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10474.
+(babel)             in language  on input line 10390.
+ [132]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10474.
-
-[132]
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 104
-84.
- (/usr/share/R/share/texmf/tex/latex/omscmtt.fd
-File: omscmtt.fd 
-)
-LaTeX Font Info:    Font shape `OMS/cmtt/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 10484
-.
+(babel)             in language  on input line 10465.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10507.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10559.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10559.
+(babel)             in language  on input line 10465.
  [133]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10608.
+(babel)             in language  on input line 10515.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10608.
+(babel)             in language  on input line 10535.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10535.
  [134]
-<figures/chapter-computing-rejection-circle.pdf, id=2678, 505.89pt x 505.89pt>
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10536.
+Package hyperref Info: bookmark level for unknown algorithm2 defaults to 0 on i
+nput line 10619.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10622.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10622.
+
+[135]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10655.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10707.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10707.
+ [136]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10756.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10756.
+ [137]
+<figures/chapter-computing-rejection-circle.pdf, id=2713, 505.89pt x 505.89pt>
 File: figures/chapter-computing-rejection-circle.pdf Graphic file (type pdf)
 <use figures/chapter-computing-rejection-circle.pdf>
 Package pdftex.def Info: figures/chapter-computing-rejection-circle.pdf  used o
-n input line 10631.
+n input line 10779.
 (pdftex.def)             Requested size: 252.94437pt x 252.94437pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10662.
+(babel)             in language  on input line 10810.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10662.
- [135 <./figures/chapter-computing-rejection-circle.pdf>]
-<figures/chapter-computing-rejection-beta-2-2.pdf, id=2696, 505.89pt x 505.89pt
+(babel)             in language  on input line 10810.
+ [138 <./figures/chapter-computing-rejection-circle.pdf>]
+<figures/chapter-computing-rejection-beta-2-2.pdf, id=2731, 505.89pt x 505.89pt
 >
 File: figures/chapter-computing-rejection-beta-2-2.pdf Graphic file (type pdf)
 <use figures/chapter-computing-rejection-beta-2-2.pdf>
 Package pdftex.def Info: figures/chapter-computing-rejection-beta-2-2.pdf  used
- on input line 10690.
+ on input line 10838.
 (pdftex.def)             Requested size: 252.94437pt x 252.94437pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10735.
+(babel)             in language  on input line 10883.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10735.
- [136 <./figures/chapter-computing-rejection-beta-2-2.pdf>]
-<figures/chapter-computing-rejection-squares.pdf, id=2715, 505.89pt x 505.89pt>
+(babel)             in language  on input line 10883.
+
+[139 <./figures/chapter-computing-rejection-beta-2-2.pdf>]
+<figures/chapter-computing-rejection-squares.pdf, id=2750, 505.89pt x 505.89pt>
 
 File: figures/chapter-computing-rejection-squares.pdf Graphic file (type pdf)
 <use figures/chapter-computing-rejection-squares.pdf>
 Package pdftex.def Info: figures/chapter-computing-rejection-squares.pdf  used 
-on input line 10797.
+on input line 10945.
 (pdftex.def)             Requested size: 252.94437pt x 252.94437pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10797.
+(babel)             in language  on input line 10945.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10797.
- [137]
+(babel)             in language  on input line 10945.
+ [140]
 \openout4 = `book-1.cpt'.
 
  (./book-1.cpt
@@ -2360,11 +2397,11 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 36.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 36.
- [138 <./figures/chapter-computing-rejection-squares.pdf>])
+ [141 <./figures/chapter-computing-rejection-squares.pdf>])
 \openout4 = `book-2.cpt'.
 
  (./book-2.cpt
-<figures/chapter-computing-circle-distance.pdf, id=2757, 505.89pt x 505.89pt>
+<figures/chapter-computing-circle-distance.pdf, id=2792, 505.89pt x 505.89pt>
 File: figures/chapter-computing-circle-distance.pdf Graphic file (type pdf)
 <use figures/chapter-computing-circle-distance.pdf>
 Package pdftex.def Info: figures/chapter-computing-circle-distance.pdf  used on
@@ -2374,7 +2411,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 68.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 68.
- [139])
+ [142])
 \openout4 = `book-3.cpt'.
 
  (./book-3.cpt
@@ -2383,14 +2420,14 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 44.
 
-[140 <./figures/chapter-computing-circle-distance.pdf>]
-<figures/chapter-computing-beta-rejections.pdf, id=2833, 505.89pt x 505.89pt>
+[143 <./figures/chapter-computing-circle-distance.pdf>]
+<figures/chapter-computing-beta-rejections.pdf, id=2867, 505.89pt x 505.89pt>
 File: figures/chapter-computing-beta-rejections.pdf Graphic file (type pdf)
 <use figures/chapter-computing-beta-rejections.pdf>
 Package pdftex.def Info: figures/chapter-computing-beta-rejections.pdf  used on
  input line 56.
 (pdftex.def)             Requested size: 151.76816pt x 151.76816pt.
-<figures/chapter-computing-rejection-beta-a-b.pdf, id=2838, 505.89pt x 505.89pt
+<figures/chapter-computing-rejection-beta-a-b.pdf, id=2872, 505.89pt x 505.89pt
 >
 File: figures/chapter-computing-rejection-beta-a-b.pdf Graphic file (type pdf)
 <use figures/chapter-computing-rejection-beta-a-b.pdf>
@@ -2399,62 +2436,62 @@ Package pdftex.def Info: figures/chapter-computing-rejection-beta-a-b.pdf  used
 (pdftex.def)             Requested size: 252.94437pt x 252.94437pt.
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11030.
+(babel)             in language  on input line 11178.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11030.
- [141 <./figures/chapter-computing-beta-rejections.pdf> <./figures/chapter-comp
+(babel)             in language  on input line 11178.
+ [144 <./figures/chapter-computing-beta-rejections.pdf> <./figures/chapter-comp
 uting-rejection-beta-a-b.pdf>]
 \openout4 = `book-4.cpt'.
 
  (./book-4.cpt)
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11097.
+(babel)             in language  on input line 11245.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11116.
+(babel)             in language  on input line 11264.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11116.
- [142]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11116.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11225.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11225.
- [143]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11317.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11317.
- [144]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11343.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11395.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11395.
+(babel)             in language  on input line 11264.
  [145]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11475.
+(babel)             in language  on input line 11264.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11475.
+(babel)             in language  on input line 11373.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11373.
  [146]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11555.
+(babel)             in language  on input line 11465.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11555.
+(babel)             in language  on input line 11465.
  [147]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11603.
+(babel)             in language  on input line 11491.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11626.
+(babel)             in language  on input line 11543.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11626.
+(babel)             in language  on input line 11543.
  [148]
-<figures/chapter-computing-stan-1.pdf, id=3042, 505.89pt x 505.89pt>
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11623.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11623.
+ [149]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11703.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11703.
+ [150]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11751.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11774.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11774.
+ [151]
+<figures/chapter-computing-stan-1.pdf, id=3077, 505.89pt x 505.89pt>
 File: figures/chapter-computing-stan-1.pdf Graphic file (type pdf)
 <use figures/chapter-computing-stan-1.pdf>
 Package pdftex.def Info: figures/chapter-computing-stan-1.pdf  used on input li
-ne 11679.
+ne 11827.
 (pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
 \openout4 = `book-5.cpt'.
 
@@ -2464,13 +2501,13 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 11.
 
-[149]
+[152]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 37.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 37.
- [150 <./figures/chapter-computing-stan-1.pdf>]
-<figures/chapter-computing-stan-2.pdf, id=3064, 505.89pt x 505.89pt>
+ [153 <./figures/chapter-computing-stan-1.pdf>]
+<figures/chapter-computing-stan-2.pdf, id=3100, 505.89pt x 505.89pt>
 File: figures/chapter-computing-stan-2.pdf Graphic file (type pdf)
 <use figures/chapter-computing-stan-2.pdf>
 Package pdftex.def Info: figures/chapter-computing-stan-2.pdf  used on input li
@@ -2478,12 +2515,12 @@ ne 50.
 (pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11773.
+(babel)             in language  on input line 11921.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11779.
+(babel)             in language  on input line 11927.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11779.
- [151 <./figures/chapter-computing-stan-2.pdf>]
+(babel)             in language  on input line 11927.
+ [154 <./figures/chapter-computing-stan-2.pdf>]
 \openout4 = `book-6.cpt'.
 
  (./book-6.cpt
@@ -2491,8 +2528,8 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 45.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 45.
- [152]
-<figures/chapter-computing-stan-anova.pdf, id=3105, 505.89pt x 505.89pt>
+ [155]
+<figures/chapter-computing-stan-anova.pdf, id=3139, 505.89pt x 505.89pt>
 File: figures/chapter-computing-stan-anova.pdf Graphic file (type pdf)
 <use figures/chapter-computing-stan-anova.pdf>
 Package pdftex.def Info: figures/chapter-computing-stan-anova.pdf  used on inpu
@@ -2502,45 +2539,45 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 90.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 90.
- [153 <./figures/chapter-computing-stan-anova.pdf>])
+ [156 <./figures/chapter-computing-stan-anova.pdf>])
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11916.
+(babel)             in language  on input line 12064.
  (./book.bbl
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 29.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 29.
- [154]
+ [157]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 139.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 139.
- [155])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 11932.
+ [158])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 12080.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11932.
+(babel)             in language  on input line 12080.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11932.
- [156]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 11932.
+(babel)             in language  on input line 12080.
+ [159]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 12080.
  (./book.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 11932.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 12080.
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 11932
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 12080
 .
 Package rerunfilecheck Info: File `book.out' has not changed.
-(rerunfilecheck)             Checksum: 7A4EDFDE9DDAA206AAF374F93B440879;4010.
+(rerunfilecheck)             Checksum: 1066B3AEB54DB819C54D36CCFC36FFD4;4136.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 11932.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 12080.
  ) 
 Here is how much of TeX's memory you used:
- 23011 strings out of 494830
- 360072 string characters out of 6178378
- 610128 words of memory out of 5000000
- 24584 multiletter control sequences out of 15000+600000
+ 23033 strings out of 494830
+ 360517 string characters out of 6178378
+ 609430 words of memory out of 5000000
+ 24594 multiletter control sequences out of 15000+600000
  20302 words of font info for 78 fonts, out of 8000000 for 9000
  61 hyphenation exceptions out of 8191
  56i,19n,51p,8864b,2026s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2573,10 +2610,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
 type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msbm10.pfb>
-Output written on book.pdf (156 pages, 1061914 bytes).
+Output written on book.pdf (159 pages, 1076834 bytes).
 PDF statistics:
- 3523 PDF objects out of 3580 (max. 8388607)
- 2832 compressed objects within 29 object streams
- 1331 named destinations out of 1440 (max. 500000)
- 481 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3561 PDF objects out of 3580 (max. 8388607)
+ 2865 compressed objects within 29 object streams
+ 1342 named destinations out of 1440 (max. 500000)
+ 494 words of extra memory for PDF output out of 10000 (max. 10000000)
 
