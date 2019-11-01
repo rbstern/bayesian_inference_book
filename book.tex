@@ -4198,7 +4198,6 @@ conjugada para a família normal.
   &= K \cdot \exp\left(-\frac{\tau_{0}^{2}(\mu-\mu_{0})^{2}}{2}\right)
   \cdot \frac{\tau}{\sqrt{2\pi}} \cdot \exp\left(-\frac{\tau^{2}(x-\mu)^{2}}{2}\right) \nonumber \\
   &\propto \exp\left(-\frac{\tau_{0}^{2}(\mu-\mu_{0})^{2}}{2}\right) \cdot \exp\left(-\frac{\tau^{2}(x-\mu)^{2}}{2}\right)	\nonumber \\
-  &= \exp\left(-\frac{\tau_{0}^{2}\mu^{2}-2\tau_{0}^{2}\mu\mu_{0}+\tau_{0}^{2}\mu_{0}^{2}}{2}\right) \cdot \exp\left(-\frac{\tau^{2}\mu^{2}-2\tau^{2}\mu x+ \tau^{2}x^{2}}{2}\right) \nonumber \\
   &= \exp\left(-\frac{\tau_{0}^{2}\mu^{2}-2\tau_{0}^{2}\mu\mu_{0}+\tau^{2}\mu^{2}-2\tau^{2}\mu x}{2}\right) \cdot \exp\left(-\frac{\tau_{0}^{2}\mu_{0}^{2}+\tau^{2}x^{2}}{2}\right) \nonumber \\
   &\propto \exp\left(-\frac{\tau_{0}^{2}\mu^{2}-2\tau_{0}^{2}\mu\mu_{0}+\tau^{2}\mu^{2}-2\tau^{2}\mu x}{2}\right) \nonumber \\
   &= \exp\left(-\frac{(\tau_{0}^{2}+\tau^{2})\mu^{2}-(2\tau_{0}^{2}\mu_{0}+2\tau^{2}x)\mu}{2}\right)
@@ -8103,22 +8102,24 @@ consideraremos a seguinte função de utilidade
 \begin{align*}
 U(R(X),\theta)	
 &= \I(\theta \in R(X)) 
--k\int_{x \in R(x)}{1 \cdot dx}
+-k\int_{x \in R(x)}{1 \cdot d\theta_0}
 & k > 0
 \end{align*}
 O elemento $\I(\theta \in R(X))$ indica que 
 é desejável que $\theta$ esteja 
 na região de credibilidade, $R(X)$.
-Por outro lado,  $\int_{x \in R(x)}{dx}$ indica que
+Por outro lado,  $\int_{x \in R(x)}{d\theta_0}$ indica que
 é desejável que a região $R(x)$ seja pequena, 
 ou seja, tenha um volume pequeno.
 \begin{theorem}
 \label{thm:hpd}
-Se $U(R(X),\theta)	= \I(\theta \in R(X)) - k\int_{x \in R(x)}{1 \cdot dx}$, então 
+Se $U(R(X),\theta)	= \I(\theta \in R(X)) - k\int_{x \in R(x)}{1 \cdot d\theta_0}$, então 
 a melhor região de credibilidade é tal que 
 $R(X) = \{\theta \in \Theta: f(\theta|X) \geq k\}$.
 Dizemos que $R(X)$ é um HPD (highest posterior density) 
 de $f(\theta|X)$.
+Entre todas as regiões que têm uma dada probabilidade,
+$R(X)$ também é a menor delas.
 \end{theorem}
 
 
@@ -8158,7 +8159,7 @@ Neste caso, como a distribuição é próxima de ser simétrica, os três interv
 \hlstd{grid_theta} \hlkwb{<-} \hlkwd{seq}\hlstd{(}\hlnum{0}\hlstd{,}\hlnum{1}\hlstd{,}\hlkwc{length.out} \hlstd{=} \hlnum{1000}\hlstd{)}
 \hlkwd{plot}\hlstd{(grid_theta,}
      \hlkwd{dbeta}\hlstd{(grid_theta,a,b),}
-     \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,}\hlkwc{lwd}\hlstd{=}\hlnum{3}\hlstd{,}\hlkwc{xlab} \hlstd{=} \hlkwd{expression}\hlstd{(theta),}\hlkwc{cex.lab}\hlstd{=}\hlnum{1.4}\hlstd{,}
+     \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,}\hlkwc{lwd}\hlstd{=}\hlnum{3}\hlstd{,}\hlkwc{xlab} \hlstd{=} \hlkwd{expression}\hlstd{(theta),}\hlkwc{cex.lab}\hlstd{=}\hlnum{1.2}\hlstd{,}
      \hlkwc{ylab}\hlstd{=}\hlstr{"Densidade a posteriori"}\hlstd{)}
 
 \hlcom{# função auxiliar para determinar a cobertura de um intervalo}

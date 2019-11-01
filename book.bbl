@@ -27,12 +27,6 @@ Bonassi, F.~V., Stern, R.~B., Peixoto, C.~M., and Wechsler, S. (2015).
 \newblock Exchangeability and the law of maturity.
 \newblock {\em Theory and Decision}, 78(4):603--615.
 
-\bibitem[Cox, 1958]{Cox1958}
-Cox, D.~R. (1958).
-\newblock The regression analysis of binary sequences.
-\newblock {\em Journal of the Royal Statistical Society. Series B
-  (Methodological)}, pages 215--242.
-
 \bibitem[de~Bragan{\c{c}}a~Pereira and Stern, 1999]{Pereira1999}
 de~Bragan{\c{c}}a~Pereira, C.~A. and Stern, J.~M. (1999).
 \newblock Evidence and credibility: full bayesian significance test for precise
@@ -73,11 +67,6 @@ Diaconis, P. and Ylvisaker, D. (1979).
 Ferguson, T.~S. (1973).
 \newblock A bayesian analysis of some nonparametric problems.
 \newblock {\em The annals of statistics}, pages 209--230.
-
-\bibitem[Fisher, 1936]{Fisher1936}
-Fisher, R.~A. (1936).
-\newblock The use of multiple measurements in taxonomic problems.
-\newblock {\em Annals of eugenics}, 7(2):179--188.
 
 \bibitem[Geinitz and Furrer, 2013]{Geinitz2013}
 Geinitz, S. and Furrer, R. (2013).
