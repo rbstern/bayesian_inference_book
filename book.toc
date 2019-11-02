@@ -44,9 +44,9 @@
 \contentsline {section}{\numberline {9}Estat\IeC {\'\i }stica Bayesiana Computacional}{88}{section.9}
 \contentsline {subsection}{\numberline {9.1}M\IeC {\'e}todo de Monte Carlo}{88}{subsection.9.1}
 \contentsline {subsubsection}{\numberline {9.1.1}O m\IeC {\'e}todo da rejei\IeC {\c c}\IeC {\~a}o}{90}{subsubsection.9.1.1}
-\contentsline {subsection}{\numberline {9.2}M\IeC {\'e}todo de Monte Carlo via cadeias de Markov}{94}{subsection.9.2}
-\contentsline {subsubsection}{\numberline {9.2.1}Cadeias de Markov}{94}{subsubsection.9.2.1}
+\contentsline {subsection}{\numberline {9.2}M\IeC {\'e}todo de Monte Carlo via cadeias de Markov}{95}{subsection.9.2}
+\contentsline {subsubsection}{\numberline {9.2.1}Cadeias de Markov}{95}{subsubsection.9.2.1}
 \contentsline {subsubsection}{\numberline {9.2.2}O algoritmo de Metropolis-Hastings}{97}{subsubsection.9.2.2}
 \contentsline {subsubsection}{\numberline {9.2.3}Monte Carlo para cadeias de Markov na pr\IeC {\'a}tica}{100}{subsubsection.9.2.3}
-\contentsline {subsubsection}{\numberline {9.2.4}Exerc\IeC {\'\i }cios}{103}{subsubsection.9.2.4}
+\contentsline {subsubsection}{\numberline {9.2.4}Exerc\IeC {\'\i }cios}{104}{subsubsection.9.2.4}
 \contentsline {section}{\numberline {10}Revis\IeC {\~a}o final}{104}{section.10}

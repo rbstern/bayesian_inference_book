@@ -109,32 +109,36 @@ Por exemplo, tomando $g(\theta) = \theta^{n}$,
 Similarmente, se $R \subset \theta$ e
 $g(\theta) = \I(\theta \in R)$,
 então é possível aproximar 
-$\E[g(\theta)|x] = \P(\theta \in R|x)$.
+$\E[g(\theta)] = \P(\theta \in R)$.
 Podemos usar o seguinte código para implementar o \cref{thm:monte_carlo} em R
 
 \begin{algorithm2}[Monte Carlo] \
  \label{algo:monte_carlo}
-<<>>=
-####################################################################
-## amostrador: funcao usada para obter a amostra do Monte Carlo,  ##
-## deve retornar uma lista de amostras                            ##
-## B: tamanho da amostra gerada.                                  ##
-## g: funcao cujo valor esperado estamos interessados.            ##
-## retorna: amostra de Monte Carlo e algumas de suas estatisticas ##
-####################################################################
-monte_carlo <- function(amostrador, B, g, ...)
-{
- amostra <- amostrador(B, ...)
- amostra_g <- sapply(amostra, g) #obtem g(x) para cada x em amostra
- est_g <- mean(amostra_g)
- var_g <- var(amostra_g)
- return(list(amostra=amostra, 
-             estimador=est_g,
-             ic=c(est_g+qnorm(0.025)*sqrt(var_g/B), 
-                  est_g+qnorm(0.975)*sqrt(var_g/B))
-       ))
-}
-@
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{####################################################################}
+\hlcom{## amostrador: funcao usada para obter a amostra do Monte Carlo,  ##}
+\hlcom{## deve retornar uma lista de amostras                            ##}
+\hlcom{## B: tamanho da amostra gerada.                                  ##}
+\hlcom{## g: funcao cujo valor esperado estamos interessados.            ##}
+\hlcom{## retorna: amostra de Monte Carlo e algumas de suas estatisticas ##}
+\hlcom{####################################################################}
+\hlstd{monte_carlo} \hlkwb{<-} \hlkwa{function}\hlstd{(}\hlkwc{amostrador}\hlstd{,} \hlkwc{B}\hlstd{,} \hlkwc{g}\hlstd{,} \hlkwc{...}\hlstd{)}
+\hlstd{\{}
+ \hlstd{amostra} \hlkwb{<-} \hlkwd{amostrador}\hlstd{(B, ...)}
+ \hlstd{amostra_g} \hlkwb{<-} \hlkwd{sapply}\hlstd{(amostra, g)} \hlcom{#obtem g(x) para cada x em amostra}
+ \hlstd{est_g} \hlkwb{<-} \hlkwd{mean}\hlstd{(amostra_g)}
+ \hlstd{var_g} \hlkwb{<-} \hlkwd{var}\hlstd{(amostra_g)}
+ \hlkwd{return}\hlstd{(}\hlkwd{list}\hlstd{(}\hlkwc{amostra}\hlstd{=amostra,}
+             \hlkwc{estimador}\hlstd{=est_g,}
+             \hlkwc{ic}\hlstd{=}\hlkwd{c}\hlstd{(est_g}\hlopt{+}\hlkwd{qnorm}\hlstd{(}\hlnum{0.025}\hlstd{)}\hlopt{*}\hlkwd{sqrt}\hlstd{(var_g}\hlopt{/}\hlstd{B),}
+                  \hlstd{est_g}\hlopt{+}\hlkwd{qnorm}\hlstd{(}\hlnum{0.975}\hlstd{)}\hlopt{*}\hlkwd{sqrt}\hlstd{(var_g}\hlopt{/}\hlstd{B))}
+       \hlstd{))}
+\hlstd{\}}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 \end{algorithm2}
 
 Assim, utilizando o método de Monte Carlo,
@@ -143,8 +147,6 @@ posteriori a partir de uma amostra desta.
 A pergunta que resta é: como obter uma
 amostra de $f(\theta|x)$ quando não conseguimos
 calcular esta quantidade analiticamente?
-Na sequência, veremos alguns métodos
-que têm essa finalidade.
 
 \subsubsection{O método da rejeição}
 
@@ -171,31 +173,35 @@ Código genérico para o método da rejeição
 
 \begin{algorithm2}[Método da rejeição] \
  \label{algo:rejection}
-<<>>=
-#############################################################################
-## Código ilustrativo em R para o método da rejeição.                      ##
-## B: tamanho da amostra a ser gerada                                      ##
-## pf.avaliar: calcula o valor de uma função proporcional a f.             ##
-## h.avaliar: calcula o valor da densidade h.                              ##
-## h.gerar: gera uma variável aleatória com densidade h.                   ##
-## M: a constante usada no método da rejeição.                             ##
-## retorna: uma variável aleatória de densidade proporcional a pf.avaliar. ##
-#############################################################################
-amostrador_rejeicao <- function(B, pf.avaliar, h.avaliar, h.gerar, M)
-{
- amostra <- vector(mode="list", length=B)
- for(ii in 1:B)
- {
-  T <- h.gerar()
-  while(runif(1,0,1) > pf.avaliar(T)/(M*h.avaliar(T)))
-  {
-   T <- h.gerar()
-  }
-  amostra[[ii]] <- T
-	}
- return(amostra)
-}
-@
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{#############################################################################}
+\hlcom{## Código ilustrativo em R para o método da rejeição.                      ##}
+\hlcom{## B: tamanho da amostra a ser gerada                                      ##}
+\hlcom{## pf.avaliar: calcula o valor de uma função proporcional a f.             ##}
+\hlcom{## h.avaliar: calcula o valor da densidade h.                              ##}
+\hlcom{## h.gerar: gera uma variável aleatória com densidade h.                   ##}
+\hlcom{## M: a constante usada no método da rejeição.                             ##}
+\hlcom{## retorna: uma variável aleatória de densidade proporcional a pf.avaliar. ##}
+\hlcom{#############################################################################}
+\hlstd{amostrador_rejeicao} \hlkwb{<-} \hlkwa{function}\hlstd{(}\hlkwc{B}\hlstd{,} \hlkwc{pf.avaliar}\hlstd{,} \hlkwc{h.avaliar}\hlstd{,} \hlkwc{h.gerar}\hlstd{,} \hlkwc{M}\hlstd{)}
+\hlstd{\{}
+ \hlstd{amostra} \hlkwb{<-} \hlkwd{vector}\hlstd{(}\hlkwc{mode}\hlstd{=}\hlstr{"list"}\hlstd{,} \hlkwc{length}\hlstd{=B)}
+ \hlkwa{for}\hlstd{(ii} \hlkwa{in} \hlnum{1}\hlopt{:}\hlstd{B)}
+ \hlstd{\{}
+  \hlstd{T} \hlkwb{<-} \hlkwd{h.gerar}\hlstd{()}
+  \hlkwa{while}\hlstd{(}\hlkwd{runif}\hlstd{(}\hlnum{1}\hlstd{,}\hlnum{0}\hlstd{,}\hlnum{1}\hlstd{)} \hlopt{>} \hlkwd{pf.avaliar}\hlstd{(T)}\hlopt{/}\hlstd{(M}\hlopt{*}\hlkwd{h.avaliar}\hlstd{(T)))}
+  \hlstd{\{}
+   \hlstd{T} \hlkwb{<-} \hlkwd{h.gerar}\hlstd{()}
+  \hlstd{\}}
+  \hlstd{amostra[[ii]]} \hlkwb{<-} \hlstd{T}
+        \hlstd{\}}
+ \hlkwd{return}\hlstd{(amostra)}
+\hlstd{\}}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 \end{algorithm2}
 
 \begin{example}
@@ -229,18 +235,22 @@ amostrador_rejeicao <- function(B, pf.avaliar, h.avaliar, h.gerar, M)
  Podemos descrever o algoritmo acima utilizando o
  seguinte código em $R$.
 
-<<>>=
-#######################################################
-## retorna: uma variável aleatória de densidade      ##
-## uniforme no círculo de raio 1 e centro na origem. ##
-#######################################################
-B = 100
-h.gerar = function() runif(2,-1,1)
-h.avaliar = function(x) ((x[1]^2 <= 1) & (x[2]^2 <= 1))/4
-pf.avaliar = function(x) (x[1]^2 + x[2]^2 <= 1)/pi
-M = 4/pi
-dados = amostrador_rejeicao(B, pf.avaliar, h.avaliar, h.gerar, M)
-@
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{#######################################################}
+\hlcom{## retorna: uma variável aleatória de densidade      ##}
+\hlcom{## uniforme no círculo de raio 1 e centro na origem. ##}
+\hlcom{#######################################################}
+\hlstd{B} \hlkwb{=} \hlnum{100}
+\hlstd{h.gerar} \hlkwb{=} \hlkwa{function}\hlstd{()} \hlkwd{runif}\hlstd{(}\hlnum{2}\hlstd{,}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{)}
+\hlstd{h.avaliar} \hlkwb{=} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{) ((x[}\hlnum{1}\hlstd{]}\hlopt{^}\hlnum{2} \hlopt{<=} \hlnum{1}\hlstd{)} \hlopt{&} \hlstd{(x[}\hlnum{2}\hlstd{]}\hlopt{^}\hlnum{2} \hlopt{<=} \hlnum{1}\hlstd{))}\hlopt{/}\hlnum{4}
+\hlstd{pf.avaliar} \hlkwb{=} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{) (x[}\hlnum{1}\hlstd{]}\hlopt{^}\hlnum{2} \hlopt{+} \hlstd{x[}\hlnum{2}\hlstd{]}\hlopt{^}\hlnum{2} \hlopt{<=} \hlnum{1}\hlstd{)}\hlopt{/}\hlstd{pi}
+\hlstd{M} \hlkwb{=} \hlnum{4}\hlopt{/}\hlstd{pi}
+\hlstd{dados} \hlkwb{=} \hlkwd{amostrador_rejeicao}\hlstd{(B, pf.avaliar, h.avaliar, h.gerar, M)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 
  O funcionamento do algoritmo acima é ilustrado na
  \cref{fig:rejection-circle}.
