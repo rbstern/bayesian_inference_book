@@ -394,7 +394,7 @@ cadeia de Markov, $T_{1},\ldots,T_{B}$, de
 medida invariante $f(\theta|x)$.
 Portanto, utilizando o \cref{theorem:clt-markov}, 
 você pode utilizar $T_{1},\ldots,T_{B}$ para
-aproximar $\E[g(\theta|x)]$, para
+aproximar $\E[g(\theta)|x]$, para
 qualquer $g$ contínua.
 Assim, você pode resolver problemas de Inferência,
 ainda que não consiga calcular a
@@ -645,6 +645,23 @@ olbm(cadeia^2, 100)
 [1,] 0.05281069
 \end{verbatim}
 
+\begin{example}[Regressão linear]
+
+\end{example}
+
+\begin{example}[Regressão linear revisitada]
+
+\end{example}
+
+\begin{example}[Regressão Poisson]
+
+\end{example}
+
+\begin{example}[ANOVA]
+
+\end{example}
+
+
 Vimos que, usando o pacote ``rstan''
 é possível simular Cadeias de Markov que tem
 como distribuição estacionária a posteriori.
@@ -654,6 +671,9 @@ Também, o pacote ``mcmc'' permite avaliar a
 precisão das estimativas acima.
 Unindo estes dois pacotes, é possível aplicar a
 inferência bayesiana para uma classe ampla de problemas.
+
+
+
 
 \subsubsection{Exercícios}
 

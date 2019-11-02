@@ -503,7 +503,7 @@ sua razoabilidade por sua conta.
 
 \begin{exercise}[\citet{Kadane2011}][p.290]
  Considere que você tem $R\$kx$.
- sua utilidade para ter $R\$f$ é $\log(f)$.
+ Sua utilidade para ter $R\$f$ é $\log(f)$.
  O custo de uma aposta em $A$ é $x$.
  Se você comprar a aposta,
  caso $A$ ocorra, você ganha $R\$1$ e,
