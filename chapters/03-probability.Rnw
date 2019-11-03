@@ -9,7 +9,7 @@ Em cursos anteriores,
 você usou a probabilidade como
 uma forma de representar a sua incerteza.
 Contudo, possivelmente você não viu o porquê
-de essa representação ser razoável.
+dessa representação ser razoável.
 Por que é razoável assumir
 que a representação da sua incerteza satisfaz
 os axiomas da probabilidade (\cref{probability})?
@@ -125,7 +125,7 @@ nos levam ao resultado no \cref{lemma:sure_loss_1}.
 
 Para prosseguir na análise,
 consideraremos a composição de apostas.
-Em outra palavras, avaliaremos o resultado
+Em outras palavras, avaliaremos o resultado
 de você compor apostas, comprando e 
 vendendo apostas em eventos individuais.
 Formalmente, para quaisquer números,
