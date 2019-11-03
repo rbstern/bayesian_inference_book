@@ -386,7 +386,7 @@ Ademais,
 
 \begin{definition}
  \label{def::independence}
- Dizemos que $X_{1}, \ldots, X_{n}$ são independentes se para todo $A_{1}, \ldots, A_{n} \subset \mathbb{R}$,
+ Dizemos que $X_{1}, \ldots, X_{n}$ são independentes se, para todo $A_{1}, \ldots, A_{n} \subset \mathbb{R}$,
  \[ \P(X_{1} \in A_{1},\ldots,X_{n} \in A_{n}) := \P(\cap_{i=1}^{n}{X_{i} \in A_{i}}) = \prod_{i=1}^{n}{\P(X_{i} \in A_{i})} \] 
  Portanto, para todo $A_{1} \ldots A_{n}$, $\{\omega \in \Omega : X_{i}(\omega) \in A_{i}\}$ são conjuntamente independentes.
 \end{definition}
@@ -620,9 +620,9 @@ alguns exemplos:
  $0.05$ de que seu paciente tenha câncer.
  O médico realiza o exame e ele indica que
  o paciente tem câncer.
- A probabilidade de o exame indicar que 
+ A probabilidade do exame indicar que 
  o paciente tem câncer quando ele o tem é $0.8$.
- A probabilidade de o exame indicar que 
+ A probabilidade do exame indicar que 
  o paciente tem câncer quando
  ele não o tem é $0.1$.
  Qual é a probabilidade de que o paciente tenha
@@ -655,7 +655,7 @@ alguns exemplos:
  probabilidade da hipótese de câncer, mas 
  o aumento não é tão grande quanto poderia se esperar.
  Isso ocorre pois o médico acreditava, a princípio, 
- que a probabilidade de o paciente ter câncer era baixa.
+ que a probabilidade do paciente ter câncer era baixa.
  Também o exame pode ter 
  falsos positivos e falsos negativos.
  Como resposta ao resultado observado, 
@@ -698,7 +698,7 @@ alguns exemplos:
  \emph{a posteriori} do analista para 
  $\theta$ após observar $X=20$, é
  uma Beta$(25,15)$.
- A partir desta distibuição, pode-se calcular, por exemplo, a probabilidade do candidato $D$ vencer a eleição. Esta é dada por $\P(\theta>0.5|X=20)=\P(\mbox{Beta}(25,15)>0.5) \approx 94,59\%$.
+ A partir desta distribuição, pode-se calcular, por exemplo, a probabilidade do candidato $D$ vencer a eleição. Esta é dada por $\P(\theta>0.5|X=20)=\P(\mbox{Beta}(25,15)>0.5) \approx 94,59\%$.
 
  Por conveniência, podemos atribuir alguns 
  nomes a conceitos estudados neste curso.
@@ -1329,7 +1329,7 @@ cada elemento do vetor $x$. Neste caso, obtemos,
  as palavras de $A$. Acreditamos que o som inicial para
  o sentido ``cachorro'' em $A$ é 
  uma consoante ou uma vogal com mesma probabilidade.
- Observamos que o sons iniciais dos
+ Observamos que os sons iniciais dos
  idiomas $B$ e $C$ para ``cachorro'' são 
  ambos consoantes.
  Estamos interessados em predizer a 
@@ -1499,7 +1499,7 @@ Em cursos anteriores,
 você usou a probabilidade como
 uma forma de representar a sua incerteza.
 Contudo, possivelmente você não viu o porquê
-de essa representação ser razoável.
+dessa representação ser razoável.
 Por que é razoável assumir
 que a representação da sua incerteza satisfaz
 os axiomas da probabilidade (\cref{probability})?
@@ -1615,7 +1615,7 @@ nos levam ao resultado no \cref{lemma:sure_loss_1}.
 
 Para prosseguir na análise,
 consideraremos a composição de apostas.
-Em outra palavras, avaliaremos o resultado
+Em outras palavras, avaliaremos o resultado
 de você compor apostas, comprando e 
 vendendo apostas em eventos individuais.
 Formalmente, para quaisquer números,
@@ -2599,7 +2599,7 @@ destas propriedades.
 
 \begin{example}
  \label{example:uniform-marginal-data}
- A primeira vez que vi este Exemplo, ele foi 
+ A primeira vez que vi este exemplo, ele foi 
  apresentado oralmente pelo 
  Professor Carlos Alberto de Bragança Pereira, um 
  dos precursores da Inferência Bayesiana no Brasil 
@@ -2768,7 +2768,7 @@ considere o caso de um diagnóstico médico.
  \end{align*}
  Observamos que, após observar que 
  a paciente tem dor atrás dos olhos,
- a probabilidade de a paciente ter dengue aumenta 
+ a probabilidade da paciente ter dengue aumenta 
  de $0.01$ para $0.47$.
  Assim, é razoável acreditar que 
  a médica passará a acreditar que o sintoma
@@ -2875,7 +2875,7 @@ generalizada para o seguinte resultado
 
 \begin{exercise}
  \label{exercise:predictive_1}
- Considere o caso de eleição no \cref{exemplo:eleicao}.
+ Considere o caso da eleição no \cref{exemplo:eleicao}.
  Neste caso, cada indivíduo pode ter a
  intenção de votar em $A$ ou $D$.
  A priori, um analista acreditava que 
@@ -3102,8 +3102,7 @@ generalizada para o seguinte resultado
   Este resultado é compatível com
   a amostragem ter sido feita com reposição?
   \item Dado que as duas bolas retiradas foram azuis,
-  qual a probabilidade a posteriori de
-  elas terem sido retiradadas da primeira caixa?
+  qual a probabilidade a posteriori delas terem sido retiradadas da primeira caixa?
  \end{enumerate}
 \end{exercise}
 
@@ -3540,7 +3539,7 @@ a bibliografia sobre o tema.
 
 \subsubsection*{Exercícios}
 
-\begin{exercise}[urna de Polya]
+\begin{exercise}[Urna de Pólya]
  \label{ex:polya}
  Considere que, inicialmente, uma urna tem
  $1$ bola branca e $1$ bola azul. A cada iteração,
@@ -3556,7 +3555,7 @@ a bibliografia sobre o tema.
   distribuição conjunta de $(X_{1},\ldots,X_{n})$.
   \item Mostre que $X_{1},\ldots,X_{n},\ldots$ é
   infinitamente permutável.
-  \item De acordo com o \cref{conditional_probability},
+  \item De acordo com a \cref{conditional_probability},
   dado $\lim_{n}\bar{X}_{n}$,
   $X_{1},\ldots,X_{n}$ são i.i.d. e
   $X_{1} \sim \text{Bernoulli}(\lim_{n}\bar{X}_{n})$.
@@ -3711,7 +3710,7 @@ a bibliografia sobre o tema.
   \end{align*}
   Para provar este resultado,
   defina $Y = \sum_{i=1}^{n}{X_{i}}$ e
-  tome como ponte de partida a desigualdade
+  tome como ponto de partida a desigualdade
   $\V[Y] \geq 0$.
 	
   \item Para todo $n \in \mathbb{N}$, 
@@ -4211,7 +4210,7 @@ conjugada para a família normal.
   &= \exp\left(-\frac{a^{2}\mu^{2}-2ab\mu+b^{2}}{2}\right)
  \end{align}
 
- Para que exista a chance de a 
+ Para que exista a chance da 
  \cref{eqn:conjugate_normal_1} ser colocada na
  forma da \cref{eqn:conjugate_normal_2},
  é necessário que os coeficientes de $\mu$ sejam
@@ -4772,7 +4771,7 @@ Esta análise é generalizada por um teorema em \citet{Diaconis1979} que é desc
  Considere que $X \in \chi$,
  $\theta \in \mathbb{R}^{d}$ e
  $f(x|\theta)$ está na forma canônica da
- familia exponencial, isto é,
+ família exponencial, isto é,
  $f(x|\theta) = h(x) \exp\left(\theta \cdot T(x) - A(\theta)\right)$.
  A função $f(\theta) = \exp\left(-\alpha A(\theta) +\theta \cdot \beta \right)$
  é integrável se e somente se $\alpha > 0$ e
@@ -6160,7 +6159,7 @@ Chamaremos este processo de Teoria da Decisão.
 A Teoria da Decisão é dividida em etapas,
 que indicam questões relevantes na tomada de qualquer decisão.
 Quando você completar todas as etapas indicadas,
-a Teoria da Decião sugerirá
+a Teoria da Decisão sugerirá
 qual ação é a mais proveitosa para você.
 
 \subsection{Elementos da tomada de decisões}
@@ -6342,7 +6341,7 @@ A melhor alternativa é chamada de \emph{alternativa de Bayes}.
   \begin{cases}
    U_{(gc,ca)} &= \P(\{ch\})U((gc,ca), ch) + \P(\bar{ch})U((gc,ca), \bar{ch}) = 0.1 \cdot 0.5 + 0.9 \cdot 0.9 = 0.86 \\
    U_{(gc,\bar{ca})} &= \P(\{ch\})U((gc,\bar{ca}), ch) + \P(\bar{ch})U((gc,\bar{ca}), \bar{ch}) = 0.1 \cdot 0.6 + 0.9 \cdot 0.7 = 0.69 \\
-   U_{(\bar{gc},ca)} &= \P(\{ch\})U((\bar{gc},ca), ch) + \P(\bar{ch})U((\bar{gc},ca), \bar{ch}) = 0 \cdot 0.5 + 1 \cdot 0.9 = 0.9 \\
+   U_{(\bar{gc},ca)} &= \P(\{ch\})U((\bar{gc},ca), ch) + \P(\bar{ch})U((\bar{gc},ca), \bar{ch}) = 0 \cdot 0.1 + 1 \cdot 0.9 = 1.0 \\
    U_{(\bar{gc},\bar{ca})}	&= \P(\{ch\})U((\bar{gc},\bar{ca}), ch) + \P(\bar{ch})U((\bar{gc},\bar{ca}), \bar{ch}) = 0.1 \cdot 0.1 + 0.9 \cdot 0.8 = 0.73
   \end{cases}
  \end{align*}
@@ -6353,7 +6352,7 @@ A melhor alternativa é chamada de \emph{alternativa de Bayes}.
 Em outros livros \citep{deGroot2005}, 
 a \cref{defn:expected_utility} não é apresentada como
 uma definição.
-É possível obtê-la como uma teorema a partir de
+É possível obtê-la como um teorema a partir de
 outras propriedades
 mais elementares envolvendo utilidade.
 Esta técnica é similar àquela que aplicamos para
@@ -6787,7 +6786,7 @@ problema de decisão com dados.
    \label{ex:chuva-dados}
   \end{table}
   \item $U(0,0) = 1$, 
-  $U(0,1) = 0$, $U(1,0) = 0.9$, $U(0,1) = 0.6$.	 
+  $U(0,1) = 0$, $U(1,0) = 0.9$, $U(1,1) = 0.6$.	 
  \end{itemize}
 \end{example}
 
@@ -6800,7 +6799,7 @@ Assim, no contexto em que temos dados,
 a melhor alternativa ainda é aquela que
 apresenta a melhor utilidade esperada.
 
-\begin{example}[continuação do \cref{ex:guarda-chuva-dados}]
+\begin{example}[Continuação do \cref{ex:guarda-chuva-dados}]
  \label{ex:guarda-chuva-dados-2}
  Existem quatro alternativas em $\mathcal{A}$,
  conforme descrito na tabela \ref{ex:chuva-dados}.
@@ -6863,7 +6862,7 @@ apresenta a melhor utilidade esperada.
   =& 0.9 \cdot 0.72 + 0.9 \cdot 0.08
   + 0.6 \cdot 0.02 + 0.6 \cdot 0.18 = 0.84
  \end{align*}
- Como $\E[U_{\delta_{2}}] > \E[U_{\delta_{4}}] > \E[U_{\delta_{1}}] > \E[U_{\delta_{2}}]$,
+ Como $\E[U_{\delta_{2}}] > \E[U_{\delta_{4}}] > \E[U_{\delta_{1}}] > \E[U_{\delta_{3}}]$,
  decorre da \cref{defn:expected_utility} que as 
  alternativas são ordenadas de melhor para
  pior da seguinte forma:
@@ -6912,8 +6911,8 @@ Esta conclusão é dada pelo seguinte Teorema:
   &\leq \E[U(\delta^*,\theta)|X=x] \\
   \E[U(\delta,\theta)|X]
   &\leq \E[U(\delta^*,\theta)|X] \\
-  \E[\E[U(\delta,\theta)|X]
-  &\leq \E[U(\delta^*,\theta)|X]] \\
+  \E[\E[U(\delta,\theta)|X]]
+  &\leq \E[\E[U(\delta^*,\theta)|X]] \\
   \E[U(\delta,\theta)]
   &\leq \E[U(\delta^*,\theta)] \\
   U(\delta) &\leq U(\delta^*)
@@ -6938,7 +6937,7 @@ alternativa ótima mais simples.
 A seguir, usaremos o \cref{ex:guarda-chuva-dados} para 
 ilustrar uma aplicação do \cref{theorem:extensive-form}.
 
-\begin{example}[continuação do \cref{ex:guarda-chuva-dados}]
+\begin{example}[Continuação do \cref{ex:guarda-chuva-dados}]
  Podemos calcular a probabilidade a posteriori para cada
  possível observação:
  \begin{align*}
@@ -6988,8 +6987,8 @@ ilustrar uma aplicação do \cref{theorem:extensive-form}.
  \cref{theorem:extensive-form}.
 \end{example}
 
- Nas próximas Seções redescreveremos tradicionais
- problemas da Teoria Estatística a partir da
+ Nas próximas Seções reescreveremos 
+ problemas tradicionais da Teoria Estatística a partir da
  Teoria da Decisão.
  Os problemas que discutiremos serão:
  Estimação, Intervalos de Confiança e Testes de Hipótese.
@@ -7274,7 +7273,7 @@ estando ligada à técnica dos mínimos quadrados.
 
 O seguinte lema é útil para 
 provar resultados envolvendo 
-a distância quadrática
+a distância quadrática.
 \begin{lemma}
  \label{lemma:conditional_l2}
  Sejam $\theta$ e $X$ 
@@ -7297,7 +7296,7 @@ a distância quadrática
 \end{proof}
 Usando o lema acima, podemos 
 achar o melhor estimador para
-a distância quadrática
+a distância quadrática.
 \begin{theorem}
  \label{thm:estimation_l2}
  Seja $\hat{\theta}$ um estimador arbitrário.
@@ -7424,7 +7423,7 @@ que não são fortemente influenciados por \emph{outliers}.
 Isto ocorre pois, em relação à distância quadrática,
 o desvio penaliza menos grandes desvios do estimador 
 em relação a $\theta$.
-Para o desvio absoluto, obtemos o seguinte resultado
+Para o desvio absoluto, obtemos o seguinte resultado:
 
 \begin{theorem}
  \label{thm:estimation_l1}
@@ -10625,7 +10624,7 @@ Similarmente, se $R \subset \theta$ e
 $g(\theta) = \I(\theta \in R)$,
 então é possível aproximar 
 $\E[g(\theta)|x] = \P(\theta \in R|x)$.
-Podemos usar o seguinte código para implementar o \cref{thm:monte_carlo} em R
+Podemos usar o seguinte código para implementar o \cref{thm:monte_carlo} em R:
 
 \begin{algorithm2}[Monte Carlo] \
  \label{algo:monte_carlo}
@@ -10674,7 +10673,7 @@ Ele pode ser descrito nos seguinte passos:
 \begin{enumerate}
  \item Considere que $f(\theta)$ é a
  densidade da qual você quer simular e
- $\tilde{f}(\theta) \propto f(\theta)$
+ $\tilde{f}(\theta) \propto f(\theta)$.
  \item Ache uma densidade, $h(\theta)$ e
  uma constante, $M$, tais que
  $\tilde{f}(\theta) \leq M h(\theta)$.
@@ -10958,10 +10957,10 @@ simula_beta_2_2_rejeicao <- function(B)
 
 \begin{exercise}
  Escreva um código para
- simular de distribuição uniforme
+ simular da distribuição uniforme
  em uma esfera de raio $1$ e centro $0$.
  Use o Método de Monte Carlo para estimar
- a distância média de de um ponto amostrado à origem.
+ a distância média de um ponto amostrado à origem.
 \end{exercise}
 
 \cprotect \solution{
@@ -10974,7 +10973,7 @@ simula_beta_2_2_rejeicao <- function(B)
  tomamos $M=8$.
  Neste caso, $\frac{\tilde{f}(\theta)}{8h(\theta)} = \tilde{f}(\theta)$.
  Portanto, o método da rejeição pode ser implementado
- da seguinte forma
+ da seguinte forma:
 														
 \begin{lstlisting}[language=R]
 simula_esfera_rejeicao <- function(B) # retorna: pontos uniformemente
@@ -11042,7 +11041,7 @@ Se usarmos o \cref{algo:monte_carlo}, obtemos
  Portanto, $\tilde{f}(\theta) \leq (2r)^{2}h(\theta)$ e
  obtemos $\frac{\tilde{f}(\theta)}{(2r)^{2}h(\theta)} = \tilde{f}(\theta)$.
  Assim, é possível simular de $f$ pelo
- método da rejeição usando o seguinte código
+ método da rejeição usando o seguinte código:
 
  \begin{lstlisting}[language=R]
 simula_circulo_rejeicao <- function(B, centro, raio)
@@ -11058,7 +11057,7 @@ simula_circulo_rejeicao <- function(B, centro, raio)
 }
  \end{lstlisting}
 
- Podemos obter estimadores da distâncias ao
+ Podemos obter estimadores das distâncias ao
  centro do círculo e exibi-los graficamente usando o
  seguinte código:
 
@@ -11932,6 +11931,11 @@ olbm(cadeia^2, 100)
 \begin{example}[Regressão Poisson]
 
 \end{example}
+
+\begin{example}[ANOVA]
+
+\end{example}
+
 
 Vimos que, usando o pacote ``rstan''
 é possível simular Cadeias de Markov que tem

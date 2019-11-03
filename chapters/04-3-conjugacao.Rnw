@@ -482,7 +482,7 @@ conjugada para a família normal.
   &= \exp\left(-\frac{a^{2}\mu^{2}-2ab\mu+b^{2}}{2}\right)
  \end{align}
 
- Para que exista a chance de a 
+ Para que exista a chance da 
  \cref{eqn:conjugate_normal_1} ser colocada na
  forma da \cref{eqn:conjugate_normal_2},
  é necessário que os coeficientes de $\mu$ sejam
@@ -1029,7 +1029,7 @@ Esta análise é generalizada por um teorema em \citet{Diaconis1979} que é desc
  Considere que $X \in \chi$,
  $\theta \in \mathbb{R}^{d}$ e
  $f(x|\theta)$ está na forma canônica da
- familia exponencial, isto é,
+ família exponencial, isto é,
  $f(x|\theta) = h(x) \exp\left(\theta \cdot T(x) - A(\theta)\right)$.
  A função $f(\theta) = \exp\left(-\alpha A(\theta) +\theta \cdot \beta \right)$
  é integrável se e somente se $\alpha > 0$ e

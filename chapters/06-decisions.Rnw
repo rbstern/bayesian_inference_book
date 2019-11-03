@@ -53,7 +53,7 @@ Chamaremos este processo de Teoria da Decisão.
 A Teoria da Decisão é dividida em etapas,
 que indicam questões relevantes na tomada de qualquer decisão.
 Quando você completar todas as etapas indicadas,
-a Teoria da Decião sugerirá
+a Teoria da Decisão sugerirá
 qual ação é a mais proveitosa para você.
 
 \subsection{Elementos da tomada de decisões}
@@ -693,7 +693,7 @@ Assim, no contexto em que temos dados,
 a melhor alternativa ainda é aquela que
 apresenta a melhor utilidade esperada.
 
-\begin{example}[continuação do \cref{ex:guarda-chuva-dados}]
+\begin{example}[Continuação do \cref{ex:guarda-chuva-dados}]
  \label{ex:guarda-chuva-dados-2}
  Existem quatro alternativas em $\mathcal{A}$,
  conforme descrito na tabela \ref{ex:chuva-dados}.
@@ -831,7 +831,7 @@ alternativa ótima mais simples.
 A seguir, usaremos o \cref{ex:guarda-chuva-dados} para 
 ilustrar uma aplicação do \cref{theorem:extensive-form}.
 
-\begin{example}[continuação do \cref{ex:guarda-chuva-dados}]
+\begin{example}[Continuação do \cref{ex:guarda-chuva-dados}]
  Podemos calcular a probabilidade a posteriori para cada
  possível observação:
  \begin{align*}

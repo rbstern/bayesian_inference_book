@@ -13,7 +13,7 @@ destas propriedades.
 
 \begin{example}
  \label{example:uniform-marginal-data}
- A primeira vez que vi este Exemplo, ele foi 
+ A primeira vez que vi este exemplo, ele foi 
  apresentado oralmente pelo 
  Professor Carlos Alberto de Bragança Pereira, um 
  dos precursores da Inferência Bayesiana no Brasil 
@@ -182,7 +182,7 @@ considere o caso de um diagnóstico médico.
  \end{align*}
  Observamos que, após observar que 
  a paciente tem dor atrás dos olhos,
- a probabilidade de a paciente ter dengue aumenta 
+ a probabilidade da paciente ter dengue aumenta 
  de $0.01$ para $0.47$.
  Assim, é razoável acreditar que 
  a médica passará a acreditar que o sintoma
@@ -516,8 +516,7 @@ generalizada para o seguinte resultado
   Este resultado é compatível com
   a amostragem ter sido feita com reposição?
   \item Dado que as duas bolas retiradas foram azuis,
-  qual a probabilidade a posteriori de
-  elas terem sido retiradadas da primeira caixa?
+  qual a probabilidade a posteriori delas terem sido retiradadas da primeira caixa?
  \end{enumerate}
 \end{exercise}
 
@@ -970,7 +969,7 @@ a bibliografia sobre o tema.
   distribuição conjunta de $(X_{1},\ldots,X_{n})$.
   \item Mostre que $X_{1},\ldots,X_{n},\ldots$ é
   infinitamente permutável.
-  \item De acordo com o \cref{conditional_probability},
+  \item De acordo com a \cref{conditional_probability},
   dado $\lim_{n}\bar{X}_{n}$,
   $X_{1},\ldots,X_{n}$ são i.i.d. e
   $X_{1} \sim \text{Bernoulli}(\lim_{n}\bar{X}_{n})$.
@@ -1125,7 +1124,7 @@ a bibliografia sobre o tema.
   \end{align*}
   Para provar este resultado,
   defina $Y = \sum_{i=1}^{n}{X_{i}}$ e
-  tome como ponte de partida a desigualdade
+  tome como ponto de partida a desigualdade
   $\V[Y] \geq 0$.
 	
   \item Para todo $n \in \mathbb{N}$, 
