@@ -359,7 +359,7 @@ Ademais,
 
 \begin{definition}
  \label{def::independence}
- Dizemos que $X_{1}, \ldots, X_{n}$ são independentes se para todo $A_{1}, \ldots, A_{n} \subset \mathbb{R}$,
+ Dizemos que $X_{1}, \ldots, X_{n}$ são independentes se, para todo $A_{1}, \ldots, A_{n} \subset \mathbb{R}$,
  \[ \P(X_{1} \in A_{1},\ldots,X_{n} \in A_{n}) := \P(\cap_{i=1}^{n}{X_{i} \in A_{i}}) = \prod_{i=1}^{n}{\P(X_{i} \in A_{i})} \] 
  Portanto, para todo $A_{1} \ldots A_{n}$, $\{\omega \in \Omega : X_{i}(\omega) \in A_{i}\}$ são conjuntamente independentes.
 \end{definition}
