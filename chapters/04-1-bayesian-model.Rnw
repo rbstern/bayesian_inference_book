@@ -289,7 +289,7 @@ generalizada para o seguinte resultado
 
 \begin{exercise}
  \label{exercise:predictive_1}
- Considere o caso de eleição no \cref{exemplo:eleicao}.
+ Considere o caso da eleição no \cref{exemplo:eleicao}.
  Neste caso, cada indivíduo pode ter a
  intenção de votar em $A$ ou $D$.
  A priori, um analista acreditava que 
@@ -954,7 +954,7 @@ a bibliografia sobre o tema.
 
 \subsubsection*{Exercícios}
 
-\begin{exercise}[urna de Polya]
+\begin{exercise}[Urna de Pólya]
  \label{ex:polya}
  Considere que, inicialmente, uma urna tem
  $1$ bola branca e $1$ bola azul. A cada iteração,

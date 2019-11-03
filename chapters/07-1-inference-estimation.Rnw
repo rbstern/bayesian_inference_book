@@ -38,7 +38,7 @@ estando ligada à técnica dos mínimos quadrados.
 
 O seguinte lema é útil para 
 provar resultados envolvendo 
-a distância quadrática
+a distância quadrática.
 \begin{lemma}
  \label{lemma:conditional_l2}
  Sejam $\theta$ e $X$ 
@@ -61,7 +61,7 @@ a distância quadrática
 \end{proof}
 Usando o lema acima, podemos 
 achar o melhor estimador para
-a distância quadrática
+a distância quadrática.
 \begin{theorem}
  \label{thm:estimation_l2}
  Seja $\hat{\theta}$ um estimador arbitrário.
@@ -188,7 +188,7 @@ que não são fortemente influenciados por \emph{outliers}.
 Isto ocorre pois, em relação à distância quadrática,
 o desvio penaliza menos grandes desvios do estimador 
 em relação a $\theta$.
-Para o desvio absoluto, obtemos o seguinte resultado
+Para o desvio absoluto, obtemos o seguinte resultado:
 
 \begin{theorem}
  \label{thm:estimation_l1}

@@ -235,7 +235,7 @@ A melhor alternativa é chamada de \emph{alternativa de Bayes}.
   \begin{cases}
    U_{(gc,ca)} &= \P(\{ch\})U((gc,ca), ch) + \P(\bar{ch})U((gc,ca), \bar{ch}) = 0.1 \cdot 0.5 + 0.9 \cdot 0.9 = 0.86 \\
    U_{(gc,\bar{ca})} &= \P(\{ch\})U((gc,\bar{ca}), ch) + \P(\bar{ch})U((gc,\bar{ca}), \bar{ch}) = 0.1 \cdot 0.6 + 0.9 \cdot 0.7 = 0.69 \\
-   U_{(\bar{gc},ca)} &= \P(\{ch\})U((\bar{gc},ca), ch) + \P(\bar{ch})U((\bar{gc},ca), \bar{ch}) = 0 \cdot 0.5 + 1 \cdot 0.9 = 0.9 \\
+   U_{(\bar{gc},ca)} &= \P(\{ch\})U((\bar{gc},ca), ch) + \P(\bar{ch})U((\bar{gc},ca), \bar{ch}) = 0 \cdot 0.1 + 1 \cdot 0.9 = 1.0 \\
    U_{(\bar{gc},\bar{ca})}	&= \P(\{ch\})U((\bar{gc},\bar{ca}), ch) + \P(\bar{ch})U((\bar{gc},\bar{ca}), \bar{ch}) = 0.1 \cdot 0.1 + 0.9 \cdot 0.8 = 0.73
   \end{cases}
  \end{align*}
@@ -246,7 +246,7 @@ A melhor alternativa é chamada de \emph{alternativa de Bayes}.
 Em outros livros \citep{deGroot2005}, 
 a \cref{defn:expected_utility} não é apresentada como
 uma definição.
-É possível obtê-la como uma teorema a partir de
+É possível obtê-la como um teorema a partir de
 outras propriedades
 mais elementares envolvendo utilidade.
 Esta técnica é similar àquela que aplicamos para
@@ -680,7 +680,7 @@ problema de decisão com dados.
    \label{ex:chuva-dados}
   \end{table}
   \item $U(0,0) = 1$, 
-  $U(0,1) = 0$, $U(1,0) = 0.9$, $U(0,1) = 0.6$.	 
+  $U(0,1) = 0$, $U(1,0) = 0.9$, $U(1,1) = 0.6$.	 
  \end{itemize}
 \end{example}
 
@@ -756,7 +756,7 @@ apresenta a melhor utilidade esperada.
   =& 0.9 \cdot 0.72 + 0.9 \cdot 0.08
   + 0.6 \cdot 0.02 + 0.6 \cdot 0.18 = 0.84
  \end{align*}
- Como $\E[U_{\delta_{2}}] > \E[U_{\delta_{4}}] > \E[U_{\delta_{1}}] > \E[U_{\delta_{2}}]$,
+ Como $\E[U_{\delta_{2}}] > \E[U_{\delta_{4}}] > \E[U_{\delta_{1}}] > \E[U_{\delta_{3}}]$,
  decorre da \cref{defn:expected_utility} que as 
  alternativas são ordenadas de melhor para
  pior da seguinte forma:
@@ -805,8 +805,8 @@ Esta conclusão é dada pelo seguinte Teorema:
   &\leq \E[U(\delta^*,\theta)|X=x] \\
   \E[U(\delta,\theta)|X]
   &\leq \E[U(\delta^*,\theta)|X] \\
-  \E[\E[U(\delta,\theta)|X]
-  &\leq \E[U(\delta^*,\theta)|X]] \\
+  \E[\E[U(\delta,\theta)|X]]
+  &\leq \E[\E[U(\delta^*,\theta)|X]] \\
   \E[U(\delta,\theta)]
   &\leq \E[U(\delta^*,\theta)] \\
   U(\delta) &\leq U(\delta^*)
@@ -881,8 +881,8 @@ ilustrar uma aplicação do \cref{theorem:extensive-form}.
  \cref{theorem:extensive-form}.
 \end{example}
 
- Nas próximas Seções redescreveremos tradicionais
- problemas da Teoria Estatística a partir da
+ Nas próximas Seções reescreveremos 
+ problemas tradicionais da Teoria Estatística a partir da
  Teoria da Decisão.
  Os problemas que discutiremos serão:
  Estimação, Intervalos de Confiança e Testes de Hipótese.

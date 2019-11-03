@@ -68,9 +68,9 @@ alguns exemplos:
  $0.05$ de que seu paciente tenha câncer.
  O médico realiza o exame e ele indica que
  o paciente tem câncer.
- A probabilidade de o exame indicar que 
+ A probabilidade do exame indicar que 
  o paciente tem câncer quando ele o tem é $0.8$.
- A probabilidade de o exame indicar que 
+ A probabilidade do exame indicar que 
  o paciente tem câncer quando
  ele não o tem é $0.1$.
  Qual é a probabilidade de que o paciente tenha
@@ -103,7 +103,7 @@ alguns exemplos:
  probabilidade da hipótese de câncer, mas 
  o aumento não é tão grande quanto poderia se esperar.
  Isso ocorre pois o médico acreditava, a princípio, 
- que a probabilidade de o paciente ter câncer era baixa.
+ que a probabilidade do paciente ter câncer era baixa.
  Também o exame pode ter 
  falsos positivos e falsos negativos.
  Como resposta ao resultado observado, 
@@ -146,7 +146,7 @@ alguns exemplos:
  \emph{a posteriori} do analista para 
  $\theta$ após observar $X=20$, é
  uma Beta$(25,15)$.
- A partir desta distibuição, pode-se calcular, por exemplo, a probabilidade do candidato $D$ vencer a eleição. Esta é dada por $\P(\theta>0.5|X=20)=\P(\mbox{Beta}(25,15)>0.5) \approx 94,59\%$.
+ A partir desta distribuição, pode-se calcular, por exemplo, a probabilidade do candidato $D$ vencer a eleição. Esta é dada por $\P(\theta>0.5|X=20)=\P(\mbox{Beta}(25,15)>0.5) \approx 94,59\%$.
 
  Por conveniência, podemos atribuir alguns 
  nomes a conceitos estudados neste curso.
@@ -777,7 +777,7 @@ cada elemento do vetor $x$. Neste caso, obtemos,
  as palavras de $A$. Acreditamos que o som inicial para
  o sentido ``cachorro'' em $A$ é 
  uma consoante ou uma vogal com mesma probabilidade.
- Observamos que o sons iniciais dos
+ Observamos que os sons iniciais dos
  idiomas $B$ e $C$ para ``cachorro'' são 
  ambos consoantes.
  Estamos interessados em predizer a 
