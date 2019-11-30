@@ -6212,7 +6212,7 @@ Por exemplo, no caso em que você decide sobre levar o
 guarda-chuva e a calculadora,
 uma variável importante pode ser a
 ocorrência de chuva no dia.
-Não queremos molhar a calculadora, mas por outro lado levar o guarda-chuvas quando não chove também não é agradável.
+Não queremos molhar a calculadora, mas por outro lado levar o guarda-chuva quando não chove também não é agradável.
 Assim,  $\Theta$ poderia ser
 o conjunto com os elementos ``chove no dia'', e 
 ``não chove no dia''. Denotaremos as
@@ -6341,7 +6341,7 @@ A melhor alternativa é chamada de \emph{alternativa de Bayes}.
   \begin{cases}
    U_{(gc,ca)} &= \P(\{ch\})U((gc,ca), ch) + \P(\bar{ch})U((gc,ca), \bar{ch}) = 0.1 \cdot 0.5 + 0.9 \cdot 0.9 = 0.86 \\
    U_{(gc,\bar{ca})} &= \P(\{ch\})U((gc,\bar{ca}), ch) + \P(\bar{ch})U((gc,\bar{ca}), \bar{ch}) = 0.1 \cdot 0.6 + 0.9 \cdot 0.7 = 0.69 \\
-   U_{(\bar{gc},ca)} &= \P(\{ch\})U((\bar{gc},ca), ch) + \P(\bar{ch})U((\bar{gc},ca), \bar{ch}) = 0 \cdot 0.1 + 1 \cdot 0.9 = 1.0 \\
+   U_{(\bar{gc},ca)} &= \P(\{ch\})U((\bar{gc},ca), ch) + \P(\bar{ch})U((\bar{gc},ca), \bar{ch}) = 0 \cdot 0.1 + 1 \cdot 0.9 = 0.9 \\
    U_{(\bar{gc},\bar{ca})}	&= \P(\{ch\})U((\bar{gc},\bar{ca}), ch) + \P(\bar{ch})U((\bar{gc},\bar{ca}), \bar{ch}) = 0.1 \cdot 0.1 + 0.9 \cdot 0.8 = 0.73
   \end{cases}
  \end{align*}
@@ -6727,7 +6727,7 @@ problema de decisão com dados.
    \begin{cases}
     \P(\theta=0,X=0)	
     &= \P(\theta=0)\P(X=0|\theta=0)
-    = 0.8 \cdot 0.9 = 0.72 \\
+    = 0.8 \cdot 0.9 = 0.74 \\
 	\P(\theta=0,X=1)	
     &= \P(\theta=0)\P(X=1|\theta=0) 
     = 0.8 \cdot 0.1 = 0.08 \\
@@ -10585,7 +10585,7 @@ $N(0,1)$, então decorre das
 $1-\alpha$ para $\E[g(\theta)|x]$.
 Note que decorre da
 \cref{eqn:monte_carlo_1} que
-$\frac{\sum_{i=1}^{n}{g(T_{i})^{2}}}{B} \approx \E[g(\theta)^{2}|x]$.
+$\frac{\sum_{i=1}^{B}{g(T_{i})^{2}}}{B} \approx \E[g(\theta)^{2}|x]$.
 Portanto, como podemos escrever
 $\V[g(\theta)|x]$ como
 $\E[g(\theta)^{2}|x]-\E[g(\theta)|x]^{2}$, então a variância de 
@@ -10668,7 +10668,7 @@ que têm essa finalidade.
 
 O método da rejeição pode ser empregado
 para obter uma amostra da posteriori.
-Ele pode ser descrito nos seguinte passos:
+Ele pode ser descrito nos seguintes passos:
 
 \begin{enumerate}
  \item Considere que $f(\theta)$ é a
@@ -10842,7 +10842,7 @@ simula_beta_2_2_rejeicao <- function(B)
  outro aspecto do método da rejeição.
  Ao combinarmos $T$ e $U$, obtemos uma
  distribuição uniforme em $[0,1]^{2}$.
- Ao remover, os pontos azuis,
+ Ao remover os pontos azuis,
  os pontos vermelhos que restam distribuem-se de
  acordo com uma distribuição Beta(2,2) no eixo $x$.
  \begin{figure}
@@ -11960,7 +11960,7 @@ inferência bayesiana para uma classe ampla de problemas.
 	\item Exiba o código para obter uma Cadeia de Markov para $\mu_{1}$ e $\mu_{2}$ no stan,
 	      considerando que $\nu = 20$, $\tau_{1}^{2}=25$ e $\tau_{2}^{2}=10$.
 	\item Estime $\mu_{1}$ e $\mu_{2}$ usando a utilidade derivada do erro quadrático.
-	\item Construa um intervalo de credibililidade de 95\% para cada parâmetro.
+	\item Construa um intervalo de credibilidade de 95\% para cada parâmetro.
 	      Interprete a razão de os intervalos para $\mu_{1}$ e $\mu_{2}$ serem menores 
 				do que o intervalo para $\mu$.
 	\item Teste a hipótese de M usando a utilidade na tabela \ref{table:u-0-1-c} e $c=1$.
@@ -12085,7 +12085,7 @@ olbm(mu >= 20, 250)
  \begin{enumerate}[label=(\alph*)]
   \item Gere dados no R considerando que $\theta_{1}=100$ e $\theta_{2}=150$ e $n=30$.
 	\item Exiba o código para obter uma Cadeia de Markov para $\theta_{1}$ e $\theta_{2}$ no stan, usando $a_1 = a_2 = b_1 = b_2 = 1$.
-	\item Construa um intervalo de credibililidade de 95\% para cada parâmetro.
+	\item Construa um intervalo de credibilidade de 95\% para cada parâmetro.
 	\item Teste a hipótese de M usando a utilidade na tabela \ref{table:u-0-1-c} e $c=1$.
 	\item Como você levaria em conta que o número de acessos pode ser influenciado pelo dia da semana?
 	      Sugira um modelo que leve este efeito em consideração e rode-o no stan.

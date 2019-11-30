@@ -71,7 +71,7 @@ $N(0,1)$, então decorre das
 $1-\alpha$ para $\E[g(\theta)|x]$.
 Note que decorre da
 \cref{eqn:monte_carlo_1} que
-$\frac{\sum_{i=1}^{n}{g(T_{i})^{2}}}{B} \approx \E[g(\theta)^{2}|x]$.
+$\frac{\sum_{i=1}^{B}{g(T_{i})^{2}}}{B} \approx \E[g(\theta)^{2}|x]$.
 Portanto, como podemos escrever
 $\V[g(\theta)|x]$ como
 $\E[g(\theta)^{2}|x]-\E[g(\theta)|x]^{2}$, então a variância de 
@@ -150,7 +150,7 @@ que têm essa finalidade.
 
 O método da rejeição pode ser empregado
 para obter uma amostra da posteriori.
-Ele pode ser descrito nos seguinte passos:
+Ele pode ser descrito nos seguintes passos:
 
 \begin{enumerate}
  \item Considere que $f(\theta)$ é a
@@ -316,7 +316,7 @@ simula_beta_2_2_rejeicao <- function(B)
  outro aspecto do método da rejeição.
  Ao combinarmos $T$ e $U$, obtemos uma
  distribuição uniforme em $[0,1]^{2}$.
- Ao remover, os pontos azuis,
+ Ao remover os pontos azuis,
  os pontos vermelhos que restam distribuem-se de
  acordo com uma distribuição Beta(2,2) no eixo $x$.
  \begin{figure}
