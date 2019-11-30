@@ -106,7 +106,7 @@ Por exemplo, no caso em que você decide sobre levar o
 guarda-chuva e a calculadora,
 uma variável importante pode ser a
 ocorrência de chuva no dia.
-Não queremos molhar a calculadora, mas por outro lado levar o guarda-chuvas quando não chove também não é agradável.
+Não queremos molhar a calculadora, mas por outro lado levar o guarda-chuva quando não chove também não é agradável.
 Assim,  $\Theta$ poderia ser
 o conjunto com os elementos ``chove no dia'', e 
 ``não chove no dia''. Denotaremos as
@@ -235,7 +235,7 @@ A melhor alternativa é chamada de \emph{alternativa de Bayes}.
   \begin{cases}
    U_{(gc,ca)} &= \P(\{ch\})U((gc,ca), ch) + \P(\bar{ch})U((gc,ca), \bar{ch}) = 0.1 \cdot 0.5 + 0.9 \cdot 0.9 = 0.86 \\
    U_{(gc,\bar{ca})} &= \P(\{ch\})U((gc,\bar{ca}), ch) + \P(\bar{ch})U((gc,\bar{ca}), \bar{ch}) = 0.1 \cdot 0.6 + 0.9 \cdot 0.7 = 0.69 \\
-   U_{(\bar{gc},ca)} &= \P(\{ch\})U((\bar{gc},ca), ch) + \P(\bar{ch})U((\bar{gc},ca), \bar{ch}) = 0 \cdot 0.1 + 1 \cdot 0.9 = 1.0 \\
+   U_{(\bar{gc},ca)} &= \P(\{ch\})U((\bar{gc},ca), ch) + \P(\bar{ch})U((\bar{gc},ca), \bar{ch}) = 0 \cdot 0.1 + 1 \cdot 0.9 = 0.9 \\
    U_{(\bar{gc},\bar{ca})}	&= \P(\{ch\})U((\bar{gc},\bar{ca}), ch) + \P(\bar{ch})U((\bar{gc},\bar{ca}), \bar{ch}) = 0.1 \cdot 0.1 + 0.9 \cdot 0.8 = 0.73
   \end{cases}
  \end{align*}
@@ -621,7 +621,7 @@ problema de decisão com dados.
    \begin{cases}
     \P(\theta=0,X=0)	
     &= \P(\theta=0)\P(X=0|\theta=0)
-    = 0.8 \cdot 0.9 = 0.72 \\
+    = 0.8 \cdot 0.9 = 0.74 \\
 	\P(\theta=0,X=1)	
     &= \P(\theta=0)\P(X=1|\theta=0) 
     = 0.8 \cdot 0.1 = 0.08 \\

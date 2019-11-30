@@ -685,7 +685,7 @@ inferência bayesiana para uma classe ampla de problemas.
 	\item Exiba o código para obter uma Cadeia de Markov para $\mu_{1}$ e $\mu_{2}$ no stan,
 	      considerando que $\nu = 20$, $\tau_{1}^{2}=25$ e $\tau_{2}^{2}=10$.
 	\item Estime $\mu_{1}$ e $\mu_{2}$ usando a utilidade derivada do erro quadrático.
-	\item Construa um intervalo de credibililidade de 95\% para cada parâmetro.
+	\item Construa um intervalo de credibilidade de 95\% para cada parâmetro.
 	      Interprete a razão de os intervalos para $\mu_{1}$ e $\mu_{2}$ serem menores 
 				do que o intervalo para $\mu$.
 	\item Teste a hipótese de M usando a utilidade na tabela \ref{table:u-0-1-c} e $c=1$.
@@ -810,7 +810,7 @@ olbm(mu >= 20, 250)
  \begin{enumerate}[label=(\alph*)]
   \item Gere dados no R considerando que $\theta_{1}=100$ e $\theta_{2}=150$ e $n=30$.
 	\item Exiba o código para obter uma Cadeia de Markov para $\theta_{1}$ e $\theta_{2}$ no stan, usando $a_1 = a_2 = b_1 = b_2 = 1$.
-	\item Construa um intervalo de credibililidade de 95\% para cada parâmetro.
+	\item Construa um intervalo de credibilidade de 95\% para cada parâmetro.
 	\item Teste a hipótese de M usando a utilidade na tabela \ref{table:u-0-1-c} e $c=1$.
 	\item Como você levaria em conta que o número de acessos pode ser influenciado pelo dia da semana?
 	      Sugira um modelo que leve este efeito em consideração e rode-o no stan.
