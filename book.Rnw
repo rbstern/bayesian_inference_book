@@ -10,6 +10,15 @@
 Michelangelo dos Anjos, Yuri Benites, Ian Danilevicz, Andressa Dantas, Thales Egydio, Luís Esteves, Jeremias Leão, Tarcísio Lobato, Rafael Paixão, Carlos Pereira, João Poloniato,  Aimée Shirozono, João Silva, Julio Stern, Aline Tonon, Sergio Wechsler e Victor Zoré.
 
 \newpage
+
+
+\epigraph{
+``Teaching is giving opportunities to students to discover things by themselves.''
+}
+{George P\'olya}
+ 
+ 
+\newpage
  
 \tableofcontents
   
