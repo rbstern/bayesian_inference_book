@@ -47,6 +47,7 @@
 \contentsline {subsection}{\numberline {9.2}M\IeC {\'e}todo de Monte Carlo via cadeias de Markov}{96}{subsection.9.2}
 \contentsline {subsubsection}{\numberline {9.2.1}Cadeias de Markov}{96}{subsubsection.9.2.1}
 \contentsline {subsubsection}{\numberline {9.2.2}O algoritmo de Metropolis-Hastings}{98}{subsubsection.9.2.2}
-\contentsline {subsubsection}{\numberline {9.2.3}Monte Carlo para cadeias de Markov na pr\IeC {\'a}tica}{101}{subsubsection.9.2.3}
-\contentsline {subsubsection}{\numberline {9.2.4}Exerc\IeC {\'\i }cios}{105}{subsubsection.9.2.4}
+\contentsline {subsubsection}{\numberline {9.2.3}O algoritmo de Gibbs}{101}{subsubsection.9.2.3}
+\contentsline {subsubsection}{\numberline {9.2.4}Monte Carlo para cadeias de Markov na pr\IeC {\'a}tica}{101}{subsubsection.9.2.4}
+\contentsline {subsubsection}{\numberline {9.2.5}Exerc\IeC {\'\i }cios}{105}{subsubsection.9.2.5}
 \contentsline {section}{\numberline {10}Revis\IeC {\~a}o final}{105}{section.10}
