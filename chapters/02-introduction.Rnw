@@ -171,14 +171,29 @@ alguns exemplos:
  Em outras palavras, a sua opinião sobre
  o parâmetro após observar os dados está entre
  a sua opinião anterior e a verossimilhança dos dados.
- \begin{figure}
-  \centering
-  \includegraphics{chapter-introduction-elections.pdf}
-  \caption{Comparação entre a distribuição a priori,
-  a verossimilhança e a distribuição a posteriori no
-  \cref{exemplo:eleicao}.}
-  \label{figura:eleicao}
- \end{figure}
+ 
+\begin{figure}
+<<warnings = FALSE>>=
+library(tidyverse)
+a = 5
+b = 5
+n_data = 30
+x = 20
+priori = function(t) dbeta(t, a, b)
+verossimilhanca = function(t) dbeta(t, x + 1, n_data - x + 1)
+posteriori = function(t) dbeta(t, a + x, b + n_data - x)
+data.frame(x = 0) %>% 
+  ggplot(aes(x = x)) +
+  xlim(c(0, 1)) +
+  stat_function(fun = priori, aes(color = "priori")) +
+  stat_function(fun = verossimilhanca, aes(color = "verossimilhança")) +
+  stat_function(fun = posteriori, aes(color = "posteriori")) +
+  labs(x = expression(theta), y = "densidade")
+@
+ \caption{Comparação entre a distribuição a priori, a verossimilhança, e a distribuição a posteriori no \cref{exemplo:eleicao}.}
+ \label{figura:eleicao}
+\end{figure}
+
 \end{example}
 
 \subsubsection*{Exercícios}

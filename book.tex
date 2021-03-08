@@ -24,13 +24,6 @@ Michelangelo dos Anjos, Yuri Benites, Ian Danilevicz, Andressa Dantas, Thales Eg
   
 \newpage
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
- \hlstd{opts_chunk}\hlopt{$}\hlkwd{set}\hlstd{(}\hlkwc{cache}\hlstd{=}\hlnum{TRUE}\hlstd{,}\hlkwc{fig.path}\hlstd{=}\hlstr{"./figures/"}\hlstd{)}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
 
 
 
@@ -732,14 +725,35 @@ alguns exemplos:
  Em outras palavras, a sua opinião sobre
  o parâmetro após observar os dados está entre
  a sua opinião anterior e a verossimilhança dos dados.
- \begin{figure}
-  \centering
-  \includegraphics{chapter-introduction-elections.pdf}
-  \caption{Comparação entre a distribuição a priori,
-  a verossimilhança e a distribuição a posteriori no
-  \cref{exemplo:eleicao}.}
-  \label{figura:eleicao}
- \end{figure}
+ 
+\begin{figure}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(tidyverse)}
+\hlstd{a} \hlkwb{=} \hlnum{5}
+\hlstd{b} \hlkwb{=} \hlnum{5}
+\hlstd{n_data} \hlkwb{=} \hlnum{30}
+\hlstd{x} \hlkwb{=} \hlnum{20}
+\hlstd{priori} \hlkwb{=} \hlkwa{function}\hlstd{(}\hlkwc{t}\hlstd{)} \hlkwd{dbeta}\hlstd{(t, a, b)}
+\hlstd{verossimilhanca} \hlkwb{=} \hlkwa{function}\hlstd{(}\hlkwc{t}\hlstd{)} \hlkwd{dbeta}\hlstd{(t, x} \hlopt{+} \hlnum{1}\hlstd{, n_data} \hlopt{-} \hlstd{x} \hlopt{+} \hlnum{1}\hlstd{)}
+\hlstd{posteriori} \hlkwb{=} \hlkwa{function}\hlstd{(}\hlkwc{t}\hlstd{)} \hlkwd{dbeta}\hlstd{(t, a} \hlopt{+} \hlstd{x, b} \hlopt{+} \hlstd{n_data} \hlopt{-} \hlstd{x)}
+\hlkwd{data.frame}\hlstd{(}\hlkwc{x} \hlstd{=} \hlnum{0}\hlstd{)} \hlopt{%>%}
+  \hlkwd{ggplot}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= x))} \hlopt{+}
+  \hlkwd{xlim}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,} \hlnum{1}\hlstd{))} \hlopt{+}
+  \hlkwd{stat_function}\hlstd{(}\hlkwc{fun} \hlstd{= priori,} \hlkwd{aes}\hlstd{(}\hlkwc{color} \hlstd{=} \hlstr{"priori"}\hlstd{))} \hlopt{+}
+  \hlkwd{stat_function}\hlstd{(}\hlkwc{fun} \hlstd{= verossimilhanca,} \hlkwd{aes}\hlstd{(}\hlkwc{color} \hlstd{=} \hlstr{"verossimilhança"}\hlstd{))} \hlopt{+}
+  \hlkwd{stat_function}\hlstd{(}\hlkwc{fun} \hlstd{= posteriori,} \hlkwd{aes}\hlstd{(}\hlkwc{color} \hlstd{=} \hlstr{"posteriori"}\hlstd{))} \hlopt{+}
+  \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{expression}\hlstd{(theta),} \hlkwc{y} \hlstd{=} \hlstr{"densidade"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{./figures/unnamed-chunk-17-1} 
+
+\end{knitrout}
+ \caption{Comparação entre a distribuição a priori, a verossimilhança, e a distribuição a posteriori no \cref{exemplo:eleicao}.}
+ \label{figura:eleicao}
+\end{figure}
+
 \end{example}
 
 \subsubsection*{Exercícios}
@@ -7240,7 +7254,7 @@ ilustrar uma aplicação do \cref{theorem:extensive-form}.
  \end{enumerate}
 }{}
 
- 
+
 
 \section{Inferência Bayesiana}
 

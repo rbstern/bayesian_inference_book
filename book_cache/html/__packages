@@ -1,7 +1,13 @@
 base
+methods
+datasets
+utils
+grDevices
+graphics
+stats
 knitr
-ggplot2
 tidyverse
+ggplot2
 tibble
 tidyr
 readr

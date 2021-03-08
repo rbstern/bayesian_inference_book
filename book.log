@@ -1,19 +1,19 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  10 JAN 2020 09:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.2.21)  2 MAR 2021 18:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **book.tex
 (./book.tex
-LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 8 language(s) loaded.
-(./config.tex (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrartcl.cls
-Document Class: scrartcl 2017/09/07 v3.24 KOMA-Script document class (article)
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14> (./config.tex
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrartcl.cls
+Document Class: scrartcl 2020/01/24 v3.29 KOMA-Script document class (article)
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2017/09/07 v3.24 KOMA-Script package (KOMA-Script-dependent b
+Package: scrkbase 2020/01/24 v3.29 KOMA-Script package (KOMA-Script-dependent b
 asics and keyval usage)
 
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2017/09/07 v3.24 KOMA-Script package (KOMA-Script-independent 
+Package: scrbase 2020/01/24 v3.29 KOMA-Script package (KOMA-Script-independent 
 basics and keyval usage)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
@@ -21,22 +21,16 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty
-Package: scrlfile 2017/09/07 v3.24 KOMA-Script package (loading files)
+Package: scrlfile 2020/01/24 v3.29 KOMA-Script package (loading files)
 )))
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/tocbasic.sty
-Package: tocbasic 2017/09/07 v3.24 KOMA-Script package (handling toc-files)
-\scr@dte@tocline@numberwidth=\skip41
-\scr@dte@tocline@numbox=\box26
+Package: tocbasic 2020/01/24 v3.29 KOMA-Script package (handling toc-files)
+\scr@dte@tocline@numberwidth=\skip47
+\scr@dte@tocline@numbox=\box45
 )
 Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `toc' on input line 133.
-Package tocbasic Info: omitting babel extension for `lof'
-(tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lof' on input line 135.
-Package tocbasic Info: omitting babel extension for `lot'
-(tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lot' on input line 136.
+(tocbasic)             for `toc' on input line 137.
 Package scrartcl Info: You've used standard option `11pt'.
 (scrartcl)             This is correct!
 (scrartcl)             Internally I'm using `fontsize=11pt'.
@@ -44,20 +38,20 @@ Package scrartcl Info: You've used standard option `11pt'.
 (scrartcl)             you'd have to use `fontsize=11pt' there
 (scrartcl)             instead of `11pt', too.
 Class scrartcl Info: File `scrsize11pt.clo' used to setup font sizes on input l
-ine 2080.
+ine 2212.
 
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
-File: scrsize11pt.clo 2017/09/07 v3.24 KOMA-Script font size class option (11pt
+File: scrsize11pt.clo 2020/01/24 v3.29 KOMA-Script font size class option (11pt
 )
 )
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/typearea.sty
-Package: typearea 2017/09/07 v3.24 KOMA-Script package (type area)
-\ta@bcor=\skip42
-\ta@div=\count79
-\ta@hblk=\skip43
-\ta@vblk=\skip44
-\ta@temp=\skip45
-\footheight=\skip46
+Package: typearea 2020/01/24 v3.29 KOMA-Script package (type area)
+\ta@bcor=\skip48
+\ta@div=\count167
+\ta@hblk=\skip49
+\ta@vblk=\skip50
+\ta@temp=\skip51
+\footheight=\skip52
 Package typearea Info: These are the values describing the layout:
 (typearea)             DIV  = 10
 (typearea)             BCOR = 0.0pt
@@ -74,522 +68,232 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 11.0pt
 (typearea)              \footskip       = 47.6pt
 (typearea)              \baselineskip   = 13.6pt
-(typearea)              on input line 1686.
+(typearea)              on input line 1719.
 )
-\c@part=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\scr@dte@part@maxnumwidth=\skip47
-\scr@dte@section@maxnumwidth=\skip48
-\scr@dte@subsection@maxnumwidth=\skip49
-\scr@dte@subsubsection@maxnumwidth=\skip50
-\scr@dte@paragraph@maxnumwidth=\skip51
-\scr@dte@subparagraph@maxnumwidth=\skip52
-LaTeX Info: Redefining \textsubscript on input line 4161.
-\abovecaptionskip=\skip53
-\belowcaptionskip=\skip54
-\c@pti@nb@sid@b@x=\box27
-\c@figure=\count86
-\c@table=\count87
-Class scrartcl Info: Redefining `\numberline' on input line 5319.
-\bibindent=\dimen102
+\c@part=\count168
+\c@section=\count169
+\c@subsection=\count170
+\c@subsubsection=\count171
+\c@paragraph=\count172
+\c@subparagraph=\count173
+\scr@dte@section@maxnumwidth=\skip53
+Class scrartcl Info: using compatibility default `runin=bysign'
+(scrartcl)           for `\section on input line 4723.
+Class scrartcl Info: using compatibility default `afterindent=bysign'
+(scrartcl)           for `\section on input line 4723.
+\scr@dte@part@maxnumwidth=\skip54
+Class scrartcl Info: using compatibility default `afterindent=false'
+(scrartcl)           for `\part on input line 4731.
+\scr@dte@subsection@maxnumwidth=\skip55
+Class scrartcl Info: using compatibility default `runin=bysign'
+(scrartcl)           for `\subsection on input line 4741.
+Class scrartcl Info: using compatibility default `afterindent=bysign'
+(scrartcl)           for `\subsection on input line 4741.
+\scr@dte@subsubsection@maxnumwidth=\skip56
+Class scrartcl Info: using compatibility default `runin=bysign'
+(scrartcl)           for `\subsubsection on input line 4751.
+Class scrartcl Info: using compatibility default `afterindent=bysign'
+(scrartcl)           for `\subsubsection on input line 4751.
+\scr@dte@paragraph@maxnumwidth=\skip57
+Class scrartcl Info: using compatibility default `runin=bysign'
+(scrartcl)           for `\paragraph on input line 4761.
+Class scrartcl Info: using compatibility default `afterindent=bysign'
+(scrartcl)           for `\paragraph on input line 4761.
+\scr@dte@subparagraph@maxnumwidth=\skip58
+Class scrartcl Info: using compatibility default `runin=bysign'
+(scrartcl)           for `\subparagraph on input line 4771.
+Class scrartcl Info: using compatibility default `afterindent=bysign'
+(scrartcl)           for `\subparagraph on input line 4771.
+\abovecaptionskip=\skip59
+\belowcaptionskip=\skip60
+\c@pti@nb@sid@b@x=\box46
+Package tocbasic Info: omitting babel extension for `lof'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lof' on input line 6002.
+\scr@dte@figure@maxnumwidth=\skip61
+\c@figure=\count174
+Package tocbasic Info: omitting babel extension for `lot'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lot' on input line 6014.
+\scr@dte@table@maxnumwidth=\skip62
+\c@table=\count175
+Class scrartcl Info: Redefining `\numberline' on input line 6178.
+\bibindent=\dimen134
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2018/02/14 3.18 The Babel package
+Package: babel 2020/02/14 3.40 The Babel package
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
-File: switch.def 2018/02/14 3.18 Babel switching mechanism
+File: switch.def 2020/02/14 3.40 Babel switching mechanism
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel-portuges/portuges.ldf
 Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2018/02/14 3.18 Babel common definitions
-\babel@savecnt=\count88
-\U@D=\dimen103
+File: babel.def 2020/02/14 3.40 Babel common definitions
+\babel@savecnt=\count176
+\U@D=\dimen135
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@dirlevel=\count89
+\bbl@readstream=\read2
+\bbl@dirlevel=\count177
 )
 Package babel Info: Making " an active character on input line 145.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2015/03/17 v1.2c Input encoding file
+Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-Now handling font encoding OML ...
-... no UTF-8 mapping file for font encoding OML
-Now handling font encoding T1 ...
-... processing UTF-8 mapping file for font encoding T1
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
-File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
-   defining Unicode char U+00A0 (decimal 160)
-   defining Unicode char U+00A1 (decimal 161)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00AB (decimal 171)
-   defining Unicode char U+00AD (decimal 173)
-   defining Unicode char U+00BB (decimal 187)
-   defining Unicode char U+00BF (decimal 191)
-   defining Unicode char U+00C0 (decimal 192)
-   defining Unicode char U+00C1 (decimal 193)
-   defining Unicode char U+00C2 (decimal 194)
-   defining Unicode char U+00C3 (decimal 195)
-   defining Unicode char U+00C4 (decimal 196)
-   defining Unicode char U+00C5 (decimal 197)
-   defining Unicode char U+00C6 (decimal 198)
-   defining Unicode char U+00C7 (decimal 199)
-   defining Unicode char U+00C8 (decimal 200)
-   defining Unicode char U+00C9 (decimal 201)
-   defining Unicode char U+00CA (decimal 202)
-   defining Unicode char U+00CB (decimal 203)
-   defining Unicode char U+00CC (decimal 204)
-   defining Unicode char U+00CD (decimal 205)
-   defining Unicode char U+00CE (decimal 206)
-   defining Unicode char U+00CF (decimal 207)
-   defining Unicode char U+00D0 (decimal 208)
-   defining Unicode char U+00D1 (decimal 209)
-   defining Unicode char U+00D2 (decimal 210)
-   defining Unicode char U+00D3 (decimal 211)
-   defining Unicode char U+00D4 (decimal 212)
-   defining Unicode char U+00D5 (decimal 213)
-   defining Unicode char U+00D6 (decimal 214)
-   defining Unicode char U+00D8 (decimal 216)
-   defining Unicode char U+00D9 (decimal 217)
-   defining Unicode char U+00DA (decimal 218)
-   defining Unicode char U+00DB (decimal 219)
-   defining Unicode char U+00DC (decimal 220)
-   defining Unicode char U+00DD (decimal 221)
-   defining Unicode char U+00DE (decimal 222)
-   defining Unicode char U+00DF (decimal 223)
-   defining Unicode char U+00E0 (decimal 224)
-   defining Unicode char U+00E1 (decimal 225)
-   defining Unicode char U+00E2 (decimal 226)
-   defining Unicode char U+00E3 (decimal 227)
-   defining Unicode char U+00E4 (decimal 228)
-   defining Unicode char U+00E5 (decimal 229)
-   defining Unicode char U+00E6 (decimal 230)
-   defining Unicode char U+00E7 (decimal 231)
-   defining Unicode char U+00E8 (decimal 232)
-   defining Unicode char U+00E9 (decimal 233)
-   defining Unicode char U+00EA (decimal 234)
-   defining Unicode char U+00EB (decimal 235)
-   defining Unicode char U+00EC (decimal 236)
-   defining Unicode char U+00ED (decimal 237)
-   defining Unicode char U+00EE (decimal 238)
-   defining Unicode char U+00EF (decimal 239)
-   defining Unicode char U+00F0 (decimal 240)
-   defining Unicode char U+00F1 (decimal 241)
-   defining Unicode char U+00F2 (decimal 242)
-   defining Unicode char U+00F3 (decimal 243)
-   defining Unicode char U+00F4 (decimal 244)
-   defining Unicode char U+00F5 (decimal 245)
-   defining Unicode char U+00F6 (decimal 246)
-   defining Unicode char U+00F8 (decimal 248)
-   defining Unicode char U+00F9 (decimal 249)
-   defining Unicode char U+00FA (decimal 250)
-   defining Unicode char U+00FB (decimal 251)
-   defining Unicode char U+00FC (decimal 252)
-   defining Unicode char U+00FD (decimal 253)
-   defining Unicode char U+00FE (decimal 254)
-   defining Unicode char U+00FF (decimal 255)
-   defining Unicode char U+0100 (decimal 256)
-   defining Unicode char U+0101 (decimal 257)
-   defining Unicode char U+0102 (decimal 258)
-   defining Unicode char U+0103 (decimal 259)
-   defining Unicode char U+0104 (decimal 260)
-   defining Unicode char U+0105 (decimal 261)
-   defining Unicode char U+0106 (decimal 262)
-   defining Unicode char U+0107 (decimal 263)
-   defining Unicode char U+0108 (decimal 264)
-   defining Unicode char U+0109 (decimal 265)
-   defining Unicode char U+010A (decimal 266)
-   defining Unicode char U+010B (decimal 267)
-   defining Unicode char U+010C (decimal 268)
-   defining Unicode char U+010D (decimal 269)
-   defining Unicode char U+010E (decimal 270)
-   defining Unicode char U+010F (decimal 271)
-   defining Unicode char U+0110 (decimal 272)
-   defining Unicode char U+0111 (decimal 273)
-   defining Unicode char U+0112 (decimal 274)
-   defining Unicode char U+0113 (decimal 275)
-   defining Unicode char U+0114 (decimal 276)
-   defining Unicode char U+0115 (decimal 277)
-   defining Unicode char U+0116 (decimal 278)
-   defining Unicode char U+0117 (decimal 279)
-   defining Unicode char U+0118 (decimal 280)
-   defining Unicode char U+0119 (decimal 281)
-   defining Unicode char U+011A (decimal 282)
-   defining Unicode char U+011B (decimal 283)
-   defining Unicode char U+011C (decimal 284)
-   defining Unicode char U+011D (decimal 285)
-   defining Unicode char U+011E (decimal 286)
-   defining Unicode char U+011F (decimal 287)
-   defining Unicode char U+0120 (decimal 288)
-   defining Unicode char U+0121 (decimal 289)
-   defining Unicode char U+0122 (decimal 290)
-   defining Unicode char U+0123 (decimal 291)
-   defining Unicode char U+0124 (decimal 292)
-   defining Unicode char U+0125 (decimal 293)
-   defining Unicode char U+0128 (decimal 296)
-   defining Unicode char U+0129 (decimal 297)
-   defining Unicode char U+012A (decimal 298)
-   defining Unicode char U+012B (decimal 299)
-   defining Unicode char U+012C (decimal 300)
-   defining Unicode char U+012D (decimal 301)
-   defining Unicode char U+012E (decimal 302)
-   defining Unicode char U+012F (decimal 303)
-   defining Unicode char U+0130 (decimal 304)
-   defining Unicode char U+0131 (decimal 305)
-   defining Unicode char U+0132 (decimal 306)
-   defining Unicode char U+0133 (decimal 307)
-   defining Unicode char U+0134 (decimal 308)
-   defining Unicode char U+0135 (decimal 309)
-   defining Unicode char U+0136 (decimal 310)
-   defining Unicode char U+0137 (decimal 311)
-   defining Unicode char U+0139 (decimal 313)
-   defining Unicode char U+013A (decimal 314)
-   defining Unicode char U+013B (decimal 315)
-   defining Unicode char U+013C (decimal 316)
-   defining Unicode char U+013D (decimal 317)
-   defining Unicode char U+013E (decimal 318)
-   defining Unicode char U+0141 (decimal 321)
-   defining Unicode char U+0142 (decimal 322)
-   defining Unicode char U+0143 (decimal 323)
-   defining Unicode char U+0144 (decimal 324)
-   defining Unicode char U+0145 (decimal 325)
-   defining Unicode char U+0146 (decimal 326)
-   defining Unicode char U+0147 (decimal 327)
-   defining Unicode char U+0148 (decimal 328)
-   defining Unicode char U+014A (decimal 330)
-   defining Unicode char U+014B (decimal 331)
-   defining Unicode char U+014C (decimal 332)
-   defining Unicode char U+014D (decimal 333)
-   defining Unicode char U+014E (decimal 334)
-   defining Unicode char U+014F (decimal 335)
-   defining Unicode char U+0150 (decimal 336)
-   defining Unicode char U+0151 (decimal 337)
-   defining Unicode char U+0152 (decimal 338)
-   defining Unicode char U+0153 (decimal 339)
-   defining Unicode char U+0154 (decimal 340)
-   defining Unicode char U+0155 (decimal 341)
-   defining Unicode char U+0156 (decimal 342)
-   defining Unicode char U+0157 (decimal 343)
-   defining Unicode char U+0158 (decimal 344)
-   defining Unicode char U+0159 (decimal 345)
-   defining Unicode char U+015A (decimal 346)
-   defining Unicode char U+015B (decimal 347)
-   defining Unicode char U+015C (decimal 348)
-   defining Unicode char U+015D (decimal 349)
-   defining Unicode char U+015E (decimal 350)
-   defining Unicode char U+015F (decimal 351)
-   defining Unicode char U+0160 (decimal 352)
-   defining Unicode char U+0161 (decimal 353)
-   defining Unicode char U+0162 (decimal 354)
-   defining Unicode char U+0163 (decimal 355)
-   defining Unicode char U+0164 (decimal 356)
-   defining Unicode char U+0165 (decimal 357)
-   defining Unicode char U+0168 (decimal 360)
-   defining Unicode char U+0169 (decimal 361)
-   defining Unicode char U+016A (decimal 362)
-   defining Unicode char U+016B (decimal 363)
-   defining Unicode char U+016C (decimal 364)
-   defining Unicode char U+016D (decimal 365)
-   defining Unicode char U+016E (decimal 366)
-   defining Unicode char U+016F (decimal 367)
-   defining Unicode char U+0170 (decimal 368)
-   defining Unicode char U+0171 (decimal 369)
-   defining Unicode char U+0172 (decimal 370)
-   defining Unicode char U+0173 (decimal 371)
-   defining Unicode char U+0174 (decimal 372)
-   defining Unicode char U+0175 (decimal 373)
-   defining Unicode char U+0176 (decimal 374)
-   defining Unicode char U+0177 (decimal 375)
-   defining Unicode char U+0178 (decimal 376)
-   defining Unicode char U+0179 (decimal 377)
-   defining Unicode char U+017A (decimal 378)
-   defining Unicode char U+017B (decimal 379)
-   defining Unicode char U+017C (decimal 380)
-   defining Unicode char U+017D (decimal 381)
-   defining Unicode char U+017E (decimal 382)
-   defining Unicode char U+01CD (decimal 461)
-   defining Unicode char U+01CE (decimal 462)
-   defining Unicode char U+01CF (decimal 463)
-   defining Unicode char U+01D0 (decimal 464)
-   defining Unicode char U+01D1 (decimal 465)
-   defining Unicode char U+01D2 (decimal 466)
-   defining Unicode char U+01D3 (decimal 467)
-   defining Unicode char U+01D4 (decimal 468)
-   defining Unicode char U+01E2 (decimal 482)
-   defining Unicode char U+01E3 (decimal 483)
-   defining Unicode char U+01E6 (decimal 486)
-   defining Unicode char U+01E7 (decimal 487)
-   defining Unicode char U+01E8 (decimal 488)
-   defining Unicode char U+01E9 (decimal 489)
-   defining Unicode char U+01EA (decimal 490)
-   defining Unicode char U+01EB (decimal 491)
-   defining Unicode char U+01F0 (decimal 496)
-   defining Unicode char U+01F4 (decimal 500)
-   defining Unicode char U+01F5 (decimal 501)
-   defining Unicode char U+0218 (decimal 536)
-   defining Unicode char U+0219 (decimal 537)
-   defining Unicode char U+021A (decimal 538)
-   defining Unicode char U+021B (decimal 539)
-   defining Unicode char U+0232 (decimal 562)
-   defining Unicode char U+0233 (decimal 563)
-   defining Unicode char U+1E02 (decimal 7682)
-   defining Unicode char U+1E03 (decimal 7683)
-   defining Unicode char U+200C (decimal 8204)
-   defining Unicode char U+2010 (decimal 8208)
-   defining Unicode char U+2011 (decimal 8209)
-   defining Unicode char U+2012 (decimal 8210)
-   defining Unicode char U+2013 (decimal 8211)
-   defining Unicode char U+2014 (decimal 8212)
-   defining Unicode char U+2015 (decimal 8213)
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201A (decimal 8218)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
-   defining Unicode char U+201E (decimal 8222)
-   defining Unicode char U+2030 (decimal 8240)
-   defining Unicode char U+2031 (decimal 8241)
-   defining Unicode char U+2039 (decimal 8249)
-   defining Unicode char U+203A (decimal 8250)
-   defining Unicode char U+2423 (decimal 9251)
-   defining Unicode char U+1E20 (decimal 7712)
-   defining Unicode char U+1E21 (decimal 7713)
 )
-Now handling font encoding OT1 ...
-... processing UTF-8 mapping file for font encoding OT1
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
-File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
-   defining Unicode char U+00A0 (decimal 160)
-   defining Unicode char U+00A1 (decimal 161)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00AD (decimal 173)
-   defining Unicode char U+00B8 (decimal 184)
-   defining Unicode char U+00BF (decimal 191)
-   defining Unicode char U+00C5 (decimal 197)
-   defining Unicode char U+00C6 (decimal 198)
-   defining Unicode char U+00D8 (decimal 216)
-   defining Unicode char U+00DF (decimal 223)
-   defining Unicode char U+00E6 (decimal 230)
-   defining Unicode char U+00EC (decimal 236)
-   defining Unicode char U+00ED (decimal 237)
-   defining Unicode char U+00EE (decimal 238)
-   defining Unicode char U+00EF (decimal 239)
-   defining Unicode char U+00F8 (decimal 248)
-   defining Unicode char U+0131 (decimal 305)
-   defining Unicode char U+0141 (decimal 321)
-   defining Unicode char U+0142 (decimal 322)
-   defining Unicode char U+0152 (decimal 338)
-   defining Unicode char U+0153 (decimal 339)
-   defining Unicode char U+0174 (decimal 372)
-   defining Unicode char U+0175 (decimal 373)
-   defining Unicode char U+0176 (decimal 374)
-   defining Unicode char U+0177 (decimal 375)
-   defining Unicode char U+0218 (decimal 536)
-   defining Unicode char U+0219 (decimal 537)
-   defining Unicode char U+021A (decimal 538)
-   defining Unicode char U+021B (decimal 539)
-   defining Unicode char U+2013 (decimal 8211)
-   defining Unicode char U+2014 (decimal 8212)
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
-)
-Now handling font encoding OMS ...
-... processing UTF-8 mapping file for font encoding OMS
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
-File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
-   defining Unicode char U+00A7 (decimal 167)
-   defining Unicode char U+00B6 (decimal 182)
-   defining Unicode char U+00B7 (decimal 183)
-   defining Unicode char U+2020 (decimal 8224)
-   defining Unicode char U+2021 (decimal 8225)
-   defining Unicode char U+2022 (decimal 8226)
-)
-Now handling font encoding OMX ...
-... no UTF-8 mapping file for font encoding OMX
-Now handling font encoding U ...
-... no UTF-8 mapping file for font encoding U
-   defining Unicode char U+00A9 (decimal 169)
-   defining Unicode char U+00AA (decimal 170)
-   defining Unicode char U+00AE (decimal 174)
-   defining Unicode char U+00BA (decimal 186)
-   defining Unicode char U+02C6 (decimal 710)
-   defining Unicode char U+02DC (decimal 732)
-   defining Unicode char U+200C (decimal 8204)
-   defining Unicode char U+2026 (decimal 8230)
-   defining Unicode char U+2122 (decimal 8482)
-   defining Unicode char U+2423 (decimal 9251)
-))
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/refcount.sty
-Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 ))
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-))))
-\c@section@level=\count90
-LaTeX Info: Redefining \ref on input line 355.
-LaTeX Info: Redefining \pageref on input line 355.
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)))
+\c@section@level=\count178
+LaTeX Info: Redefining \ref on input line 356.
+LaTeX Info: Redefining \pageref on input line 356.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
-Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
-
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
-Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
-Package hobsub Info: Skipping package `infwarerr' (already loaded).
-Package hobsub Info: Skipping package `ltxcmds' (already loaded).
-Package hobsub Info: Skipping package `ifluatex' (already loaded).
-Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
-Package ifvtex Info: VTeX not detected.
-Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
-Package hobsub Info: Skipping package `etexcmds' (already loaded).
-Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
 )
-Package pdftexcmds Info: LuaTeX not detected.
+(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
 )
-Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
-Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-Package hobsub Info: Skipping package `hobsub' (already loaded).
-Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
-Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
-Package: xcolor-patch 2016/05/16 xcolor patch
-Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
-Package atveryend Info: \enddocument detected (standard20110627).
-Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
-Package hobsub Info: Skipping package `refcount' (already loaded).
-Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
-Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-\@linkdim=\dimen104
-\Hy@linkcounter=\count91
-\Hy@pagecounter=\count92
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen136
+\Hy@linkcounter=\count179
+\Hy@pagecounter=\count180
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count93
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
-File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 4383.
-Package hyperref Info: Hyper figures OFF on input line 4509.
-Package hyperref Info: Link nesting OFF on input line 4514.
-Package hyperref Info: Hyper index ON on input line 4517.
-Package hyperref Info: Plain pages OFF on input line 4524.
-Package hyperref Info: Backreferencing OFF on input line 4529.
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count181
+\pdfmajorversion=\count182
+Package hyperref Info: Option `colorlinks' set `true' on input line 4421.
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing OFF on input line 4567.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4762.
-\c@Hy@tempcnt=\count94
+Package hyperref Info: Bookmarks ON on input line 4800.
+\c@Hy@tempcnt=\count183
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip10
+\Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5115.
-\XeTeXLinkMargin=\dimen105
-\Fld@menulength=\count95
-\Field@Width=\dimen106
-\Fld@charsize=\dimen107
-Package hyperref Info: Hyper figures OFF on input line 6369.
-Package hyperref Info: Link nesting OFF on input line 6374.
-Package hyperref Info: Hyper index ON on input line 6377.
-Package hyperref Info: backreferencing OFF on input line 6384.
-Package hyperref Info: Link coloring ON on input line 6387.
-Package hyperref Info: Link coloring with OCG OFF on input line 6394.
-Package hyperref Info: PDF/A mode OFF on input line 6399.
-LaTeX Info: Redefining \ref on input line 6439.
-LaTeX Info: Redefining \pageref on input line 6443.
-\Hy@abspage=\count96
-\c@Item=\count97
-\c@Hfootnote=\count98
+LaTeX Info: Redefining \url on input line 5159.
+\XeTeXLinkMargin=\dimen137
+
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count184
+\Field@Width=\dimen138
+\Fld@charsize=\dimen139
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing OFF on input line 6445.
+Package hyperref Info: Link coloring ON on input line 6448.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
+
+(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count185
+\c@Item=\count186
+\c@Hfootnote=\count187
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
-\Fld@listcount=\count99
-\c@bookmark@seq@number=\count100
+File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
-Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-82.
+(/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
 )
-\Hy@SectionHShift=\skip55
+\Fld@listcount=\count188
+\c@bookmark@seq@number=\count189
+
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip63
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks17
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2017/09/02 v2.17a AMS math features
-\@mathmargin=\skip56
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip64
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -598,52 +302,52 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks18
-\ex@=\dimen108
+\ex@=\dimen140
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen109
+\pmbraise@=\dimen141
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count101
-LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count102
-\leftroot@=\count103
-LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count104
-\DOTSCASE@=\count105
-LaTeX Info: Redefining \ldots on input line 472.
-LaTeX Info: Redefining \dots on input line 475.
-LaTeX Info: Redefining \cdots on input line 596.
-\Mathstrutbox@=\box28
-\strutbox@=\box29
-\big@size=\dimen110
-LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count106
-\c@MaxMatrixCols=\count107
-\dotsspace@=\muskip11
-\c@parentequation=\count108
-\dspbrk@lvl=\count109
+\inf@bad=\count190
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count191
+\leftroot@=\count192
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count193
+\DOTSCASE@=\count194
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box47
+\strutbox@=\box48
+\big@size=\dimen142
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count195
+\c@MaxMatrixCols=\count196
+\dotsspace@=\muskip17
+\c@parentequation=\count197
+\dspbrk@lvl=\count198
 \tag@help=\toks19
-\row@=\count110
-\column@=\count111
-\maxfields@=\count112
+\row@=\count199
+\column@=\count266
+\maxfields@=\count267
 \andhelp@=\toks20
-\eqnshift@=\dimen111
-\alignsep@=\dimen112
-\tagshift@=\dimen113
-\tagwidth@=\dimen114
-\totwidth@=\dimen115
-\lineht@=\dimen116
+\eqnshift@=\dimen143
+\alignsep@=\dimen144
+\tagshift@=\dimen145
+\tagwidth@=\dimen146
+\totwidth@=\dimen147
+\lineht@=\dimen148
 \@envbody=\toks21
-\multlinegap=\skip57
-\multlinetaggap=\skip58
+\multlinegap=\skip65
+\multlinetaggap=\skip66
 \mathdisplay@stack=\toks22
-LaTeX Info: Redefining \[ on input line 2817.
-LaTeX Info: Redefining \] on input line 2818.
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
@@ -655,64 +359,87 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@headfont=\toks25
 \thm@notefont=\toks26
 \thm@headpunct=\toks27
-\thm@preskip=\skip59
-\thm@postskip=\skip60
-\thm@headsep=\skip61
+\thm@preskip=\skip67
+\thm@postskip=\skip68
+\thm@headsep=\skip69
 \dth@everypar=\toks28
 )
+(/usr/share/texlive/texmf-dist/tex/latex/xpatch/xpatch.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2020-02-14 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count268
+\l__pdf_internal_box=\box49
+))
+Package: xpatch 2012/10/02 v0.3 Extending etoolbox patching commands
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2020-02-14 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count269
+\g__xparse_grabber_int=\count270
+\l__xparse_m_args_int=\count271
+\l__xparse_v_nesting_int=\count272
+)
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count273
+))
+Class scrartcl Info: amsthm's \deferred@thm@head patched.
+
 (/usr/share/texlive/texmf-dist/tex/latex/thmtools/thmtools.sty
-Package: thmtools 2014/04/21 v66
+Package: thmtools 2019/12/22 v68
 \thmt@toks=\toks29
-\c@thmt@dummyctr=\count113
+\c@thmt@dummyctr=\count274
 
 (/usr/share/texlive/texmf-dist/tex/latex/thmtools/thm-patch.sty
-Package: thm-patch 2014/04/21 v66
+Package: thm-patch 2019/12/22 v68
 
 (/usr/share/texlive/texmf-dist/tex/latex/thmtools/parseargs.sty
-Package: parseargs 2014/04/21 v66
+Package: parseargs 2019/12/22 v68
 \@parsespec=\toks30
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/thmtools/thm-kv.sty
-Package: thm-kv 2014/04/21 v66
-Package thm-kv Info: Theorem names will be uppercased on input line 40.
-Package thm-kv Info: kvsetkeys patch (v1.16 or later) on input line 156.
+Package: thm-kv 2019/12/22 v68
+Package thm-kv Info: Theorem names will be uppercased on input line 39.
+Package thm-kv Info: kvsetkeys patch (v1.16 or later) on input line 155.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/thmtools/thm-autoref.sty
-Package: thm-autoref 2014/04/21 v66
+Package: thm-autoref 2019/12/22 v68
 
 (/usr/share/texlive/texmf-dist/tex/latex/thmtools/aliasctr.sty
-Package: aliasctr 2014/04/21 v66
-
-(/usr/share/texlive/texmf-dist/tex/latex/carlisle/remreset.sty)))
+Package: aliasctr 2019/12/22 v68
+))
 (/usr/share/texlive/texmf-dist/tex/latex/thmtools/thm-listof.sty
-Package: thm-listof 2014/04/21 v66
+Package: thm-listof 2019/12/22 v68
 )
 (/usr/share/texlive/texmf-dist/tex/latex/thmtools/thm-restate.sty
-Package: thm-restate 2014/04/21 v66
+Package: thm-restate 2019/12/22 v68
 )
 (/usr/share/texlive/texmf-dist/tex/latex/thmtools/thm-amsthm.sty
-Package: thm-amsthm 2014/04/21 v66
+Package: thm-amsthm 2019/12/22 v68
 \thmt@style@headstyle=\toks31
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
-Package: cleveref 2018/02/08 v0.21.1 Intelligent cross-referencing
-Package cleveref Info: `hyperref' support loaded on input line 2301.
-LaTeX Info: Redefining \cref on input line 2301.
-LaTeX Info: Redefining \Cref on input line 2301.
-LaTeX Info: Redefining \crefrange on input line 2301.
-LaTeX Info: Redefining \Crefrange on input line 2301.
-LaTeX Info: Redefining \cpageref on input line 2301.
-LaTeX Info: Redefining \Cpageref on input line 2301.
-LaTeX Info: Redefining \cpagerefrange on input line 2301.
-LaTeX Info: Redefining \Cpagerefrange on input line 2301.
-LaTeX Info: Redefining \labelcref on input line 2301.
-LaTeX Info: Redefining \labelcpageref on input line 2301.
-Package cleveref Info: `amsthm' support loaded on input line 2957.
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: `amsthm' support loaded on input line 3026.
 )
-\c@theorem=\count114
+\c@theorem=\count275
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
@@ -741,12 +468,13 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
-Package: enumitem 2011/09/28 v3.5.2 Customized lists
-\labelindent=\skip62
-\enit@outerparindent=\dimen117
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip70
+\enit@outerparindent=\dimen149
 \enit@toks=\toks32
-\enit@inbox=\box30
-\enitdp@description=\count115
+\enit@inbox=\box50
+\enit@count@id=\count276
+\enitdp@description=\count277
 )
 
 Class scrartcl Warning: Usage of package `fancyhdr' together
@@ -763,96 +491,96 @@ Class scrartcl Warning: Usage of package `fancyhdr' together
 (scrartcl)              package `fancyhdr' on input line 28.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip63
-\f@nch@O@elh=\skip64
-\f@nch@O@erh=\skip65
-\f@nch@O@olh=\skip66
-\f@nch@O@orh=\skip67
-\f@nch@O@elf=\skip68
-\f@nch@O@erf=\skip69
-\f@nch@O@olf=\skip70
-\f@nch@O@orf=\skip71
+\f@nch@headwidth=\skip71
+\f@nch@O@elh=\skip72
+\f@nch@O@erh=\skip73
+\f@nch@O@olh=\skip74
+\f@nch@O@orh=\skip75
+\f@nch@O@elf=\skip76
+\f@nch@O@erf=\skip77
+\f@nch@O@olf=\skip78
+\f@nch@O@orf=\skip79
 )
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count116
+\c@float@type=\count278
 \float@exts=\toks33
-\float@box=\box31
+\float@box=\box51
 \@float@everytoks=\toks34
-\@floatcapt=\box32
+\@floatcapt=\box52
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/layout.sty
 Package: layout 2014/10/28 v1.2c Show layout parameters
-\oneinch=\count117
-\cnt@paperwidth=\count118
-\cnt@paperheight=\count119
-\cnt@hoffset=\count120
-\cnt@voffset=\count121
-\cnt@textheight=\count122
-\cnt@textwidth=\count123
-\cnt@topmargin=\count124
-\cnt@oddsidemargin=\count125
-\cnt@evensidemargin=\count126
-\cnt@headheight=\count127
-\cnt@headsep=\count128
-\cnt@marginparsep=\count129
-\cnt@marginparwidth=\count130
-\cnt@marginparpush=\count131
-\cnt@footskip=\count132
-\fheight=\count133
-\ref@top=\count134
-\ref@hoffset=\count135
-\ref@voffset=\count136
-\ref@head=\count137
-\ref@body=\count138
-\ref@foot=\count139
-\ref@margin=\count140
-\ref@marginwidth=\count141
-\ref@marginpar=\count142
-\Interval=\count143
-\ExtraYPos=\count144
-\PositionX=\count145
-\PositionY=\count146
-\ArrowLength=\count147
+\oneinch=\count279
+\cnt@paperwidth=\count280
+\cnt@paperheight=\count281
+\cnt@hoffset=\count282
+\cnt@voffset=\count283
+\cnt@textheight=\count284
+\cnt@textwidth=\count285
+\cnt@topmargin=\count286
+\cnt@oddsidemargin=\count287
+\cnt@evensidemargin=\count288
+\cnt@headheight=\count289
+\cnt@headsep=\count290
+\cnt@marginparsep=\count291
+\cnt@marginparwidth=\count292
+\cnt@marginparpush=\count293
+\cnt@footskip=\count294
+\fheight=\count295
+\ref@top=\count296
+\ref@hoffset=\count297
+\ref@voffset=\count298
+\ref@head=\count299
+\ref@body=\count300
+\ref@foot=\count301
+\ref@margin=\count302
+\ref@marginwidth=\count303
+\ref@marginpar=\count304
+\Interval=\count305
+\ExtraYPos=\count306
+\PositionX=\count307
+\PositionY=\count308
+\ArrowLength=\count309
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
-Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
-\multirow@colwidth=\skip72
-\multirow@cntb=\count148
-\multirow@dima=\skip73
-\bigstrutjot=\dimen118
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip80
+\multirow@cntb=\count310
+\multirow@dima=\skip81
+\bigstrutjot=\dimen150
 )
 (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 ) (./slashbox.sty
 slashbox style by K.Yasuoka, May 1993.
-\@slashboxa=\box33
-\@slashboxb=\box34
-\@slashboxc=\box35
-\@slashboxwd=\count149
-\@slashboxht=\count150
-\@slashsepl=\dimen119
-\@slashsepr=\dimen120
+\@slashboxa=\box53
+\@slashboxb=\box54
+\@slashboxc=\box55
+\@slashboxwd=\count311
+\@slashboxht=\count312
+\@slashsepl=\dimen151
+\@slashsepr=\dimen152
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
-Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks35
 \verbatim@line=\toks36
-\verbatim@in@stream=\read1
+\verbatim@in@stream=\read3
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count151
+\c@AlgoLine=\count313
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\algocf@hangindent=\skip74
+\algocf@hangindent=\skip82
 
 (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count152
+\c@checkoddpage=\count314
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
@@ -860,249 +588,138 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 (/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-\skiptotal=\skip75
-\skiplinenumber=\skip76
-\skiprule=\skip77
-\skiphlne=\skip78
-\skiptext=\skip79
-\skiplength=\skip80
-\algomargin=\skip81
-\skipalgocfslide=\skip82
-\algowidth=\dimen121
-\inoutsize=\dimen122
-\inoutindent=\dimen123
-\interspacetitleruled=\dimen124
-\interspacealgoruled=\dimen125
-\interspacetitleboxruled=\dimen126
-\algocf@ruledwidth=\skip83
-\algocf@inoutbox=\box36
-\algocf@inputbox=\box37
-\AlCapSkip=\skip84
-\AlCapHSkip=\skip85
-\algoskipindent=\skip86
-\algocf@nlbox=\box38
-\algocf@hangingbox=\box39
-\algocf@untilbox=\box40
-\algocf@skipuntil=\skip87
-\algocf@capbox=\box41
-\algocf@lcaptionbox=\skip88
-\algoheightruledefault=\skip89
-\algoheightrule=\skip90
-\algotitleheightruledefault=\skip91
-\algotitleheightrule=\skip92
-\c@algocfline=\count153
-\c@algocfproc=\count154
-\c@algocf=\count155
-\algocf@algoframe=\box42
-\algocf@algobox=\box43
+\skiptotal=\skip83
+\skiplinenumber=\skip84
+\skiprule=\skip85
+\skiphlne=\skip86
+\skiptext=\skip87
+\skiplength=\skip88
+\algomargin=\skip89
+\skipalgocfslide=\skip90
+\algowidth=\dimen153
+\inoutsize=\dimen154
+\inoutindent=\dimen155
+\interspacetitleruled=\dimen156
+\interspacealgoruled=\dimen157
+\interspacetitleboxruled=\dimen158
+\algocf@ruledwidth=\skip91
+\algocf@inoutbox=\box56
+\algocf@inputbox=\box57
+\AlCapSkip=\skip92
+\AlCapHSkip=\skip93
+\algoskipindent=\skip94
+\algocf@nlbox=\box58
+\algocf@hangingbox=\box59
+\algocf@untilbox=\box60
+\algocf@skipuntil=\skip95
+\algocf@capbox=\box61
+\algocf@lcaptionbox=\skip96
+\algoheightruledefault=\skip97
+\algoheightrule=\skip98
+\algotitleheightruledefault=\skip99
+\algotitleheightrule=\skip100
+\c@algocfline=\count315
+\c@algocfproc=\count316
+\c@algocf=\count317
+\algocf@algoframe=\box62
+\algocf@algobox=\box63
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count156
-\c@ALG@rem=\count157
-\c@ALG@nested=\count158
-\ALG@tlm=\skip93
-\ALG@thistlm=\skip94
-\c@ALG@Lnr=\count159
-\c@ALG@blocknr=\count160
-\c@ALG@storecount=\count161
-\c@ALG@tmpcounter=\count162
-\ALG@tmplength=\skip95
+\c@ALG@line=\count318
+\c@ALG@rem=\count319
+\c@ALG@nested=\count320
+\ALG@tlm=\skip101
+\ALG@thistlm=\skip102
+\c@ALG@Lnr=\count321
+\c@ALG@blocknr=\count322
+\c@ALG@storecount=\count323
+\c@ALG@tmpcounter=\count324
+\ALG@tmplength=\skip103
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count163
-\lst@gtempboxa=\box44
+\lst@mode=\count325
+\lst@gtempboxa=\box64
 \lst@token=\toks37
-\lst@length=\count164
-\lst@currlwidth=\dimen127
-\lst@column=\count165
-\lst@pos=\count166
-\lst@lostspace=\dimen128
-\lst@width=\dimen129
-\lst@newlines=\count167
-\lst@lineno=\count168
-\lst@maxwidth=\dimen130
+\lst@length=\count326
+\lst@currlwidth=\dimen159
+\lst@column=\count327
+\lst@pos=\count328
+\lst@lostspace=\dimen160
+\lst@width=\dimen161
+\lst@newlines=\count329
+\lst@lineno=\count330
+\lst@maxwidth=\dimen162
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count169
-\lst@skipnumbers=\count170
-\lst@framebox=\box45
+File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+\c@lstnumber=\count331
+\lst@skipnumbers=\count332
+\lst@framebox=\box65
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2015/06/04 1.6 listings configuration
+File: listings.cfg 2019/09/10 1.8c listings configuration
 ))
-Package: listings 2015/06/04 1.6 (Carsten Heinz)
+Package: listings 2019/09/10 1.8c (Carsten Heinz)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+Package: caption 2020/01/03 v3.4h Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen131
-\captionmargin@=\dimen132
-\captionwidth=\dimen133
-\caption@tempdima=\dimen134
-\caption@indent=\dimen135
-\caption@parindent=\dimen136
-\caption@hangindent=\dimen137
+Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 61.
+\captionmargin=\dimen163
+\captionmargin@=\dimen164
+\captionwidth=\dimen165
+\caption@tempdima=\dimen166
+\caption@indent=\dimen167
+\caption@parindent=\dimen168
+\caption@hangindent=\dimen169
+Package caption Info: KOMA-Script document class detected.
 )
 Package caption Info: KOMA-Script document class.
-\c@ContinuedFloat=\count171
+\c@caption@flags=\count333
+\c@continuedfloat=\count334
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
-Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
-\c@subfigure=\count172
-\c@subtable=\count173
+Package: subcaption 2020/01/22 v1.3d Sub-captions (AR)
+\c@subfigure=\count335
+\c@subtable=\count336
 )
 (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip96
-\bibsep=\skip97
+\bibhang=\skip104
+\bibsep=\skip105
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count174
+\c@NAT@ctr=\count337
 )
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xy.sty
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xy.tex Bootstrap'ing:
-catcodes, docmode, (/usr/share/texlive/texmf-dist/tex/generic/xypic/xyrecat.tex
-) (/usr/share/texlive/texmf-dist/tex/generic/xypic/xyidioms.tex)
-
- Xy-pic version 3.8.9 <2013/10/06>
- Copyright (c) 1991-2013 by Kristoffer H. Rose <krisrose@tug.org> and others
- Xy-pic is free software: see the User's Guide for details.
-
-Loading kernel: messages; fonts; allocations: state,
-\X@c=\dimen138
-\Y@c=\dimen139
-\U@c=\dimen140
-\D@c=\dimen141
-\L@c=\dimen142
-\R@c=\dimen143
-\Edge@c=\toks38
-\X@p=\dimen144
-\Y@p=\dimen145
-\U@p=\dimen146
-\D@p=\dimen147
-\L@p=\dimen148
-\R@p=\dimen149
-\Edge@p=\toks39
-\X@origin=\dimen150
-\Y@origin=\dimen151
-\X@xbase=\dimen152
-\Y@xbase=\dimen153
-\X@ybase=\dimen154
-\Y@ybase=\dimen155
-\X@min=\dimen156
-\Y@min=\dimen157
-\X@max=\dimen158
-\Y@max=\dimen159
-\lastobjectbox@=\box46
-\zerodotbox@=\box47
-\almostz@=\dimen160
- direction,
-\d@X=\dimen161
-\d@Y=\dimen162
-\K@=\count175
-\KK@=\count176
-\Direction=\count177
-\K@dXdY=\dimen163
-\K@dYdX=\dimen164
-\xyread@=\read2
-\xywrite@=\write3
-\csp@=\count178
-\quotPTK@=\dimen165
-
-utility macros; pictures: \xy, positions,
-\swaptoks@@=\toks40
-\connectobjectbox@@=\box48
- objects,
-\styletoks@=\toks41
- decorations;
-kernel objects: directionals, circles, text; options; algorithms: directions,
-edges, connections;  Xy-pic loaded)
-Package: xy 2013/10/06 Xy-pic version 3.8.9
-
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xyall.tex
- Xy-pic option: All features v.3.8
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xycurve.tex
- Xy-pic option: Curve and Spline extension v.3.12 curve,
-\crv@cnt@=\count179
-\crvpts@=\toks42
-\splinebox@=\box49
-\splineval@=\dimen166
-\splinedepth@=\dimen167
-\splinetol@=\dimen168
-\splinelength@=\dimen169
- circles,
-\L@=\dimen170
- loaded)
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xyframe.tex
- Xy-pic option: Frame and Bracket extension v.3.14 loaded)
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xycmtip.tex
- Xy-pic option: Computer Modern tip extension v.3.7
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xytips.tex
- Xy-pic option: More Tips extension v.3.11 loaded) loaded)
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xyline.tex
- Xy-pic option: Line styles extension v.3.10
-\xylinethick@=\dimen171
- loaded)
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xyrotate.tex
- Xy-pic option: Rotate and Scale extension v.3.8 loaded)
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xycolor.tex
- Xy-pic option: Colour extension v.3.11 loaded)
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xymatrix.tex
- Xy-pic option: Matrix feature v.3.14
-\Row=\count180
-\Col=\count181
-\queue@=\toks43
-\queue@@=\toks44
-\qcount@=\count182
-\qcount@@=\count183
-\matrixsize@=\count184
- loaded)
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xyarrow.tex
- Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded)
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xygraph.tex
- Xy-pic option: Graph feature v.3.11 loaded) loaded)
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf.tex
- Xy-pic option: PDF driver v.1.7 Xy-pic pdf driver: `color' extension support
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf-co.tex loaded)
-Xy-pic pdf driver: `curve' extension support
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf-cu.tex loaded)
-Xy-pic pdf driver: `frame' extension support
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf-fr.tex loaded)
-Xy-pic pdf driver: `line' extension support
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf-li.tex loaded)
-Xy-pic pdf driver: `rotate' extension support
-(/usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf-ro.tex loaded) loaded))
 (/usr/share/texlive/texmf-dist/tex/latex/preprint/authblk.sty
 Package: authblk 2001/02/27 1.3 (PWD)
-\affilsep=\skip98
-\@affilsep=\skip99
-\c@Maxaffil=\count185
-\c@authors=\count186
-\c@affil=\count187
+\affilsep=\skip106
+\@affilsep=\skip107
+\c@Maxaffil=\count338
+\c@authors=\count339
+\c@affil=\count340
 ) (./cprotect.sty
 Package: cprotect 2011/01/27 v1.0e (Bruno Le Floch)
 
 (/usr/share/texlive/texmf-dist/tex/latex/bigfoot/suffix.sty
 Package: suffix 2006/07/15 1.5a Variant command support
 )
-\CPT@WriteOut=\write4
-\c@CPT@WriteCount=\count188
-\c@CPT@numB=\count189
-\CPT@commandatend@toks=\toks45
+\CPT@WriteOut=\write3
+\c@CPT@WriteCount=\count341
+\c@CPT@numB=\count342
+\CPT@commandatend@toks=\toks38
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
@@ -1110,25 +727,29 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 105.
 )
-\Gin@req@height=\dimen172
-\Gin@req@width=\dimen173
+\Gin@req@height=\dimen170
+\Gin@req@width=\dimen171
 )
 (/usr/share/texlive/texmf-dist/tex/latex/epigraph/epigraph.sty
-Package: epigraph 2009/09/02 v1.5c typesetting epigraphs
-\beforeepigraphskip=\skip100
-\afterepigraphskip=\skip101
-\epigraphwidth=\skip102
-\epigraphrule=\skip103
+Package: epigraph 2020/01/02 v1.5e typesetting epigraphs
+
+(/usr/share/texlive/texmf-dist/tex/latex/nextpage/nextpage.sty
+Package: nextpage 2009/09/03 v1.1a additional page commands
+)
+\beforeepigraphskip=\skip108
+\afterepigraphskip=\skip109
+\epigraphwidth=\skip110
+\epigraphrule=\skip111
 )
 (/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip104
-\fb@frw=\dimen174
-\fb@frh=\dimen175
-\FrameRule=\dimen176
-\FrameSep=\dimen177
+\OuterFrameSep=\skip112
+\fb@frw=\dimen172
+\fb@frh=\dimen173
+\FrameRule=\dimen174
+\FrameSep=\dimen175
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty
 Package: alltt 1997/06/16 v2.0g defines alltt environment
@@ -1141,11 +762,13 @@ tim
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
@@ -1153,493 +776,140 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
-\AtBeginShipoutBox=\box50
+\AtBeginShipoutBox=\box66
 Package hyperref Info: Link coloring ON on input line 3.
 LaTeX Info: Redefining \ref on input line 3.
 LaTeX Info: Redefining \pageref on input line 3.
 LaTeX Info: Redefining \nameref on input line 3.
 
 (./book.out) (./book.out)
-\@outlinefile=\write5
-\openout5 = `book.out'.
+\@outlinefile=\write4
+\openout4 = `book.out'.
 
+Class scrartcl Info: loading recommended package `bookmark'.
+(scrartcl)           Using `bookmark' together with `hyperref' is recommended,
+(scrartcl)           because of handling of possible bookmark level gaps.
+(scrartcl)           You can avoid loading `bookmark' with KOMA-Script option
+(scrartcl)           `bookmarkpackage=false' before \begin{document} and
+(scrartcl)           you can avoid this message adding:
+(scrartcl)             \usepackage{bookmark}
+(scrartcl)           before \begin{document} on input line 3.
 
+(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2019/12/03 v1.28 PDF bookmarks (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2019/12/03 v1.28 bookmark driver for pdfTeX (HO)
+Package auxhook Info: \AddLineBeginMainAux comes a little late,
+(auxhook)             because the main .aux file is already opened on input lin
+e 168.
+\BKM@id=\count343
+))
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count190
-\scratchdimen=\dimen178
-\scratchbox=\box51
-\nofMPsegments=\count191
-\nofMParguments=\count192
-\everyMPshowfont=\toks46
-\MPscratchCnt=\count193
-\MPscratchDim=\dimen179
-\MPnumerator=\count194
-\makeMPintoPDFobject=\count195
-\everyMPtoPDFconversion=\toks47
-) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-)
+\scratchcounter=\count344
+\scratchdimen=\dimen176
+\scratchbox=\box67
+\nofMPsegments=\count345
+\nofMParguments=\count346
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count347
+\MPscratchDim=\dimen177
+\MPnumerator=\count348
+\makeMPintoPDFobject=\count349
+\everyMPtoPDFconversion=\toks40
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
+85.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
-Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
-Package textcomp Info: Sub-encoding information:
-(textcomp)               5 = only ISO-Adobe without \textcurrency
-(textcomp)               4 = 5 + \texteuro
-(textcomp)               3 = 4 + \textohm
-(textcomp)               2 = 3 + \textestimated + \textcurrency
-(textcomp)               1 = TS1 - \textcircled - \t
-(textcomp)               0 = TS1 (full)
-(textcomp)             Font families with sub-encoding setting implement
-(textcomp)             only a restricted character set as indicated.
-(textcomp)             Family '?' is the default used for unknown fonts.
-(textcomp)             See the documentation for details.
-Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
-File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
-Now handling font encoding TS1 ...
-... processing UTF-8 mapping file for font encoding TS1
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu
-File: ts1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
-   defining Unicode char U+00A2 (decimal 162)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00A4 (decimal 164)
-   defining Unicode char U+00A5 (decimal 165)
-   defining Unicode char U+00A6 (decimal 166)
-   defining Unicode char U+00A7 (decimal 167)
-   defining Unicode char U+00A8 (decimal 168)
-   defining Unicode char U+00A9 (decimal 169)
-   defining Unicode char U+00AA (decimal 170)
-   defining Unicode char U+00AC (decimal 172)
-   defining Unicode char U+00AE (decimal 174)
-   defining Unicode char U+00AF (decimal 175)
-   defining Unicode char U+00B0 (decimal 176)
-   defining Unicode char U+00B1 (decimal 177)
-   defining Unicode char U+00B2 (decimal 178)
-   defining Unicode char U+00B3 (decimal 179)
-   defining Unicode char U+00B4 (decimal 180)
-   defining Unicode char U+00B5 (decimal 181)
-   defining Unicode char U+00B6 (decimal 182)
-   defining Unicode char U+00B7 (decimal 183)
-   defining Unicode char U+00B9 (decimal 185)
-   defining Unicode char U+00BA (decimal 186)
-   defining Unicode char U+00BC (decimal 188)
-   defining Unicode char U+00BD (decimal 189)
-   defining Unicode char U+00BE (decimal 190)
-   defining Unicode char U+00D7 (decimal 215)
-   defining Unicode char U+00F7 (decimal 247)
-   defining Unicode char U+0192 (decimal 402)
-   defining Unicode char U+02C7 (decimal 711)
-   defining Unicode char U+02D8 (decimal 728)
-   defining Unicode char U+02DD (decimal 733)
-   defining Unicode char U+0E3F (decimal 3647)
-   defining Unicode char U+2016 (decimal 8214)
-   defining Unicode char U+2020 (decimal 8224)
-   defining Unicode char U+2021 (decimal 8225)
-   defining Unicode char U+2022 (decimal 8226)
-   defining Unicode char U+2030 (decimal 8240)
-   defining Unicode char U+2031 (decimal 8241)
-   defining Unicode char U+203B (decimal 8251)
-   defining Unicode char U+203D (decimal 8253)
-   defining Unicode char U+2044 (decimal 8260)
-   defining Unicode char U+204E (decimal 8270)
-   defining Unicode char U+2052 (decimal 8274)
-   defining Unicode char U+20A1 (decimal 8353)
-   defining Unicode char U+20A4 (decimal 8356)
-   defining Unicode char U+20A6 (decimal 8358)
-   defining Unicode char U+20A9 (decimal 8361)
-   defining Unicode char U+20AB (decimal 8363)
-   defining Unicode char U+20AC (decimal 8364)
-   defining Unicode char U+20B1 (decimal 8369)
-   defining Unicode char U+2103 (decimal 8451)
-   defining Unicode char U+2116 (decimal 8470)
-   defining Unicode char U+2117 (decimal 8471)
-   defining Unicode char U+211E (decimal 8478)
-   defining Unicode char U+2120 (decimal 8480)
-   defining Unicode char U+2122 (decimal 8482)
-   defining Unicode char U+2126 (decimal 8486)
-   defining Unicode char U+2127 (decimal 8487)
-   defining Unicode char U+212E (decimal 8494)
-   defining Unicode char U+2190 (decimal 8592)
-   defining Unicode char U+2191 (decimal 8593)
-   defining Unicode char U+2192 (decimal 8594)
-   defining Unicode char U+2193 (decimal 8595)
-   defining Unicode char U+2329 (decimal 9001)
-   defining Unicode char U+232A (decimal 9002)
-   defining Unicode char U+2422 (decimal 9250)
-   defining Unicode char U+25E6 (decimal 9702)
-   defining Unicode char U+25EF (decimal 9711)
-   defining Unicode char U+266A (decimal 9834)
-))
-LaTeX Info: Redefining \oldstylenums on input line 334.
-Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
-Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
-Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
-Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
-Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
-Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
-Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
-Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
-Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
-Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
-Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
-Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
-Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
-Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
-Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
-Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
-Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
-Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
-Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
-Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
-Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
-Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
-Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
-Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
-
-Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
-Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
-Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
-Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
-Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
-Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
-Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
-Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
-Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
-Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
-Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
-Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
-Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
-Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
-Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
-Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
-Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
-Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
-Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
-Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
-Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
-Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
-Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
-Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
-Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
-Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
-Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
-Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
-Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
-Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
-Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
-Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
-Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
-Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
-Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
-Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
-Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
-\c@lstlisting=\count196
+\c@lstlisting=\count350
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 3.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 3.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Package xypdf Info: Line width: 0.43799pt on input line 3.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 12.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 12.
  [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 21.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 21.
- [2] (./book.toc
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 40.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 40.
- [3]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [2] (./book.toc
+[3]
 Overfull \hbox (1.095pt too wide) detected at line 53
- []\OT1/cmss/bx/n/10.95 105
+ []\OT1/cmss/bx/n/10.95 106
  []
 
 )
-\tf@toc=\write6
-\openout6 = `book.toc'.
+\tf@toc=\write5
+\openout5 = `book.toc'.
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 25.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 25.
  [4]
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 30.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 37.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 40.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 53.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
-File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
 Package hyperref Info: bookmark level for unknown example defaults to 0 on inpu
-t line 58.
+t line 51.
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 70.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 110.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 110.
- [5]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 126.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 176.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 176.
- [6]
+nput line 63.
+ [5] [6]
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
-t line 195.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 219.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 221.
+t line 188.
 Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
-line 234.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 252.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 252.
- [7]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 303.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 338.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 338.
-
-[8]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 407.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 407.
- [9]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 484.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 484.
- [10]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 507.
-
+line 227.
+ [7] [8] [9] [10]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 515.
+(amsmath)                 on input line 508.
+
+[11] [12]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 733.
+<./figures/unnamed-chunk-17-1.pdf, id=318, 505.89pt x 505.89pt>
+File: ./figures/unnamed-chunk-17-1.pdf Graphic file (type pdf)
+<use ./figures/unnamed-chunk-17-1.pdf>
+Package pdftex.def Info: ./figures/unnamed-chunk-17-1.pdf  used on input line 7
+50.
+(pdftex.def)             Requested size: 505.88875pt x 505.89645pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: Float too large for page by 34.61513pt on input line 755.
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 562.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 564.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 576.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 576.
-[11]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 643.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 643.
- [12]
-<figures/chapter-introduction-elections.pdf, id=476, 505.89pt x 361.35pt>
-File: figures/chapter-introduction-elections.pdf Graphic file (type pdf)
-<use figures/chapter-introduction-elections.pdf>
-Package pdftex.def Info: figures/chapter-introduction-elections.pdf  used on in
-put line 737.
-(pdftex.def)             Requested size: 505.88875pt x 361.34912pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 743.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 743.
- [13]
 Package hyperref Info: bookmark level for unknown exercise defaults to 0 on inp
-ut line 748.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 844.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 844.
- [14 <./figures/chapter-introduction-elections.pdf>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 941.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1013.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1013.
- [15]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1118.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1118.
-
-[16]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1500.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1500.
- [17]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1503.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1505.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1644.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1644.
- [18]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1773.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1773.
- [19]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1893.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1934.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1934.
- [20]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2040.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2040.
- [21]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2212.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2235.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2235.
- [22]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2330.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2330.
- [23]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2367.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2467.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2467.
- [24]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2559.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2559.
- [25]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2596.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2597.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2673.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2673.
- [26]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2752.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2752.
- [27]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2839.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2839.
- [28]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3113.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3113.
- [29]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3225.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3301.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3301.
- [30]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3416.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3416.
-
-[31]
-Overfull \hbox (2.47983pt too wide) in paragraph at lines 3419--3425
+ut line 762.
+[13] [14 <./figures/unnamed-chunk-17-1.pdf>] [15] [16] [17] [18] [19] [20]
+[21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32]
+Overfull \hbox (2.47983pt too wide) in paragraph at lines 3433--3439
 []\OT1/cmr/bx/n/10.95 Teorema 4.17. []\OT1/cmr/m/it/10.95 Con-si-dere que $\OML
 /cmm/m/it/10.95 X[]; [] ; X[]; []$ \OT1/cmr/m/it/10.95 ^^Se uma sequ^encia in-f
 i-ni-ta-mente per-mut^^Savel tal que $\OMS/cmsy/m/n/10.95 ^^@1 \OML/cmm/m/it/10
 .95 < E\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 X[]X[]\OT1/cmr/m/n/10.95 ] =
  []
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3500.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3500.
-[32]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 3519
-.
+[33]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 3
+533.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3519.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3533.
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3542.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3542.
- [33]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3725.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3725.
- [34]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3736.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3736.
-
-[35]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3738.
-
-Overfull \hbox (14.92455pt too wide) in paragraph at lines 3795--3802
+ [34] [35]
+[36]
+Overfull \hbox (14.92455pt too wide) in paragraph at lines 3809--3816
 \OT1/cmr/m/n/10.95 No Exem-plo [][]2.2[][], ob-ser-va-mos que $\OML/cmm/m/it/10
 .95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 )\OML/cmm/
 m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OMS/cmsy/m/n/10.95 j\OML/
@@ -1647,585 +917,172 @@ cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 )$ era pro-por-ci-o-nal a uma dis-tri-bu
 i^^Xc~ao Beta(25,15). As-sim, $[] []$
  []
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3839.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3839.
-[36]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3930.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3930.
- [37]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3930.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4009.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4009.
- [38]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4141.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4163.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4163.
- [39]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4241.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4241.
- [40]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4333.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4333.
- [41]
-<./figures/normal_normal-1.pdf, id=1117, 289.08pt x 216.81pt>
+[37] [38] [39] [40] [41] [42]
+<./figures/normal_normal-1.pdf, id=965, 289.08pt x 216.81pt>
 File: ./figures/normal_normal-1.pdf Graphic file (type pdf)
 <use ./figures/normal_normal-1.pdf>
-Package pdftex.def Info: ./figures/normal_normal-1.pdf  used on input line 4335
+Package pdftex.def Info: ./figures/normal_normal-1.pdf  used on input line 4349
 .
 (pdftex.def)             Requested size: 289.07928pt x 216.81938pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4373.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4373.
- [42]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4407.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4407.
- [43 <./figures/normal_normal-1.pdf>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4454.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4454.
-
-[44]
-
-LaTeX Warning: Reference `fig:normal_gamma' on page 45 undefined on input line 
-4472.
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4578.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4578.
+ [43] [44 <./figures/normal_normal-1.pdf>]
 [45]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4621.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4688.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4688.
- [46]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4767.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4767.
- [47]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4859.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 4859.
- [48]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5077.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5100.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5100.
- [49]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5201.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5201.
- [50]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5326.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5326.
- [51]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5406.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5406.
- [52]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5491.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5491.
- [53]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5600.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5600.
- [54]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5629.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5865.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 5865.
- [55]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6116.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6164.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6164.
- [56]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6174.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6242.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6242.
- [57]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6311.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6356.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6356.
- [58]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6630.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6630.
- [59]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6663.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6726.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6726.
 
-[60]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6821.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6821.
- [61]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6898.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6898.
- [62]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6974.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 6974.
- [63]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7245.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7255.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7270.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7270.
- [64]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7275.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7347.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7347.
- [65]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7422.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7436.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7436.
- [66]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7515.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7515.
- [67]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7770.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7770.
- [68]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7782.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7813.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7856.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7856.
- [69]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7934.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 7934.
- [70]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8010.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8010.
- [71]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8038.
-<figures/chapter-decisions-normal-mixture.pdf, id=1691, 505.89pt x 505.89pt>
+LaTeX Warning: Reference `fig:normal_gamma' on page 46 undefined on input line 
+4486.
+
+[46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60]
+[61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72]
+<figures/chapter-decisions-normal-mixture.pdf, id=1539, 505.89pt x 505.89pt>
 File: figures/chapter-decisions-normal-mixture.pdf Graphic file (type pdf)
 <use figures/chapter-decisions-normal-mixture.pdf>
 Package pdftex.def Info: figures/chapter-decisions-normal-mixture.pdf  used on 
-input line 8073.
+input line 8087.
 (pdftex.def)             Requested size: 252.94437pt x 252.94437pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8099.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8099.
- [72]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8134.
+ [73]
 
+LaTeX Warning: Reference `intervalos' on page 74 undefined on input line 8172.
 
-LaTeX Warning: Reference `intervalos' on page 73 undefined on input line 8158.
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8159.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8159.
-[73 <./figures/chapter-decisions-normal-mixture.pdf>]
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 817
-5.
+[74 <./figures/chapter-decisions-normal-mixture.pdf>]
+LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 
+8189.
 
 (/usr/share/R/share/texmf/tex/latex/omscmtt.fd
 File: omscmtt.fd 
 )
 LaTeX Font Info:    Font shape `OMS/cmtt/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8175.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8189.
 
 
-Underfull \vbox (badness 2080) detected at line 8241
+Underfull \vbox (badness 2080) detected at line 8255
  []
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8241.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8241.
-[74]
-<./figures/intervalos-1.pdf, id=1721, 289.08pt x 216.81pt>
+[75]
+<./figures/intervalos-1.pdf, id=1569, 289.08pt x 216.81pt>
 File: ./figures/intervalos-1.pdf Graphic file (type pdf)
 <use ./figures/intervalos-1.pdf>
-Package pdftex.def Info: ./figures/intervalos-1.pdf  used on input line 8243.
+Package pdftex.def Info: ./figures/intervalos-1.pdf  used on input line 8257.
 (pdftex.def)             Requested size: 289.07928pt x 216.81938pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8266.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8266.
- [75]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8496.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8530.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8530.
- [76 <./figures/intervalos-1.pdf>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8593.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8656.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8656.
- [77]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8729.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8729.
- [78]
+ [76] [77 <./figures/intervalos-1.pdf>] [78] [79]
 Package hyperref Info: bookmark level for unknown corollary defaults to 0 on in
-put line 8786.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8820.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 8820.
- [79]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9054.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9054.
- [80]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9143.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9238.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9238.
- [81]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9385.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9427.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9427.
- [82]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9540.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9540.
-
-[83]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9660.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 9660.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 9660.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 9660.
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9672.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9672.
+put line 8800.
+ [80] [81] [82] [83]
 [84]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9767.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9767.
- [85]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9904.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9922.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 9922.
- [86]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10215.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10215.
- [87]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10413.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10413.
- [88]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10524.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10545.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10592.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10592.
- [89]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 9674.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 9674.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 9674.
+
+[85] [86] [87] [88] [89] [90]
 Package hyperref Info: bookmark level for unknown algorithm2 defaults to 0 on i
-nput line 10638.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10675.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10675.
- [90]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10676.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10742.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10742.
- [91]
-<figures/chapter-computing-rejection-circle.pdf, id=2045, 505.89pt x 505.89pt>
+nput line 10652.
+ [91] [92]
+<figures/chapter-computing-rejection-circle.pdf, id=1893, 505.89pt x 505.89pt>
 File: figures/chapter-computing-rejection-circle.pdf Graphic file (type pdf)
 <use figures/chapter-computing-rejection-circle.pdf>
 Package pdftex.def Info: figures/chapter-computing-rejection-circle.pdf  used o
-n input line 10800.
+n input line 10814.
 (pdftex.def)             Requested size: 252.94437pt x 252.94437pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10829.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10829.
- [92]
-<figures/chapter-computing-rejection-beta-2-2.pdf, id=2062, 505.89pt x 505.89pt
+ [93]
+<figures/chapter-computing-rejection-beta-2-2.pdf, id=1910, 505.89pt x 505.89pt
 >
 File: figures/chapter-computing-rejection-beta-2-2.pdf Graphic file (type pdf)
 <use figures/chapter-computing-rejection-beta-2-2.pdf>
 Package pdftex.def Info: figures/chapter-computing-rejection-beta-2-2.pdf  used
- on input line 10859.
+ on input line 10873.
 (pdftex.def)             Requested size: 252.94437pt x 252.94437pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10889.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10889.
- [93 <./figures/chapter-computing-rejection-circle.pdf>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10904.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 10904.
- [94 <./figures/chapter-computing-rejection-beta-2-2.pdf>]
-\openout4 = `book-1.cpt'.
+ [94 <./figures/chapter-computing-rejection-circle.pdf>] [95 <./figures/chapter
+-computing-rejection-beta-2-2.pdf>]
+\openout3 = `book-1.cpt'.
 
-\openout4 = `book-2.cpt'.
+\openout3 = `book-2.cpt'.
 
-\openout4 = `book-3.cpt'.
+\openout3 = `book-3.cpt'.
 
-\openout4 = `book-4.cpt'.
+\openout3 = `book-4.cpt'.
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11266.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11275.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11275.
-[95]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11285.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11377.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11377.
- [96]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11473.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11473.
- [97]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11517.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11557.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11557.
- [98]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11643.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11643.
- [99]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11709.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11709.
- [100]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11777.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11781.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11787.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11787.
- [101]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11850.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11850.
- [102]
-<figures/chapter-computing-stan-1.pdf, id=2263, 505.89pt x 505.89pt>
+[96] [97] [98] [99] [100] [101] [102] [103]
+<figures/chapter-computing-stan-1.pdf, id=2112, 505.89pt x 505.89pt>
 File: figures/chapter-computing-stan-1.pdf Graphic file (type pdf)
 <use figures/chapter-computing-stan-1.pdf>
 Package pdftex.def Info: figures/chapter-computing-stan-1.pdf  used on input li
-ne 11857.
+ne 11871.
 (pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
-\openout4 = `book-5.cpt'.
+\openout3 = `book-5.cpt'.
 
- (./book-5.cpt
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 33.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 33.
- [103 <./figures/chapter-computing-stan-1.pdf>]
-<figures/chapter-computing-stan-2.pdf, id=2281, 505.89pt x 505.89pt>
+ (./book-5.cpt [104 <./figures/chapter-computing-stan-1.pdf>]
+<figures/chapter-computing-stan-2.pdf, id=2129, 505.89pt x 505.89pt>
 File: figures/chapter-computing-stan-2.pdf Graphic file (type pdf)
 <use figures/chapter-computing-stan-2.pdf>
 Package pdftex.def Info: figures/chapter-computing-stan-2.pdf  used on input li
 ne 50.
 (pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
-)
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11951.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11951.
- [104 <./figures/chapter-computing-stan-2.pdf>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 11971.
-\openout4 = `book-6.cpt'.
+) [105 <./figures/chapter-computing-stan-2.pdf>]
+\openout3 = `book-6.cpt'.
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 12114.
 
-(./book.bbl
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 13.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 13.
- [105]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 118.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 118.
- [106])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 12130.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 12130.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 12130.
- [107]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 12130.
+(./book.bbl [106] [107])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 12144.
+ [108]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 12144.
  (./book.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 12130.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 12144.
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 12130
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 12144
 .
 Package rerunfilecheck Info: File `book.out' has not changed.
-(rerunfilecheck)             Checksum: 3FF26DF70D1B467E948B4D5F627D11CA;4216.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 12130.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 12144.
  ) 
 Here is how much of TeX's memory you used:
- 21580 strings out of 494830
- 343258 string characters out of 6178378
- 571216 words of memory out of 5000000
- 23440 multiletter control sequences out of 15000+600000
- 20653 words of font info for 81 fonts, out of 8000000 for 9000
- 61 hyphenation exceptions out of 8191
- 56i,19n,51p,8864b,764s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 20355 strings out of 483049
+ 350927 string characters out of 5962914
+ 741599 words of memory out of 5000000
+ 33954 multiletter control sequences out of 15000+600000
+ 547902 words of font info for 82 fonts, out of 8000000 for 9000
+ 83 hyphenation exceptions out of 8191
+ 51i,19n,55p,10148b,748s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
 
- </home/rizbicki/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/tcti1095.60
-0pk> </home/rizbicki/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm109
-5.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/symbols/msbm10.pfb>
-Output written on book.pdf (107 pages, 765104 bytes).
+ </home/rbstern/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcti1095.600
+pk> </home/rbstern/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.
+600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/symbols/msbm10.pfb>
+Output written on book.pdf (108 pages, 766420 bytes).
 PDF statistics:
- 2652 PDF objects out of 2984 (max. 8388607)
- 2240 compressed objects within 23 object streams
- 1073 named destinations out of 1200 (max. 500000)
+ 2657 PDF objects out of 2984 (max. 8388607)
+ 2244 compressed objects within 23 object streams
+ 1074 named destinations out of 1200 (max. 500000)
  457 words of extra memory for PDF output out of 10000 (max. 10000000)
 

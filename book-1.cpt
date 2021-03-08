@@ -9,7 +9,7 @@
  Neste caso, $\frac{\tilde{f}(\theta)}{8h(\theta)} = \tilde{f}(\theta)$.
  Portanto, o método da rejeição pode ser implementado
  da seguinte forma:
-
+														
 \begin{lstlisting}[language=R]
 simula_esfera_rejeicao <- function(B) # retorna: pontos uniformemente
 {                                     # da esfera de raio 1 centrada na origem.

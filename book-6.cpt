@@ -30,7 +30,7 @@ model {
  y2 ~ normal(mu2, 1);
 }
 	\end{verbatim}
-
+	
 	\item Utilizando o \cref{thm:estimation_l2},
         sabemos que, sob a utilidade obtida pelo erro quadrático,
 				o estimador ótimo é a média a posteriori,
@@ -44,7 +44,7 @@ model {
 				usamos o seguinte código:
 	\begin{verbatim}
 amostra <- stan(file="anova.stan",
-                data=c("N1", "N2", "y1", "y2"), iter=10^4, chains=1)
+                data=c("N1", "N2", "y1", "y2"), iter=10^4, chains=1)	
 est_mu1 <- mean(extract(amostra, "mu1")[["mu1"]])
 est_mu2 <- mean(extract(amostra, "mu2")[["mu2"]])
 c(est_mu1,est_mu2)
@@ -75,7 +75,7 @@ plot(amostra)
 	e os $y_{i,j}$ tem variância $(1)$ menor que os $\mu_{i} (25)$,
 	é razoável esperar que o intervalo de credibilidade para $\mu_{1}$ e $\mu_{2}$
 	seja menor que aquele de $\mu$.
-
+	
 	\item Desejamos testar $H_{0}: \mu_{1} \leq \mu_{2}$.
 	      Decorre do, \cref{thm:0-1-c} que, como $c=1$,
 				rejeitamos $H_{0}$ se $P(H_{0}|y) < 0.5$.
@@ -94,7 +94,7 @@ mean(mu1 <= mu2)
 [1] 0
 \end{verbatim}
 	     Assim, obtemos que $P(H_{0}|y) \approx 0$ e rejeitamos $H_{0}$.
-
+			
   \item Similarmente ao item anterior, obtemos:
 	\begin{verbatim}
 mu <- extract(amostra, "mu")[["mu"]]
