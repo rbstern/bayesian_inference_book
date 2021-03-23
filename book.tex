@@ -3129,6 +3129,18 @@ generalizada para o seguinte resultado
  \end{enumerate}
 \end{exercise}
 
+\begin{exercise}
+ Considere que $X \sim \text{Binomial}(10, 0.5)$,
+ $Y|\theta \sim \text{Binomial}(10, \theta)$ e
+ $\theta \sim \text{Beta}(3, 3)$.
+ \begin{enumerate}[label=(\alph*)]
+  \item Ache $\E[X]$ e $\E[Y]$.
+  \item Ache $\V[X]$ e $\V[Y]$.
+  \item Faça um gráfico comparando
+  $f(x)$ e $f(y)$.
+ \end{enumerate}
+\end{exercise}
+
 \solution{\textbf{Solução}:
  \begin{enumerate}[label=(\alph*)]
   \item Defina $\theta$ como a indicadora de que
@@ -3231,10 +3243,13 @@ generalizada para o seguinte resultado
 
 \begin{exercise}
  Considere que $X_1, \ldots X_{n+1}$ são i.i.d. dado $\theta$,
- $X_i|\theta \sim \text{Binomial}(n,\theta)$
+ $X_i|\theta \sim \text{Binomial}(m,\theta)$
  e $\theta \sim \text{Beta}(a,b)$.
  Determine $\P(x_{n+1}|x_{1},\ldots,x_{n})$.
 \end{exercise}
+
+% Adicionar seção sobre Monte Carlo da
+% distribuição marginal de X
 
 \subsection{Permutabilidade*}
 
@@ -3745,8 +3760,6 @@ a bibliografia sobre o tema.
 
 %\begin{exercise}[\citet{Diaconis1980}]
 %\end{exercise}
-
-\pagebreak
 
 
 \subsection{Famílias conjugadas}
@@ -4865,6 +4878,26 @@ Esta análise é generalizada por um teorema em \citet{Diaconis1979} que é desc
 \end{example}
 
 \subsubsection*{Exercícios}
+
+\begin{exercise}
+ O jogador $A$ acredita que a frequência com que 
+ ela vence jogos de xadrez contra o jogador $B$
+ segue uma distribuição $\text{Beta}(2,2)$.
+ Em um torneio, o jogador $A$ joga quatro partidas contra
+ o jogador $B$ até ganhar seu primeiro jogo.
+ \begin{enumerate}[label=(\alph*)]
+  \item Descreva os elementos do modelo estatístico Bayesiano.
+  \item Antes de jogar contra $B$, em média quantas vezes
+  o jogador $A$ acreditava que ele precisaria jogar
+  até vencer contra o jogador $B$?
+  \item Encontre a distribuição a posteriori para
+ a frequência com que o jogador $A$ vence
+ jogos contra o jogador $B$ após o torneio.
+ \item Após o torneio, em média quantas partidas a mais
+ o jogador $A$ acredita que precisaria jogar contra $B$
+ para obter uma nova vitória?
+ \end{enumerate}
+\end{exercise}
 
 \begin{exercise}
  Escolha duas de suas famílias de

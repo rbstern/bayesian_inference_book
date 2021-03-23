@@ -1102,6 +1102,26 @@ Esta análise é generalizada por um teorema em \citet{Diaconis1979} que é desc
 \subsubsection*{Exercícios}
 
 \begin{exercise}
+ O jogador $A$ acredita que a frequência com que 
+ ela vence jogos de xadrez contra o jogador $B$
+ segue uma distribuição $\text{Beta}(2,2)$.
+ Em um torneio, o jogador $A$ joga quatro partidas contra
+ o jogador $B$ até ganhar seu primeiro jogo.
+ \begin{enumerate}[label=(\alph*)]
+  \item Descreva os elementos do modelo estatístico Bayesiano.
+  \item Antes de jogar contra $B$, em média quantas vezes
+  o jogador $A$ acreditava que ele precisaria jogar
+  até vencer contra o jogador $B$?
+  \item Encontre a distribuição a posteriori para
+ a frequência com que o jogador $A$ vence
+ jogos contra o jogador $B$ após o torneio.
+ \item Após o torneio, em média quantas partidas a mais
+ o jogador $A$ acredita que precisaria jogar contra $B$
+ para obter uma nova vitória?
+ \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
  Escolha duas de suas famílias de
  distribuições favoritas e descubra se
  elas pertencem ou não à família exponencial.

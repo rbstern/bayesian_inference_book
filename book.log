@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.2.21)  2 MAR 2021 18:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.2.21)  16 MAR 2021 11:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -851,7 +851,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [2] (./book.toc
 [3]
 Overfull \hbox (1.095pt too wide) detected at line 53
- []\OT1/cmss/bx/n/10.95 106
+ []\OT1/cmss/bx/n/10.95 105
  []
 
 )
@@ -891,8 +891,8 @@ Package hyperref Info: bookmark level for unknown exercise defaults to 0 on inp
 ut line 762.
 [13] [14 <./figures/unnamed-chunk-17-1.pdf>] [15] [16] [17] [18] [19] [20]
 [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32]
-Overfull \hbox (2.47983pt too wide) in paragraph at lines 3433--3439
-[]\OT1/cmr/bx/n/10.95 Teorema 4.17. []\OT1/cmr/m/it/10.95 Con-si-dere que $\OML
+Overfull \hbox (2.47983pt too wide) in paragraph at lines 3448--3454
+[]\OT1/cmr/bx/n/10.95 Teorema 4.18. []\OT1/cmr/m/it/10.95 Con-si-dere que $\OML
 /cmm/m/it/10.95 X[]; [] ; X[]; []$ \OT1/cmr/m/it/10.95 ^^Se uma sequ^encia in-f
 i-ni-ta-mente per-mut^^Savel tal que $\OMS/cmsy/m/n/10.95 ^^@1 \OML/cmm/m/it/10
 .95 < E\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 X[]X[]\OT1/cmr/m/n/10.95 ] =
@@ -900,16 +900,15 @@ i-ni-ta-mente per-mut^^Savel tal que $\OMS/cmsy/m/n/10.95 ^^@1 \OML/cmm/m/it/10
 
 [33]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 3
-533.
+548.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3533.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3548.
 
  [34] [35]
-[36]
-Overfull \hbox (14.92455pt too wide) in paragraph at lines 3809--3816
+Overfull \hbox (14.92455pt too wide) in paragraph at lines 3822--3829
 \OT1/cmr/m/n/10.95 No Exem-plo [][]2.2[][], ob-ser-va-mos que $\OML/cmm/m/it/10
 .95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 )\OML/cmm/
 m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OMS/cmsy/m/n/10.95 j\OML/
@@ -917,87 +916,88 @@ cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 )$ era pro-por-ci-o-nal a uma dis-tri-bu
 i^^Xc~ao Beta(25,15). As-sim, $[] []$
  []
 
-[37] [38] [39] [40] [41] [42]
-<./figures/normal_normal-1.pdf, id=965, 289.08pt x 216.81pt>
+[36] [37] [38] [39] [40] [41] [42]
+<./figures/normal_normal-1.pdf, id=971, 289.08pt x 216.81pt>
 File: ./figures/normal_normal-1.pdf Graphic file (type pdf)
 <use ./figures/normal_normal-1.pdf>
-Package pdftex.def Info: ./figures/normal_normal-1.pdf  used on input line 4349
+Package pdftex.def Info: ./figures/normal_normal-1.pdf  used on input line 4362
 .
 (pdftex.def)             Requested size: 289.07928pt x 216.81938pt.
- [43] [44 <./figures/normal_normal-1.pdf>]
-[45]
+ [43 <./figures/normal_normal-1.pdf>]
+[44]
 
-LaTeX Warning: Reference `fig:normal_gamma' on page 46 undefined on input line 
-4486.
+LaTeX Warning: Reference `fig:normal_gamma' on page 45 undefined on input line 
+4499.
 
-[46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60]
-[61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72]
-<figures/chapter-decisions-normal-mixture.pdf, id=1539, 505.89pt x 505.89pt>
+[45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59]
+[60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72]
+<figures/chapter-decisions-normal-mixture.pdf, id=1551, 505.89pt x 505.89pt>
 File: figures/chapter-decisions-normal-mixture.pdf Graphic file (type pdf)
 <use figures/chapter-decisions-normal-mixture.pdf>
 Package pdftex.def Info: figures/chapter-decisions-normal-mixture.pdf  used on 
-input line 8087.
+input line 8120.
 (pdftex.def)             Requested size: 252.94437pt x 252.94437pt.
- [73]
+ [73 <./figures/chapter-decisions-normal-mixture.pdf>]
 
-LaTeX Warning: Reference `intervalos' on page 74 undefined on input line 8172.
+LaTeX Warning: Reference `intervalos' on page 74 undefined on input line 8205.
 
-[74 <./figures/chapter-decisions-normal-mixture.pdf>]
 LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 
-8189.
-
+8222.
 (/usr/share/R/share/texmf/tex/latex/omscmtt.fd
 File: omscmtt.fd 
 )
 LaTeX Font Info:    Font shape `OMS/cmtt/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8189.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8222.
+
+ [74]
+Underfull \vbox (badness 10000) detected at line 8288
+ []
 
 
-Underfull \vbox (badness 2080) detected at line 8255
+Underfull \vbox (badness 10000) detected at line 8288
  []
 
 [75]
-<./figures/intervalos-1.pdf, id=1569, 289.08pt x 216.81pt>
+<./figures/intervalos-1.pdf, id=1580, 289.08pt x 216.81pt>
 File: ./figures/intervalos-1.pdf Graphic file (type pdf)
 <use ./figures/intervalos-1.pdf>
-Package pdftex.def Info: ./figures/intervalos-1.pdf  used on input line 8257.
+Package pdftex.def Info: ./figures/intervalos-1.pdf  used on input line 8290.
 (pdftex.def)             Requested size: 289.07928pt x 216.81938pt.
- [76] [77 <./figures/intervalos-1.pdf>] [78] [79]
+ [76 <./figures/intervalos-1.pdf>] [77] [78]
 Package hyperref Info: bookmark level for unknown corollary defaults to 0 on in
-put line 8800.
- [80] [81] [82] [83]
-[84]
+put line 8833.
+ [79] [80] [81] [82] [83]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 9674.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 9674.
+(hyperref)                removing `math shift' on input line 9707.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 9674.
+(hyperref)                removing `superscript' on input line 9707.
 
-[85] [86] [87] [88] [89] [90]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 9707.
+
+[84] [85] [86] [87] [88] [89]
 Package hyperref Info: bookmark level for unknown algorithm2 defaults to 0 on i
-nput line 10652.
- [91] [92]
-<figures/chapter-computing-rejection-circle.pdf, id=1893, 505.89pt x 505.89pt>
+nput line 10685.
+ [90] [91]
+<figures/chapter-computing-rejection-circle.pdf, id=1898, 505.89pt x 505.89pt>
 File: figures/chapter-computing-rejection-circle.pdf Graphic file (type pdf)
 <use figures/chapter-computing-rejection-circle.pdf>
 Package pdftex.def Info: figures/chapter-computing-rejection-circle.pdf  used o
-n input line 10814.
+n input line 10847.
 (pdftex.def)             Requested size: 252.94437pt x 252.94437pt.
- [93]
-<figures/chapter-computing-rejection-beta-2-2.pdf, id=1910, 505.89pt x 505.89pt
+ [92]
+<figures/chapter-computing-rejection-beta-2-2.pdf, id=1917, 505.89pt x 505.89pt
 >
 File: figures/chapter-computing-rejection-beta-2-2.pdf Graphic file (type pdf)
 <use figures/chapter-computing-rejection-beta-2-2.pdf>
 Package pdftex.def Info: figures/chapter-computing-rejection-beta-2-2.pdf  used
- on input line 10873.
+ on input line 10906.
 (pdftex.def)             Requested size: 252.94437pt x 252.94437pt.
- [94 <./figures/chapter-computing-rejection-circle.pdf>] [95 <./figures/chapter
+ [93 <./figures/chapter-computing-rejection-circle.pdf>] [94 <./figures/chapter
 -computing-rejection-beta-2-2.pdf>]
 \openout3 = `book-1.cpt'.
 
@@ -1007,34 +1007,34 @@ Package pdftex.def Info: figures/chapter-computing-rejection-beta-2-2.pdf  used
 
 \openout3 = `book-4.cpt'.
 
-[96] [97] [98] [99] [100] [101] [102] [103]
-<figures/chapter-computing-stan-1.pdf, id=2112, 505.89pt x 505.89pt>
+[95] [96] [97] [98] [99] [100] [101] [102]
+<figures/chapter-computing-stan-1.pdf, id=2118, 505.89pt x 505.89pt>
 File: figures/chapter-computing-stan-1.pdf Graphic file (type pdf)
 <use figures/chapter-computing-stan-1.pdf>
 Package pdftex.def Info: figures/chapter-computing-stan-1.pdf  used on input li
-ne 11871.
+ne 11904.
 (pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
 \openout3 = `book-5.cpt'.
 
- (./book-5.cpt [104 <./figures/chapter-computing-stan-1.pdf>]
-<figures/chapter-computing-stan-2.pdf, id=2129, 505.89pt x 505.89pt>
+ (./book-5.cpt [103 <./figures/chapter-computing-stan-1.pdf>]
+<figures/chapter-computing-stan-2.pdf, id=2136, 505.89pt x 505.89pt>
 File: figures/chapter-computing-stan-2.pdf Graphic file (type pdf)
 <use figures/chapter-computing-stan-2.pdf>
 Package pdftex.def Info: figures/chapter-computing-stan-2.pdf  used on input li
 ne 50.
 (pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
-) [105 <./figures/chapter-computing-stan-2.pdf>]
+) [104 <./figures/chapter-computing-stan-2.pdf>]
 \openout3 = `book-6.cpt'.
 
 
-(./book.bbl [106] [107])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 12144.
- [108]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 12144.
+(./book.bbl [105] [106])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 12177.
+ [107]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 12177.
  (./book.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 12144.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 12177.
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 12144
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 12177
 .
 Package rerunfilecheck Info: File `book.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -1042,12 +1042,12 @@ Package rerunfilecheck Info: File `book.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 12144.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 12177.
  ) 
 Here is how much of TeX's memory you used:
- 20355 strings out of 483049
- 350927 string characters out of 5962914
- 741599 words of memory out of 5000000
+ 20365 strings out of 483049
+ 351047 string characters out of 5962914
+ 741590 words of memory out of 5000000
  33954 multiletter control sequences out of 15000+600000
  547902 words of font info for 82 fonts, out of 8000000 for 9000
  83 hyphenation exceptions out of 8191
@@ -1079,10 +1079,10 @@ fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msbm10.pfb>
-Output written on book.pdf (108 pages, 766420 bytes).
+Output written on book.pdf (107 pages, 768010 bytes).
 PDF statistics:
- 2657 PDF objects out of 2984 (max. 8388607)
- 2244 compressed objects within 23 object streams
- 1074 named destinations out of 1200 (max. 500000)
+ 2668 PDF objects out of 2984 (max. 8388607)
+ 2256 compressed objects within 23 object streams
+ 1084 named destinations out of 1200 (max. 500000)
  457 words of extra memory for PDF output out of 10000 (max. 10000000)
 
