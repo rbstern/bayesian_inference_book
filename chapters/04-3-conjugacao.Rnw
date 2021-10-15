@@ -708,28 +708,97 @@ tanto $\mu$ quanto $\tau^{2}$ são desconhecidos
  \end{align*}
 \end{proof}
 
+
 \begin{example}
  Considere novamente o Exemplo
  \ref{ex:altura}, mas vamos agora assumir 
- que
- a altura de um brasileiro selecionado ao acaso, $X$, é tal que
-$X|\mu \sim N(\mu,\tau^2)$, com $\tau^2$ desconhecido.
- Agora precisamos fazer a inferência simultaneamente para  $\mu$
- e $\tau^2$
+ que a altura de um brasileiro selecionado ao acaso, 
+ $X$, é tal que
+ $X|\mu \sim N(\mu,\tau^2)$, 
+ com $\tau^2$ desconhecido.
+ Agora precisamos fazer a inferência simultaneamente 
+ para $\mu$ e $\tau^2$
  Para tanto, vamos assumir que
-$(\mu,\tau^2) \sim \mbox{Normal-Gamma}(1.65,1,6,0.05)$.
-$X=1.8$, então
-$(\mu,\tau^2)|x   \sim \mbox{Normal-Gamma}(1.725,2,6.5,0.055625)$. A Figura \ref{fig:normal_gamma} mostra a distribuição a priori e a distribuição a posteriori para essa observação. 
+ $(\mu,\tau^2) \sim \mbox{Normal-Gamma}(1.65,1,6,0.05)$.
+ Como $x=1.8$,
+ $(\mu,\tau^2)|x \sim 
+ \mbox{Normal-Gamma}(1.725, 2, 6.5, 0.055625)$. 
+ A Figura \ref{fig:normal_gamma} mostra 
+ a distribuição a priori e 
+ a distribuição a posteriori 
+ para essa observação. 
 
- <<normal_gamma,cache=TRUE, fig.pos="t", fig.height=3, fig.width=4, fig.cap="Distribuições a priori e a posteriori (depois de observamos um indivíduo com 1,8m) para a altura média de um brasileiro",fig.path="../",fig.align="center">>=
+<<normal_gamma, cache=TRUE, fig.pos="t", fig.height=3, fig.width=4, fig.cap="Distribuições a priori e a posteriori (depois de observamos um indivíduo com 1,8m) para a altura média de um brasileiro", fig.path="../", fig.align="center">>=
 library(ggplot2)
+library(patchwork)
 
-grid_bivariado <- expand.grid(mu=seq(1.4,1.8,length.out = 300),
-                              tau2=seq(60,200,length.out = 300))
+set.seed(0)
+sigma <- 0.075
+mu <- 1.70
+# X ~ N(mu, sigma)
+altura <- 1.80
 
+atualiza <- function(hparam, x)
+{
+  list(
+    mu0 = (hparam$lambda*hparam$mu0+x)/(hparam$lambda+1),
+    lambda = hparam$lambda + 1,
+    alpha = hparam$alpha + .5,
+    beta = hparam$beta +
+      (hparam$lambda*(hparam$mu0-x)^2)/(2*(hparam$lambda+1))
+  )
+}
 
- 
- @
+hparam_prior <- list(
+  mu0 = 1.65, 
+  lambda = 1, 
+  beta = 0.05,
+  alpha = 120*0.05
+)
+
+grid_bivariado <- expand.grid(
+  mu = seq(1.4, 1.8, length.out = 300),
+  tau2 = seq(60, 200, length.out = 300)
+)
+
+# retorna f(grid_bivariado|hparam)
+densidade <- function(grid_bivariado, hparam)
+{
+  dgamma(grid_bivariado$tau2,
+         hparam$alpha,
+         hparam$beta)*
+    dnorm(grid_bivariado$mu,
+          hparam$mu0,
+          sqrt(1/(hparam$lambda*grid_bivariado$tau2)))
+}
+  
+plot_densidade <- function(grid_bivariado, hparam)
+{
+  dados_plot <- data.frame(
+    mu = grid_bivariado$mu,
+    tau2 = grid_bivariado$tau2,
+    densidade = densidade(grid_bivariado, hparam)
+  )
+  
+  ggplot(dados_plot, 
+         aes(mu, tau2, fill = densidade)) + 
+    geom_raster(interpolate = TRUE) + 
+    ggtitle(paste0("Prior")) +
+    coord_cartesian(xlim=range(grid_bivariado$mu),
+                    ylim=range(grid_bivariado$tau2)) +
+    scale_fill_gradientn(colours = terrain.colors(100)) +
+    theme_bw() +
+    theme(axis.text=element_text(size=18),
+          axis.title=element_text(size=20,face="bold")) +
+    xlab(expression(mu)) + 
+    ylab(expression(tau^2))
+}
+
+aux1 = plot_densidade(grid_bivariado, hparam_prior)
+aux2 = plot_densidade(grid_bivariado, 
+                      atualiza(hparam_prior, altura))
+aux1 / aux2
+@
 \end{example}
 
 \subsubsection*{Exercícios}
@@ -744,8 +813,10 @@ grid_bivariado <- expand.grid(mu=seq(1.4,1.8,length.out = 300),
  \begin{enumerate}[label=(\alph*)]
   \item Ache a posteriori para
   $\mu|X_{1},\ldots,X_{n}$.
-  \item Derive $\lim_{n \rightarrow \infty}\E[\mu|X_{1},\ldots,X_{n}]$.
-  \item Derive $\lim_{n \rightarrow \infty}\V[\mu|X_{1},\ldots,X_{n}]$.
+  \item Determine 
+  $\lim_{n \rightarrow \infty}\E[\mu|X_{1},\ldots,X_{n}]$.
+  \item Determine
+  $\lim_{n \rightarrow \infty}\V[\mu|X_{1},\ldots,X_{n}]$.
   \item Interprete em suas próprias palavras os
   resultados obtidos nos itens anteriores.
  \end{enumerate}

@@ -478,9 +478,9 @@ o modelo estatístico}
  \end{align*}
 }{}
 
-
-
 \begin{exercise}
-Seja $T(X)$ uma estatística suficiente para $\theta$. Mostre que 
-$f(\theta|T=t(x))=f(\theta|X=x)$. Interprete esse resultado.
+Seja $T(X)$ uma estatística suficiente para $\theta$. 
+Mostre que 
+$f(\theta|T=t(x))=f(\theta|X=x)$. 
+Interprete esse resultado.
 \end{exercise}

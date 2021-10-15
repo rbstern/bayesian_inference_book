@@ -18,7 +18,6 @@ destas propriedades.
  Professor Carlos Alberto de Bragança Pereira, um 
  dos precursores da Inferência Bayesiana no Brasil 
  (e no mundo).
-
  Considere que, dado $\theta$, 
  $X_{1}$ e $X_{2}$ são i.i.d. e
  $X_{i} \sim \text{Uniforme}(\theta-0.5,\theta+0.5)$.
@@ -37,7 +36,6 @@ destas propriedades.
  $-0.5 \leq \theta \leq 0.5$.
  Assim, como $\theta-0.5 \leq X_{2} \leq \theta + 0.5$,
  conclua que $X_{2} \in [-1,1]$.
-
  Assim, antes de observar $X_{1}=0$, você 
  acreditava que $X_{2}$ poderia ser 
  qualquer número real. 
@@ -212,7 +210,7 @@ considere o caso de um diagnóstico médico.
 \end{example}
 
 A equação \ref{eqn:x2_posterior} pode ser 
-generalizada para o seguinte resultado
+generalizada para o seguinte resultado:
 
 \begin{theorem}
  \label{theorem:exchangeable_predictive}

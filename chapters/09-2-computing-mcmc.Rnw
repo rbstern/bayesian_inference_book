@@ -493,6 +493,20 @@ mean(unlist(metropolis(10^5,0,rprop,ldprop,ldpost)))
 \subsubsection{O algoritmo de Gibbs}
 \label{subsec:gibbs}
 
+\subsubsection*{Exercícios}
+
+\begin{exercise}
+ Dizemos que $\theta \sim \text{Laplace}(\lambda)$ 
+ se $f(\theta) = 2^{-1}\lambda \exp(-\lambda |\theta|)$.
+ Considere que $\theta \sim \text{Laplace}(5)$ e,
+ dado $\theta$, $X_1, \ldots, X_n$ são i.i.d. e
+ $X_i \sim \text{N}(\theta, 1)$.
+ Construa um estimador e
+ um intervalo de credibilidade para $\theta$
+ após observar $\bar{x} = 2$ com $n = 10$.
+ Com a mesma amostra, também teste
+ a hipótese $H_0: \theta > 0$.
+\end{exercise}
 
 \subsubsection{Monte Carlo para cadeias de Markov na prática}
 
