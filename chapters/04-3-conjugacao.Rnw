@@ -728,7 +728,7 @@ tanto $\mu$ quanto $\tau^{2}$ são desconhecidos
  a distribuição a posteriori 
  para essa observação. 
 
-<<normal_gamma, cache=TRUE, fig.pos="t", fig.height=3, fig.width=4, fig.cap="Distribuições a priori e a posteriori (depois de observamos um indivíduo com 1,8m) para a altura média de um brasileiro", fig.path="../", fig.align="center">>=
+<<normal_gamma, cache=TRUE, fig.pos="t", fig.height=3, fig.width=4, fig.cap="Distribuições a priori e a posteriori (depois de observamos um indivíduo com 1,8m) para a altura média de um brasileiro", fig.align="center">>=
 library(ggplot2)
 library(patchwork)
 

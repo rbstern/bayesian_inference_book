@@ -8,46 +8,46 @@
 \contentsline {subsubsection}{\numberline {1.2.3}Distribuições importantes}{11}{subsubsection.1.2.3}%
 \contentsline {section}{\numberline {2}Aprendizado e atualização de incertezas}{12}{section.2}%
 \contentsline {subsection}{\numberline {2.1}O Teorema de Bayes}{12}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Modelo estatístico}{15}{subsection.2.2}%
-\contentsline {section}{\numberline {3}Coerência e Probabilidade: como evitar prejuízos certos?}{19}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Probabilidade marginal}{19}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Probabilidade condicional}{21}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Caracterização da coerência}{23}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Infinitas apostas*}{25}{subsubsection.3.3.1}%
-\contentsline {section}{\numberline {4}Explorando o modelo estatístico}{27}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Predições usando o modelo estatístico}{27}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Permutabilidade*}{31}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Famílias conjugadas}{36}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}O modelo beta-binomial (Dirichlet-multinomial)}{38}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}O modelo normal-normal}{40}{subsubsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.3}A família exponencial}{48}{subsubsection.4.3.3}%
-\contentsline {subsubsection}{\numberline {4.3.4}O processo de Dirichlet*}{52}{subsubsection.4.3.4}%
-\contentsline {section}{\numberline {5}Revisão sobre o teorema de Bayes e o modelo estatístico}{57}{section.5}%
-\contentsline {section}{\numberline {6}Tomando decisões conscientemente}{59}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Elementos da tomada de decisões}{59}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Avaliando alternativas}{61}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Usando dados para avaliar alternativas}{62}{subsection.6.3}%
-\contentsline {section}{\numberline {7}Inferência Bayesiana}{67}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Estimação Pontual}{67}{subsection.7.1}%
-\contentsline {subsubsection}{\numberline {7.1.1}Distância quadrática}{67}{subsubsection.7.1.1}%
-\contentsline {subsubsection}{\numberline {7.1.2}Desvio absoluto}{69}{subsubsection.7.1.2}%
-\contentsline {subsection}{\numberline {7.2}Regiões de credibilidade}{72}{subsection.7.2}%
-\contentsline {subsubsection}{\numberline {7.2.1}Intervalos de credibilidade}{72}{subsubsection.7.2.1}%
-\contentsline {subsubsection}{\numberline {7.2.2}Regiões de credibilidade}{75}{subsubsection.7.2.2}%
-\contentsline {subsubsection}{\numberline {7.2.3}Regiões de credibilidade com credibilidade especificada}{76}{subsubsection.7.2.3}%
-\contentsline {subsection}{\numberline {7.3}Testes de hipótese}{79}{subsection.7.3}%
-\contentsline {subsubsection}{\numberline {7.3.1}Hipóteses plenas}{80}{subsubsection.7.3.1}%
-\contentsline {subsubsection}{\numberline {7.3.2}Hipóteses precisas}{84}{subsubsection.7.3.2}%
-\contentsline {subsubsection}{\numberline {7.3.3}Coerência em testes de hipótese}{85}{subsubsection.7.3.3}%
-\contentsline {subsection}{\numberline {7.4}Princípio da verossimilhança$^*$}{87}{subsection.7.4}%
-\contentsline {section}{\numberline {8}Revisão sobre teoria da decisão e inferência bayesiana}{89}{section.8}%
-\contentsline {section}{\numberline {9}Estatística Bayesiana Computacional}{92}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Método de Monte Carlo}{92}{subsection.9.1}%
-\contentsline {subsubsection}{\numberline {9.1.1}O método da rejeição}{94}{subsubsection.9.1.1}%
-\contentsline {subsection}{\numberline {9.2}Método de Monte Carlo via cadeias de Markov}{99}{subsection.9.2}%
-\contentsline {subsubsection}{\numberline {9.2.1}Cadeias de Markov}{99}{subsubsection.9.2.1}%
-\contentsline {subsubsection}{\numberline {9.2.2}O algoritmo de Metropolis-Hastings}{101}{subsubsection.9.2.2}%
-\contentsline {subsubsection}{\numberline {9.2.3}O algoritmo de Gibbs}{105}{subsubsection.9.2.3}%
-\contentsline {subsubsection}{\numberline {9.2.4}Monte Carlo para cadeias de Markov na prática}{105}{subsubsection.9.2.4}%
-\contentsline {subsubsection}{\numberline {9.2.5}Exercícios}{108}{subsubsection.9.2.5}%
-\contentsline {section}{\numberline {10}Revisão final}{109}{section.10}%
+\contentsline {subsection}{\numberline {2.2}Modelo estatístico}{17}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Coerência e Probabilidade: como evitar prejuízos certos?}{24}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Probabilidade marginal}{24}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Probabilidade condicional}{27}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Caracterização da coerência}{30}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Infinitas apostas*}{32}{subsubsection.3.3.1}%
+\contentsline {section}{\numberline {4}Explorando o modelo estatístico}{34}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Predições usando o modelo estatístico}{34}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Permutabilidade*}{42}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Famílias conjugadas}{48}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}O modelo beta-binomial (Dirichlet-multinomial)}{50}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}O modelo normal-normal}{53}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}A família exponencial}{63}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}O processo de Dirichlet*}{70}{subsubsection.4.3.4}%
+\contentsline {section}{\numberline {5}Revisão sobre o teorema de Bayes e o modelo estatístico}{75}{section.5}%
+\contentsline {section}{\numberline {6}Tomando decisões conscientemente}{82}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Elementos da tomada de decisões}{83}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Avaliando alternativas}{84}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Usando dados para avaliar alternativas}{88}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Inferência Bayesiana}{96}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Estimação Pontual}{96}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Distância quadrática}{96}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Desvio absoluto}{98}{subsubsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.2}Regiões de credibilidade}{103}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Intervalos de credibilidade}{103}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}Regiões de credibilidade}{107}{subsubsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.3}Regiões de credibilidade com credibilidade especificada}{108}{subsubsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.3}Testes de hipótese}{114}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}Hipóteses plenas}{114}{subsubsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.2}Hipóteses precisas}{121}{subsubsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.3}Coerência em testes de hipótese}{124}{subsubsection.7.3.3}%
+\contentsline {subsection}{\numberline {7.4}Princípio da verossimilhança$^*$}{126}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Revisão sobre teoria da decisão e inferência bayesiana}{129}{section.8}%
+\contentsline {section}{\numberline {9}Estatística Bayesiana Computacional}{137}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Método de Monte Carlo}{138}{subsection.9.1}%
+\contentsline {subsubsection}{\numberline {9.1.1}O método da rejeição}{139}{subsubsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.2}Método de Monte Carlo via cadeias de Markov}{149}{subsection.9.2}%
+\contentsline {subsubsection}{\numberline {9.2.1}Cadeias de Markov}{149}{subsubsection.9.2.1}%
+\contentsline {subsubsection}{\numberline {9.2.2}O algoritmo de Metropolis-Hastings}{151}{subsubsection.9.2.2}%
+\contentsline {subsubsection}{\numberline {9.2.3}O algoritmo de Gibbs}{155}{subsubsection.9.2.3}%
+\contentsline {subsubsection}{\numberline {9.2.4}Monte Carlo para cadeias de Markov na prática}{155}{subsubsection.9.2.4}%
+\contentsline {subsubsection}{\numberline {9.2.5}Exercícios}{158}{subsubsection.9.2.5}%
+\contentsline {section}{\numberline {10}Revisão final}{161}{section.10}%

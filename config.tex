@@ -39,7 +39,7 @@
 
 \usepackage{ifthen}
 \newboolean{noShowSolutions}
-\setboolean{noShowSolutions}{true}
+\setboolean{noShowSolutions}{false}
 \newcommand{\solutioncmd}[2]{{{#1}}{{#2}}}
 \newcommand{\solution}[2]{\ifthenelse {\boolean{noShowSolutions}} {\solutioncmd{#2}}{\solutioncmd{#1} }}
 \usepackage{xcolor}

@@ -12,9 +12,11 @@ y <- rnorm(n, 5 + 10*x)
 # beta ~ N(0, 100)
 # Y|mu*, beta, M2 ~ N(mu + beta*X, 1)
 
-# mu,  u
-#  |   |
-# mu*, beta
+#param[1], param[2], param[3]
+#        -------------------
+# M1     | mu,       u
+#        | |         |
+# M2     | mu,      beta
 
 # Uma possibilidade:
 # h(mu, u) = (mu*, u)
@@ -47,13 +49,15 @@ ldtgt <- function(param)
 {
   case_when(
     param[1] == 0 ~
-      log(0.5) + log(dnorm(param[2], 0, 10)) + 
-      log(dnorm(param[3], 0, 10)) +
-      sum(log(dnorm(y, param[2]))), 
+      log(0.5) + # log(P(M = 0))
+      log(dnorm(param[2], 0, 10)) + # log(f(mu))
+      log(dnorm(param[3], 0, 10)) + # log(f(u))
+      sum(log(dnorm(y-param[2]))), # log(f(y|mu, u))
     param[1] == 1 ~
-      log(0.5) + log(dnorm(param[2], 0, 10)) + 
-      log(dnorm(param[3], 0, 10)) + 
-      sum(log(dnorm(y, param[2] + param[3]*x)))
+      log(0.5) + # log(P(M = 1))
+      log(dnorm(param[2], 0, 10)) + # log(f(mu*))
+      log(dnorm(param[3], 0, 10)) + # log(f(beta))
+      sum(log(dnorm(y-param[2]-param[3]*x))) # log(f(y|mu, beta))
   )
 }
 

@@ -376,7 +376,7 @@ O seguinte código ilustra como encontrar os intervalos de credibilidade
 investigados nesta seção, com constantes na utilidade escolhidas de modo que a credibilidade dos intervalos seja $95\%$.
 Neste caso, como a distribuição é próxima de ser simétrica, os três intervalos são muito próximos (\cref{fig:intervalos}).
 
-<<intervalos, cache=TRUE, fig.pos="t", fig.height=3, fig.width=4, fig.cap="Intervalos de credibilidade", fig.path="../", fig.align="center">>=
+<<intervalos, cache=TRUE, fig.pos="t", fig.height=3, fig.width=4, fig.cap="Intervalos de credibilidade", fig.align="center">>=
 a <- 25 # hiperparâmetro a posteriori
 b <- 15 # hiperparâmetro a posteriori
 
