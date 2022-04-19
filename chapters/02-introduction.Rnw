@@ -1,4 +1,4 @@
-\textsl{}\section{Aprendizado e atualização de incertezas}
+\section{Aprendizado e atualização de incertezas}
 
 \subsection{O Teorema de Bayes}
 
@@ -948,4 +948,3 @@ cada elemento do vetor $x$. Neste caso, obtemos,
   & \text{\cref{lemma:bayes_prop}}
  \end{align*}
 }{}
-

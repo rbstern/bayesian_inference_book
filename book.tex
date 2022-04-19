@@ -551,8 +551,7 @@ Ademais,
  \label{continuous-distributions}
 \end{table}
 
-
-\textsl{}\section{Aprendizado e atualização de incertezas}
+\section{Aprendizado e atualização de incertezas}
 
 \subsection{O Teorema de Bayes}
 
@@ -747,8 +746,7 @@ alguns exemplos:
   \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{expression}\hlstd{(theta),} \hlkwc{y} \hlstd{=} \hlstr{"densidade"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{./figures/unnamed-chunk-17-1} 
-
+\includegraphics[width=\maxwidth]{./figures/unnamed-chunk-2-1} 
 \end{knitrout}
  \caption{Comparação entre a distribuição a priori, a verossimilhança, e a distribuição a posteriori no \cref{exemplo:eleicao}.}
  \label{figura:eleicao}
@@ -1508,8 +1506,6 @@ cada elemento do vetor $x$. Neste caso, obtemos,
   & \text{\cref{lemma:bayes_prop}}
  \end{align*}
 }{}
-
-
 
 \newpage
 
@@ -2606,7 +2602,6 @@ obteremos o seguinte teorema:
  $\P$ seja coerente.
 \end{exercise}
 
-
 \section{Explorando o modelo estatístico}
 \subsection{Predições usando o modelo estatístico}
 
@@ -3127,18 +3122,6 @@ generalizada para o seguinte resultado:
  \end{enumerate}
 \end{exercise}
 
-\begin{exercise}
- Considere que $X \sim \text{Binomial}(10, 0.5)$,
- $Y|\theta \sim \text{Binomial}(10, \theta)$ e
- $\theta \sim \text{Beta}(3, 3)$.
- \begin{enumerate}[label=(\alph*)]
-  \item Ache $\E[X]$ e $\E[Y]$.
-  \item Ache $\V[X]$ e $\V[Y]$.
-  \item Faça um gráfico comparando
-  $f(x)$ e $f(y)$.
- \end{enumerate}
-\end{exercise}
-
 \solution{\textbf{Solução}:
  \begin{enumerate}[label=(\alph*)]
   \item Defina $\theta$ como a indicadora de que
@@ -3198,6 +3181,18 @@ generalizada para o seguinte resultado:
   \end{align*}
  \end{enumerate}
 }{}
+
+\begin{exercise}
+ Considere que $X \sim \text{Binomial}(10, 0.5)$,
+ $Y|\theta \sim \text{Binomial}(10, \theta)$ e
+ $\theta \sim \text{Beta}(3, 3)$.
+ \begin{enumerate}[label=(\alph*)]
+  \item Ache $\E[X]$ e $\E[Y]$.
+  \item Ache $\V[X]$ e $\V[Y]$.
+  \item Faça um gráfico comparando
+  $f(x)$ e $f(y)$.
+ \end{enumerate}
+\end{exercise}
 
 \begin{exercise}
  Considere que $X_{1},\ldots,X_{n},X_{n+1}$ são 
@@ -3758,7 +3753,6 @@ a bibliografia sobre o tema.
 
 %\begin{exercise}[\citet{Diaconis1980}]
 %\end{exercise}
-
 
 \subsection{Famílias conjugadas}
 
@@ -4364,7 +4358,6 @@ $\mu|x   \sim N(177,0.05)$. A Figura \ref{fig:normal_normal} mostra a distribui�
 \caption[Distribuições a priori e a posteriori (depois de observamos um indivíduo com 1,8m) para a altura média de um brasileiro]{Distribuições a priori e a posteriori (depois de observamos um indivíduo com 1,8m) para a altura média de um brasileiro}\label{fig:normal_normal}
 \end{figure}
 
-
 \end{knitrout}
 
 \end{example}
@@ -4584,7 +4577,6 @@ tanto $\mu$ quanto $\tau^{2}$ são desconhecidos
 
 \caption[Distribuições a priori e a posteriori (depois de observamos um indivíduo com 1,8m) para a altura média de um brasileiro]{Distribuições a priori e a posteriori (depois de observamos um indivíduo com 1,8m) para a altura média de um brasileiro}\label{fig:normal_gamma}
 \end{figure}
-
 
 \end{knitrout}
 \end{example}
@@ -5752,7 +5744,6 @@ discutida a seguir.
  mostre que $F_1 = F_2$.
 \end{exercise}
 
-
 \section{Revisão sobre o teorema de Bayes e
 o modelo estatístico}
 
@@ -6239,7 +6230,6 @@ Mostre que
 $f(\theta|T=t(x))=f(\theta|X=x)$. 
 Interprete esse resultado.
 \end{exercise}
-
 
 \section{Tomando decisões conscientemente}
 \label{section:decisions}
@@ -7382,7 +7372,6 @@ ilustrar uma aplicação do \cref{theorem:extensive-form}.
  nesta descrição e encontre a decisão ótima para o advogado.
 \end{exercise}
 
-
 \section{Inferência Bayesiana}
 
 Neste capítulo, veremos como
@@ -7919,7 +7908,6 @@ com relação à utilidade $U(\hat \theta,\theta)=-\I(\hat{\theta}\neq \theta)$?
 Interprete essa utilidade.
 \end{exercise}
 
-
 \subsection{Regiões de credibilidade}
 
 Na Seção passada estudamos 
@@ -8393,7 +8381,6 @@ Neste caso, como a distribuição é próxima de ser simétrica, os três interv
 \caption[Intervalos de credibilidade]{Intervalos de credibilidade}\label{fig:intervalos}
 \end{figure}
 
-
 \end{knitrout}
 
 
@@ -8636,7 +8623,6 @@ $\int_{\infty}^{a^*}{f_{\theta|X}(t|X)dt}=\int_{b^*}^{\infty}{f_{\theta|X}(t|X)d
 isto é, 
 $F_{\theta|X}(a^*|X)=1-F_{\theta|X}(b^*|X)$.
 }{}
-
 
 
 \subsection{Testes de hipótese}
@@ -9802,7 +9788,6 @@ consonâncias com a união e com a intersecção.
  Possivelmente incluir testes agnósticos.
 \end{comment}
 
-
 \subsection{Princípio da verossimilhança$^*$}
 Esta seção resume um resultado 
 descoberto em \citet{Birnbaum1962}.
@@ -10043,7 +10028,6 @@ Você acha os princípios razoáveis?
  Portanto, o estimador de máxima verossimilhança
  satisfaz o princípio da Verossimilhança.
 }{}
-
 
 
 \section{Revisão sobre teoria da decisão e 
@@ -10664,7 +10648,6 @@ Você acha os princípios razoáveis?
  (Fator de Bayes) ou
  usar uma utilidade diferente (FBST).
 }{}
-
 
 
 \section{Estatística Bayesiana Computacional}
@@ -11408,7 +11391,6 @@ simula_beta_via_beta <- function(B,a1,b1,a2,b2) {
 \end{exercise}
 
 
-
 \subsection{Método de Monte Carlo via cadeias de Markov}
 
 Foi ilustrado na seção passada que
@@ -11914,7 +11896,7 @@ obtida por
 \hlkwd{mean}\hlstd{(}\hlkwd{unlist}\hlstd{(}\hlkwd{metropolis}\hlstd{(}\hlnum{10}\hlopt{^}\hlnum{5}\hlstd{,}\hlnum{0}\hlstd{,rprop,ldprop,ldpost)))}
 \end{alltt}
 \begin{verbatim}
-## [1] 3.134518
+## [1] 3.133677
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -12269,7 +12251,6 @@ olbm(mu >= 20, 250)
 	      Sugira um modelo que leve este efeito em consideração e rode-o no stan.
  \end{enumerate}
 \end{exercise}
-
 
 \section{Revisão final}
 

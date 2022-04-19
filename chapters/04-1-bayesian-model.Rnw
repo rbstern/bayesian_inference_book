@@ -518,18 +518,6 @@ generalizada para o seguinte resultado:
  \end{enumerate}
 \end{exercise}
 
-\begin{exercise}
- Considere que $X \sim \text{Binomial}(10, 0.5)$,
- $Y|\theta \sim \text{Binomial}(10, \theta)$ e
- $\theta \sim \text{Beta}(3, 3)$.
- \begin{enumerate}[label=(\alph*)]
-  \item Ache $\E[X]$ e $\E[Y]$.
-  \item Ache $\V[X]$ e $\V[Y]$.
-  \item Faça um gráfico comparando
-  $f(x)$ e $f(y)$.
- \end{enumerate}
-\end{exercise}
-
 \solution{\textbf{Solução}:
  \begin{enumerate}[label=(\alph*)]
   \item Defina $\theta$ como a indicadora de que
@@ -589,6 +577,18 @@ generalizada para o seguinte resultado:
   \end{align*}
  \end{enumerate}
 }{}
+
+\begin{exercise}
+ Considere que $X \sim \text{Binomial}(10, 0.5)$,
+ $Y|\theta \sim \text{Binomial}(10, \theta)$ e
+ $\theta \sim \text{Beta}(3, 3)$.
+ \begin{enumerate}[label=(\alph*)]
+  \item Ache $\E[X]$ e $\E[Y]$.
+  \item Ache $\V[X]$ e $\V[Y]$.
+  \item Faça um gráfico comparando
+  $f(x)$ e $f(y)$.
+ \end{enumerate}
+\end{exercise}
 
 \begin{exercise}
  Considere que $X_{1},\ldots,X_{n},X_{n+1}$ são 
