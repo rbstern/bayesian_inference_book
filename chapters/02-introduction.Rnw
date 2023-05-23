@@ -1,3 +1,5 @@
+\newpage
+
 \section{Aprendizado e atualização de incertezas}
 
 \subsection{O Teorema de Bayes}
