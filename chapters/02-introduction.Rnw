@@ -363,7 +363,7 @@ o réu seja inocente, e que ele deve portanto ser condenado.
 
 \begin{exercise}
  Sejam $A_{1},\ldots,A_{n}$ eventos disjuntos tais que
- $B = \cup_{i=1}^{n}{A_{i}}$.
+ $\Omega = \cup_{i=1}^{n}{A_{i}}$.
  Prove que 
  \begin{align*}
   \P(A_{1}|B)
