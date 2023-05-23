@@ -1,3 +1,5 @@
+\newpage
+
 \section{Explorando o modelo estatístico}
 \subsection{Predições usando o modelo estatístico}
 
