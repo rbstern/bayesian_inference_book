@@ -74,7 +74,7 @@ Para tal, considere a seguinte definição
  $x$ dado $\theta$. Dizemos que 
  $\mathcal{P}$ é conjugada para $f(x|\theta)$ se,
  para todo $x \in \chi$,
- $f(x|\theta_{0})f(\theta_{0}) \in \mathcal{P}$.
+ $f(\theta_{0}) \in \mathcal{P} \Rightarrow f(x|\theta_{0})f(\theta_{0}) \in \mathcal{P}$.
 \end{definition}
 Em palavras, se os dados seguem a
 distribuição $f(x|\theta)$,
@@ -339,6 +339,8 @@ a densidade preditiva dos dados.
   \item Derive $\lim_{n \rightarrow \infty}\V[\theta|X_{1},\ldots,X_{n}]$.
   \item Interprete, em suas palavras,
   os dois itens anteriores.
+  \item Calcule o viés, a variância e o erro quadrático médio do estimador $\E[\theta|X_{1},\ldots,X_{n}]$ e compare esses valores com 
+  os obtidos pelo estimador de máxima verossimilhança para $\theta$. Interprete.
 \end{enumerate}
 \end{exercise}
 
