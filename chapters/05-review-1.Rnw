@@ -1,3 +1,5 @@
+\newpage
+
 \section{Revisão sobre o teorema de Bayes e
 o modelo estatístico}
 
