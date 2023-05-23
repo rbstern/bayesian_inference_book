@@ -1,3 +1,5 @@
+\newpage
+
 \section{Revisão sobre teoria da decisão e 
          inferência bayesiana}
 
