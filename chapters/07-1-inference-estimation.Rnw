@@ -1,3 +1,5 @@
+\newpage
+
 \section{Inferência Bayesiana}
 
 Neste capítulo, veremos como
