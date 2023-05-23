@@ -1,3 +1,5 @@
+\newpage
+
 \section{Tomando decisões conscientemente}
 \label{section:decisions}
 
