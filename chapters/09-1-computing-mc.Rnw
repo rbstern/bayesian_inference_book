@@ -1,3 +1,5 @@
+\newpage
+
 \section{Estatística Bayesiana Computacional}
 
 Até o momento, trabalhamos com modelos tais que
