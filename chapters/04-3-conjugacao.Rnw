@@ -949,7 +949,8 @@ diversas famílias de distribuições.
  \label{defn:exponential-family}
  Dizemos que, dado um vetor de parâmetros $\theta$,
  um vetor de dados, $X$, 
- tem distribuição pertencente à família exponencial se
+ tem distribuição pertencente à família exponencial se o suporte de $x$ não
+ depende de $\theta$ e se
  \begin{align*}
   f(x|\theta) 
   &= h(x) \exp\left(g(\theta) \cdot T(x)
