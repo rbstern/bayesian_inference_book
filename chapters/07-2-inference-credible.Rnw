@@ -340,7 +340,7 @@ Por outro lado,  $\int_{x \in R(x)}{d\theta_0}$ indica que
 ou seja, tenha um volume pequeno.
 \begin{theorem}
 \label{thm:hpd}
-Se $U(R(X),\theta)	= \I(\theta \in R(X)) - k\int_{x \in R(x)}{1 \cdot d\theta_0}$, então 
+Se $U(R(X),\theta)	= \I(\theta \in R(X)) - k\int_{\theta_0 \in R(x)}{1 \cdot d\theta_0}$, então 
 a melhor região de credibilidade é tal que 
 $R(X) = \{\theta \in \Theta: f(\theta|X) \geq k\}$.
 Dizemos que $R(X)$ é um HPD (highest posterior density) 
