@@ -11,6 +11,27 @@ Michelangelo dos Anjos, Yuri Benites, Ian Danilevicz, Andressa Dantas, Thales Eg
 
 \newpage
 
+Todos os direitos reservados.
+Permitido o uso nos termos licença Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional.
+
+\vspace{1em}
+
+\textbf{Reutilização deste material}
+\\
+\noindent
+Você pode remixar, transformar, e criar a partir do material para qualquer fim, mesmo que comercial.
+Nesse caso, tem de distribuir as suas contribuições sob a mesma licença que o original.
+Você não pode aplicar termos jurídicos ou medidas de caráter tecnológico que restrinjam legalmente outros de fazerem algo que a licença permita.
+
+\textbf{Código-fonte}
+\\
+\noindent
+O código-fonte deste material está disponível em:
+\\
+\url{https://github.com/rbstern/bayesian_inference_book/}
+
+\newpage
+
 
 \epigraph{
 ``Teaching is giving opportunities to students to discover things by themselves.''
