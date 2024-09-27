@@ -13,8 +13,7 @@ Michelangelo dos Anjos, Yuri Benites, Ian Danilevicz, Andressa Dantas, Thales Eg
 
 Todos os direitos reservados.
 Permitido o uso nos termos licença Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional.
-
-\vspace{1em}
+\vspace{4mm}
 
 \textbf{Reutilização deste material}
 \\
@@ -22,6 +21,7 @@ Permitido o uso nos termos licença Creative Commons Atribuição-CompartilhaIgu
 Você pode remixar, transformar, e criar a partir do material para qualquer fim, mesmo que comercial.
 Nesse caso, tem de distribuir as suas contribuições sob a mesma licença que o original.
 Você não pode aplicar termos jurídicos ou medidas de caráter tecnológico que restrinjam legalmente outros de fazerem algo que a licença permita.
+\vspace{4mm}
 
 \textbf{Código-fonte}
 \\

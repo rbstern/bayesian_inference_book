@@ -11,6 +11,27 @@ Michelangelo dos Anjos, Yuri Benites, Ian Danilevicz, Andressa Dantas, Thales Eg
 
 \newpage
 
+Todos os direitos reservados.
+Permitido o uso nos termos licença Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional.
+\vspace{4mm}
+
+\textbf{Reutilização deste material}
+\\
+\noindent
+Você pode remixar, transformar, e criar a partir do material para qualquer fim, mesmo que comercial.
+Nesse caso, tem de distribuir as suas contribuições sob a mesma licença que o original.
+Você não pode aplicar termos jurídicos ou medidas de caráter tecnológico que restrinjam legalmente outros de fazerem algo que a licença permita.
+\vspace{4mm}
+
+\textbf{Código-fonte}
+\\
+\noindent
+O código-fonte deste material está disponível em:
+\\
+\url{https://github.com/rbstern/bayesian_inference_book/}
+
+\newpage
+
 
 \epigraph{
 ``Teaching is giving opportunities to students to discover things by themselves.''
@@ -551,6 +572,8 @@ Ademais,
  \label{continuous-distributions}
 \end{table}
 
+\newpage
+
 \section{Aprendizado e atualização de incertezas}
 
 \subsection{O Teorema de Bayes}
@@ -746,7 +769,7 @@ alguns exemplos:
   \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{expression}\hlstd{(theta),} \hlkwc{y} \hlstd{=} \hlstr{"densidade"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{./figures/unnamed-chunk-2-1} 
+\includegraphics[width=\maxwidth]{./figures/unnamed-chunk-5-1} 
 \end{knitrout}
  \caption{Comparação entre a distribuição a priori, a verossimilhança, e a distribuição a posteriori no \cref{exemplo:eleicao}.}
  \label{figura:eleicao}
@@ -919,7 +942,7 @@ o réu seja inocente, e que ele deve portanto ser condenado.
 
 \begin{exercise}
  Sejam $A_{1},\ldots,A_{n}$ eventos disjuntos tais que
- $B = \cup_{i=1}^{n}{A_{i}}$.
+ $\Omega = \cup_{i=1}^{n}{A_{i}}$.
  Prove que 
  \begin{align*}
   \P(A_{1}|B)
@@ -2602,6 +2625,8 @@ obteremos o seguinte teorema:
  $\P$ seja coerente.
 \end{exercise}
 
+\newpage
+
 \section{Explorando o modelo estatístico}
 \subsection{Predições usando o modelo estatístico}
 
@@ -3830,7 +3855,7 @@ Para tal, considere a seguinte definição
  $x$ dado $\theta$. Dizemos que 
  $\mathcal{P}$ é conjugada para $f(x|\theta)$ se,
  para todo $x \in \chi$,
- $f(x|\theta_{0})f(\theta_{0}) \in \mathcal{P}$.
+ $f(\theta_{0}) \in \mathcal{P} \Rightarrow f(x|\theta_{0})f(\theta_{0}) \in \mathcal{P}$.
 \end{definition}
 Em palavras, se os dados seguem a
 distribuição $f(x|\theta)$,
@@ -4095,6 +4120,8 @@ a densidade preditiva dos dados.
   \item Derive $\lim_{n \rightarrow \infty}\V[\theta|X_{1},\ldots,X_{n}]$.
   \item Interprete, em suas palavras,
   os dois itens anteriores.
+  \item Calcule o viés, a variância e o erro quadrático médio do estimador $\E[\theta|X_{1},\ldots,X_{n}]$ e compare esses valores com 
+  os obtidos pelo estimador de máxima verossimilhança para $\theta$. Interprete.
 \end{enumerate}
 \end{exercise}
 
@@ -4727,7 +4754,8 @@ diversas famílias de distribuições.
  \label{defn:exponential-family}
  Dizemos que, dado um vetor de parâmetros $\theta$,
  um vetor de dados, $X$, 
- tem distribuição pertencente à família exponencial se
+ tem distribuição pertencente à família exponencial se o suporte de $x$ não
+ depende de $\theta$ e se
  \begin{align*}
   f(x|\theta) 
   &= h(x) \exp\left(g(\theta) \cdot T(x)
@@ -5744,6 +5772,8 @@ discutida a seguir.
  mostre que $F_1 = F_2$.
 \end{exercise}
 
+\newpage
+
 \section{Revisão sobre o teorema de Bayes e
 o modelo estatístico}
 
@@ -6230,6 +6260,8 @@ Mostre que
 $f(\theta|T=t(x))=f(\theta|X=x)$. 
 Interprete esse resultado.
 \end{exercise}
+
+\newpage
 
 \section{Tomando decisões conscientemente}
 \label{section:decisions}
@@ -7372,6 +7404,8 @@ ilustrar uma aplicação do \cref{theorem:extensive-form}.
  nesta descrição e encontre a decisão ótima para o advogado.
 \end{exercise}
 
+\newpage
+
 \section{Inferência Bayesiana}
 
 Neste capítulo, veremos como
@@ -8250,7 +8284,7 @@ Por outro lado,  $\int_{x \in R(x)}{d\theta_0}$ indica que
 ou seja, tenha um volume pequeno.
 \begin{theorem}
 \label{thm:hpd}
-Se $U(R(X),\theta)	= \I(\theta \in R(X)) - k\int_{x \in R(x)}{1 \cdot d\theta_0}$, então 
+Se $U(R(X),\theta)	= \I(\theta \in R(X)) - k\int_{\theta_0 \in R(x)}{1 \cdot d\theta_0}$, então 
 a melhor região de credibilidade é tal que 
 $R(X) = \{\theta \in \Theta: f(\theta|X) \geq k\}$.
 Dizemos que $R(X)$ é um HPD (highest posterior density) 
@@ -10030,6 +10064,8 @@ Você acha os princípios razoáveis?
 }{}
 
 
+\newpage
+
 \section{Revisão sobre teoria da decisão e 
          inferência bayesiana}
 
@@ -10649,6 +10685,8 @@ Você acha os princípios razoáveis?
  usar uma utilidade diferente (FBST).
 }{}
 
+
+\newpage
 
 \section{Estatística Bayesiana Computacional}
 
@@ -12251,6 +12289,8 @@ olbm(mu >= 20, 250)
 	      Sugira um modelo que leve este efeito em consideração e rode-o no stan.
  \end{enumerate}
 \end{exercise}
+
+\newpage
 
 \section{Revisão final}
 
