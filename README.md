@@ -1,6 +1,6 @@
 # Livro de Inferência Bayesiana
 
-Por Luı́s Gustavo Esteves, Rafael Izbicki e Rafael Bassi Stern
+Por Luı́s Gustavo Esteves, Rafael Izbicki (https://rafaelizbicki.com/) e Rafael Bassi Stern (https://www.rafaelstern.science/)
 
 Para compilar:
 
