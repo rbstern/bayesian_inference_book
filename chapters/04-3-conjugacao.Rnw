@@ -730,9 +730,9 @@ tanto $\mu$ quanto $\tau^{2}$ são desconhecidos
  a distribuição a posteriori 
  para essa observação. 
 
-<<normal_gamma, cache=TRUE, fig.pos="t", fig.height=3, fig.width=4, fig.cap="Distribuições a priori e a posteriori (depois de observamos um indivíduo com 1,8m) para a altura média de um brasileiro", fig.align="center">>=
+<<normal_gamma, cache=TRUE, fig.pos="t", fig.height=5, fig.width=8, fig.cap="Distribuições a priori e a posteriori (depois de observamos um indivíduo com 1,8m) para a altura média de um brasileiro", fig.align="center">>=
 library(ggplot2)
-library(patchwork)
+library(gridExtra)
 
 set.seed(0)
 sigma <- 0.075
@@ -774,7 +774,7 @@ densidade <- function(grid_bivariado, hparam)
           sqrt(1/(hparam$lambda*grid_bivariado$tau2)))
 }
   
-plot_densidade <- function(grid_bivariado, hparam)
+plot_densidade <- function(grid_bivariado, hparam, title)
 {
   dados_plot <- data.frame(
     mu = grid_bivariado$mu,
@@ -785,7 +785,7 @@ plot_densidade <- function(grid_bivariado, hparam)
   ggplot(dados_plot, 
          aes(mu, tau2, fill = densidade)) + 
     geom_raster(interpolate = TRUE) + 
-    ggtitle(paste0("Prior")) +
+    ggtitle(title) +
     coord_cartesian(xlim=range(grid_bivariado$mu),
                     ylim=range(grid_bivariado$tau2)) +
     scale_fill_gradientn(colours = terrain.colors(100)) +
@@ -796,10 +796,13 @@ plot_densidade <- function(grid_bivariado, hparam)
     ylab(expression(tau^2))
 }
 
-aux1 = plot_densidade(grid_bivariado, hparam_prior)
+# Plot prior and posterior
+aux1 = plot_densidade(grid_bivariado, hparam_prior, "Prior")
 aux2 = plot_densidade(grid_bivariado, 
-                      atualiza(hparam_prior, altura))
-aux1 / aux2
+                      atualiza(hparam_prior, altura), "Posterior")
+
+# Combine the two plots using gridExtra
+grid.arrange(aux1, aux2, ncol = 2)
 @
 \end{example}
 

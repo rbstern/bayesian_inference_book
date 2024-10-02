@@ -20,7 +20,7 @@
 \contentsline {subsection}{\numberline {4.3}Famílias conjugadas}{38}{subsection.4.3}%
 \contentsline {subsubsection}{\numberline {4.3.1}O modelo beta-binomial (Dirichlet-multinomial)}{40}{subsubsection.4.3.1}%
 \contentsline {subsubsection}{\numberline {4.3.2}O modelo normal-normal}{42}{subsubsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.3}A família exponencial}{50}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3}A família exponencial}{49}{subsubsection.4.3.3}%
 \contentsline {subsubsection}{\numberline {4.3.4}O processo de Dirichlet*}{54}{subsubsection.4.3.4}%
 \contentsline {section}{\numberline {5}Revisão sobre o teorema de Bayes e o modelo estatístico}{60}{section.5}%
 \contentsline {section}{\numberline {6}Tomando decisões conscientemente}{62}{section.6}%

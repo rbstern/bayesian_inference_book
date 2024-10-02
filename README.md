@@ -1,4 +1,23 @@
-# Bayesian Inference Book
+# Livro de Inferência Bayesiana
+
+Por Luı́s Gustavo Esteves, Rafael Izbicki e Rafael Bassi Stern
+
+Para compilar:
+
+    cd /tmp/
+    git clone https://github.com/rbstern/bayesian_inference_book
+    cd bayesian_inference_book
+    apt install texlive-full
+    apt install r-cran-knitr
+    make clean
+    make
+    cd build
+    pdflatex book.tex
+    bibtex book
+    pdflatex book.tex
+    pdflatex book.tex
+
+---
 
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 

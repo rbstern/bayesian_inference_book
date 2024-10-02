@@ -40,7 +40,7 @@ copybook:
 
 # compile a TEX from a RNoWeb file
 %.tex: %.Rnw Makefile
-	mkdir build	
+	mkdir -p build	
 	Rscript \
 		-e "require(knitr)" \
 		-e "knitr::opts_chunk[['set']](fig.path='$(FIGUREDIR)/$*-')" \
@@ -49,7 +49,7 @@ copybook:
 	cp config.tex build/config.tex
 	cp book.bib build/book.bib
 	cp slashbox.sty build/slashbox.sty
-	mkdir build/figures
+	mkdir -p build/figures
 	cp -a ./figures/. ./build/figures/
 	
 # extract an R file from an RNoWeb file
